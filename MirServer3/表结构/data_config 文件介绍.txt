@@ -1,0 +1,16 @@
+stab\data_config     文件介绍-官方目录下面_996是官方文件不要动，自定义添加的放到不带_996文件
+
+   
+
+dev\data_config目录下面自定义添加的放到不带_996文件
+
+
+
+ModelAtlasSplitConfigs   打包超大资源产生的坐标文件
+objBlendConfigs                地图中特效叠加模式更改
+sceneAniTickConfigs         传奇3地图资源游戏播放速度，客户端写死不能更改
+
+以下3个为添加地图使用,地图转换时自动生成
+sceneAtlasFormatConfigs
+sceneAtlasSplitConfigs
+sceneSpriteFormatConfigs

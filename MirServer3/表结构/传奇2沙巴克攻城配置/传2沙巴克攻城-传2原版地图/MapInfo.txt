@@ -1,0 +1,14 @@
+;;NOTALLOWUSEMAGIC 禁止使用技能 说明：NOTALLOWUSEMAGIC(火墙|彻地钉) NOSAFEPOSITIONMOVE 禁止在当前地图安全区中使用传送戒指 NOPOSITIONMOVE 禁止传送 
+;;NEEdHOLE 切换到该地图需要一个洞 NORECALL 禁止天地合一传送 NOGUILDRECALL 禁止行会合一传送 NODEARRECALL 禁止夫妻传送 NOMASTERRECALL 禁止师徒传送 NORANDOMMOVE 禁止使用随机 
+;;MAPGROUP(1)点击小地图不能传送
+
+[m2_0150 沙巴克皇宫 0] DAY FIGHT 
+[m2_3 沙巴克城 0] HORSE  ONKILLMON Norunmon Norunhuman
+
+[m2_0151  铁匠铺] fight
+[m2_0152  服装店] fight
+[m2_0153  药店] fight
+[m2_0154  杂货店] fight
+[m2_0155  布料店] fight
+[m2_0156  监狱] fight
+[m2_0162  监狱] safe

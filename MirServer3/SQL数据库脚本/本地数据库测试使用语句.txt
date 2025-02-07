@@ -1,0 +1,16 @@
+用于本地测试服务器 制作版本时使用
+
+
+合服次数、时间
+update TBL_CONFIG set hfcount = 次数
+update TBL_CONFIG set hftime = 时间
+
+
+部暑常量、内测服常量、正式服常量（常量数值为时间戳，需要去百度搜时间戳转换）
+update [TBL_CONFIG] set [FLD_SERCONFIG]='{"maxitemlog": 1000, "maxdummy": 50, "createservertime": 1731052690, "testservertime": 1731054000, "startservertime": 1731057600, "limitchat": 0, "limitjob": 0}'
+
+
+
+
+
+

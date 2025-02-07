@@ -1,0 +1,24 @@
+1.个人变量申明.txt
+	VAR integer HUMAN 特戒位置71  ->  VAR string HUMAN 特戒位置71
+2.穿戴装备触发.txt
+	CALCVAR HUMAN 特戒位置71 = 0  ->  CALCVAR HUMAN 特戒位置71 = ''
+3.左侧按钮事件QF.txt
+	#IF
+	large <$Human(特戒位置71)> 0
+	#ACT
+	inc S$特戒界面字符串 <DBItemShow|id=tj1|x=-2.0|y=-2.0|makeindex=<$Human(特戒位置71)>|showtips=1|dblink=@开始脱下特戒1>
+	
+	->
+	
+	#IF
+	not equal <$Human(特戒位置71)>
+	#ACT
+	inc S$特戒界面字符串 <DBItemShow|id=tj1|x=-2.0|y=-2.0|SMakeIndex=<$Human(特戒位置71)>|showtips=1|dblink=@开始脱下特戒1>
+4.界面按钮生成.txt
+	large <$Human(特戒位置71)> 0  ->  not equal <$Human(特戒位置71)>
+
+5.脚本文件所有涉及以下变量需要修改
+	1.makeindex  ->  SMakeIndex	
+	2.物品唯一ID变量 N$  ->  S$
+	
+	

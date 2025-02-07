@@ -1,0 +1,14 @@
+5.2.3_d客户端表现效果调整
+1.更新cfg_magic表SkillCD列值改成600ms
+2.更新cfg_model_info表中标黄色部分ID568~810 技能特效
+3.更新cfg_skill_present表中标黄色部分
+4.新增cfg_magicinfo表delayLaunch字段延迟向服务器发送
+5.新增cfg_buff表hideByLaunching字段添加BUFF后延迟播放特效
+
+
+服务端--M2上调整如图所示
+
+
+注：
+全部按上面调整正常后。想加快速度直接调整M2上的值就可以。
+M2上面服务端客户端需要同时调整，点击调整框会有TIPS说明
