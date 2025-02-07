@@ -1,0 +1,11 @@
+﻿chuanqi3/Client3/cache
+chuanqi3/Client3/mod_launcher
+chuanqi3/Client3/*.dll
+chuanqi3/MirServer3/CenterLog
+chuanqi3/MirServer3/DBServer/DBServer.log
+chuanqi3/MirServer3/DBServer/Log
+chuanqi3/MirServer3/LoginGate/Log
+chuanqi3/MirServer3/Mir200/Log
+chuanqi3/MirServer3/Mir200/M2Server.log
+chuanqi3/MirServer3/RunGate/Log
+chuanqi3/MirServer3/RunGate/RunGate.log
