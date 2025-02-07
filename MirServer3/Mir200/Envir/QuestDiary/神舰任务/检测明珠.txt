@@ -1,0 +1,17 @@
+[@检测明珠]
+{
+#IF
+checkitem 连环明珠 1
+#ACT
+enter_ok
+take 连环明珠 1
+sendmsg 5 你有连环明珠，进入了调控室。
+#ELSEACT
+enter_fail
+#ELSESAY
+你不能进到这里去。要进这儿的话需要我的力量。\
+不过你没有 {连环明珠/FCOLOR=250}，不能跟我联动啊。\
+求到{连环明珠/FCOLOR=250} 后再来吧。\ 
+
+
+}

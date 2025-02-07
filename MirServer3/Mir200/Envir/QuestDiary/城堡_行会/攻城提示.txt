@@ -1,0 +1,20 @@
+;;不要删
+[@CastleWarSendMsg]
+{
+#If
+random 3
+#Act
+SendMsg  " 沙巴克城开战了。。。"
+Break
+
+#If
+random 3
+#Act
+SendMsg  " 沙巴克城危险所以避难来了。"
+Break
+
+#If
+#Act
+SendMsg  " 谁能让沙巴克城稳定一点啊。。"
+Break
+}

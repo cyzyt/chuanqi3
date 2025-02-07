@@ -1,0 +1,7 @@
+;;不要删
+[@Main]
+	#Call	[\城堡_行会\沙城旗帜.txt]	@Defence_MainFlag
+
+[@_Startup]
+#Act
+;;PasteFlag SABUK

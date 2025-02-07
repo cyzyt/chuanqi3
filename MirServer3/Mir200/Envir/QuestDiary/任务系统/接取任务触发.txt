@@ -1,0 +1,9 @@
+[@接取任务触发]
+{
+#If
+Equal  <$CURRTASKID>  301
+#act
+
+
+
+}

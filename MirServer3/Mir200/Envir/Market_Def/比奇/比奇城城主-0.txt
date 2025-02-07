@@ -1,0 +1,13 @@
+;;不要删
+%100
++40
++1
+[@Main]
+#Act
+NEWPICKTASK 201
+
+#If
+Equal  <$CURRTASKID>  201
+#Act
+SendMsg 6 你点击了任务为ID:<$CURRTASKID>！！！！！
+Break

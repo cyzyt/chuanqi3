@@ -1,0 +1,13 @@
+[@诅咒药水]
+{
+#if
+CHECKCLEANUPGPOINT
+#act
+CLEANUPGPOINT
+SendMsg 6 你清了点数
+#ELSEACT
+stop
+SendMsg 6 你没有可清的点
+
+
+}

@@ -1,0 +1,54 @@
+[INFO]
+;职业
+Job=2
+;性别
+Gender=0
+;头发
+Hair = 5
+;使用魔法
+USESKILL=召唤骷髅,召唤神兽,施毒术,治愈术,灵魂火符,幽灵盾,神圣战甲术
+;USESKILL=召唤骷髅,召唤神兽,施毒术,治愈术,灵魂火符,幽灵盾,神圣战甲术
+;出身时背包物品
+INITITEMS = 黄色药粉（中）,灰色药粉（中）,护身符（中）,护身符（中）,护身符（中）
+;是不是掉背包装备，1=掉，0=不掉
+;DropItem=0
+
+;是不是掉身上装备，1=掉，0=不掉
+DropUseItem=0
+;掉身上装备几率
+DieDropUseItemRate=1500
+DropItem=0
+ButchItemRate=0
+ButchUseItem=0
+ButchItemCount=0
+UseAllSkillByJob=0
+;==============================身上装备============================
+[UseItems]
+;衣服
+USEITEMS0 = 幽灵战衣（男）
+;武器
+USEITEMS1 = 龙纹剑
+;xun明物
+USEITEMS2 = 
+;项链
+USEITEMS3 = 灵魂项链
+;头盔
+USEITEMS4 = 行者帽
+;左手镯
+USEITEMS5 = 如来手镯
+;右手镯
+USEITEMS6 = 如来手镯
+;左戒指
+USEITEMS7 = 泰坦戒指
+;右戒指
+USEITEMS8 = 泰坦戒指
+;fu物品
+USEITEMS9 = 护身符（中）
+;腰带
+USEITEMS10 = 
+;鞋子
+USEITEMS11 = 月光鞋
+;宝石
+USEITEMS12 = 
+;斗笠
+UseItems13 = 

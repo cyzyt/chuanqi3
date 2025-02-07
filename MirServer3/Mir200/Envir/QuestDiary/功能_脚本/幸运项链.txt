@@ -1,0 +1,94 @@
+[@幸运项链_1]
+{
+#SAY
+合成幸运项链有2种模式:\ \
+
+<进入普通合成模式/@有几率成幸运>\ \
+<进入高级合成模式/@必成幸运合成>\ \
+<[ 离 开 ]/@EXIT>
+
+
+[@有几率成幸运]
+#SAY
+请将需要合成的项链佩带在身上!\ \
+成功几率为 50% \ \
+<[开始合成幸运]/@开始合成幸运>\
+
+
+
+[@开始合成幸运]
+#if
+CHECKUSEITEM 3
+#Act
+GETITEMADDVALUE 3 5 N$运点数
+#say
+你的项链目前有<$STR(N$运点数)>点幸运. \ \
+<帮我增加幸运/@增加幸运>\
+#elsesay
+你还没穿项链呢。
+
+[@增加幸运]
+#If
+small N$运点数 5
+#Act
+goto @判断成功
+#elseact
+SendMsg 6 你的项链不能再加了
+
+[@判断成功]
+#if
+random 2
+#SAY
+哦，非常抱歉！合成失败了。\
+<结束/@exit>
+#ACT
+take 金币 10000
+#ELSEACT
+ChangeitemaddvaLue 3 5 + 1
+SendMsg 5 你的项链增加了1点幸运. 
+SENDMOVEMSG 1 253 255 350 1 玩家:<$USERNAME>成功将<$NECKLACE>增加了1点幸运！
+
+;;;;;;;;===========================
+[@必成幸运合成]
+#SAY
+请将需要合成的项链佩带在身上!\ \
+成功几率为 100% \ \
+<[开始合成幸运]/@必成幸运合成_1>\
+
+
+
+[@必成幸运合成_1]
+#if
+CHECKUSEITEM 3
+#Act
+GETITEMADDVALUE 3 5 M10
+#say
+你的项链目前有<$STR(M10)>点幸运. \ \
+<帮我增加幸运/@增加幸运_1>\
+#elsesay
+你还没穿项链呢。
+
+[@增加幸运_1]
+#If
+small M10 5
+#Act
+goto @判断成功_1
+#elsesay
+\ \
+你的项链不能再加了
+
+[@判断成功_1]
+#if
+CHECKGAMEGOLD > 999
+#say
+祝贺你，你的项链增加了1点幸运. \ \
+<[继续合成幸运]/@必成幸运合成_1>\
+#ACT
+GAMEGOLD - 1000
+ChangeitemaddvaLue 3 5 + 1
+SendMsg 5 你的项链增加了1点幸运. 
+SENDMOVEMSG 1 253 255 350 1 玩家:<$USERNAME>成功将<$NECKLACE>增加了1点幸运！
+#elsesay
+你的积分不够1000
+
+}

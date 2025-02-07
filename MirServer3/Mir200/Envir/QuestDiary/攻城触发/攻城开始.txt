@@ -1,0 +1,37 @@
+[@攻城开始]
+{
+#Act
+Mov A499 1
+SendMovemsg 0 255 241 200 2 ぐ沙巴克：攻城战役已开启...
+SendMovemsg 0 255 241 250 2 ぐ沙巴克：攻城战役已开启...
+SendMovemsg 0 255 241 300 2 ぐ沙巴克：攻城战役已开启...
+SETMAPMODE 3 SAFE 
+SETMAPMODE 3 Fight2 1 
+SETMAPMODE 3 NOTALLOWUSEMAGIC(瞬息移动|异形换位|乾坤大挪移)
+SETMAPMODE 3 NOALLOWUSEITEMS(随机传送卷)
+
+
+
+
+#If
+#Act
+Movenpc  3 151        2    350 219
+Movenpc  3 152        2    343 234
+Movenpc  3 153        2    335 223
+Movenpc  3 155        2    362 226
+Movenpc  3 156        2    350 233
+Movenpc  3 166        Z011  10   7
+Movenpc  3 169         Z011  10   8
+Movenpc  3 172          Z011  10   9
+Movenpc  3 157        Z011  10  10
+Movenpc  3 158        Z011  10  12
+Movenpc 3 180  Z011  10  13
+Movenpc 3 181  Z011  10  14
+Movenpc 3 182  Z011  10  15
+Movenpc 3 183  Z011  10  16
+Movenpc 3 184  Z011   9  16
+Movenpc 3 185  Z011   9  15
+SENDMSG 0 沙巴克攻城战开始了。
+SENDMSG 0 沙巴克的部分商人已经到毒蛇山谷或道馆避难了。
+
+}

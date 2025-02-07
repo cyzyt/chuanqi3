@@ -1,0 +1,129 @@
+;;
+[@main]
+#SAY
+<Img|ay=1|width=540|height=450|scale9l=70|bg=1|scale9r=70|scale9t=70|loadDelay=1|scale9b=70|reset=1|Move=0|esc=1|img=public/bg_npc_01.png|show=0>
+<Layout|x=500|y=10|width=80|height=80|link=@Exit>
+<Button|x=500|y=10|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@Exit>
+<Text|x=25|y=20|color=147|size=18|text=
+通过神舰来自无体世界的存在,进入传奇大陆上的各种实体\
+上才显现出它们的存在,这些异界的存在们不顾幻魔灵的结\
+界渐渐从神舰出来到无人的绝望之谷想确认它们的存在。它\
+们利用人类周围和人类,魔族,魔教徒的身体来生活下去,\
+身体被破坏时会转移到别的物体上继续活动。。。\
+紫霞神女在寻找可以仔细侦察此事的人,决定请武林人士的\
+强大力量,便让这些武林人士踏入了绝望之谷。\>
+<Text|x=25.0|y=170.0|color=251|size=18|text=购买死血符（1小时）[20万金币]|link=@buysxy>
+;;<购买死血符（1小时）。/@buysxy>{  20万金币/FCOLOR=58}\
+<Text|x=25.0|y=210.0|color=251|size=18|text=进入绝望之谷[等级＜60级]|link=@绝望之谷#地图号=d2801#地图x=43#地图x=207#等级=60>
+<Text|x=25.0|y=250.0|color=251|size=18|text=进入魔教副馆1[60-70级]|link=@副馆1>
+<Text|x=25.0|y=290.0|color=251|size=18|text=进入魔教副馆2-1[暂无级别限制]|link=@副馆2-1>
+<Text|x=25.0|y=330.0|color=251|size=18|text=进入魔教副馆2-2[等级＞60级]|link=@副馆2-2>
+
+
+[@绝望之谷]
+#IF
+CHECKLEVELEX > <$str(S$等级)>
+#ACT
+close
+sendMsg 5 "对不起,您超过了<$str(S$等级)>级，不能进入!"
+break
+
+#if
+NOT Checkitem 死血符（1小时） 1
+#ACT
+close
+sendMsg 5 "对不起,您的包裹里没有死血符（1小时）!"
+break
+
+#IF
+CHECKLEVELEX < <$str(S$等级)>
+Checkitem 死血符（1小时） 1
+#ACT
+mapmove <$str(S$地图号)> <$str(S$地图x)> <$str(S$地图y)>
+close
+sendMsg 5 "您的目的地达到了!"
+SENDMOVEMSG 1 253 255 100 3  "一位玩家进入了绝望之谷，如果你想进入，请在道馆[紫霞仙子]传送进入."
+
+[@副馆1]
+#or
+CHECKLEVELEX < 60
+CHECKLEVELEX > 70
+#ACT
+close
+sendMsg 5 "对不起,您的等级不符，不能进入!"
+break
+
+#if
+NOT Checkitem 死血符（1小时） 1
+#ACT
+close
+sendMsg 5 "对不起,您的包裹里没有死血符（1小时）!"
+break
+
+#IF
+CHECKLEVELEX > 60
+CHECKLEVELEX < 70
+Checkitem 死血符（1小时） 1
+#ACT
+mapmove D2802 24 33
+close
+sendMsg 5 "您的目的地达到了!"
+SENDMOVEMSG 1 253 255 100 3  "一位玩家进入了绝望之谷，如果你想进入，请在道馆[紫霞仙子]传送进入."
+
+[@副馆2-1]
+#if
+NOT Checkitem 死血符（1小时） 1
+#ACT
+close
+sendMsg 5 对不起,您的包裹里没有死血符（1小时）!
+break
+
+#IF
+Checkitem 死血符（1小时） 1
+#ACT
+mapmove D2802 375 38
+close
+sendMsg 5 您的目的地达到了!
+SENDMOVEMSG 1 253 255 100 3  一位玩家进入了绝望之谷，如果你想进入，请在道馆[紫霞仙子]传送进入.
+
+[@副馆2-2]
+#IF
+CHECKLEVELEX < 60
+#ACT
+close
+sendMsg 5 "对不起,您的等级小于60级，不能进入!"
+break
+
+#if
+NOT Checkitem 死血符（1小时） 1
+#ACT
+close
+sendMsg 5 "对不起,您的包裹里没有死血符（1小时）!"
+break
+
+#IF
+CHECKLEVELEX > 60
+Checkitem 死血符（1小时） 1
+#ACT
+mapmove D2803 25 47
+close
+sendMsg 5 "您的目的地达到了!"
+SENDMOVEMSG 1 253 255 100 3  "一位玩家进入了绝望之谷，如果你想进入，请在道馆[紫霞仙子]传送进入."
+#ELSESAY
+对不起,您的包裹里没有死血符（1小时）或等级不够60级.\\
+
+
+[@buysxy]
+#IF
+checkgold 200000
+#ACT
+give 死血符（1小时） 1
+take 金币 200000
+#SAY
+购买成功！\\
+<继续购买/@buysxy>\\
+<返回/@main>\
+#ELSESAY
+您没有 200000 金币，我无法给你死血符（1小时）.\\
+<离 开/@exit>\
+

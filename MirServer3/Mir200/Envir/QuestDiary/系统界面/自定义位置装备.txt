@@ -1,0 +1,98 @@
+[@自定义装备按钮1]
+{
+#IF
+#ACT
+mov N$是否显示了特戒界面 0
+DELBUTTON 3 3002
+mov N$是否显示了生肖界面 1
+mov S$生肖界面字符串 
+inc S$生肖界面字符串 <Img|children={closebtn,tejietitle,tejie_xian}|x=415.0|y=0.0|img=public/1900000675.jpg|esc=0|link=@空>
+inc S$生肖界面字符串 <Button|id=closebtn|x=355.0|y=10.0|color=255|size=18|nimg=public/1900000510.png|link=@关闭生肖界面>
+inc S$生肖界面字符串 <Img|id=tejietitle|x=173.0|y=19.0|img=public/word_sxbt_05.png|esc=0>
+
+inc S$生肖界面字符串 <Img|children={sx1zb}|x=462.0|y=66.0|width=60|height=60|img=public/1900000651.png>
+inc S$生肖界面字符串 <Img|children={sx2zb}|x=544.0|y=66.0|width=60|height=60|img=public/1900000651.png>
+inc S$生肖界面字符串 <Img|children={sx3zb}|x=626.0|y=66.0|width=60|height=60|img=public/1900000651.png>
+inc S$生肖界面字符串 <Img|children={sx4zb}|x=708.0|y=66.0|width=60|height=60|img=public/1900000651.png>
+inc S$生肖界面字符串 <Img|children={sx5zb}|x=462.0|y=138.0|width=60|height=60|img=public/1900000651.png>
+inc S$生肖界面字符串 <Img|children={sx6zb}|x=544.0|y=138.0|width=60|height=60|img=public/1900000651.png>
+inc S$生肖界面字符串 <Img|children={sx7zb}|x=626.0|y=138.0|width=60|height=60|img=public/1900000651.png>
+inc S$生肖界面字符串 <Img|children={sx8zb}|x=708.0|y=138.0|width=60|height=60|img=public/1900000651.png>
+inc S$生肖界面字符串 <Img|children={sx9zb}|x=462.0|y=210.0|width=60|height=60|img=public/1900000651.png>
+inc S$生肖界面字符串 <Img|children={sx10zb}|x=544.0|y=210.0|width=60|height=60|img=public/1900000651.png>
+inc S$生肖界面字符串 <Img|children={sx11zb}|x=626.0|y=210.0|width=60|height=60|img=public/1900000651.png>
+inc S$生肖界面字符串 <Img|children={sx12zb}|x=708.0|y=210.0|width=60|height=60|img=public/1900000651.png>
+
+#IF
+not EQUAL <$USEITEMNAME[15]> 
+#ACT
+inc S$生肖界面字符串 <EquipShow|scale=0.9|id=sx1zb|x=-4.0|y=-4.0|index=15|showtips=1|reload=1>
+
+#IF
+not EQUAL <$USEITEMNAME[55]> 
+#ACT
+inc S$生肖界面字符串 <EquipShow|scale=0.9|id=sx2zb|x=-4.0|y=-4.0|index=55|showtips=1|reload=1>
+
+#IF
+not EQUAL <$USEITEMNAME[73]> 
+#ACT
+inc S$生肖界面字符串 <EquipShow|scale=0.9|id=sx3zb|x=-4.0|y=-4.0|index=73|showtips=1|reload=1>
+
+#IF
+not EQUAL <$USEITEMNAME[74]> 
+#ACT
+inc S$生肖界面字符串 <EquipShow|scale=0.9|id=sx4zb|x=-4.0|y=-4.0|index=74|showtips=1|reload=1>
+
+#IF
+not EQUAL <$USEITEMNAME[75]> 
+#ACT
+inc S$生肖界面字符串 <EquipShow|scale=0.9|id=sx5zb|x=-4.0|y=-4.0|index=75|showtips=1|reload=1>
+
+#IF
+not EQUAL <$USEITEMNAME[76]> 
+#ACT
+inc S$生肖界面字符串 <EquipShow|scale=0.9|id=sx6zb|x=-4.0|y=-4.0|index=76|showtips=1|reload=1>
+
+#IF
+not EQUAL <$USEITEMNAME[77]> 
+#ACT
+inc S$生肖界面字符串 <EquipShow|scale=0.9|id=sx7zb|x=-4.0|y=-4.0|index=77|showtips=1|reload=1>
+
+#IF
+not EQUAL <$USEITEMNAME[78]> 
+#ACT
+inc S$生肖界面字符串 <EquipShow|scale=0.9|id=sx8zb|x=-4.0|y=-4.0|index=78|showtips=1|reload=1>
+
+#IF
+not EQUAL <$USEITEMNAME[79]> 
+#ACT
+inc S$生肖界面字符串 <EquipShow|scale=0.9|id=sx9zb|x=-4.0|y=-4.0|index=79|showtips=1|reload=1>
+
+#IF
+not EQUAL <$USEITEMNAME[80]> 
+#ACT
+inc S$生肖界面字符串 <EquipShow|scale=0.9|id=sx10zb|x=-4.0|y=-4.0|index=80|showtips=1|reload=1>
+
+#IF
+not EQUAL <$USEITEMNAME[81]> 
+#ACT
+inc S$生肖界面字符串 <EquipShow|scale=0.9|id=sx11zb|x=-4.0|y=-4.0|index=81|showtips=1|reload=1>
+
+#IF
+not EQUAL <$USEITEMNAME[82]> 
+#ACT
+inc S$生肖界面字符串 <EquipShow|scale=0.9|id=sx12zb|x=-4.0|y=-4.0|index=82|showtips=1|reload=1>
+
+#IF
+#ACT
+addbutton 3 3003 <$STR(S$生肖界面字符串)>
+
+
+[@关闭生肖界面]
+#IF
+#ACT
+mov N$是否显示了生肖界面 0
+DELBUTTON 3 3003
+
+
+}

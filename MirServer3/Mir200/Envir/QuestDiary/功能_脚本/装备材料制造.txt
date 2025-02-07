@@ -1,0 +1,77 @@
+[@装备材料制造功能集合]
+{
+
+[@装备材料制造_开始合成]
+#IF
+#ACT
+GetValidstr <$Str(S$合成字符串)> = S$消耗道具字符串 S$合成物品
+GetValidstr <$Str(S$消耗道具字符串)> | S$消耗道具 S$消耗货币
+
+; 先判断是否满足，不满足直接break，减少计算量
+#or
+Not CHECKITEMS <$str(S$消耗道具)> 0 0
+Not CHECKITEMS <$str(S$消耗货币)> 0 1
+#ACT
+SendMsg 9 材料不足
+break
+
+
+#IF
+LARGE <$str(N$合成数量)> 1
+#ACT
+; SendMsg 0 消耗道具--<$str(S$消耗道具)>
+mov S$变量1 
+mov S$变量2 
+mov S$变量3 
+mov S$变量4 
+GETVALIDSTRSUPER <$STR(S$消耗道具)> & S$变量
+GetValidstr <$Str(S$消耗货币)> # S$消耗货币ID S$消耗货币数量
+MUL S$消耗货币数量 <$Str(S$消耗货币数量)> <$str(N$合成数量)>
+mov S$消耗货币 
+INC S$消耗货币 <$Str(S$消耗货币ID)>#<$str(S$消耗货币数量)>
+
+mov S$消耗道具
+MOV N$临时变量 1
+While N$临时变量 < 5
+goto @倍数合成处理
+INC N$临时变量 1
+EndWhile
+
+; #IF
+; #ACT
+; SendMsg 0 消耗道具222--<$str(S$消耗道具)>
+; SendMsg 0 消耗货币222--<$str(S$消耗货币)>
+
+#IF
+CHECKITEMS <$str(S$消耗道具)> 0 0
+CHECKITEMS <$str(S$消耗货币)> 0 1
+#ACT
+takes <$str(S$消耗道具)> N$消耗道具是否有绑定 0
+takes <$str(S$消耗货币)> N$消耗金币是否有绑定 1
+give <$str(S$合成物品)> <$str(N$合成数量)>
+#ELSEACT
+SendMsg 9 材料不足
+
+[@倍数合成处理]
+#IF
+EQUAL S$变量<$str(N$临时变量)> 
+#ACT
+mov N$临时变量 999
+Break
+
+#IF
+#ACT
+GETVALIDSTRSUPER <$STR(S$变量<$str(N$临时变量)>)> # S$道具<$str(N$临时变量)>_
+MUL S$道具<$str(N$临时变量)>_2 <$str(S$道具<$str(N$临时变量)>_2)> <$str(N$合成数量)>
+
+#IF
+#ACT
+mov N$下一临时变量 <$str(N$临时变量)>
+INC N$下一临时变量 1
+#IF
+EQUAL S$变量<$str(N$下一临时变量)> 
+#ACT
+inc S$消耗道具 <$str(S$道具<$str(N$临时变量)>_1)>#<$str(S$道具<$str(N$临时变量)>_2)>
+#ELSEACT
+inc S$消耗道具 <$str(S$道具<$str(N$临时变量)>_1)>#<$str(S$道具<$str(N$临时变量)>_2)>&
+}

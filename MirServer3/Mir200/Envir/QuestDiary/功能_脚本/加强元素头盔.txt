@@ -1,0 +1,83 @@
+[@加强元素头盔_1]
+{
+#Say
+<头盔加强火/@头盔加强火>        <头盔洗弱火/@头盔洗弱火>\ 
+<头盔加强冰/@头盔加强冰>        <头盔洗弱冰/@头盔洗弱冰>\
+<头盔加强雷/@头盔加强雷>        <头盔洗弱雷/@头盔洗弱雷>\ 
+<头盔加强风/@头盔加强风>        <头盔洗弱风/@头盔洗弱风>\
+<头盔加强神圣/@头盔加强神圣>    <头盔洗弱神圣/@头盔洗弱神圣>\
+
+[@头盔洗弱火]
+#If
+CHECKITEMADDVALUE 4 21 < -1
+#Act
+ChangeitemaddvaLue 4 21 = 0
+SendMsg 6 你的头盔洗了1点弱火
+#elseact
+SendMsg 6 你的头盔没有弱火
+[@头盔洗弱冰]
+#If
+CHECKITEMADDVALUE 4 22 < -1
+#Act
+ChangeitemaddvaLue 4 22 = 0
+SendMsg 6 你的头盔洗了1点弱冰
+#elseact
+SendMsg 6 你的头盔没有弱冰
+[@头盔洗弱雷]
+#If
+CHECKITEMADDVALUE 4 23 < -1
+#Act
+ChangeitemaddvaLue 4 23 = 0
+SendMsg 6 你的头盔洗了1点弱雷
+#elseact
+SendMsg 6 你的头盔没有弱雷
+[@头盔洗弱风]
+#If
+CHECKITEMADDVALUE 4 24 < -1
+#Act
+ChangeitemaddvaLue 4 24 = 0
+SendMsg 6 你的头盔洗了1点弱风
+#elseact
+SendMsg 6 你的头盔没有弱风
+
+[@头盔加强火]
+#If
+CHECKITEMADDVALUE 4 21 < 1
+#Act
+ChangeitemaddvaLue 4 21 + 1
+SendMsg 6 你的头盔增加了1点强火
+#elseact
+SendMsg 6 你的头盔已经有强火不能再加了
+[@头盔加强冰]
+#If
+CHECKITEMADDVALUE 4 22 < 1
+#Act
+ChangeitemaddvaLue 4 22 + 1
+SendMsg 6 你的头盔增加了1点强冰
+#elseact
+SendMsg 6 你的头盔已经有强冰不能再加了
+[@头盔加强雷]
+#If
+CHECKITEMADDVALUE 4 23 < 1
+#Act
+ChangeitemaddvaLue 4 23 + 1
+SendMsg 6 你的头盔增加了1点强雷
+#elseact
+SendMsg 6 你的头盔已经有强雷不能再加了
+[@头盔加强风]
+#If
+CHECKITEMADDVALUE 4 24 < 1
+#Act
+ChangeitemaddvaLue 4 24 + 1
+SendMsg 6 你的头盔增加了1点强风
+#elseact
+SendMsg 6 你的头盔已经有强风不能再加了
+[@头盔加强神圣]
+#If
+CHECKITEMADDVALUE 4 25 < 1
+#Act
+ChangeitemaddvaLue 4 25 + 1
+SendMsg 6 你的头盔增加了1点强神圣
+#elseact
+SendMsg 6 你的头盔已经有强神圣不能再加了
+}

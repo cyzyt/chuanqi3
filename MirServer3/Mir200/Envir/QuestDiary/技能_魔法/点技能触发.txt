@@ -1,0 +1,13 @@
+[@点技能触发_1]
+{
+#IF
+;;点击基本剑术
+EQUAL <$CURRCLICKSKILLID> 3
+;;点击基本剑术
+EQUAL <$CURRCLICKSKILLNAME> 基本剑术
+#ACT
+Reddel 205 3 
+Sendmsg 9 删除基本剑术上面的红点
+
+
+}

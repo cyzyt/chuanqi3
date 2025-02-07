@@ -1,0 +1,52 @@
+[@Main]
+#If
+Not CHECKPKPOINTEX > 2
+#Say
+<Img|ay=1|height=278|scale9l=70|bg=1|scale9r=70|scale9t=70|loadDelay=1|scale9b=70|reset=1|Move=0|esc=1|img=public/bg_npc_01.png|show=0>
+<Layout|x=385|y=10|width=80|height=80|link=@Exit>
+<Button|x=385|y=10|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@Exit>
+<Text|x=25|y=20|color=147|size=18|text=六面神石>
+
+<Text|x=25.0|y=50.0|color=251|size=18|text=移动至沙漠土城所需金钱:2000钱|link=@六面_沙漠>
+<Text|x=25.0|y=73.0|color=251|size=18|text=__<移动至石阁庙地下城入口所需金钱:500钱|link=@六面_石阁庙>
+<Text|x=25.0|y=96.0|color=251|size=18|text=移动至绿洲村所需金钱:2500钱|link=@六面_绿洲>
+
+#Elseact
+MapMove 81 125 274                                   
+Break
+
+
+[@六面_石阁庙]
+#If
+CheckMoney 金币 ? 500
+#Act
+Money 金币 - 500
+MapMove 75 184 91
+Break
+#Elseact
+MessageBox 你没有足够的钱来传送...
+Break
+
+[@六面_沙漠]
+#If
+CheckMoney 金币 ? 2000
+#Act
+Money 金币 - 2000
+MapMove 5 204 290 
+Break
+#Elseact
+MessageBox 你没有足够的钱来传送...
+Break
+[@六面_绿洲]
+#If
+CheckMoney 金币 ? 2500
+#Act
+Money 金币 - 2500
+MapMove 4 435 84
+Break
+#Elseact
+MessageBox 你没有足够的钱来传送...
+Break
+
+
+

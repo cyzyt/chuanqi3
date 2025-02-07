@@ -1,0 +1,315 @@
+[@BOSS查询_1]
+{
+#If
+CheckMapSameMonCount  D024  沃玛教主 > 0
+#Act
+Mov S$沃玛教主 已经复活
+#elseact
+Mov S$沃玛教主 已被击杀
+
+#If
+CheckMapHumanCount D024 > 0
+#Act
+Mov S$人物1 有人
+#elseact
+Mov S$人物1 空闲
+
+#If
+CheckMapSameMonCount  D6015 触龙神 > 0
+#Act
+Mov S$触龙神 已经复活
+#elseact
+Mov S$触龙神 已被击杀
+
+#If
+CheckMapHumanCount D6015 > 0
+#Act
+Mov S$人物2 有人
+#elseact
+Mov S$人物2 空闲
+
+#If
+CheckMapSameMonCount  D1215 骷髅教主 > 0
+#Act
+Mov S$骷髅教主 已经复活
+#elseact
+Mov S$骷髅教主 已被击杀
+
+#If
+CheckMapHumanCount D1215 > 0
+#Act
+Mov S$人物3 有人
+#elseact
+Mov S$人物3 空闲
+
+#If
+CheckMapSameMonCount  D10162 赤月恶魔 > 0
+#Act
+Mov S$赤月恶魔 已经复活
+#elseact
+Mov S$赤月恶魔 已被击杀
+
+#If
+CheckMapHumanCount D10162 > 0
+#Act
+Mov S$人物4 有人
+#elseact
+Mov S$人物4 空闲
+
+#If
+CheckMapSameMonCount  d515  祖玛教主 > 0
+#Act
+Mov S$祖玛教主 已经复活
+#elseact
+Mov S$祖玛教主 已被击杀
+
+#If
+CheckMapHumanCount d515 > 0
+#Act
+Mov S$人物5 有人
+#elseact
+Mov S$人物5 空闲
+
+#If
+CheckMapSameMonCount  D1116  潘夜牛魔王 > 0
+#Act
+Mov S$潘夜牛魔王 已经复活
+#elseact
+Mov S$潘夜牛魔王 已被击杀
+
+#If
+CheckMapHumanCount D1116 > 0
+#Act
+Mov S$人物6 有人
+#elseact
+Mov S$人物6 空闲
+
+#If
+CheckMapSameMonCount  D1506  震天魔神 > 0
+#Act
+Mov S$震天魔神 已经复活
+#elseact
+Mov S$震天魔神 已被击杀
+
+#If
+CheckMapHumanCount D1506 > 0
+#Act
+Mov S$人物7 有人
+#elseact
+Mov S$人物7 空闲
+
+#If
+CheckMapSameMonCount  D904 霸王教主 > 0
+#Act
+Mov S$霸王教主 已经复活
+#elseact
+Mov S$霸王教主 已被击杀
+
+#If
+CheckMapHumanCount D904 > 0
+#Act
+Mov S$人物8 有人
+#elseact
+Mov S$人物8 空闲
+
+#If
+CheckMapSameMonCount  d1606 诺玛教主 > 0
+#Act
+Mov S$诺玛教主 已经复活
+#elseact
+Mov S$诺玛教主 已被击杀
+
+#If
+CheckMapHumanCount d1606 > 0
+#Act
+Mov S$人物9 有人
+#elseact
+Mov S$人物9 空闲
+
+#If
+CheckMapSameMonCount  D2005  地天灭王 > 0
+#Act
+Mov S$地天灭王 已经复活
+#elseact
+Mov S$地天灭王 已被击杀
+
+#If
+CheckMapHumanCount D2005 > 0
+#Act
+Mov S$人物10 有人
+#elseact
+Mov S$人物10 空闲
+
+
+#If
+#Say
+<Img|ay=1|width=535|height=460|scale9l=70|bg=1|scale9r=70|scale9t=70|loadDelay=1|scale9b=70|reset=1|Move=0|esc=1|img=public/bg_npc_01.png|show=0>
+<Layout|x=500|y=0|width=80|height=80|link=@Exit>
+<Button|x=500|y=0|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@Exit>
+<Text|x=50.0|y=26.0|color=255|size=18|text=地图>
+<Text|x=180.0|y=26.0|color=255|size=18|text=教主情况>
+<Text|x=310.0|y=26.0|color=255|size=18|text=刷新时间>
+<Text|x=429.0|y=26.0|color=255|size=18|text=场地>
+<Text|x=30.0|y=50.0|color=255|size=18|text=———————————————————————————>
+
+<Text|x=25|y=80|color=251|size=18|text=沃玛神殿>
+<Text|x=125|y=80|color=255|size=18|text=沃玛教主:>
+<Text|x=225|y=80|color=250|size=18|text=<$Str(S$沃玛教主)>>
+<Text|x=325|y=80|color=248|size=18|text=5小时>
+<Text|x=425|y=80|color=253|size=18|text=<$Str(S$人物1)>>
+
+<Text|x=25|y=110|color=251|size=18|text=生死关>
+<Text|x=125|y=110|color=255|size=18|text=触龙神:>
+<Text|x=225|y=110|color=250|size=18|text=<$Str(S$触龙神)>>
+<Text|x=325|y=110|color=248|size=18|text=5小时>
+<Text|x=425|y=110|color=253|size=18|text=<$Str(S$人物2)>>
+
+<Text|x=25|y=140|color=251|size=18|text=骷髅洞穴>
+<Text|x=125|y=140|color=255|size=18|text=骷髅教主:>
+<Text|x=225|y=140|color=250|size=18|text=<$Str(S$骷髅教主)>>
+<Text|x=325|y=140|color=248|size=18|text=5小时>
+<Text|x=425|y=140|color=253|size=18|text=<$Str(S$人物3)>>
+
+<Text|x=25|y=170|color=251|size=18|text=赤月洞穴>
+<Text|x=125|y=170|color=255|size=18|text=赤月恶魔:>
+<Text|x=225|y=170|color=250|size=18|text=<$Str(S$赤月恶魔)>>
+<Text|x=325|y=170|color=248|size=18|text=5小时>
+<Text|x=425|y=170|color=253|size=18|text=<$Str(S$人物4)>>
+
+<Text|x=25|y=200|color=251|size=18|text=祖玛神殿>
+<Text|x=125|y=200|color=255|size=18|text=祖玛教主:>
+<Text|x=225|y=200|color=250|size=18|text=<$Str(S$祖玛教主)>>
+<Text|x=325|y=200|color=248|size=18|text=5小时>
+<Text|x=425|y=200|color=253|size=18|text=<$Str(S$人物5)>>
+
+<Text|x=25|y=230|color=251|size=18|text=潘夜神殿>
+<Text|x=125|y=230|color=255|size=18|text=潘夜牛魔王:>
+<Text|x=225|y=230|color=250|size=18|text=<$Str(S$潘夜牛魔王)>>
+<Text|x=325|y=230|color=248|size=18|text=5小时>
+<Text|x=425|y=230|color=253|size=18|text=<$Str(S$人物6)>>
+
+<Text|x=25|y=260|color=251|size=18|text=真天宫>
+<Text|x=125|y=260|color=255|size=18|text=震天魔神:>
+<Text|x=225|y=260|color=250|size=18|text=<$Str(S$震天魔神)>>
+<Text|x=325|y=260|color=248|size=18|text=5小时>
+<Text|x=425|y=260|color=253|size=18|text=<$Str(S$人物7)>>
+
+<Text|x=25|y=290|color=251|size=18|text=调控室>
+<Text|x=125|y=290|color=255|size=18|text=霸王教主:>
+<Text|x=225|y=290|color=250|size=18|text=<$Str(S$霸王教主)>>
+<Text|x=325|y=290|color=248|size=18|text=3小时>
+<Text|x=425|y=290|color=253|size=18|text=<$Str(S$人物8)>>
+
+<Text|x=25|y=320|color=251|size=18|text=诺玛墓穴>
+<Text|x=125|y=320|color=255|size=18|text=诺玛教主:>
+<Text|x=225|y=320|color=250|size=18|text=<$Str(S$诺玛教主)>>
+<Text|x=325|y=320|color=248|size=18|text=5小时>
+<Text|x=425|y=320|color=253|size=18|text=<$Str(S$人物9)>>
+
+<Text|x=25|y=350|color=251|size=18|text=地底宫殿>
+<Text|x=125|y=350|color=255|size=18|text=地天灭王:>
+<Text|x=225|y=350|color=250|size=18|text=<$Str(S$地天灭王)>>
+<Text|x=325|y=350|color=248|size=18|text=5小时>
+<Text|x=425|y=350|color=253|size=18|text=<$Str(S$人物10)>>
+[]
+
+#If
+checkhum D10162 1
+#Act
+Mov 赤月场地  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+Mov 赤月场地  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+#If
+CheckMapSameMonCount  "D515" 1 祖玛教主
+#Act
+Mov 祖玛情况  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+Mov 祖玛情况 "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#If
+checkhum D515 1
+#Act
+Mov 祖玛场地  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+Mov 祖玛场地  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+#If
+CheckMapSameMonCount  "D1116" 1 潘夜牛魔王
+#Act
+Mov 牛魔情况  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+Mov 牛魔情况 "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#If
+checkhum D1116 1
+#Act
+Mov 牛魔场地  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+Mov 牛魔场地  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+#If
+CheckMapSameMonCount  "D1506" 1 震天魔神
+#Act
+Mov 魔神情况  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+Mov 魔神情况 "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#If
+checkhum D1506 1
+#Act
+Mov 魔神场地  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+Mov 魔神场地  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+#If
+CheckMapSameMonCount  "D904" 1 霸王教主
+#Act
+Mov 霸王情况  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+Mov 霸王情况 "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#If
+checkhum D904 1
+#Act
+Mov 霸王场地  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+Mov 霸王场地  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+#If
+CheckMapSameMonCount  "d1606" 1 诺玛教主
+#Act
+Mov 诺玛情况  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+Mov 诺玛情况 "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#If
+checkhum d1606 1
+#Act
+Mov 诺玛场地  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+Mov 诺玛场地  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+#If
+CheckMapSameMonCount  "D2005" 1 地天灭王
+#Act
+Mov 地天情况  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+Mov 地天情况 "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#If
+checkhum D2005 1
+#Act
+Mov 地天场地  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+Mov 地天场地  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+
+
+#If
+#Say
+
+
+─────────[ <返回上层/@Main> ]─────────\
+_ [{FCOLOR/10}超级黑野猪{FCOLOR/12}]房间[ <$OUTPUT(石阁场地)> ]状态[ <$OUTPUT(石阁情况)> ]\
+_ [{FCOLOR/10} 沃玛教主 {FCOLOR/12}]房间[ <$OUTPUT(沃玛场地)> ]状态[ <$OUTPUT(沃玛情况)> ]\
+_ [{FCOLOR/10} 驽 马 王 {FCOLOR/12}]房间[ <$OUTPUT(沙漠场地)> ]状态[ <$OUTPUT(沙漠情况)> ]\
+_ [{FCOLOR/10} 触 龙 神 {FCOLOR/12}]房间[ <$OUTPUT(触龙场地)> ]状态[ <$OUTPUT(触龙情况)> ]\
+_ [{FCOLOR/10} 骷髅教主 {FCOLOR/12}]房间[ <$OUTPUT(骷髅场地)> ]状态[ <$OUTPUT(骷髅情况)> ]\
+_ [{FCOLOR/10} 赤月恶魔 {FCOLOR/12}]房间[ <$OUTPUT(赤月场地)> ]状态[ <$OUTPUT(赤月情况)> ]\
+_ [{FCOLOR/10} 祖玛教主 {FCOLOR/12}]房间[ <$OUTPUT(祖玛场地)> ]状态[ <$OUTPUT(祖玛情况)> ]\
+_ [{FCOLOR/10}潘夜牛魔王{FCOLOR/12}]房间[ <$OUTPUT(牛魔场地)> ]状态[ <$OUTPUT(牛魔情况)> ]\
+_ [{FCOLOR/10} 震天魔神 {FCOLOR/12}]房间[ <$OUTPUT(魔神场地)> ]状态[ <$OUTPUT(魔神情况)> ]\
+_ [{FCOLOR/10} 霸王教主 {FCOLOR/12}]房间[ <$OUTPUT(霸王场地)> ]状态[ <$OUTPUT(霸王情况)> ]\
+_ [{FCOLOR/10} 诺玛教主 {FCOLOR/12}]房间[ <$OUTPUT(诺玛场地)> ]状态[ <$OUTPUT(诺玛情况)> ]\
+;_ [{FCOLOR/10} 地天灭王 {FCOLOR/12}]房间[ <$OUTPUT(地天场地)> ]状态[ <$OUTPUT(地天情况)> ]\
+
+}
+

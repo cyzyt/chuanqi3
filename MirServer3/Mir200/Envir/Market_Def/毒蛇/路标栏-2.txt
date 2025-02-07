@@ -1,0 +1,17 @@
+;;不要删
+[@Main]
+#Say
+<Img|ay=1|height=320|scale9l=70|bg=1|scale9r=70|scale9t=70|loadDelay=1|scale9b=70|reset=1|Move=0|esc=1|img=public/bg_npc_01.png|show=0>
+<Layout|x=385|y=10|width=80|height=80|link=@Exit>
+<Button|x=386|y=10|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@Exit>
+{往其他村庄移动的路/FCOLOR=250}\
+比奇省  - [165,367]\ 
+
+{往洞穴移动的路/FCOLOR=250}\
+矿山    - [366,200]\ 
+{商人位置/FCOLOR=250}\
+铁匠铺  - [351,219]\
+施药商  - [334,224]\
+小商贩  - [361,226]\
+卖布商  - [342,235]\
+酒幕    - [346,234]\

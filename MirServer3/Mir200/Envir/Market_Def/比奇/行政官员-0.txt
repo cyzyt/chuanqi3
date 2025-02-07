@@ -1,0 +1,3 @@
+;;不要删
+[@Main]
+	#Call	[\城堡_行会\行会功能.txt]	@Castle_Execution

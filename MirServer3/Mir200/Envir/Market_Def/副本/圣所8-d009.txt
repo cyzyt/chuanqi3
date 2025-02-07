@@ -1,0 +1,58 @@
+;;不要删
+[@Main]
+#If
+Not CHECKPKPOINTEX > 2
+#Say
+你要去哪到哪个区域？ \
+
+<第一据点/@第一据点>   <第二据点/@第二据点>\
+<第三据点/@第三据点>   <第四据点/@第四据点>\
+<第五据点/@第五据点>   <第六据点/@第六据点>\\
+#Elseact
+MapMove 81 125 274                                   
+Break
+
+[@第一据点]
+#If
+checkgold 1
+#Act
+SETNPCEFFECT 335 10159 1 1
+MapMove d009 25 527
+Break
+
+
+[@第二据点]
+#If
+checkgold 1
+#Act
+SETNPCEFFECT 336 10159 1 1
+MapMove d009 231 738
+Break
+[@第三据点]
+#If
+checkgold 1
+#Act
+SETNPCEFFECT 337 10159 1 1
+MapMove d009 579 592
+Break
+[@第四据点]
+#If
+checkgold 1
+#Act
+SETNPCEFFECT 338 10159 1 1
+MapMove d009 335 367
+Break
+[@第五据点]
+#If
+checkgold 1
+#Act
+SETNPCEFFECT 339 10159 1 1
+MapMove d009 569 272
+Break
+[@第六据点]
+#If
+checkgold 1
+#Act
+SETNPCEFFECT 339 10159 1 1
+MapMove d009 730 87
+Break

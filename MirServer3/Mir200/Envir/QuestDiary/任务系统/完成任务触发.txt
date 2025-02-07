@@ -1,0 +1,25 @@
+[@完成任务触发]
+{
+#IF
+Equal  <$CURRTASKID>  301
+#say
+　\
+你已经杀完了10只狼，快去向万事通报告吧。\
+　\
+<去找万事通/@去找万事通>\
+　\
+<先不去了/@exit>\
+
+
+
+
+
+
+
+[@去找万事通]
+#Act
+SETNPCEFFECT 97 4568 0 90
+OPENNPCSHOWEX 97 1
+SendMsg 6 你点击了任务为ID:<$CURRTASKID>！！！！！
+Break
+}

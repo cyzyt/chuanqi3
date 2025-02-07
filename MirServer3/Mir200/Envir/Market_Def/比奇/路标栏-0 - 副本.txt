@@ -1,0 +1,24 @@
+;;²»ÒªÉ¾
+[@Main]
+#if
+#Act
+;addbuff 10000 0 1
+;addbuff 10000 0 10
+
+addbuff 10000 0 2
+sendmsg 6 <$BUFFOL(10000)>===<$BUFFTR(10000)>
+;sendmsg 6 <$STATSERVERTIME>
+;sendmsg 6 <$STATSERVERTIME>
+
+;TEST
+;CHANGEHUMNAME Ã«Ôó¶«
+;KILLMAPMON 0 440 383 10 * 1 0
+;addbuff 1600 3600
+;CHANGEITEMADDVALUE 1 14 + 1
+;CHANGEITEMADDVALUE 1 15 + 1
+;CHANGEITEMADDVALUE 1 16 + 1
+
+;ChangeitemaddvaLueEx 1 14 + 1  0 
+;ChangeitemaddvaLueEx 1 15 + 1  1 
+;ChangeitemaddvaLueEx 1 16 + 1  2 
+

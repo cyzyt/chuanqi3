@@ -1,0 +1,145 @@
+
+(@upgradenow @getbackupgnow )
+%100
++5
++6
+[@武器一键升满_1]
+{
+#if
+CheckWeaponLevel < 1
+#act
+#say
+_<强化武器的攻击力/@炼攻击>\
+_<强化武器的全系列(自然力、灵魂力)/@炼制全系>\
+_<强化武器的攻击元素/@炼元素>\
+#elseact
+sendmsg 6 你的武器大于1级
+[@炼攻击]
+#if
+RANDOMEX 50 100
+#act
+SetWeaponLv 1 + 15
+ChangeitemaddvaLue 1 2 + 15
+sendmsg 6 你的武器(<$WEAPON>)  增加了15点攻击
+close
+#elseact
+SetWeaponLv 1 + 15
+ChangeitemaddvaLue 1 2 + 10
+sendmsg 6 你的武器(<$WEAPON>)  增加了10点攻击
+close
+
+[@炼制全系]
+#if
+CheckRefineWeapon 0
+#act
+goto @开始全系
+break
+
+#if
+CheckRefineWeapon 1
+#act
+goto @开始全系
+break
+
+#if
+CheckRefineWeapon 2
+#act
+goto @开始灵魂
+break
+
+[@开始全系]
+#if
+RANDOMEX 50 100
+#act
+SetWeaponLv 1 + 10
+ChangeitemaddvaLue 1 3 + 15
+sendmsg 6 你的武器(<$WEAPON>)  增加了15点
+#elseact
+SetWeaponLv 1 + 10
+ChangeitemaddvaLue 1 3 + 10
+sendmsg 6 你的武器(<$WEAPON>)  增加了10点
+close
+[@开始灵魂]
+#if
+RANDOMEX 50 100
+#act
+SetWeaponLv 1 + 15
+ChangeitemaddvaLue 1 4 + 15
+sendmsg 6 你的武器(<$WEAPON>)  增加了15点灵魂
+#elseact
+SetWeaponLv 1 + 15
+ChangeitemaddvaLue 1 4 + 10
+sendmsg 6 你的武器(<$WEAPON>)  增加了10点灵魂
+close
+
+
+[@炼元素]
+#SAY
+请选择您要制炼的元素种类.. \ \
+<升满(火) /@MAX_Fire> \
+<升满(冰)/@MAX_Ice> \
+<升满(雷)/@MAX_Light> \
+<升满(风)/@MAX_Wind> \
+<升满(神圣)/@MAX_Holy> \
+<升满(暗黑)/@MAX_Dark> \
+<升满(幻影)/@MAX_Pantom> \
+
+[@MAX_Fire]
+#if
+CheckWeaponLevel < 1
+#act
+SetWeaponLv 1 + 15
+ChangeitemaddvaLue 1 14 + 15
+sendmsg 6 你的武器(<$WEAPON>)  增加了15点火
+#elseact
+sendmsg 6 你的武器大于一级不能升
+
+[@MAX_Ice]
+#if
+CheckWeaponLevel < 1
+#act
+SetWeaponLv 1 + 15
+ChangeitemaddvaLue 1 15 + 15
+sendmsg 6 你的武器(<$WEAPON>)  增加了15点冰
+
+[@MAX_Light]
+#if
+CheckWeaponLevel < 1
+#act
+SetWeaponLv 1 + 15
+ChangeitemaddvaLue 1 16 + 15
+sendmsg 6 你的武器(<$WEAPON>)  增加了15点雷
+
+[@MAX_Wind]
+#if
+CheckWeaponLevel < 1
+#act
+SetWeaponLv 1 + 15
+ChangeitemaddvaLue 1 17 + 15
+sendmsg 6 你的武器(<$WEAPON>)  增加了15点风
+
+[@MAX_Holy]
+#if
+CheckWeaponLevel < 1
+#act
+SetWeaponLv 1 + 15
+ChangeitemaddvaLue 1 18 + 15
+sendmsg 6 你的武器(<$WEAPON>)  增加了15点神圣
+[@MAX_Dark]
+#if
+CheckWeaponLevel < 1
+#act
+SetWeaponLv 1 + 15
+ChangeitemaddvaLue 1 19 + 15
+sendmsg 6 你的武器(<$WEAPON>)  增加了15点暗黑
+[@MAX_Pantom]
+#if
+CheckWeaponLevel < 1
+#act
+SetWeaponLv 1 + 15
+ChangeitemaddvaLue 1 20 + 15
+sendmsg 6 你的武器(<$WEAPON>)  增加了15点幻影
+
+
+
+}

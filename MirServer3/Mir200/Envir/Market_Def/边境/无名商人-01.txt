@@ -1,0 +1,13 @@
+(@buy @sell @repair @s_repair )
+%100
++30
++3
++25
++42
+[@Main]
+
+
+#If
+#Act
+#Say
+我打算在沙漠地区寻找新的贸易道路。

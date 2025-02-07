@@ -1,0 +1,25 @@
+;;创天网络有限公司原版1.45
+[@MapQuest_massheal_cave_mon1]
+#If
+checkjob warrior
+#Act
+Break
+;
+#If
+checkjob wizard
+#Act
+Break
+;
+#If
+#Act
+goto @MapQuest_massheal_cave_mon1_1
+
+[@MapQuest_massheal_cave_mon1_1]
+#If
+#Act
+Param1 1_023
+Param2 22
+Param3 22
+MonGen 蜈蚣61  2 1
+Break
+

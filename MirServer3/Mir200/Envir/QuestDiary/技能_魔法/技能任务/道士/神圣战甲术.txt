@@ -1,0 +1,194 @@
+;;创天网络有限公司原版1.45
+[@mugong_Upac]
+{
+#If
+check [021] 1
+#Say
+你不是已经有了神圣战甲术(秘籍)吗? 为什么还跟我要呢? \ \
+<结束/@Exit>
+#Act
+Break
+
+#If
+check [048] 1
+#Act
+goto @mugong_Upac_next6
+Break
+
+#ELSEACT
+goto @mugong_Upac_next
+
+[@mugong_Upac_next]
+#If
+CheckMagicName 神圣战甲术 1
+#Say
+你不是已经修炼了神圣战甲术吗? \ \
+<结束/@Exit>
+#ELSEACT
+goto @mugong_Upac_next1
+
+[@mugong_Upac_next1]
+#If
+checklevel 25
+#Act
+goto @mugong_Upac_next3
+#ELSESAY
+你还没有能力修炼神圣战甲术..到了 {等级 25/FCOLOR=215} 再来找我吧。\ \
+<结束/@Exit>
+
+[@mugong_Upac_next3]
+#If
+#Say
+使用神圣战甲术可以瞬间吸收大自然的真气， {提高物理防御力/FCOLOR=215} 。 \ \
+你想修炼神圣战甲术吗?要想修炼神圣战甲术就要学会吸收大自然真气的方法。世上万物各有各的真气，神圣战甲术就是吸收这种真气， {一定时间内保护自己/FCOLOR=215} 。\ \
+<教我神圣战甲术吧/@mugong_Upac_next4_1> \
+<我想我还未做好准备/@mugong_Upac_next4_2>
+
+[@mugong_Upac_next4_1]
+#If
+#Say
+前面我也说了，要想修炼神圣战甲术就要学会吸收 {大自然真气/FCOLOR=215} 的方法，你还没有这个能力，小心走火入魔啊。\ \
+<不走火入魔还可修炼神圣战甲术该怎么做呢?/@mugong_Upac_next5>
+
+[@mugong_Upac_next4_2]
+#If
+#Say
+嗯....为了修炼新的技术而变换自己或许是可怕的事情。做好心理准备之后再来吧。\ \
+<结束/@Exit>
+
+[@mugong_Upac_next5]
+#If
+#Act
+SET [048] 1
+#Say
+吸收大自然真气时，不走火入魔的方法之一是找到可以协调大自然和你之间真气的 {协调物/FCOLOR=215} 。此协调物要有最 {洁净的大自然真气/FCOLOR=215} .. \
+这个协调物隐藏在 {起爆石/FCOLOR=215} 里面.. 起爆石可在带着  {比奇废矿/FCOLOR=215}  所得到的某种特殊物品就可进入的秘密地点获得。\ \
+<下一个/@mugong_Upac_next6>
+
+[@mugong_Upac_next6]
+#If
+#Say
+请在  {比奇废矿/FCOLOR=215}  仔细找一下吧。那你就可以在秘密地点找到 {起爆石/FCOLOR=215} 。\ \
+<结束/@Exit>
+}
+
+
+
+
+
+[@MapQuest_Upac_Recall2]
+{
+#If
+check [049] 1
+#Act
+Break
+
+#If
+check [048] 1
+#Act
+goto @MapQuest_Upac_Recall2_1
+Break
+
+[@MapQuest_Upac_Recall2_1]
+#If
+random 100
+#Act
+give 神圣战甲术 1
+map D420_001
+}
+
+
+
+
+[@mugong_Upac_test]
+{
+#If
+check [021] 1
+#Act
+Break
+
+#If
+check [049] 0
+#Act
+Break
+
+#If
+check [048] 0
+#Act
+Break
+
+#If
+check [048] 1
+check [049] 1
+check [021] 0
+checkitem 起爆石 1
+#Say
+好好.. 这个 {起爆石/FCOLOR=215} 就是调节大自然和你之间真气的石头。当你拿到这颗石头的同时，你已经拥有了调节大自然和你之间真气的能力.. \
+你现在有充分的能力修炼神圣战甲术了...\ \
+<那么请给我神圣战甲术(秘籍)吧/@mugong_Upac_test_next>
+#ELSESAY
+你把起爆石给弄丢了?? 没有起爆石我可无法让你修炼神圣战甲术..\ \
+<结束/@Exit>
+
+[@mugong_Upac_test_next]
+#If
+checkitem 起爆石 1
+#Act
+take 起爆石
+goto @mugong_Upac_test_next2
+#ELSESAY
+你丢了 {起爆石/FCOLOR=215} ?? 那我可没办法让你修炼神圣战甲术..\ \
+<结束/@Exit>
+
+[@mugong_Upac_test_next2]
+#If
+gender man
+#Act
+goto @mugong_Upac_test_next3
+#ELSEACT
+goto @mugong_Upac_test_next4
+
+[@mugong_Upac_test_next3]
+#If
+check [021] 0
+#Act
+give 神圣战甲术（秘籍） 1
+give 神奇灵魂战衣（男） 1
+give 八面太极戒指
+give 金币 25000
+reset [048] 1
+SET [021] 1
+#Say
+想想你已经修炼成功的魔法，你就会知道该怎么使用神圣战技术了，持续使用神圣战甲术，你就自然而然学会利用大自然真气的。 \ \
+<结束/@Exit>
+
+[@mugong_Upac_test_next4]
+#If
+check [021] 0
+#Act
+give 神奇灵魂战衣（女） 1
+give 神圣战甲术（秘籍） 1
+give 八面太极戒指
+give 金币 25000
+reset [048] 1
+SET [021] 1
+#Say
+想想你已经修炼成功的魔法，你就会知道该怎么使用神圣战技术了，持续使用神圣战甲术，你就自然而然学会利用 {大自然真气/FCOLOR=215} 的。 \ \.
+<结束/@Exit>
+}
+
+[@mugong_Upac_explain]
+{
+#If
+#Say
+要想修炼神圣战甲术, 首先要从比奇废矿的怪物身上夺回 {神圣战甲术/FCOLOR=215} 。
+必须把你打败的僵尸掉下的神圣战甲术书放入包里，这样你就会被移动到废矿的秘密房间。
+那个房间是 {尸王/FCOLOR=215} 居住的地方, 在这些怪物当中就可以得到 {起爆石/FCOLOR=215} 。
+把起爆石给我带来即可。\ \ 
+<结束/@Exit>
+}
+
+{FCOLOR/10}尸王{FCOLOR/12} 居住的地方, 在这些怪物当中就可以得到 {FCOLOR/10}起爆石{FCOLOR/12} 。
+把起爆石给我带来即可。\ \ 
+<结束/@Exit>
+}

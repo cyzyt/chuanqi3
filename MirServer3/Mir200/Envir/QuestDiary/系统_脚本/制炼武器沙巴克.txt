@@ -1,0 +1,369 @@
+(@upgradenow @getbackupgnow )
+%100
++5
++6
+[@制炼武器沙城]
+{
+
+<制炼武器/@upgrade>    <领取制炼好的武器/@getbackupgnow>     \
+<加武器经验/@加武器经验>    <武器当前等级经验满/@wqm>\ 
+<更换换武器元素/@修改武器元素值>  <武器初始化/@heardsing>    \
+
+
+
+[@加武器经验]
+#say
+我能给你的武器加经验，\
+每次收你5万金币.\
+<帮我加经验/@帮我加经验> \
+[@帮我加经验]
+#if
+SMALL <$CURRWEAPONEXP> <$CURRWEAPONMAXEXP>
+#act
+goto @检测经验
+#ELSEsay
+你武器经验满了不能再加。
+
+[@检测经验]
+#if
+checkgold 50000
+#act
+take 金币 50000
+SETEQUIPEXP 1 + 10000
+sendmsg 5 你的武器经验加了10000
+close
+#ELSEsay
+你身上没有5万金币。
+
+[@wqm]
+#say
+我能使你的的武器当前等级经验加满直接升刀，\
+每次收你50万金币.\
+<帮我加满/@帮我加满> \
+[@帮我加满]
+#if
+checkgold 500000
+#act
+take 金币 500000
+SetWeaponMaxExp
+sendmsg 5 你的武器当前等级经验满了.
+close
+#ELSEsay
+你身上没有50万金币。
+[@heardsing]
+#say
+我能使你的的武器变为初始状态，\
+每次需要魔晶石一个.\
+<初始武器/@初始武器> \
+[@初始武器]
+#if
+checkitem 魔晶石 1
+#act
+take 魔晶石 1
+InitWeaponAtt 0 10101
+SetWeaponLv 1 0
+sendmsg 5 你的武器已经初始化.
+#ELSEsay
+你身上没有魔晶石。
+
+[@upgrade]
+#if
+CheckRefineWeapon 0
+#act
+break
+#say
+您的武器等级提高了，恭喜您.. \
+您现在也可以制炼武器了... \
+
+好,您要做什么制炼?? \ \
+__<【 破 坏 力 】/@Refine_DC>        <【 全系列魔法 】/@Refine_ALL> \\
+ 
+__<【 攻击元素 】/@Refine_Atom>        <【 持 久 度 】/@Refine_Dura> \\\\
+
+
+
+#if
+CheckRefineWeapon 1
+#act
+break
+#say
+您的武器等级提高了，恭喜您.. \
+您现在也可以制炼武器了... \
+
+好,您要做什么制炼?? \ \
+___<【 破 坏 力 】/@Refine_DC>       <【 自然系魔法 】/@Refine_MC> \\
+ 
+___<【 攻击元素 】/@Refine_Atom>       <【 持 久 度 】/@Refine_Dura> \\\\
+
+
+
+#if
+CheckRefineWeapon 2
+#act
+break
+#say
+您的武器等级提高了，恭喜您.. \
+您现在也可以制炼武器了... \
+
+好,您要做什么制炼?? \ \
+
+___<【制炼破坏力 】/@Refine_DC>       <【制炼灵魂系魔法 】/@Refine_SC> \\
+ 
+___<【制炼元素 】/@Refine_Atom>         <【制炼持久度 】/@Refine_Dura> \\\\
+
+
+
+#ELSEsay
+您的武器等级提高了，恭喜您.. \
+您现在也可以制炼武器了... \
+
+好,您要做什么制炼?? \ \
+___<【制炼破坏力 】/@Refine_DC>   <【制炼持久度 】/@Refine_Dura>\\     
+ 
+___<【制炼元素 】/@Refine_Atom>          \\\\
+
+
+[@Refine_Atom]
+#SAY
+请选择您要制炼的元素种类. \ \
+<制炼元素(火) /@Refine_Fire> \
+<制炼元素(冰)/@Refine_Ice> \
+<制炼元素(雷)/@Refine_Light> \
+<制炼元素(风)/@Refine_Wind> \
+<制炼元素(神圣)/@Refine_Holy> \
+<制炼元素(暗黑)/@Refine_Dark> \
+<制炼元素(幻影)/@Refine_Pantom> \
+
+[@Refine_DC]
+#if
+#act
+RefineWeapon 0 
+GETBACKUPGWEAPON 0 0 0
+break
+
+[@Refine_SC]
+#if
+#act
+RefineWeapon 2
+;GETBACKUPGWEAPON
+break
+
+[@Refine_Fire]
+#if
+#act
+RefineWeapon 5
+GETBACKUPGWEAPON 0 0
+break
+;;-----------------------------------------------------------------
+[@Refine_ALL]
+#if
+#act
+RefineWeapon 3 
+GETBACKUPGWEAPON 0 0 0
+break
+
+[@Refine_MC]
+#if
+#act
+RefineWeapon 1
+GETBACKUPGWEAPON 
+break
+
+[@Refine_Ice]
+#if
+#act
+RefineWeapon 6
+GETBACKUPGWEAPON 0 0
+break
+
+[@Refine_Light]
+#if
+#act
+RefineWeapon 7
+GETBACKUPGWEAPON 0 0
+break
+
+[@Refine_Wind]
+#if
+#act
+RefineWeapon 8
+GETBACKUPGWEAPON 0 0
+break
+
+[@Refine_Holy]
+#if
+#act
+RefineWeapon 9
+GETBACKUPGWEAPON 0 0
+break
+
+[@Refine_Dark]
+#if
+#act
+RefineWeapon 10
+GETBACKUPGWEAPON 0 0
+break
+
+[@Refine_Pantom]
+#if
+#act
+RefineWeapon 11
+GETBACKUPGWEAPON 0 0
+break  
+
+[@Refine_Dura]
+#if
+#act
+RefineWeapon 4
+GETBACKUPGWEAPON 0 0
+break  
+                                                               
+[@Biron]
+你可以在矿山里采到黑铁矿石。如果你想修炼过程得到\
+一个好得结果你最好拿给我更高纯度的黑铁矿。\
+顺便请记得，在修炼期间如果没有足够数量的黑色铁矿，\
+那怕你的矿石纯度再高修练的结果也可能不好。\ \
+                                                                                                              <返回/@upgrade>
+[@Etc]
+装饰品，项链，手镯当你的特殊技能融入了这种装饰物的时候，\
+能够加强你的武器。如果你给我好原料我能给你好结果。\
+如果你给我糟糕的装饰品那可能会失败，除非你有很好的运气。\ \
+                                                                                                              <返回/@upgrade>
+[@Weapon]
+#ACT
+SendCustomMsg 1 只能对武器进行炼制！ 253 255 600 433
+#SAY
+只能对武器进行炼制。\
+如果你想要升级武器请给我你携带的武器...\ \                                                                                                              <返回/@upgrade>
+[@Gold]
+#ACT
+SendCustomMsg 1 修练武器的金子太少！ 253 255 600 433
+#SAY
+修练武器的金子太少...\
+你真的认为我的技术的价值就这么点数量的程度？\
+这个价格我不能做这个工作。\ \                                                                                                              <返回/@upgrade>
+[@confirmupgrade]
+给我看你给我的原料，修炼你的<$USERWEAPON>，我的视力不好，\
+我想从你的包里取得更多的饰品和黑铁矿。\
+如果你有<重要的物品/fcolor=58>，在你寄存在仓库后请回来。\ 
+    <(修炼系统会收走背包里所有矿石 手镯 项链哦)/FCOLOR=254>\  \ 
+<请求修炼/@upgradenow>                                  <在安排好以后再回来/@exit>
+
+                                                                                                               <退出/@exit>
+
+[~@upgradenow_ok]
+#act
+SendCustomMsg 1 我会把它弄得像新的一样,请1分钟后再回来 253 255 600 433
+#say
+我会把它弄得像新的一样，\
+所以请1分钟后再回来。\ \
+                                                                                                               <返回/@Main>
+[~@upgradenow_ing]
+我们工作的规则是一个人只能进行一个项目。\
+请下次再来...\ \
+                                                                                                               <返回/@Main>
+[~@upgradenow_fail]
+#act
+SendCustomMsg 1 材料不够！准备好所有的矿石，武器和饰品，还有金币50万 253 255 600 433
+#say
+材料不够。请你下次来的时候，\
+准备好所有的矿石，武器和饰品。\
+还有金币50万...\ \
+                                                                                                               <返回/@Main>
+[~@getbackupgnow_ok]
+#act
+SendCustomMsg 1 只有在你使用过一次后才知道，出去试试吧 253 255 600 433
+#say
+就这样了，我尽我最大努力精炼了你的武器，
+结果是否<成功/@Success>\
+只有在你使用过一次后才知道，出去试试吧。\ \
+                                                                                                                <退出/@exit>
+[@Success]
+通过使用它，你可以体会到它精炼的好处。\
+无论你的战斗对象是其他玩家还是怪物...\
+你都会发现这个成果...\ \
+                                                                                                                <退出/@exit>
+[~@getbackupgnow_ing]
+这个工作正忙着呢，请稍等片刻...\ \
+                                                                                                                <返回/@Main>
+[~@getbackupgnow_fail]
+#act
+SendCustomMsg 1 领取失败 253 255 600 433
+#say
+领取失败
+
+[@修改武器元素值]
+#SAY
+挑你想要的武器的元素吧.每次收50万金币。\ 
+<把武器的元素换成（火）元素./@ChangeAtom_Fire> \
+<把武器的元素换成（冰）元素./@ChangeAtom_Ice> \
+<把武器的元素换成（雷）元素./@ChangeAtom_Light> \
+<把武器的元素换成（风）元素./@ChangeAtom_Wind> \
+<把武器的元素换成（神圣）元素./@ChangeAtom_Holy> \
+<把武器的元素换成（暗黑）元素./@ChangeAtom_Dark> \
+<把武器的元素换成（幻影）元素./@ChangeAtom_Pantom> \
+
+[@ChangeAtom_Fire]
+#IF
+checkgold 500000
+#ACT
+take 金币 500000
+ChangeitemaddvaLue 1 14 + 0
+sendmsg 6 武器的元素换成了（火）系列
+#ELSEsay
+你身上没有50万金币。
+[@ChangeAtom_Ice]
+#IF
+checkgold 500000
+#ACT
+take 金币 500000
+ChangeitemaddvaLue 1 15 + 0
+sendmsg 6 武器的元素换成了（冰）系列
+#ELSEsay
+你身上没有50万金币。
+[@ChangeAtom_Light]
+#IF
+checkgold 500000
+#ACT
+take 金币 500000
+ChangeitemaddvaLue 1 16 + 0
+sendmsg 6 武器的元素换成了（雷）系列
+#ELSEsay
+你身上没有50万金币。
+[@ChangeAtom_Wind]
+#IF
+checkgold 500000
+#ACT
+take 金币 500000
+ChangeitemaddvaLue 1 17 + 0
+sendmsg 6 武器的元素换成了（风）系列
+#ELSEsay
+你身上没有50万金币。
+[@ChangeAtom_Holy]
+#IF
+checkgold 500000
+#ACT
+take 金币 500000
+ChangeitemaddvaLue 1 18 + 0
+sendmsg 6 武器的元素换成了（神圣）系列
+#ELSEsay
+你身上没有50万金币。
+[@ChangeAtom_Dark]
+#IF
+checkgold 500000
+#ACT
+take 金币 500000
+ChangeitemaddvaLue 1 19 + 0
+sendmsg 6 武器的元素换成了（暗黑）系列
+#ELSEsay
+你身上没有50万金币。
+[@ChangeAtom_Pantom]
+#IF
+checkgold 500000
+#ACT
+take 金币 500000
+ChangeitemaddvaLue 1 20 + 0
+sendmsg 6 武器的元素换成了（幻影）系列
+#ELSEsay
+你身上没有50万金币。
+}

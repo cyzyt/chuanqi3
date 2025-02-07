@@ -1,0 +1,83 @@
+[@加强元素鞋子_1]
+{
+#Say
+<鞋子加强火/@鞋子加强火>        <鞋子洗弱火/@鞋子洗弱火>\ 
+<鞋子加强冰/@鞋子加强冰>        <鞋子洗弱冰/@鞋子洗弱冰>\
+<鞋子加强雷/@鞋子加强雷>        <鞋子洗弱雷/@鞋子洗弱雷>\ 
+<鞋子加强风/@鞋子加强风>        <鞋子洗弱风/@鞋子洗弱风>\
+<鞋子加强神圣/@鞋子加强神圣>    <鞋子洗弱神圣/@鞋子洗弱神圣>\
+
+[@鞋子洗弱火]
+#If
+CHECKITEMADDVALUE 11 21 < -1
+#Act
+ChangeitemaddvaLue 11 21 = 0
+SendMsg 6 你的鞋子洗了1点弱火
+#elseact
+SendMsg 6 你的鞋子没有弱火
+[@鞋子洗弱冰]
+#If
+CHECKITEMADDVALUE 11 22 < -1
+#Act
+ChangeitemaddvaLue 11 22 = 0
+SendMsg 6 你的鞋子洗了1点弱冰
+#elseact
+SendMsg 6 你的鞋子没有弱冰
+[@鞋子洗弱雷]
+#If
+CHECKITEMADDVALUE 11 23 < -1
+#Act
+ChangeitemaddvaLue 11 23 = 0
+SendMsg 6 你的鞋子洗了1点弱雷
+#elseact
+SendMsg 6 你的鞋子没有弱雷
+[@鞋子洗弱风]
+#If
+CHECKITEMADDVALUE 11 24 < -1
+#Act
+ChangeitemaddvaLue 11 24 = 0
+SendMsg 6 你的鞋子洗了1点弱风
+#elseact
+SendMsg 6 你的鞋子没有弱风
+
+[@鞋子加强火]
+#If
+CHECKITEMADDVALUE 11 21 < 1
+#Act
+ChangeitemaddvaLue 11 21 + 1
+SendMsg 6 你的鞋子增加了1点强火
+#elseact
+SendMsg 6 你的鞋子已经有强火不能再加了
+[@鞋子加强冰]
+#If
+CHECKITEMADDVALUE 11 22 < 1
+#Act
+ChangeitemaddvaLue 11 22 + 1
+SendMsg 6 你的鞋子增加了1点强冰
+#elseact
+SendMsg 6 你的鞋子已经有强冰不能再加了
+[@鞋子加强雷]
+#If
+CHECKITEMADDVALUE 11 23 < 1
+#Act
+ChangeitemaddvaLue 11 23 + 1
+SendMsg 6 你的鞋子增加了1点强雷
+#elseact
+SendMsg 6 你的鞋子已经有强雷不能再加了
+[@鞋子加强风]
+#If
+CHECKITEMADDVALUE 11 24 < 1
+#Act
+ChangeitemaddvaLue 11 24 + 1
+SendMsg 6 你的鞋子增加了1点强风
+#elseact
+SendMsg 6 你的鞋子已经有强风不能再加了
+[@鞋子加强神圣]
+#If
+CHECKITEMADDVALUE 11 25 < 1
+#Act
+ChangeitemaddvaLue 11 25 + 1
+SendMsg 6 你的鞋子增加了1点强神圣
+#elseact
+SendMsg 6 你的鞋子已经有强神圣不能再加了
+}

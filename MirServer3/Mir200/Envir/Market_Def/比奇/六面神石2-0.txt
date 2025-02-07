@@ -1,0 +1,114 @@
+[@Main]
+#If
+Not CHECKPKPOINTEX > 2
+#Say
+<Img|ay=1|height=300|scale9l=70|bg=1|scale9r=70|scale9t=70|loadDelay=1|scale9b=70|reset=1|Move=0|esc=1|img=public/bg_npc_01.png|show=0>
+<Layout|x=385|y=10|width=80|height=80|link=@Exit>
+<Button|x=385|y=10|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@Exit>
+<Text|x=25|y=20|color=147|size=18|text=六面神石>
+<Text|x=25.0|y=50.0|color=251|size=18|text=移动至毒蛇山村所需金钱:1000钱|link=@六面_毒蛇>
+
+#Elseact
+MapMove 81 125 274                                   
+Break
+
+[@六面_沙城]
+#If
+CheckMoney 金币 ? 500
+#Act
+Money 金币 - 500
+MapMove 3 222 160
+Break
+#Elseact
+MessageBox 你没有足够的钱来传送...
+Break
+[@六面_比奇]
+#If
+CheckMoney 金币 ? 500
+#Act
+Money 金币 - 500
+MapMove 0 508 312
+Break
+#Elseact
+MessageBox 你没有足够的钱来传送...
+Break
+[@六面_毒蛇]
+#If
+CheckMoney 金币 ? 1000
+#Act
+Money 金币 - 1000
+MapMove 2 306 245
+Break
+#Elseact
+MessageBox 你没有足够的钱来传送...
+Break
+[@六面_银杏]
+#If
+CheckMoney 金币 ? 1000
+#Act
+Money 金币 - 1000
+MapMove 02 249 145
+Break
+#Elseact
+MessageBox 你没有足够的钱来传送...
+Break
+[@六面_边境]
+#If
+CheckMoney 金币 ? 1000
+#Act
+Money 金币 - 1000
+MapMove 01 456 217
+Break
+#Elseact
+MessageBox 你没有足够的钱来传送...
+Break
+[@六面_潘夜]
+#If
+CheckMoney 金币 ? 1500
+#Act
+Money 金币 - 1500
+MapMove 8 288 242
+Break
+#Elseact
+MessageBox 你没有足够的钱来传送...
+Break
+[@六面_盟重]
+#If
+CheckMoney 金币 ? 1500
+#Act
+Money 金币 - 2000
+MapMove 74 349 330
+Break
+#Elseact
+MessageBox 你没有足够的钱来传送...
+Break
+[@六面_沙漠]
+#If
+CheckMoney 金币 ? 2000
+#Act
+Money 金币 - 2000
+MapMove 5 204 290 
+Break
+#Elseact
+MessageBox 你没有足够的钱来传送...
+Break
+[@六面_绿洲]
+#If
+CheckMoney 金币 ? 2500
+#Act
+Money 金币 - 2500
+MapMove 4 435 84
+Break
+#Elseact
+MessageBox 你没有足够的钱来传送...
+Break
+[@六面_乐园]
+#If
+CheckMoney 金币 ? 5000
+#Act
+Money 金币 - 5000
+MapMove 9 190 579
+Break
+#Elseact
+MessageBox 你没有足够的钱来传送...
+Break

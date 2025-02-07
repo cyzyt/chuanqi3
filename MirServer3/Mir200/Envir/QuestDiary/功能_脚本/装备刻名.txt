@@ -1,0 +1,169 @@
+[@装备刻名_1]
+{
+#Say
+<$USERNAME>请选择要改名的装备：(将要改名的装备戴身上)\
+
+<武　器/@@inputstring50>　  <盔　甲/@@inputstring51>\
+<项　链/@@inputstring52>　　<头　盔/@@inputstring53>\
+<左手镯/@@inputstring54>　　<右手镯/@@inputstring55>\ 
+<左戒指/@@inputstring56>　　<右戒指/@@inputstring57>\
+
+
+[@inputstring50]
+#IF
+#ACT
+mov  s50 <$NPCPARAMS(1,s50)>
+
+#If
+Equal s50
+#Act
+MessageBox 不能为空！
+Break
+
+#If
+CHECKCHANGEITEMNAME 0 <$str(s50)>　
+#Act
+ChangeItemName 1 <$str(s50)>　<$WEAPON>
+SendMsg 6 提示：您的武器→改名成功! ! !
+#ELSEACT
+SendMsg 6 提示：您的名字不符合规定，最多7个汉字! ! !
+
+[@inputstring51]
+#IF
+#ACT
+mov  s51 <$NPCPARAMS(1,s51)>
+
+#If
+Equal s51
+#Act
+MessageBox 不能为空！
+Break
+
+#If
+CHECKCHANGEITEMNAME 0 <$str(s51)>　
+#Act
+ChangeItemName 0 <$str(s51)>　<$DRESS>
+SendMsg 6 提示：您的衣服→改名成功：<$G_DRESS>! ! !
+#ELSEACT
+SendMsg 6 提示：您的名字不符合规定，最多7个汉字! ! !
+
+[@inputstring52]
+#IF
+#ACT
+mov  s52 <$NPCPARAMS(1,s52)>
+
+#If
+Equal s52
+#Act
+MessageBox 不能为空！
+Break
+
+#If
+CHECKCHANGEITEMNAME 0 <$str(s52)>　
+#Act
+ChangeItemName 3 <$str(s52)>　<$NECKLACE>
+SendMsg 6 提示：您的项链→改名成功! ! !
+#ELSEACT
+SendMsg 6 提示：您的名字不符合规定，最多7个汉字! ! !
+[@inputstring53]
+#IF
+#ACT
+mov  s53 <$NPCPARAMS(1,s53)>
+
+#If
+Equal s53
+#Act
+MessageBox 不能为空！
+Break
+
+#If
+CHECKCHANGEITEMNAME 0 <$str(s53)>　
+#Act
+ChangeItemName 4 <$str(s53)>　<$HELMET> 
+SendMsg 6 提示：您的头盔→改名成功! ! !
+#ELSEACT
+SendMsg 6 提示：您的名字不符合规定，最多7个汉字! ! !
+[@inputstring54]
+#IF
+#ACT
+mov  s54 <$NPCPARAMS(1,s54)>
+
+#If
+Equal s54
+#Act
+MessageBox 不能为空！
+Break
+
+#If
+CHECKCHANGEITEMNAME 0 <$str(s54)>　
+#Act
+ChangeItemName 6 <$str(s54)>　<$ARMRING_L>
+SendMsg 6 提示：您的左手镯→改名成功! ! !
+#ELSEACT
+SendMsg 6 提示：您的名字不符合规定，最多7个汉字! ! !
+[@inputstring55]
+#IF
+#ACT
+mov  s55 <$NPCPARAMS(1,s55)>
+
+#If
+Equal s55
+#Act
+MessageBox 不能为空！
+Break
+
+#If
+CHECKCHANGEITEMNAME 0 <$str(s55)>　
+#Act
+ChangeItemName 5 <$str(s55)>　<$ARMRING_R>
+SendMsg 6 提示：您的右手镯→改名成功! ! !
+#ELSEACT
+SendMsg 6 提示：您的名字不符合规定，最多7个汉字! ! !
+[@inputstring56]
+#IF
+#ACT
+mov  s56 <$NPCPARAMS(1,s56)>
+
+#If
+Equal s56
+#Act
+MessageBox 不能为空！
+Break
+
+#If
+Equal s57 结婚戒指
+#Act
+MessageBox 不能为结婚戒指！
+Break
+
+#If
+CHECKCHANGEITEMNAME 0 <$str(s56)>　
+#Act
+ChangeItemName 8 <$str(s56)>　<$RING_L>
+SendMsg 6 提示：您的左戒指→改名成功! ! !
+#ELSEACT
+SendMsg 6 提示：您的名字不符合规定，最多7个汉字! ! !
+[@inputstring57]
+#IF
+#ACT
+mov  s57 <$NPCPARAMS(1,s57)>
+
+#If
+Equal s57
+#Act
+MessageBox 不能为空！
+Break
+#If
+Equal s57 结婚戒指
+#Act
+MessageBox 不能为结婚戒指！
+Break
+
+#If
+CHECKCHANGEITEMNAME 7 <$str(s57)> 
+#Act
+ChangeItemName 7 <$str(s57)>　<$RING_R>
+SendMsg 5 提示：您的右戒指→改名成功! ! !
+#ELSEACT
+SendMsg 5 提示：结婚戒指不能刻名! ! !
+}

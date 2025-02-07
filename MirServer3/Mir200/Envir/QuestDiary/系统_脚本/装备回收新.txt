@@ -1,0 +1,345 @@
+[@装备回收x1]
+{
+#IF
+#ACT
+GOTO @祖玛回收
+
+
+[@回收展示]
+#IF
+#ACT
+#SAY
+<Img|x=288.0|y=51.0|show=0|scale9r=0|scale9t=0|esc=1|bg=1|scale9b=0|move=1|loadDelay=1|bagpos=1|img=private/bag_ui/bag_ui_mobile/bg_03.png|reset=1|scale9l=0>
+<Layout|x=846.0|y=49.0|width=80|height=80|link=@exit>
+<Button|x=792.0|y=67.0|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@exit>
+;;<Img|x=287.0|y=121.0|width=135|height=310|scale9t=0|scale9b=0|img=private/bag_ui/bag_ui_sort//good_bg.png|scale9r=0|scale9l=0|esc=0>
+<Button|x=302.0|y=150.0|nimg=<$str(S$按钮展示1)>|color=255|size=18|text=祖玛装备|link=@祖玛回收>
+<Button|x=302.0|y=190.0|nimg=<$str(S$按钮展示2)>|color=255|size=18|text=赤月装备|link=@赤月回收>
+<Button|x=302.0|y=230.0|nimg=<$str(S$按钮展示3)>|color=255|size=18|text=诺玛装备|link=@诺玛回收>
+<Button|x=302.0|y=270.0|nimg=<$str(S$按钮展示4)>|color=255|size=18|text=四字项链|link=@四字回收>
+<Text|x=520.0|y=70.0|color=1003|size=20|text=装备回收>
+<Button|x=302.0|y=310.0|color=255|size=18|nimg=public/1900000680.png|text=回收介绍|link=@回收介绍>
+
+<$str(S$展示装备)>
+
+
+
+
+[@回收介绍]
+#IF
+#ACT
+MOV S$按钮展示1 public/1900000680_1.png
+MOV S$按钮展示2 public/1900000680_1.png
+MOV S$按钮展示3 public/1900000680_1.png
+MOV S$按钮展示4 public/1900000680_1.png
+
+
+#IF
+EQUAL S$回收标志 祖玛回收
+#ACT
+MOV S$按钮展示1 public/1900000680.png
+MOV S$介绍说明 <Text|x=562.0|y=151.0|color=1003|size=18|text=祖玛装备回收介绍>
+INC S$介绍说明 <Text|x=486.0|y=184.0|color=1003|size=18|text=经验回收:>
+INC S$介绍说明 <Text|x=555.0|y=210.0|color=1003|size=18|text=首饰：10000经验>
+INC S$介绍说明 <Text|x=555.0|y=240.0|color=1003|size=18|text=武器：30000经验>
+
+
+#IF
+EQUAL S$回收标志 赤月回收
+#ACT
+MOV S$按钮展示2 public/1900000680.png
+MOV S$介绍说明 <Text|x=562.0|y=151.0|color=1003|size=18|text=赤月装备回收介绍>
+INC S$介绍说明 <Text|x=486.0|y=184.0|color=1003|size=18|text=经验回收:>
+INC S$介绍说明 <Text|x=555.0|y=210.0|color=1003|size=18|text=首饰：100000经验/件>
+INC S$介绍说明 <Text|x=555.0|y=240.0|color=1003|size=18|text=武器：5000000经验/件>
+INC S$介绍说明 <Text|x=486.0|y=278.0|color=1003|size=18|text=元宝回收:>
+INC S$介绍说明 <Text|x=555.0|y=306.0|color=1003|size=18|text=首饰：10绑元/件>
+INC S$介绍说明 <Text|x=555.0|y=335.0|color=1003|size=18|text=武器：500绑元/件>
+
+
+#IF
+EQUAL S$回收标志 诺玛回收
+#ACT
+MOV S$按钮展示3 public/1900000680.png
+MOV S$介绍说明 <Text|x=562.0|y=151.0|color=1003|size=18|text=诺玛装备回收介绍>
+INC S$介绍说明 <Text|x=486.0|y=184.0|color=1003|size=18|text=元宝回收:>
+INC S$介绍说明 <Text|x=555.0|y=210.0|color=1003|size=18|text=首饰：500绑元/件>
+INC S$介绍说明 <Text|x=486.0|y=278.0|color=1003|size=18|text=金刚石回收:>
+INC S$介绍说明 <Text|x=555.0|y=306.0|color=1003|size=18|text=首饰：2金刚石/件>
+
+
+#IF
+EQUAL S$回收标志 四字回收
+#ACT
+MOV S$按钮展示4 public/1900000680.png
+MOV S$介绍说明 <Text|x=562.0|y=151.0|color=1003|size=18|text=四字项链回收介绍>
+INC S$介绍说明 <Text|x=486.0|y=184.0|color=1003|size=18|text=元宝回收:>
+INC S$介绍说明 <Text|x=555.0|y=210.0|color=1003|size=18|text=首饰：300绑元/件>
+INC S$介绍说明 <Text|x=486.0|y=278.0|color=1003|size=18|text=金刚石回收:>
+INC S$介绍说明 <Text|x=555.0|y=306.0|color=1003|size=18|text=首饰：2金刚石/件>
+
+
+#IF
+#ACT
+#SAY
+<Img|x=288.0|y=51.0|show=0|scale9r=0|scale9t=0|esc=1|bg=1|scale9b=0|move=1|loadDelay=1|bagpos=1|img=private/bag_ui/bag_ui_mobile/bg_03.png|reset=1|scale9l=0>
+<Layout|x=846.0|y=49.0|width=80|height=80|link=@exit>
+<Button|x=792.0|y=67.0|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@exit>
+;;<Img|x=287.0|y=121.0|width=135|height=310|scale9t=0|scale9b=0|img=private/bag_ui/bag_ui_sort//good_bg.png|scale9r=0|scale9l=0|esc=0>
+<Button|x=302.0|y=150.0|nimg=<$str(S$按钮展示1)>|color=255|size=18|text=祖玛装备|link=@祖玛回收>
+<Button|x=302.0|y=190.0|nimg=<$str(S$按钮展示2)>|color=255|size=18|text=赤月装备|link=@赤月回收>
+<Button|x=302.0|y=230.0|nimg=<$str(S$按钮展示3)>|color=255|size=18|text=诺玛装备|link=@诺玛回收>
+<Button|x=302.0|y=270.0|nimg=<$str(S$按钮展示4)>|color=255|size=18|text=四字项链|link=@四字回收>
+<Text|x=520.0|y=70.0|color=1003|size=20|text=装备回收>
+<Button|x=302.0|y=310.0|color=255|size=18|nimg=public/1900000680.png|text=回收介绍|link=@回收介绍>
+
+<$str(S$介绍说明)>
+
+
+[@祖玛回收]
+#IF
+#ACT
+MOV S$回收标志 祖玛回收
+MOV N$回收首饰经验 10000
+MOV N$回收武器经验 30000
+MOV N$回收绑元
+MOV N$回收金刚石
+MOV S$按钮展示1 public/1900000680.png
+MOV S$按钮展示2 public/1900000680_1.png
+MOV S$按钮展示3 public/1900000680_1.png
+MOV S$按钮展示4 public/1900000680_1.png
+
+MOV S$展示装备 <ItemShow|x=447.0|y=150.0|width=70|height=70|itemid=10128|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=520.0|y=150.0|width=70|height=70|itemid=10132|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=594.0|y=150.0|width=70|height=70|itemid=10129|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=667.0|y=150.0|width=70|height=70|itemid=10181|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=741.0|y=150.0|width=70|height=70|itemid=10182|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=447.0|y=220.0|width=70|height=70|itemid=10185|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=520.0|y=220.0|width=70|height=70|itemid=10118|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=594.0|y=220.0|width=70|height=70|itemid=10184|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=667.0|y=220.0|width=70|height=70|itemid=10183|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=741.0|y=220.0|width=70|height=70|itemid=10087|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=447.0|y=290.0|width=70|height=70|itemid=10018|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=520.0|y=290.0|width=70|height=70|itemid=10030|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=594.0|y=290.0|width=70|height=70|itemid=10017|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=667.0|y=290.0|width=70|height=70|itemid=10104|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=741.0|y=290.0|width=70|height=70|itemid=10021|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <Button|x=552.0|y=363.0|color=255|size=18|nimg=public/1900000673.png|pimg=public/1900000674.png|text=回收经验|link=@回收经验>
+
+
+GOTO @回收展示
+
+[@赤月回收]
+#IF
+#ACT
+MOV S$回收标志 赤月回收
+MOV N$回收首饰经验 100000
+MOV N$回收武器经验 5000000
+MOV N$回收首饰绑元 10
+MOV N$回收武器绑元 500
+MOV N$回收首饰金刚石
+MOV N$回收武器金刚石
+MOV S$按钮展示1 public/1900000680_1.png
+MOV S$按钮展示2 public/1900000680.png
+MOV S$按钮展示3 public/1900000680_1.png
+MOV S$按钮展示4 public/1900000680_1.png
+
+MOV S$展示装备 <ItemShow|x=447.0|y=150.0|width=70|height=70|itemid=10331|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=520.0|y=150.0|width=70|height=70|itemid=10081|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=594.0|y=150.0|width=70|height=70|itemid=10080|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=667.0|y=150.0|width=70|height=70|itemid=10117|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=741.0|y=150.0|width=70|height=70|itemid=10088|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=447.0|y=220.0|width=70|height=70|itemid=10130|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=520.0|y=220.0|width=70|height=70|itemid=10126|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=594.0|y=220.0|width=70|height=70|itemid=10085|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=667.0|y=220.0|width=70|height=70|itemid=10084|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=741.0|y=220.0|width=70|height=70|itemid=10127|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=447.0|y=290.0|width=70|height=70|itemid=10106|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=520.0|y=290.0|width=70|height=70|itemid=10123|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=594.0|y=290.0|width=70|height=70|itemid=10124|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=667.0|y=290.0|width=70|height=70|itemid=10105|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <Button|x=510.0|y=363.0|color=255|size=18|nimg=public/1900000673.png|pimg=public/1900000674.png|text=回收经验|link=@回收经验>
+INC S$展示装备 <Button|x=669.0|y=363.0|color=255|size=18|nimg=public/1900000673.png|pimg=public/1900000674.png|text=回收绑元|link=@回收绑元>
+
+
+GOTO @回收展示
+
+[@诺玛回收]
+#IF
+#ACT
+MOV S$回收标志 诺玛回收
+MOV N$回收首饰经验
+MOV N$回收武器经验
+MOV N$回收首饰绑元 500
+MOV N$回收武器绑元
+MOV N$回收首饰金刚石 2
+MOV N$回收武器金刚石
+MOV S$按钮展示1 public/1900000680_1.png
+MOV S$按钮展示2 public/1900000680_1.png
+MOV S$按钮展示3 public/1900000680.png
+MOV S$按钮展示4 public/1900000680_1.png
+
+MOV S$展示装备 <ItemShow|x=447.0|y=150.0|width=70|height=70|itemid=10190|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=520.0|y=150.0|width=70|height=70|itemid=10375|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=594.0|y=150.0|width=70|height=70|itemid=10379|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=667.0|y=150.0|width=70|height=70|itemid=10372|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=741.0|y=150.0|width=70|height=70|itemid=10191|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=447.0|y=220.0|width=70|height=70|itemid=10376|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=520.0|y=220.0|width=70|height=70|itemid=10380|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=594.0|y=220.0|width=70|height=70|itemid=10373|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=667.0|y=220.0|width=70|height=70|itemid=10119|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=741.0|y=220.0|width=70|height=70|itemid=10377|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=447.0|y=290.0|width=70|height=70|itemid=10381|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=520.0|y=290.0|width=70|height=70|itemid=10374|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <Button|x=510.0|y=363.0|color=255|size=18|nimg=public/1900000673.png|pimg=public/1900000674.png|text=回收绑元|link=@回收绑元>
+INC S$展示装备 <Button|x=669.0|y=363.0|color=255|size=18|nimg=public/1900000673.png|pimg=public/1900000674.png|text=回收金刚石|link=@回收金刚石>
+
+GOTO @回收展示
+
+
+
+
+[@四字回收]
+#IF
+#ACT
+MOV S$回收标志 四字回收
+MOV N$回收首饰经验
+MOV N$回收武器经验
+MOV N$回收首饰绑元 300
+MOV N$回收武器绑元
+MOV N$回收首饰金刚石 2
+MOV N$回收武器金刚石
+MOV S$按钮展示1 public/1900000680_1.png
+MOV S$按钮展示2 public/1900000680_1.png
+MOV S$按钮展示3 public/1900000680_1.png
+MOV S$按钮展示4 public/1900000680.png
+
+MOV S$展示装备 <ItemShow|x=447.0|y=150.0|width=70|height=70|itemid=10450|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=545.0|y=150.0|width=70|height=70|itemid=10451|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=642.0|y=150.0|width=70|height=70|itemid=10452|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <ItemShow|x=741.0|y=150.0|width=70|height=70|itemid=10453|itemcount=1|showtips=1|bgtype=1>
+INC S$展示装备 <Button|x=510.0|y=363.0|color=255|size=18|nimg=public/1900000673.png|pimg=public/1900000674.png|text=回收绑元|link=@回收绑元>
+INC S$展示装备 <Button|x=669.0|y=363.0|color=255|size=18|nimg=public/1900000673.png|pimg=public/1900000674.png|text=回收金刚石|link=@回收金刚石>
+
+GOTO @回收展示
+
+
+
+
+[@回收经验]
+#IF
+#ACT
+MOV N$回收首饰件数
+MOV N$回收武器件数
+
+#IF
+EQUAL S$回收标志 祖玛回收
+#ACT
+TAKEBAGITEM 幽灵手套|幽灵项链|阎罗手套|巨龙戒指|天鸣戒指|遗魂项链|心灵手镯|五彩项链|思贝儿手镯|火玉戒指 46 N$回收首饰件数
+
+TAKEBAGITEM 炼狱|银蛇|魔杖|井中月|无极棍 46 N$回收武器件数
+
+#IF
+EQUAL S$回收标志 赤月回收
+#ACT
+TAKEBAGITEM 霸龙头盔|绿色项链|骑士手镯|力量戒指|恶魔铃铛|龙之手镯|紫碧螺|灵魂项链|三眼手镯|泰坦戒指 46 N$回收首饰件数
+
+TAKEBAGITEM 裁决之杖|骨玉权杖|龙纹剑|血饮 46 N$回收武器件数
+
+
+
+#OR
+LARGE <$str(N$回收首饰件数)> > 0
+LARGE <$str(N$回收武器件数)> > 0
+#ACT
+MUL N$获得经验1 <$str(N$回收首饰经验)> <$STR(N$回收首饰件数)>
+MUL N$获得经验2 <$str(N$回收武器经验)> <$STR(N$回收武器件数)>
+INC N$获得经验1 <$str(N$获得经验2)>
+
+MONEY 经验 + <$STR(N$获得经验1)>
+sendmsg 0 <$USERNAME>回收装备获得:<$STR(N$获得经验1)>经验
+break
+#elseact
+sendmsg 6 没有可以让我回收的装备！
+break
+
+
+[@回收绑元]
+#IF
+#ACT
+MOV N$回收首饰件数
+MOV N$回收武器件数
+
+#IF
+EQUAL S$回收标志 赤月回收
+#ACT
+TAKEBAGITEM 黑铁头盔|绿色项链|骑士手镯|力量戒指|恶魔铃铛|龙之手镯|紫碧螺|灵魂项链|三眼手镯|泰坦戒指 46 N$回收首饰件数
+
+TAKEBAGITEM 裁决之杖|骨玉权杖|龙纹剑|血饮 46 N$回收武器件数
+
+#IF
+EQUAL S$回收标志 诺玛回收
+#ACT
+TAKEBAGITEM 战神头盔|破荒项链|金棱手镯|师承戒指|虎面头盔|魔云项链|思过手镯|龙马戒指|黑铁头盔|定心项链|世尊手镯|青云戒指 46 N$回收首饰件数
+
+#IF
+EQUAL S$回收标志 四字回收
+#ACT
+TAKEBAGITEM 血花落照|黑天暗云|九宫云雾|万里碧海 46 N$回收首饰件数
+
+
+#OR
+LARGE <$str(N$回收首饰件数)> > 0
+LARGE <$str(N$回收武器件数)> > 0
+#ACT
+MUL N$获得绑元1 <$str(N$回收首饰绑元)> <$STR(N$回收首饰件数)>
+MUL N$获得绑元2 <$str(N$回收武器绑元)> <$STR(N$回收武器件数)>
+INC N$获得绑元1 <$str(N$获得绑元2)>
+
+MONEY 绑定元宝 + <$STR(N$获得绑元1)>
+sendmsg 0 <$USERNAME>回收装备获得:<$STR(N$获得绑元1)>绑元
+break
+#elseact
+sendmsg 6 没有可以让我回收的装备！
+break
+
+[@回收金刚石]
+#IF
+#ACT
+MOV N$回收首饰件数
+MOV N$回收武器件数
+
+#IF
+EQUAL S$回收标志 诺玛回收
+#ACT
+MOV N$回收件数 0
+TAKEBAGITEM 战神头盔|破荒项链|金棱手镯|师承戒指|虎面头盔|魔云项链|思过手镯|龙马戒指|黑铁头盔|定心项链|世尊手镯|青云戒指 46 N$回收首饰件数
+
+#IF
+EQUAL S$回收标志 四字回收
+#ACT
+TAKEBAGITEM 血花落照|黑天暗云|九宫云雾|万里碧海 46 N$回收首饰件数
+
+
+#OR
+LARGE <$str(N$回收首饰件数)> > 0
+LARGE <$str(N$回收武器件数)> > 0
+#ACT
+MUL N$获得金刚石1 <$str(N$回收首饰金刚石)> <$STR(N$回收首饰件数)>
+MUL N$获得金刚石2 <$str(N$回收武器金刚石)> <$STR(N$回收武器件数)>
+INC N$获得金刚石1 <$str(N$获得金刚石2)>
+
+MONEY 金刚石 + <$STR(N$获得金刚石1)>
+sendmsg 0 <$USERNAME>回收装备获得:<$STR(N$获得金刚石1)>金刚石
+break
+#elseact
+sendmsg 6 没有可以让我回收的装备！
+break
+
+
+}
+
+
+
+
+

@@ -1,0 +1,62 @@
+;;不要删
+[@Main]
+#ACT
+PLAYEFFECT 5534
+sendmsg 6 加特效5534
+;ThrowItem <$map> <$x> <$y> 5 木剑 5|20 1 0 0
+
+;RefineWeapon 0 1
+;Getbackupgweapon 0 1
+
+;MOV S99 zhu8
+;mapmove <$STR(S99)> 38 38
+
+;mapmove zhu8 38 38
+;Break
+
+;ADDATTLIST 属性组1 = 3#51#10000
+;SendMsg 6 11111
+;MailGIVE 木剑 1 0#1#2#3#4#5#6#7#8
+;SendmailEx <$userid> 1 系统奖励 你好<$USERNAME>奖励你木剑1把带绑定规则,请提取
+
+
+;mov J499 1
+;mov Z0 111
+;mov B0 1
+;SendMsg 6 J499::<$str(J499)>
+;SendMsg 6 Z0::<$str(Z0)>
+;SendMsg 6 B0::<$str(B0)>
+
+
+
+;DelItemByMakeIndex 10433161_19412967 N1 N2
+;SendMsg 6 N1,,,<$str(N1)>
+;SendMsg 6 N2,,,<$str(N2)>
+
+;RepairItem 0 1
+;sendmsg 5 你的已修理
+;GetRepairCost 0 S$修理费用
+;sendmsg 5 你的衣服特修需要<$str(S$修理费用)>金币,你要修理吗
+
+;mov J11 77
+;SendMsg 7 J11::<$str(J11)>
+;addbuff 10000 0 1
+;addbuff 10000 0 10
+
+;addbuff 10000 0 2
+sendmsg 6 <$BUFFOL(10000)>===<$BUFFTR(10000)>
+;sendmsg 6 <$STATSERVERTIME>
+;sendmsg 6 <$STATSERVERTIME>
+
+;TEST
+;CHANGEHUMNAME 毛泽东
+;KILLMAPMON 0 440 383 10 * 1 0
+;addbuff 1600 3600
+;CHANGEITEMADDVALUE 1 14 + 1
+;CHANGEITEMADDVALUE 1 15 + 1
+;CHANGEITEMADDVALUE 1 16 + 1
+
+;ChangeitemaddvaLueEx 1 14 + 1  0 
+;ChangeitemaddvaLueEx 1 15 + 1  1 
+;ChangeitemaddvaLueEx 1 16 + 1  2 
+

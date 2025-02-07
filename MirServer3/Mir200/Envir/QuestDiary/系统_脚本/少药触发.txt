@@ -1,0 +1,46 @@
+;;<$USEDUPMED>=1红药 2蓝药 3双回药 4护身符 5灵魂护身符 6灰色药粉 7黄色药粉
+[@少药触发]
+{
+#IF
+EQUAL <$USEDUPMED> 1
+#act
+SENDMSG 5 提示:你包里红药少于5个
+break
+
+#IF
+EQUAL <$USEDUPMED> 2
+#act
+SENDMSG 5 提示:你包里蓝药少于5个
+break
+
+#IF
+EQUAL <$USEDUPMED> 3
+#act
+SENDMSG 5 提示:你包里双回药少于5个
+break
+
+#IF
+EQUAL <$USEDUPMED> 4
+#act
+SENDMSG 5 提示:你包里护身符少于10次
+break
+
+#IF
+EQUAL <$USEDUPMED> 5
+#act
+SENDMSG 5 提示:你包里灵魂护身符少于10次
+break
+
+#IF
+EQUAL <$USEDUPMED> 6
+#act
+SENDMSG 5 提示:你包里灰色药粉少于10次
+break
+
+#IF
+EQUAL <$USEDUPMED> 7
+#act
+SENDMSG 5 提示:你包里黄色药粉少于10次
+break
+}
+;;创天网络有限公司原版1.45

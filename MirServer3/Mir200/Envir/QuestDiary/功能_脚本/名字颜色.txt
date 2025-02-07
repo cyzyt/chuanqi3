@@ -1,0 +1,58 @@
+[@名字颜色_1]
+{
+#say
+是不是觉得自己名称的颜色太单调了，换换试试！\ \
+『<复原/@Color255>』\
+『<蓝色/@Color0>』 『<绿色/@Color1>』 『<黄色/@Color2>』 『<橙色/@Color3>』\
+『<土黄/@Color4>』 『<红色/@Color5>』 『<淡兰/@Color6>』 『<淡绿/@Color7>』\ \
+
+
+[@Color255]
+#ACT
+CHANGENAMECOLOR 255
+SendMsg 6 你的名字颜色已经复原。
+
+[@Color0]
+#ACT
+CHANGENAMECOLOR 252
+SendMsg 6 你的名字颜色已经改变。
+
+[@Color1]
+#ACT
+CHANGENAMECOLOR 217
+SendMsg 6 你的名字颜色已经改变。
+
+[@Color2]
+#ACT
+CHANGENAMECOLOR 251
+SendMsg 6 你的名字颜色已经改变。
+ 
+[@Color3]
+#ACT
+CHANGENAMECOLOR 253
+SendMsg 6 你的名字颜色已经改变。
+ 
+
+[@Color4]
+#ACT
+CHANGENAMECOLOR 125
+SendMsg 6 你的名字颜色已经改变。
+ 
+
+[@Color5]
+#ACT
+CHANGENAMECOLOR 249
+SendMsg 6 你的名字颜色已经改变。
+ 
+[@Color6]
+#ACT
+CHANGENAMECOLOR 254
+SendMsg 6 你的名字颜色已经改变。
+ 
+[@Color7]
+#ACT
+CHANGENAMECOLOR 250
+SendMsg 6 你的名字颜色已经改变。
+ 
+
+}

@@ -1,0 +1,46 @@
+[@平时登陆触发Ex_Ly]
+{
+#If
+ISADMIN
+#Act
+;;DELATTLIST GM战力
+;;Addattlist GM战力 = 3#3#10000|3#4#10000|3#0#10000-10000
+;;SetIcon 0 1 5500 0 10 0 0
+GMEXECUTE 无敌
+;;SendMsg 5 你是GM，给你增加了GM之力！
+
+#If
+ISCASTLEMASTER
+#Act
+SendMsg 1 伟大的沙巴克城主'<$USERNAME>'上线了！ 
+SendMovemsg 0 255 241 150 2 伟大的沙巴克城主{<$USERNAME>/FCOLOR=253}上线了
+#If
+#Act
+bindEvent 1 1 @背包满
+
+
+
+#If
+equal <$CURRTEMNAME> 20周年称号 
+#Act
+PLAYEFFECT 5534
+sendmsg 6 穿上：<$CURRTEMNAME>
+#If
+equal <$CURRTEMNAME> 21周年称号 
+#Act
+PLAYEFFECT 5535
+sendmsg 6 穿上：<$CURRTEMNAME>
+
+#If
+#Act
+NEWPICKTASK 1
+NEWPICKTASK 301
+NEWPICKTASK 201
+;;上线触发任务
+
+
+
+
+
+
+}

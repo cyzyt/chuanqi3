@@ -1,0 +1,70 @@
+;;不要删;;;;;;;;;;;
+[@CastleWarStart]
+{
+#Act
+
+SENDMSG 1 "═════════< 传奇日报 >═════════" 
+SENDMSG 1 " 沙巴克攻城战开始了。" 
+SENDMSG 1 " 沙巴克的部分商人已经到毒蛇山谷或道馆避难了。"
+SENDMSG 1 "═════════< 传奇日报 >═════════"
+Movenpc 151       2    350 219
+Movenpc 3 151      2    343 234
+Movenpc 3 152      2    335 223
+Movenpc 3 153      2    362 226
+Movenpc 3 154      2    350 233
+Movenpc 3 155        Z011  10   7
+Movenpc 3 156         Z011  10   8
+Movenpc 3 157          Z011  10   9
+Movenpc 3 158        Z011  10  10
+Movenpc 3 159        Z011  10  12
+Movenpc 3 180  Z011  10  13
+Movenpc 3 181  Z011  10  14
+Movenpc 3 182  Z011  10  15
+Movenpc 3 183  Z011  10  16
+Movenpc 3 184  Z011   9  16
+Movenpc 3 185  Z011   9  15
+
+}
+
+[@CastleWarReady]
+{
+#Act
+@closemaindoor
+@closelmaindoor
+@closermaindoor  
+SENDMSG 1 "═════════< 传奇日报 >═════════" 
+SENDMSG 1 " 号外号外: [ 沙巴克城 ] 攻城战将在 1小时后 打响 " 
+SENDMSG 1 " 号外号外: [ 沙巴克城 ] 攻城战将在 1小时后 打响 " 
+SENDMSG 1 "═════════< 传奇日报 >═════════"
+}
+
+[@CastleWarFinish]
+{
+#Act
+GMEXECUTE ReloadNpc
+;Movenpc2,350,219,老胡"         3 195 183
+;Movenpc2,343,234,双喜"         3 229 150
+;Movenpc2,335,223,晶晶"         3 204 196
+;Movenpc2,362,226,园老板"         3 229 168
+;Movenpc2,350,233,多多"         3 211 183
+;MovenpcZ011,10,7,敏贞"         3 289 513
+;MovenpcZ011,10,8,在奎"         3  75 516
+;MovenpcZ011,10,9,完美"         3  92  47
+;MovenpcZ011,10,10,啊翔"        3 198 180
+;MovenpcZ011,10,12,俞公"        3 203 197
+;MovenpcZ011,10,13,沙巴克旗帜"  3 165 190
+;MovenpcZ011,10,14,沙巴克旗帜"  3 170 195
+;MovenpcZ011,10,15,沙巴克旗帜"  3 233 196
+;MovenpcZ011,10,16,沙巴克旗帜"  3 237 192
+;MovenpcZ011,9,16,沙巴克旗帜"   3 240 123
+;MovenpcZ011,9,15,沙巴克旗帜"   3 236 119
+
+SENDMSG 1 "═════════< 传奇日报 >═════════" 
+SENDMSG 1 "" 
+SENDMSG 1 " 沙巴克攻城战结束了。"
+SENDMSG 1 "" 
+SENDMSG 1 "═════════< 传奇日报 >═════════"
+SENDMSG 1 " 沙巴克攻城战结束了。"
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Ext;;ended Premtium Build(42 New Skills And Jewel)

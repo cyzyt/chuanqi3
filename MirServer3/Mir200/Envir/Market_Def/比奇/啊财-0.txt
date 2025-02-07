@@ -1,0 +1,19 @@
+;;不要删
+[@Main]
+#If
+CHECKPKPOINTEX > 2
+#Say
+跟你这种人我无话可说。\ \
+<结束/@Exit>
+#ELSEACT
+goto @Main_0_0
+
+[@Main_0_0]
+	#Call	[\系统_脚本\兑换金币.txt]	@Change
+
+
+
+[@TQuest]
+#Say
+今天没事情可拜托你了。\ \
+<结束/@Exit>

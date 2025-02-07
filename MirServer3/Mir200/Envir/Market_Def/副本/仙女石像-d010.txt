@@ -1,0 +1,37 @@
+;;不要删
+[@Main]
+#If
+Not CHECKPKPOINTEX > 2
+#Say
+你要进到桃源副本吗 \
+这里异常凶险，需要组队才能进入 \
+<进入桃源/@进入桃源>\
+;;<深虎滩/@深虎滩>\
+;;<神魔之岛/@神魔之岛>\
+#Elseact
+MapMove 81 125 274                                   
+Break
+
+[@进入桃源]
+#If
+checkgold 1
+#Act
+;;take 金币 1
+MapMove ID1_001 48 137
+Break
+
+
+[@神魔之岛]
+#If
+checkgold 1
+#Act
+;;take 金币 1
+MapMove 20 491 521
+Break
+[@深虎滩]
+#If
+checkgold 1
+#Act
+;;take 金币 1
+MapMove d3400 109 361
+Break

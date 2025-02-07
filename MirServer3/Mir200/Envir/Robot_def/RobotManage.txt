@@ -1,0 +1,145 @@
+[@每日清理_变量]
+#If
+#Act
+	ClearHumCustVar	每日任务0_首次标识
+Break
+
+[@AddMapGate]
+#If
+#Act
+AddMapGateEX 异界之门 6#275#331#15#2 d900#20#21
+GetMapGate 异界之门 6 G10 G11
+CreateNPC 异界之门 6 <$STR(G10)> <$STR(G11)> 125 异界之门 1
+SendMsg 0 异界的门开了。（沙漠 <$STR(G10)>:<$STR(G11)>）
+
+
+[@DelMapGate]
+#Act
+DelMapGate 异界之门 6
+DelNpc 异界之门 6
+SendMsg 0 异界的门已经关闭。
+
+[@神宫通知]
+#If
+#Act
+SendMsg 0 通往绝情神宫的冰桥将在10分钟后开始冻结.
+;;Delaygoto 6000 @神宫开门
+Break
+
+
+[@神宫开门]
+#If
+#Act
+DelMapGate 雪原神宫 82
+AddMapGate 雪原神宫 82 115 36 1 8_002 182 183
+GetMapGate 雪原神宫 82 G12 G13 
+SendMsg 0 通往绝情神宫的冰桥已经凝结,大家开始进发.【雪原村落 <$STR(G12)>:<$STR(G13)>】
+SendMsg 0 30分钟后，冰桥将会融化。
+SENDMOVEMSG 0 253 255 350 1 通往绝情神宫的冰桥已经凝结,大家开始进发.雪原村落 <$STR(G12)>:<$STR(G13)>
+SENDMOVEMSG 0 253 255 350 1 30分钟后，冰桥将会融化。
+;;Delaygoto 6000 @神宫关门
+Break
+
+[@神宫关门]
+#If
+#Act
+DelMapGate 雪原神宫 82
+AddMapGate 雪原神宫 82 15 36 1 8_001 82 83
+SendMsg 0 通往绝情神宫冰桥已经融化了，重新形成冰桥需要一定时间...
+SENDMOVEMSG 0 253 255 350 1 通往绝情神宫冰桥已经融化了，重新形成冰桥需要一定时间...
+;;SendCenterMsg 180 251 通往绝情神宫冰桥已经融化了，重新形成冰桥需要一定时间.... 1  15
+
+[@开赤龙石门]
+#If
+#Act
+AddMapGateEX 赤龙石门 d005#172#124#2#2 D006#23#25
+GetMapGate 赤龙石门 d005 G12 G13
+MAPEFFECT 11 d005 <$STR(G12)> <$STR(G13)> 10119 -1 1
+CreateNPC 赤龙石门 d005 <$STR(G12)> <$STR(G13)> 123 赤龙石门 1
+SendMsg 0 赤龙石门开了。（本国领地 <$STR(G12)>:<$STR(G13)>）
+
+
+[@关赤龙石门]
+#Act
+DelMapGate 赤龙石门 d005
+DELMAPEFFECT 11
+DelNpc 赤龙石门 d005
+SendMsg 0 赤龙石门已经关闭。
+
+[@月河BUFF1]
+#IF
+#Act
+SETNPCEFFECT 335 10155 3 50
+SETNPCEFFECT 336 10155 3 50
+SETNPCEFFECT 337 10155 3 50
+SETNPCEFFECT 338 10155 3 50
+SETNPCEFFECT 339 10155 3 50
+SETNPCEFFECT 340 10155 3 50
+[@月河BUFF2]
+#IF
+#Act
+SETNPCEFFECT 335 10156 3 50
+SETNPCEFFECT 336 10156 3 50
+SETNPCEFFECT 337 10156 3 50
+SETNPCEFFECT 338 10156 3 50
+SETNPCEFFECT 339 10156 3 50
+SETNPCEFFECT 340 10156 3 50
+[@月河BUFF3]
+#IF
+#Act
+SETNPCEFFECT 335 10157 3 50
+SETNPCEFFECT 336 10157 3 50
+SETNPCEFFECT 337 10157 3 50
+SETNPCEFFECT 338 10157 3 50
+SETNPCEFFECT 339 10157 3 50
+SETNPCEFFECT 340 10157 3 50
+[@月河BUFF4]
+#Act
+SETNPCEFFECT 335 10158 3 50
+SETNPCEFFECT 336 10158 3 50
+SETNPCEFFECT 337 10158 3 50
+SETNPCEFFECT 338 10158 3 50
+SETNPCEFFECT 339 10158 3 50
+SETNPCEFFECT 340 10158 3 50
+[@月河BUFF5]
+#IF
+#Act
+SETNPCEFFECT 335 10159 3 50
+SETNPCEFFECT 336 10159 3 50
+SETNPCEFFECT 337 10159 3 50
+SETNPCEFFECT 338 10159 3 50
+SETNPCEFFECT 339 10159 3 50
+SETNPCEFFECT 340 10159 3 50
+
+[@副本每日清理]
+#If
+not Equal U80 <$year><$month><$day>
+#Act
+Mov U80 <$year><$month><$day>
+Mov U81 0
+Mov U81 0
+Mov U81 0
+
+[@跑船名单清理]
+#IF
+#Act
+CLEARNAMELIST ..\QuestDiary\神舰任务\船领奖名单.txt 
+CLEARNAMELIST ..\QuestDiary\神舰任务\跑船名单.txt
+SENDMSG 0 跑船名单已清理
+
+[@跑船活动公告1]
+#If
+#Act
+SENDMSG 0 跑船活动5分钟后开始了，详情咨询道馆的跑船使者.
+
+[@盟重天气]
+#If
+#Act
+SETWEATHEREFFECT 74 1 1000
+SENDMSG 0 盟重城瞬间黄沙滚滚！！
+
+[@发放物品]
+#If
+#Act
+ThrowItem 1 393 117 10 回城卷 5|60 1 1 0
+SENDMSG 0 道馆发物品了。

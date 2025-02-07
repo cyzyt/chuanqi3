@@ -1,0 +1,10 @@
+(@buy @sell @repair @s_repair )
+%100
++30
++3
++25
+[@Main]
+#If
+#Act
+	#Call	[任务系统\大老板.txt]	@大老板
+

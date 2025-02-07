@@ -1,0 +1,63 @@
+[@称号测试_1]
+{
+#Say
+<傲视群雄/@傲视群雄>        <钻石会员/@钻石会员>         <武林至尊/@武林至尊>\
+
+<最强王者/@最强王者>        <君临天下/@君临天下>\ 
+
+<删除称号/@删除称号>\
+
+[@删除称号]
+#If
+#Act
+DEPRIVETITLE ALL 
+SendMsg 5 你删除了所有称号...
+
+
+
+[@傲视群雄]
+#If
+NOT CHECKTITLE 傲视群雄 //检测没有有这个称号
+#Act
+CONFERTITLE 傲视群雄 //授予称号
+SendMsg 5 恭喜你获得了【傲视群雄】称号...
+#ELSEACT
+SendMsg 5 你已经有了该称号
+
+
+[@钻石会员]
+#If
+NOT CHECKTITLE 钻石会员 //检测没有有这个称号
+#Act
+CONFERTITLE 钻石会员 //授予称号
+SendMsg 5 恭喜你获得了【钻石会员】称号...
+#ELSEACT
+SendMsg 5 你已经有了该称号
+
+[@武林至尊]
+#If
+NOT CHECKTITLE 武林至尊 //检测没有有这个称号
+#Act
+CONFERTITLE 武林至尊 //授予称号
+SendMsg 5 恭喜你获得了【武林至尊】称号...
+#ELSEACT
+SendMsg 5 你已经有了该称号
+
+[@最强王者]
+#If
+NOT CHECKTITLE 最强王者 //检测没有有这个称号
+#Act
+CONFERTITLE 最强王者 //授予称号
+SendMsg 5 恭喜你获得了【最强王者】称号...
+#ELSEACT
+SendMsg 5 你已经有了该称号
+
+[@君临天下]
+#If
+NOT CHECKTITLE 君临天下 //检测没有有这个称号
+#Act
+CONFERTITLE 君临天下 //授予称号
+SendMsg 5 恭喜你获得了【君临天下】称号...
+#ELSEACT
+SendMsg 5 你已经有了该称号
+}

@@ -1,0 +1,20 @@
+;;不要删
+[@Main]
+#If
+Not CHECKPKPOINTEX > 2
+#Say
+我找到了出去的路，你要出去吗\
+<送我出去吧/@送我出去吧>\
+<让我再考虑一下/@exit>\
+
+#Elseact
+MapMove 81 125 274                                   
+Break
+
+[@送我出去吧]
+#If
+#Act
+MapMove id7_000 81 35
+Break
+
+

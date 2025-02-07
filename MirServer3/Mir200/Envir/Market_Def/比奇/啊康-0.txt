@@ -1,0 +1,61 @@
+(@buy @sell @repair @s_repair )
+%100
++5
++6
+
+[@Main]
+#Say
+ <修理武器/@repair>\
+ <特殊修理/@特殊修理>\
+
+<请求把剑从手分离开/@reMove_sword>\
+
+[@repair]
+要修理武器吗？\ \
+ <返回/@Main>
+
+[~@repair]
+已经修好了。\ \
+ <返回/@Main>
+
+[@特殊修理]
+#If
+#Act
+	#Call	[系统_脚本\特别修理.txt]	@特别修理
+ 
+[@reMove_sword]
+#If
+checkitemw 攻杀铁剑 1
+#Act
+takew 攻杀铁剑 1
+#Say
+你是怎么会让手粘在剑上呢 。。。\
+你看看现在是不是已经摘下来了。。。 \
+这种没用的剑我来替你保管吧。。。
+#ELSEACT
+goto @reMove_sword_1
+
+
+[@reMove_sword_1]
+#If
+checkitemw 焱火剑 1
+#Act
+takew 攻杀铁剑 1
+takew 焱火剑 1
+#Say
+你是怎么会让手粘在剑上呢 。。。\
+你看看现在是不是已经摘下来了。。。 \
+这种没用的剑我来替你保管吧。。。
+#ELSESAY
+你的手没有粘在剑上。。。\
+听说攻杀铁剑和 焱火剑一旦到手上就摘不下来。
+
+ 
+[goods]
+木剑            10	10
+青铜剑          10	10
+铁剑            10	10
+短剑            10	10
+匕首            10	10
+鹤嘴锄          10	10
+ 

@@ -1,0 +1,10 @@
+[@个人变量申明Ex_Ly]
+{
+
+#If
+CHECKLEVELEX > 0
+#Act
+VAR string HUMAN 押镖次数
+
+
+}

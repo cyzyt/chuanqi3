@@ -1,0 +1,31 @@
+;;创天网络有限公司原版1.45
+[@Main]
+#If
+check [031] 1
+#Act
+Break
+;
+#If
+check [058] 1
+#Act
+Break
+;
+#If
+check [057] 1
+#Act
+goto @giveitem
+Break
+#ELSEACT
+Break
+;
+[@giveitem]
+#If
+random 3
+#Act
+give 闪电石 1
+SET [058] 1
+#Say
+（这就是霹雳尊者所讲的闪电石吗？如果没有涂树脂将如何提这个东西。。手上火辣辣的。）\
+#ELSEACT
+Break
+

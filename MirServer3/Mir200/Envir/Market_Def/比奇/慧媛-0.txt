@@ -1,0 +1,12 @@
+(@buy @sell @repair @s_repair )
+%100
++10
++11
++15
++52
+[@Main]
+
+
+#If
+#Act
+	#Call	[公共_商人\鞋店.txt]	@鞋店

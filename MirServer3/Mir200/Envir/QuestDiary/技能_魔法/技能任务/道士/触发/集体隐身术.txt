@@ -1,0 +1,39 @@
+;;创天网络有限公司原版1.45
+[@mugong_masshiding_test]
+#If
+checkjob warrior
+#Act
+Break
+;
+#If
+checkjob wizard
+#Act
+Break
+;
+#If
+check [020] 1
+#Act
+Break
+
+#If
+check [047] 1
+#Act
+Break
+
+#If
+check [046] 1
+#Act
+goto @giveitem_jt
+Break
+
+[@giveitem_jt]
+#If
+random 20
+#Say
+(现在回到清明子那儿，并将 '成致日志'拿给他，就可以学习'集体隐身术'了...)\
+#Act
+give 成致日志 1
+SET [047] 1
+#ELSEACT
+Break
+

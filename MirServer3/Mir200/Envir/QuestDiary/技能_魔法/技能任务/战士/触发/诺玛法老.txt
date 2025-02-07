@@ -1,0 +1,79 @@
+;;创天网络有限公司原版1.45
+[@MapQuest_mutebo_stone]
+#If
+checkjob taoist
+#Act
+Break
+;
+#If
+checkjob wizard
+#Act
+Break
+;
+#If
+check [013] 1
+#Act
+Break
+
+#If
+check [045] 1
+#Act
+Break
+
+#If
+check [044] 1
+#Say
+(要快点回去了。。。) \ \
+#Act
+Break
+
+#If
+check [043] 1
+checkbaggage
+random 5
+#Act
+goto @MapQuest_mutebo_stone_next
+#ELSEACT
+Break
+
+[@MapQuest_mutebo_stone_next]
+#If
+checkitem 诺玛石 4
+#Say
+(诺玛石都找到了，现在该快点回去了。。)  \ \
+#Act
+give 诺玛石 1
+SET [044] 1
+Break
+
+#If
+checkitem 诺玛石 3
+#Say
+(再找到1个诺玛石就可以了。。。) \ \
+#Act
+give 诺玛石 1
+Break
+
+#If
+checkitem 诺玛石 2
+#Say
+(再找到2个诺玛石就可以了。。。) \ \
+#Act
+give 诺玛石 1
+Break
+
+#If
+checkitem 诺玛石 1
+#Say
+(现在剩下3个诺玛石了。。。) \ \
+#Act
+give 诺玛石 1
+Break
+
+#If
+#Say
+(这个是诺玛石吗？。。。现在找到1个。) \ \
+#Act
+give 诺玛石 1
+Break
+

@@ -1,0 +1,9 @@
+(@upgradenow @getbackupgnow )
+%100
++5
++6
+[@Main]
+
+#If
+#Act
+	#Call	[\系统_脚本\制炼武器沙巴克.txt]	@制炼武器沙城

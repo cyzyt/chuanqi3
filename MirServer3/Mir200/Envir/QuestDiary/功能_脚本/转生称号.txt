@@ -1,0 +1,74 @@
+[@转生称号_1]
+{
+<转生称号1/@转生称号1> <转生称号2/@转生称号2> <转生称号3/@转生称号3> <转生称号4/@转生称号4>\
+<转生称号5/@转生称号5> <转生称号6/@转生称号6> <转生称号7/@转生称号7> \
+<清除转生/@清除转生>  \
+<检测转生/@检测转生>
+
+
+
+
+
+
+[@检测转生]
+#If
+checkrenewlevel > 1
+#Say
+转生大于1次。
+#elsesay
+转生小于1次。
+
+[@清除转生]
+#If
+#Act
+SETSUPERCHANGE = 0
+UpdateEquipEffect 0 0
+UpdateEquipEffect 0 1
+sendmsg 5 转生清除，请小退再上
+
+
+
+
+[@转生称号1]
+#If
+#Act
+SETSUPERCHANGE + 1
+UpdateEquipEffect 5551 1 20 -10
+sendmsg 5 转生成功。
+[@转生称号2]
+#If
+#Act
+SETSUPERCHANGE = 2
+UpdateEquipEffect 5552 1 20 -10
+sendmsg 5 转生成功。
+[@转生称号3]
+#If
+#Act
+SETSUPERCHANGE = 3 
+UpdateEquipEffect 5553 1 20 -10
+sendmsg 5 转生成功。
+[@转生称号4]
+#If
+#Act
+SETSUPERCHANGE = 4
+UpdateEquipEffect 5554 1 20 -10
+sendmsg 5 转生成功。
+[@转生称号5]
+#If
+#Act
+SETSUPERCHANGE = 5
+UpdateEquipEffect 5555 1 20 -10
+sendmsg 5 转生成功。
+[@转生称号6]
+#If
+#Act
+SETSUPERCHANGE = 6
+UpdateEquipEffect 5556 1 20 -10
+sendmsg 5 转生成功。
+[@转生称号7]
+#If
+#Act
+SETSUPERCHANGE = 7
+UpdateEquipEffect 5557 1 20 -10
+sendmsg 5 转生成功。
+}

@@ -1,0 +1,15 @@
+[@雪原魔石]
+{
+#IF
+checkitem 雪原魔石 1
+#ACT
+enter_ok
+take 雪原魔石 1
+sendmsg 5 你有雪原魔石，进入了冥穴魔王室。
+#ELSEACT
+enter_fail
+#ELSESAY
+你不能进到这里去。要进这儿的话需要我的力量。\
+不过你没有 {雪原魔石/FCOLOR=250}，不能跟我联动啊。\
+求到{雪原魔石/FCOLOR=250} 后再来吧。\ 
+}

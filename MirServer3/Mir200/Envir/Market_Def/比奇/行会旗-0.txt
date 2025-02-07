@@ -1,0 +1,10 @@
+;;不要删
+[@Main]
+#Say
+沙巴克名称<$CASTLENAME>\
+<$OWNERGUILD> 行会旗帜 \ 
+管理员是<$LORD>\
+<结束/@Exit>
+
+[@TestUserFlag]
+	#Call	[\城堡_行会\沙城旗帜.txt]	@Defence_SubFlag

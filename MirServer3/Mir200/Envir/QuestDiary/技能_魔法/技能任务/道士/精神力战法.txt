@@ -1,0 +1,165 @@
+;;创天网络有限公司原版1.45
+[@mugong_ilgang]
+{
+#If
+check [015] 1
+#Say
+你不是已经收到 {精神力战法秘籍/FCOLOR=215} 吗？\ \
+<结束/@Exit>
+#Act
+Break
+
+#If
+check [033] 1
+#Say
+不是不管三七二十一就舞剑。 {先走心剑紧随其后。/FCOLOR=215} 保持心如止水，冷静对敌。\ 
+想重新接受修炼吗？\ \
+<好的, 再拜托你一次。/@mugong_ilgang_next4_1> \
+<准备好了，再来！/@mugong_ilgang_next5>
+#Act
+Break
+
+#If
+checkjob taoist
+#Act
+goto @mugong_ilgang_next1
+#ELSESAY
+该武功不是其它职业的人们可以掌握的简单武功呀。只有 {道士/FCOLOR=215} 才可以掌握。\ \
+<结束/@Exit>
+
+[@mugong_ilgang_next1]
+#If
+CheckMagicName 精神力战法
+#Say
+看你的眼光很锐利，好象正在修炼 {精神力战法/FCOLOR=215} 。\ \
+<结束/@Exit>
+#ELSEACT
+goto @mugong_ilgang_next2
+
+[@mugong_ilgang_next2]
+#If
+checklevel 8
+#Act
+SET [033] 1
+#Say
+精神力战法是剑术造诣很深的某个先辈故人创造的 {为了道士的剑法/FCOLOR=215} 。道士们终究是比战士们力量弱，如果不学习精神力战法，放弃 {直接进攻/FCOLOR=215} 还是好些。\
+现在你已经到了该修炼精神力战法的时候，我教你修炼。和修炼其它的魔法不一样，现在是修炼剑法，所以修炼方法和战士的修炼方法没有什么不同的。\
+怎么样？接受修炼吗？\ \
+<好的，拜托了！/@mugong_ilgang_next4_1> \
+<准备好之后，再来！/@mugong_ilgang_next5>
+#ELSESAY
+精神力战法是剑术造诣很深的某个先辈故人创造的 {为了道士的剑法/FCOLOR=215} 。嗯。。。但是你好像还没有达到修炼精神力战法的水平。在修炼一下准备好了，再来！\ \
+<结束/@Exit>
+
+[@mugong_ilgang_next5]
+#If
+#Say
+药准备多些好，那么快点去吧！\ \
+<结束/@Exit> 
+
+[@mugong_ilgang_next4_1]
+#If
+#Say
+那么将我移动到 {修炼场/FCOLOR=215} 。有可能要辛苦些，请做好准备！\ \
+<移动/@mugong_ilgang_next4_2>
+
+[@mugong_ilgang_next4_2]
+#If
+checkhum 1_012 1
+#Say
+已经有人在接受测试哟... 请等一下.. \ \
+<结束/@Exit>
+#ELSEACT
+goto @mugong_ilgang_next4_3
+
+[@mugong_ilgang_next4_3]
+#If
+#Act
+Monclear 1_012
+Param1 1_012
+Param2 9
+Param3 12
+MonGen 半兽战士61   1  1
+MonGen 半兽人61    3  1
+TimeRecall 5
+map 1_012
+goto @jingshenlizhanfa
+Break
+
+[@jingshenlizhanfa]
+#Act
+Mov A3 %USERMAP
+
+#If
+Equal A3 "1_012"
+#Act
+delaygoto [local] 10 @jingshenlizhanfa
+#ELSEACT
+BreakTIMERECALL
+Break
+
+}
+
+[@mugong_ilgang_complete]
+{
+#If
+check [015] 1
+#Act
+Break
+
+#If
+check [033] 0
+#Act
+Break
+
+#If
+check [033] 1
+check [034] 1
+check [015] 0
+#Act
+goto @mugong_ilgang_complete_next1
+#ELSEACT
+Break
+
+[@mugong_ilgang_complete_next1]
+#If
+CheckMagicName 精神力战法
+#Say
+看你的眼光很锐利，好象正在修炼 {精神力战法/FCOLOR=215} 。\ \
+<结束/@Exit>
+#Act
+Break
+#If
+check [015] 0
+#Act
+give 精神力战法（秘籍） 1
+give 灵魂铁手镯  1
+give 金币 9000
+reset [033] 1
+SET [015] 1
+#ELSESAY
+知道你可以成功。\
+辛苦了， {现在可以看到一点剑路了吗？/FCOLOR=215}  \ 
+这个是精神力战法要点解释的 {秘籍/FCOLOR=215} ，请拿走看看。你已经具有了基本素质，只要掌握要点，充分地可以学习精神力战法。\ 
+这里有些金币和东西，用在需要的地方。\ \
+<结束/@Exit>
+#Say
+你不是已经收到 {精神力战法秘籍/FCOLOR=215} 吗？\ \
+<结束/@Exit>
+
+}
+
+[@mugong_ilgang_explain]
+{
+#If
+#Say
+如果想掌握精神力战法，请在一定的时间之内将训练场里的怪兽都处理了即可。\ \
+<结束/@Exit>
+}
+
+{
+#If
+#Say
+如果想掌握精神力战法，请在一定的时间之内将训练场里的怪兽都处理了即可。\ \
+<结束/@Exit>
+}

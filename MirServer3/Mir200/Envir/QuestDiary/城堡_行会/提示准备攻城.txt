@@ -1,0 +1,22 @@
+[@提示准备攻城]
+{
+#If
+#Act
+SENDMSG 0 一个小时后沙巴克攻城战就会开始。
+
+#If
+random 3
+#Act
+SENDMSG 0 晶晶："谁能让沙巴克城稳定一点啊。"
+
+#If
+random 3
+#Act
+SENDMSG 0 老胡："沙巴克城开战了。。。"
+
+#If
+random 3
+#Act
+SENDMSG 0 双喜："沙巴克城危险所以避难来了。"
+
+}

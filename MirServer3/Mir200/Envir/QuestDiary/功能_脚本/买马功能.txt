@@ -1,0 +1,124 @@
+[@horse]
+{
+欢迎光临比奇马厩。马是高价产品，请慎重选择。\
+<我要买褐马/@设置马匹1>   <我要买白马/@设置马匹2>  <我要买红马/@设置马匹3>   <我要买黑马/@设置马匹4>  \
+<我要买雪浪/@设置马匹5>   <我要买赤影/@设置马匹6>  <买蓝麒麟/@设置马匹7>   <我要买黑影马/@设置马匹8>\
+<我要卖马/@卖马1> \
+
+[@设置马匹1]
+#if
+EQUAL <$HORSEAPPR> 0
+#act
+SETHORSEAPPR 1200
+addbuff 1200
+#elseact
+Sendmsg 6 你有马了不能再买马
+
+[@设置马匹2]
+#if
+EQUAL <$HORSEAPPR> 0
+#act
+SETHORSEAPPR 1201
+addbuff 1201
+Sendmsg 6 已经购买了白马
+#elseact
+Sendmsg 6 你有马了不能再买马
+
+[@设置马匹3]
+#if
+EQUAL <$HORSEAPPR> 0
+#act
+SETHORSEAPPR 1202
+addbuff 1202
+Sendmsg 6 已经购买了红马
+#elseact
+Sendmsg 6 你有马了不能再买马
+
+[@设置马匹4]
+#if
+EQUAL <$HORSEAPPR> 0
+#act
+addbuff 1203
+SETHORSEAPPR 1203
+Sendmsg 6 已经购买了黑马
+#elseact
+Sendmsg 6 你有马了不能再买马
+
+[@设置马匹5]
+#if
+EQUAL <$HORSEAPPR> 0
+#act
+SETHORSEAPPR 1205
+addbuff 1205
+Sendmsg 6 已经购买了雪浪
+#elseact
+Sendmsg 6 你有马了不能再买马
+
+[@设置马匹6]
+#if
+EQUAL <$HORSEAPPR> 0
+#act
+SETHORSEAPPR 1206
+addbuff 1206
+Sendmsg 6 已经购买了赤影
+#elseact
+Sendmsg 6 你有马了不能再买马
+
+[@设置马匹7]
+#if
+EQUAL <$HORSEAPPR> 0
+#act
+SETHORSEAPPR 1207
+addbuff 1207
+Sendmsg 6 已经购买了蓝麒麟
+#elseact
+Sendmsg 6 你有马了不能再买马
+
+[@设置马匹8]
+#if
+EQUAL <$HORSEAPPR> 0
+#act
+SETHORSEAPPR 1204
+addbuff 1204
+Sendmsg 6 已经购买了黑影
+#elseact
+Sendmsg 6 你有马了不能再买马
+
+[@卖马1]
+#if
+small <$HORSEAPPR> 1
+#act
+Sendmsg 6 你没有马
+#elseact
+goto @各马检测
+
+[@各马检测]
+#if
+#act
+mov N$马匹价格1200 250000
+mov N$马匹价格1201 10000000
+mov N$马匹价格1202 20000000
+mov N$马匹价格1203 30000000
+mov N$马匹价格1204 40000000
+mov N$马匹价格1205 50000000
+mov N$马匹价格1206 60000000
+mov N$马匹价格1207 70000000
+
+#IF
+#ACT
+mov S$当前马匹id <$HORSEAPPR>
+SETHORSEAPPR 0
+delbuff <$str(S$当前马匹id)>
+MONEY 金币 + <$str(N$马匹价格<$str(S$当前马匹id)>)>
+Sendmsg 6 已经卖马
+
+[@上马]
+#act
+RIDEHORSE
+Sendmsg 6 已经上马
+
+[@下马]
+#act
+DISMOUNTHORSE
+Sendmsg 6 已经下马
+}

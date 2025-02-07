@@ -1,0 +1,95 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@首饰美化]
+{
+#Say
+美化后的首饰会闪闪发光哦,每次操作收费100积分.\\
+<【衣服】/@衣服光>                <【武器】/@武器光>\
+<【头盔】/@头盔光>                <【项 链】/@光效果1>\
+<【手镯(左)】/@光效果2>             <【手镯(右)】/@光效果3>\
+<【戒指(左)】/@光效果4>             <【戒指(右)】/@光效果5>\
+<【勋章】/@勋章光>                   <【鞋子】/@鞋子光> \
+
+[@勋章光]
+#If
+CHECKUSEITEM 2
+#Act
+SETITEMEFFECT 2 0 0 5501#0
+SendMsg 6 衣服光效加上去了
+#elsesay
+你还没衣服呢。
+
+[@鞋子光]
+#If
+CHECKUSEITEM 11
+#Act
+SETITEMEFFECT 11 0 0 5501#0
+SendMsg 6 衣服光效加上去了
+#elsesay
+你还没衣服呢。
+
+[@衣服光]
+#If
+CHECKUSEITEM 0
+#Act
+SETITEMEFFECT 0 0 0 5501#0
+SendMsg 6 衣服光效加上去了
+#elsesay
+你还没衣服呢。
+[@武器光]
+#If
+CHECKUSEITEM 1
+#Act
+SETITEMEFFECT 1 0 0 5501#0
+SendMsg 6 武器光效加上去了
+#elsesay
+你还没戴武器呢。
+[@头盔光]
+#If
+CHECKUSEITEM 4
+#Act
+SETITEMEFFECT 4 0 0 5501#0
+SendMsg 6 头盔光效加上去了
+#elsesay
+你还没戴头盔呢。
+[@光效果1]
+#If
+CHECKUSEITEM 3
+#Act
+SETITEMEFFECT 3 0 0 5501#0
+SendMsg 6 项链光效加上去了
+#elsesay
+你还没戴项链呢。
+[@光效果2]
+#If
+CHECKUSEITEM 5
+#Act
+SETITEMEFFECT 5 0 0 5501#0
+SendMsg 6 手镯光效加上去了
+#elsesay
+你还没戴手镯呢。
+[@光效果3]
+#If
+CHECKUSEITEM 6
+#Act
+SETITEMEFFECT 6 0 0 5501#0
+SendMsg 6 手镯光效加上去了
+#elsesay
+你还没戴手镯呢。
+[@光效果4]
+#If
+CHECKUSEITEM 7
+#Act
+SETITEMEFFECT 7 0 0 5501#0
+SendMsg 6 戒指光效加上去了
+#elsesay
+你还没戴戒指呢。
+[@光效果5]
+#If
+CHECKUSEITEM 8
+#Act
+SETITEMEFFECT 8 0 0 5501#0
+SendMsg 6 戒指光效加上去了
+#elsesay
+你还没戴戒指呢。
+
+}

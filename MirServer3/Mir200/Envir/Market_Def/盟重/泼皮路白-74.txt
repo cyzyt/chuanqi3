@@ -1,0 +1,13 @@
+;;不要删
+[@Main]
+#If
+CHECKPKPOINTEX > 2
+#Say
+(....................)\ \
+<关闭/@Exit>
+
+#ELSEACT
+goto @Main_0
+
+[@Main_0]
+	#Call	[\技能_魔法\技能任务\道士\群体治愈术.txt]	@mugong_massheal_illtown

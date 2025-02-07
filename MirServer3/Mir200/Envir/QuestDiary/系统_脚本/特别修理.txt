@@ -1,0 +1,64 @@
+[@特别修理]
+{
+#say
+我这里提供2种全身特修的方式，你要？\
+<金币全身特修/@金币全身特修>\
+<元宝全身特修/@元宝全身特修>\
+
+
+[@元宝全身特修]
+#If
+#Act
+GETREPATRALLCOSTNONPC S$随身特修
+#If
+LARGE <$STR(S$随身特修)> 0
+#SAY
+这个物品是要装备在身上才行\ 
+特修需要 50元宝，你要修理吗\
+<我要元宝修/@我要元宝修>\
+#ELSESAY
+你现在不需要特修！
+
+
+
+
+[@我要元宝修]
+#if
+CHECKGAMEGOLD > 50
+#act 
+ACTREPAIRALLNONPC
+GAMEGOLD - 50
+#SAY
+特修完成!
+#ELSESAY
+你的元宝不足50,特修失败！
+break
+
+
+
+
+
+[@金币全身特修]
+#If
+#Act
+GETREPATRALLCOSTNONPC S$随身特修
+#say
+这个物品是要装备在身上才行\ 
+特修需要 <$STR(S$随身特修)> 金币，你要修理吗\
+ <我要全修理/@我要全修理>\
+ 
+[@我要全修理]
+#IF
+CHECKMONEY 金币 > <$STR(S$随身特修)>
+#ACT
+MONEY 金币 - <$STR(S$随身特修)>
+ACTREPAIRALLNONPC
+#SAY
+你的装备修好了.
+#ELSESAY
+你是不是没有钱啊.修理需要<$STR(S$随身特修)>金币
+
+
+
+
+}

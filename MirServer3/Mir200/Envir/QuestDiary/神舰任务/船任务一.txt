@@ -1,0 +1,12 @@
+[@船任务一]
+{
+（这里什么时候有了这样一扇门？）\ \
+<走入这扇门/@SinGiQuest_Start>\
+<到神舰别处去看看/@exit>
+
+[@SinGiQuest_Start]
+#IF
+#ACT
+enter_ok
+
+}

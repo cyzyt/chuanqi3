@@ -1,0 +1,113 @@
+;;不要删
+[@Main]
+
+<城门状态/@城门状态>\
+<开左城门/@openlmaindoor> <开主城门/@openmaindoor> <开右城门/@openrmaindoor>\
+<关左城门/@closelmaindoor> <关主城门/@closemaindoor> <关右城门/@closermaindoor>\
+<修左城门/@repairldoornow> <修主城门/@repairdoornow> <修右城门/@repairrdoornow>\
+
+[@城门状态]
+#act
+sendmsg 5 城堡的总黄金是: <$CASTLEGOLD>　今天的收入是: <$TODAYINCOME>\ 
+
+;;--------------------------------------------------
+[@openlmaindoor]
+#Act
+sendmsg 5  开了左城门
+
+[@closelmaindoor]
+#Act
+sendmsg 5  关了左城门 
+
+[@repairldoornow]
+#Act
+sendmsg 5  修了左城门
+;;--------------------------------------------------
+[@openmaindoor]
+#Act
+sendmsg 5  开了主城门
+
+[@closemaindoor]
+#Act
+sendmsg 5  关了主城门 
+;;--------------------------------------------------
+[@openrmaindoor]
+#Act
+sendmsg 5  开了右城门
+
+[@closermaindoor]
+#Act
+sendmsg 5 关了右城门 
+
+[@repairrdoornow]
+#Act
+sendmsg 5  修了右城门
+
+
+
+[@Propse_CastleWar]
+#If
+Checkunderwar 沙巴克
+#Act
+MessageBox 在攻城中是不能申请攻城战的...
+Break
+
+#If
+Not Isguildmaster
+#Act
+MessageBox 你不是行会老大不能申请攻城战役...
+Break
+
+#If
+EQUAL <$GUILDNAME> <$CASTLEGUILDNAME>
+#Act
+MessageBox 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　你已经申请过了..
+Break
+
+#If
+CheckContainsText <$LISTOFWAR> <$GUILDNAME>
+#Act
+MessageBox 你的行会在申请列表中..
+Break
+
+#If
+Not Checkitem 祖玛头像 1
+#Act
+MessageBox 因为没有祖玛头像所以不能申请攻城战...
+Break
+
+#If
+Iscastlemaster
+#Act
+MessageBox 你是想自己攻打自己吗...
+Break
+
+#Elseact
+Take 祖玛头像 1
+Addtocastlewarlist 沙巴克 <$Guildname>
+goto @申请成功
+
+[@申请成功]
+#say
+申请了攻城战,攻城日程是:\
+3天后下午20点开始战争<(包含今天)。\　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+
+
+[@view_warschedule]
+沙巴克城攻城战的日程是这样的。\ \
+<$LISTOFWAR> \ \
+
+<返回/@Main>
+
+
+[@改变沙城门状态1]
+#Act
+
+[@改变沙城门状态2]
+#Act
+
+[@改变沙城门状态3]
+#Act
+
+
+

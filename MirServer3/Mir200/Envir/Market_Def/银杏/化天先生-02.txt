@@ -1,0 +1,267 @@
+;;不要删
+[@Main]
+
+#If
+checkpkpoint 2
+#Say
+跟你这种人我无话可说。。\ \
+<关闭/@Exit>
+#ELSEACT
+goto @Main_0
+
+;-------------------
+
+[@Main_0]
+#If
+checkjob wizard
+#Act
+BreakTimeRecall 
+goto @beouk_Main
+#ELSEACT
+BreakTimeRecall 
+goto @beouk_other_class
+
+;;
+;;
+
+[@beouk_other_class]
+#If
+checkjob warrior
+#Say
+本座人称霹雳尊者， 你听说过吗？\
+呵呵呵， 本座最近在指导江湖的后生们。 不过，你不是魔法师啊。\ 
+你这个战士还是去找龙血先生吧。\ \
+<对今日的任务进行了解/@TQuest>\
+<结束/@Exit>
+#ELSESAY
+本座人称霹雳尊者， 你听说过吗？\
+呵呵呵， 本座最近在指导江湖的后生们。 不过，你不是魔法师啊。\ 
+你这个道士还是去找清明子先生吧。\ \
+<对今日的任务进行了解/@TQuest>\
+<结束/@Exit>
+
+
+
+[@beouk_Main]
+#If
+#Say
+本座就是霹雳尊者。\
+你找我有什么事？ \
+<寻求武功指导/@beouk_mugong_Main>\
+<对今日的任务进行了解/@TQuest>\
+<结束/@Exit>
+
+[@beouk_mugong_Main]
+#If
+#Say
+<Img|ay=1|height=400|show=0|bg=1|scale9r=70|scale9t=70|loadDelay=1|scale9b=70|esc=1|Move=0|reset=1|img=public/bg_npc_01.png|scale9l=70>
+<Layout|x=545|y=0|width=80|height=80|link=@Exit>
+<Button|x=546|y=0|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@Exit>
+<Text|x=25|y=20|color=255|size=18|text=我可以指导你以下这些武功。\修炼的时候有什么问题尽管来找我。>
+<Text|x=31.0|y=83.0|color=255|size=18|text=（1 - 10 等级 修炼魔法）\>
+<Text|x=25.0|y=147.0|color=255|size=18|text=（11 - 20 等级 修炼魔法）\>
+<Text|x=24.0|y=246.0|color=255|size=18|text=（21 - 25 等级 修炼魔法）\>
+<Text|x=36.0|y=116.0|color=251|size=18|text=火球术|link=@fireball_test_start>
+<Text|x=34.0|y=182.0|color=251|size=18|text=抗拒火环|link=@firewind_test_start>
+<Text|x=150.0|y=182.0|color=251|size=18|text=诱惑之光|link=@lightwave_test_start>
+<Text|x=267.0|y=184.0|color=251|size=18|text=瞬息移动|link=@fly_test_start>
+<Text|x=35.0|y=214.0|color=251|size=18|text=大火球|link=@upfireball_test_start>
+<Text|x=154.0|y=213.0|color=251|size=18|text=雷电术|link=@lightstick_test_start>
+<Text|x=273.0|y=215.0|color=251|size=18|text=地狱火|link=@fireline_test_start>
+<Text|x=37.0|y=285.0|color=251|size=18|text=疾光电影|link=@lightline_test_start>
+<Text|x=156.0|y=288.0|color=251|size=18|text=爆裂火焰|link=@wizard_hight>
+<Text|x=35.0|y=336.0|color=251|size=18|text=不寻求武功指导|link=@Exit>
+
+
+
+
+;;
+;;
+
+[@fireball_test_start]
+;;
+#If
+#Act
+goto @fireball_begin
+
+[@fireball_begin]
+	#Call	[\技能_魔法\技能任务\法师\火球术.txt]	@mugong_fireball
+
+;;
+
+[@upfireball_test_start]
+;;
+#If
+check [050] 1
+check [028] 0
+#Act
+goto @upfireball_complete
+Break
+
+#If
+#Act
+goto @upfireball_begin
+Break
+
+[@upfireball_begin]
+	#Call	[\技能_魔法\技能任务\法师\大火球.txt]	@mugong_upfireball
+
+[@upfireball_complete]
+	#Call	[\技能_魔法\技能任务\法师\大火球.txt]	@mugong_upfireball_complete
+
+;;
+
+[@firewind_test_start]
+;;
+#If
+check [034] 1
+check [025] 0
+#Act
+goto @firewind_complete
+Break
+
+#If
+#Act
+goto @firewind_begin
+
+[@firewind_begin]
+	#Call	[\技能_魔法\技能任务\法师\抗拒火环.txt]	@mugong_firewind
+
+[@firewind_complete]
+	#Call	[\技能_魔法\技能任务\法师\抗拒火环.txt]	@mugong_firewind_complete
+
+;;
+
+[@lightwave_test_start]
+;;
+#If
+check [036] 1
+check [026] 0
+#Act
+goto @lightwave_complete
+Break
+
+#If
+#Act
+goto @lightwave_begin
+Break
+
+[@lightwave_begin]
+	#Call	[\技能_魔法\技能任务\法师\诱惑之光.txt]	@mugong_lightwave
+
+[@lightwave_complete]
+	#Call	[\技能_魔法\技能任务\法师\诱惑之光.txt]	@mugong_lightwave_test_complete
+
+;;
+
+[@fireline_test_start]
+;;
+#If
+check [054] 1
+check [030] 0
+#Act
+goto @fireline_complete
+Break
+
+#If
+#Act
+goto @fireline_begin
+Break
+
+[@fireline_begin]
+	#Call	[\技能_魔法\技能任务\法师\地狱火.txt]	@mugong_fireline
+
+[@fireline_complete]
+	#Call	[\技能_魔法\技能任务\法师\地狱火.txt]	@mugong_fireline_complete
+
+;;
+
+[@lightstick_test_start]
+;;
+#If
+check [052] 1
+check [029] 0
+#Act
+goto @lightstick_complete
+Break
+
+#If
+#Act
+goto @lightstick_begin
+Break
+
+[@lightstick_begin]
+	#Call	[\技能_魔法\技能任务\法师\雷电术.txt]	@mugong_lightstick
+
+[@lightstick_complete]
+	#Call	[\技能_魔法\技能任务\法师\雷电术.txt]	@mugong_lightstick_complete
+
+
+;;
+
+[@fly_test_start]
+;;
+#If
+check [048] 1
+check [027] 0
+#Act
+goto @fly_complete
+Break
+
+#If
+#Act
+goto @fly_begin
+Break
+
+[@fly_begin]
+	#Call	[\技能_魔法\技能任务\法师\瞬息移动.txt]	@mugong_fly
+[@fly_complete]
+
+	#Call	[\技能_魔法\技能任务\法师\瞬息移动.txt]	@mugong_fly_complete
+
+;;
+
+[@lightline_test_start]
+;;
+#If
+check [058] 1
+check [031] 0
+#Act
+goto @lightline_test
+Break
+
+#If
+#Act
+goto @lightline_begin
+
+[@lightline_begin]
+	#Call	[\技能_魔法\技能任务\法师\疾光电影.txt]	@mugong_lightline
+
+[@lightline_test]
+	#Call	[\技能_魔法\技能任务\法师\疾光电影.txt]	@mugong_lightline_test
+
+[@wizard_hight]
+#If
+CheckMagicName 爆裂火焰 
+#Say
+你不是已经修炼了爆裂火焰吗..请找寻其它的武功吧！\\
+<结束/@Exit>
+#Act
+Break
+
+#If
+check [032] 0
+#Say
+你有什么事吗？说说看。。\ 
+嗯，想学称为“爆裂火焰”的武功？\
+不好意思，我没到这个境界，请去银杏村的（353：212）寻找化天先生\
+他会帮助你的\\
+<结束/@Exit>
+#ELSESAY
+你找到化天先生了,还来这里干什么呢？\\
+<结束/@Exit>
+
+[@TQuest]
+#Say
+今天没事情可拜托你了。\ \
+<结束/@Exit>

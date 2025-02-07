@@ -1,0 +1,9 @@
+(@buy @sell @upgradenow @getbackupgnow ) 
+%100
++3
++4
+
+[@Main]
+#If
+#Act
+	#Call	[功能_脚本\内测管理员.txt]	@内测管理员

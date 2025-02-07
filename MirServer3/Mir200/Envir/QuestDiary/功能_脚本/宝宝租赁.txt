@@ -1,0 +1,79 @@
+[@宝宝租赁_1]
+{
+
+#Say
+<潘夜战士/@潘夜战士>   <霸王守卫/@霸王守卫>   <霸王教主/@霸王教主>\ 
+<焰魔兵/@焰魔兵>       <焰魔兽/@焰魔兽>           <焰魔将/@焰魔将> \
+<加宝宝攻/@加宝宝攻>    <杀死宝宝/@杀死宝宝>  <宝宝升级/@宝宝升级>\ 
+
+
+
+
+[@潘夜战士]
+#If
+#Act
+RECALLMOB 潘夜战士 0 120 0
+
+[@霸王守卫]
+#If
+#Act
+RECALLMOB 霸王守卫999 7 30 0
+
+[@霸王教主]
+#If
+#Act
+RECALLMOB 霸王教主999 0 120 0
+
+
+
+[@宝宝升级]
+#say
+<宝宝0级/@宝宝0级>\
+<宝宝7级/@宝宝7级>\
+
+[@宝宝0级]
+#If
+#Act
+ChangeSlaveLevel 超强骷髅 = 0
+
+[@宝宝7级]
+#If
+#Act
+ChangeSlaveLevel 超强骷髅 = 7
+
+
+[@加宝宝攻]
+#If
+CHECKSLAVENAME 玛雅战神
+#Act
+ChangeSlaveAttackHumPowerRate 玛雅战神 50000
+ChangeSlaveAttackHumPowerRate 玛雅法神 50000
+ChangeSlaveAttackHumPowerRate 玛雅天尊 50000
+SendMsg 6 玛雅战神攻击人物500倍攻击力
+#elseact
+SendMsg 6 请先把玛雅战神召唤出来
+
+[@焰魔兽]
+#If
+#Act
+RECALLMOB 焰魔兽 7 30 0
+
+[@焰魔将]
+#If
+#Act
+RECALLMOB 焰魔将 7 30 0
+
+[@焰魔兵]
+#If
+#Act
+RECALLMOB 焰魔兵 7 30 0
+
+
+
+[@杀死宝宝]
+#If
+#Act
+KILLSLAVE
+SendMsg 5 你的宝宝全部杀死了
+
+}

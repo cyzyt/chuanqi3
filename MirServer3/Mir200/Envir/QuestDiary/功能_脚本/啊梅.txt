@@ -1,0 +1,183 @@
+[@啊梅]
+{
+
+#say
+<Img|ay=1|width=600|height=480|show=0|scale9r=70|scale9t=70|bg=1|scale9b=70|Move=1|reset=1|loadDelay=1|img=public/bg_npc_01.png|esc=1|scale9l=70>
+<Layout|x=560|y=10|width=80|height=80|link=@Exit>
+<Button|x=560|y=10|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@Exit>
+<Text|x=40.0|y=40.0|color=254|size=20|text=亲爱的<$USERNAME>:>
+<Text|x=40.0|y=80.0|color=251|size=18|text=你目前声望是:<$CREDITPOINT>点，目前积分是:<$GAMEGOLD>点 >
+<Text|x=30.0|y=120.0|color=250|size=18|text=首饰发光|link=@首饰发光>
+<Text|x=140.0|y=120.0|size=18|color=250|text=装备刻名|link=@装备刻名>
+<Text|x=250.0|y=120.0|size=18|color=250|text=装备改造|link=@装备改造>
+<Text|x=360.0|y=120.0|size=18|color=250|text=加强洗弱|link=@加强洗弱>
+<Text|x=470.0|y=120.0|size=18|color=250|text=装备保护|link=@装备保护>
+
+<Text|x=30.0|y=170.0|size=18|color=250|text=学习技能|link=@学习技能>
+<Text|x=140.0|y=170.0|size=18|color=250|text=购买玫瑰|link=@购买玫瑰>
+<Text|x=250.0|y=170.0|size=18|color=250|text=BOSS查询|link=@BOSS查询>
+<Text|x=360.0|y=170.0|size=18|color=250|text=购买双倍|link=@购买双倍>
+<Text|x=470.0|y=170.0|size=18|color=250|text=清除红名|link=@清除红名>
+
+
+<Text|x=30.0|y=220.0|size=18|color=250|text=性别转换|link=@性别转换>
+<Text|x=140.0|y=220.0|size=18|color=250|text=职业转换|link=@职业转换>
+<Text|x=250.0|y=220.0|size=18|color=250|text=购买勋章|link=@购买勋章>
+<Text|x=360.0|y=220.0|size=18|color=250|text=发型发色|link=@发型发色>
+<Text|x=470.0|y=220.0|size=18|color=250|text=衣服染色|link=@衣服染色>
+<Text|x=470.0|y=260.0|size=18|color=250|text=名字颜色|link=@名字颜色>
+
+<Text|x=32.0|y=300.0|size=18|color=250|text=武器失败补救|link=@武器失败补救>
+<Text|x=172.0|y=300.0|size=18|color=250|text=武器MAX再升|link=@武器MAX再升>
+<Text|x=312.0|y=300.0|size=18|color=250|text=武器一键升满|link=@武器一键升满>
+<Text|x=455.0|y=300.0|size=18|color=250|text=武器天生加三|link=@武器天生加三>
+<Text|x=31.0|y=344.0|size=18|color=250|text=武器特殊冶炼|link=@武器特殊冶炼>
+<Text|x=172.0|y=344.0|size=18|color=250|text=四字项链合成|link=@四字项链合成>
+<Text|x=312.0|y=344.0|size=18|color=250|text=飞龙神剑合成|link=@飞龙神剑合成>
+<Text|x=455.0|y=344.0|size=18|color=250|text=合成影魅之刃|link=@合成影魅之刃>
+<Text|x=32.0|y=388.0|size=18|color=250|text=合成幸运项链|link=@合成幸运项链>
+<Text|x=172.0|y=388.0|size=18|color=250|text=人物转生系统|link=@人物转生系统>
+
+
+[@名字颜色]
+#If
+#Act
+	#Call	[功能_脚本\名字颜色.txt]	@名字颜色_1
+	
+[@衣服染色]
+#If
+#Act
+	#Call	[功能_脚本\衣服染色.txt]	@衣服染色_1
+
+[@发型发色]
+#If
+#Act
+	#Call	[系统_脚本\美容师.txt]	@发型师
+
+[@合成影魅之刃]
+#If
+#Act
+	#Call	[功能_脚本\合成影魅.txt]	@合成影魅_1
+
+[@合成幸运项链]
+#If
+#Act
+	#Call	[功能_脚本\幸运项链.txt]	@幸运项链_1
+
+[@飞龙神剑合成]
+#If
+#Act
+	#Call	[功能_脚本\飞龙剑合成.txt]	@飞龙剑合成_1
+	
+[@购买玫瑰]
+#If
+#Act
+	#Call	[功能_脚本\积分玫瑰.txt]	@积分玫瑰
+	
+[@购买勋章]
+#If
+#Act
+	#Call	[功能_脚本\积分勋章.txt]	@积分勋章	
+
+
+[@首饰发光]
+#If
+#Act
+	#Call	[功能_脚本\首饰美化.txt]	@首饰美化
+[@装备刻名]
+#If
+#Act
+	#Call	[功能_脚本\装备刻名.txt]	@装备刻名_1
+[@装备改造]
+#If
+#Act
+	#Call	[功能_脚本\装备改造.txt]	@装备改造_1
+[@BOSS查询]
+#If
+#Act
+	#Call	[功能_脚本\BOSS查询.txt]	@BOSS查询_1
+[@装备保护]
+#If
+#Act
+	#Call	[功能_脚本\装备绑定.txt]	@装备绑定
+[@职业转换]
+#If
+#Act
+	#Call	[功能_脚本\转换职业.txt]	@转换职业_0_1
+[@性别转换]
+#If
+gender man
+#Act
+CHANGEgender 1
+SendMsg 6  你已经变成一位淑女了，请小退再上。
+#ELSEACT
+CHANGEgender 0
+SendMsg 6  你已经变成一位猛男了，请小退再上。	
+[@学习技能]
+#say
+<学老技能/@学老技能>\    
+<学新技能/@学新技能>\
+
+[@学老技能]
+#If
+#Act
+	#Call	[功能_脚本\学全技能.txt]	@学全技能
+[@学新技能]
+#If
+#Act
+	#Call	[功能_脚本\学新技能.txt]	@学新技能1	
+[@加强洗弱]
+#say
+<衣服强元素/@衣服强元素>\
+<手镯强元素/@手镯强元素>\
+
+[@衣服强元素]
+#Call	[功能_脚本\加强元素.txt]	@加强元素_1
+[@手镯强元素]
+#Call	[功能_脚本\加强元素手镯.txt]	@加强元素手镯
+[@购买双倍]
+#If
+#Act
+	#Call	[功能_脚本\多倍经验.txt]	@多倍经验
+[@清除红名]
+#If
+#Act
+	#Call	[功能_脚本\清洗红名.txt]	@清除红名x
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@武器失败补救]
+#if
+#act
+#CALL [系统_脚本\武器失败再升.txt] @武器失败再升_1
+[@武器失败再升]
+#if
+#act
+#CALL [系统_脚本\武器失败再升.txt] @武器失败再升_1
+
+[@武器一键升满]
+#if
+#act
+#CALL [系统_脚本\武器一键升满.txt] @武器一键升满_1
+[@武器天生加三]
+#if
+#act
+#CALL [系统_脚本\武器天生加三.txt] @武器天生加三_1
+[@武器MAX再升]
+#if
+#act
+#CALL [系统_脚本\武器天生加三.txt] @武器天生加三_1
+[@武器特殊冶炼]
+#if
+#act
+#CALL [系统_脚本\武器特殊冶炼.txt] @武器特殊冶炼_1	
+
+[@人物转生系统]
+#If
+#Act
+	#Call	[功能_脚本\转生称号.txt]	@转生称号_1
+	
+
+[@四字项链合成]
+#If
+#Act
+	#Call	[功能_脚本\四字项链.txt]	@四字项链_1	
+}

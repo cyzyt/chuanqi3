@@ -1,0 +1,907 @@
+[@传3武器合成]
+{
+
+#IF
+EQUAL <$WEAPON>
+#ACT
+sendmsg 9 你身上没有佩戴武器！
+Break
+
+#If
+#Act
+sendmsg 7 武器经验：<$CURRWEAPONEXP>，最大经验：<$CURRWEAPONMAXEXP>
+
+
+
+
+
+
+
+#IF
+#ACT
+MOV S$首饰串
+MOV S$装备标识
+MOV S$炼制标识
+MOV S$首饰提升按钮
+MOV N$勾选_破坏 0
+MOV N$勾选_自然 0
+MOV N$勾选_灵魂 0
+MOV N$勾选_火焰 0
+MOV N$勾选_冰霜 0
+MOV N$勾选_雷电 0
+MOV N$勾选_神圣 0
+MOV N$勾选_暗黑 0
+MOV N$勾选_幻影 0
+MOV N$勾选_飓风 0
+GOTO @武器提升界面
+Break
+
+[@武器提升界面]
+
+#IF
+EQUAL N$勾选_破坏 0
+EQUAL N$勾选_自然 0
+EQUAL N$勾选_灵魂 0
+EQUAL N$勾选_火焰 0
+EQUAL N$勾选_冰霜 0
+EQUAL N$勾选_雷电 0
+EQUAL N$勾选_神圣 0
+EQUAL N$勾选_暗黑 0
+EQUAL N$勾选_幻影 0
+EQUAL N$勾选_飓风 0
+#ACT
+MOV S$属性已选
+#ELSEACT
+MOV S$属性已选 是的
+
+#IF
+#ACT
+MOV S$首饰串 <$STR(S0)>
+#SAY
+<Img|show=4|bg=1|children={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,110,111,112,113,114,115,116,117,,118,119,120,121}|loadDelay=0|Move=0|esc=1|img=custom/main/public_bg_general.png|reset=1>
+<Layout|id=1|ay=1|x=713.0|y=-1.0|width=50|height=50|link=@Exit>
+<Button|id=2|x=724.0|y=9.0|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@Exit>
+<Img|id=3|x=360.0|y=18.0|img=custom/wuqilz/title.png|esc=0>
+<Img|id=4|x=12.0|y=46.0|img=custom/wuqilz/bg1.png|esc=0>
+<Img|id=5|x=16.0|y=135.0|img=custom/wuqilz/banner.png|esc=0>
+<Text|id=6|x=22.0|y=135.0|outline=2|color=161|size=16|text=合成需求：材料首饰+黑铁矿石>
+<Img|id=7|x=33.0|y=171.0|img=custom/main/k.png|esc=0>
+<Text|id=8|x=95|y=210|outline=2|color=161|size=16|text=当前修炼值：<$STR(N$武器经验)>%>
+<Img|id=9|x=30|y=242.0|img=custom/wuqilz/banner.png|esc=0>
+<Text|id=10|x=25|y=242.0|outline=2|color=161|size=16|text=说明：背包里的所有黑铁矿与首饰将作为材料被收走>
+
+<Img|id=12|ax=0|ay=1|x=27.0|y=276.0|width=355|height=215|scale9l=6|scale9b=6|scale9r=6|scale9t=6|img=custom/main/ao_1.png|esc=0>
+<ListView|id=13|children={bag}|x=29.0|y=280.0|width=355|height=208|bounce=0|direction=1|margin=0|color=x>
+<BAGITEMS|id=14|id=bag|x=29.0|y=279.0|select=<$STR(S0)>|count=40|row=8|condition=43#0,19#0,20#0,22#0,23#0,24#0,26#0|selecttype=0|link=@武器提升界面>
+<Img|id=15|x=428.0|y=135.0|img=custom/wuqilz/banner.png|esc=0>
+<Text|id=16|x=434.0|y=135.0|outline=2|color=161|size=16|text=选择想要提升的属性，成功后增加1点！>
+<DBItemShow|id=17|x=30|y=165|width=70|height=70|makeindex=<$WEAPONID>|itemcount=0|bgtype=1|showtips=1>
+
+<Text|id=19|x=40|y=55|outline=2|color=161|size=18|text=说明：提升主武器的属性或元素，每次提升至少需要3个黑铁矿和材料首饰1个，材料品质\越高成功率越高，炼制会收走背包内的所有首饰与黑铁矿，贵重首饰记得提前存入仓库！>
+<Img|id=20|x=430|y=172|img=custom/main/icon_target_01.png>
+<Text|id=21|x=450|y=170|outline=2|color=161|size=16|text=提升属性或元素 只能选择一项>
+
+<CheckBox|id=22|x=430|y=210|checkboxid=1|nimg=custom/main/fx1.png|pimg=custom/main/fx2.png|default=<$STR(N$勾选_破坏)>|submit=1|delay=0|count=0|link=@勾选强化_破坏>
+<Text|id=23|x=462|y=210|outline=2|color=161|size=16|text=破坏攻击>
+<CheckBox|id=24|x=538|y=210|checkboxid=2|nimg=custom/main/fx1.png|pimg=custom/main/fx2.png|default=<$STR(N$勾选_自然)>|submit=2|delay=0|count=0|link=@勾选强化_自然>
+<Text|id=25|x=570|y=210|outline=2|color=161|size=16|text=自然魔法>
+<CheckBox|id=26|x=646|y=210|checkboxid=3|nimg=custom/main/fx1.png|pimg=custom/main/fx2.png|default=<$STR(N$勾选_灵魂)>|submit=3|delay=0|count=0|link=@勾选强化_灵魂>
+<Text|id=27|x=678|y=210|outline=2|color=161|size=16|text=灵魂魔法>
+
+<CheckBox|id=28|x=430|y=250|checkboxid=4|nimg=custom/main/fx1.png|pimg=custom/main/fx2.png|default=<$STR(N$勾选_火焰)>|submit=4|delay=0|count=0|link=@勾选强化_火焰>
+<Text|id=29|x=462|y=250|outline=2|color=161|size=16|text=火焰元素>
+<CheckBox|id=30|x=538|y=250|checkboxid=5|nimg=custom/main/fx1.png|pimg=custom/main/fx2.png|default=<$STR(N$勾选_冰霜)>|submit=5|delay=0|count=0|link=@勾选强化_冰霜>
+<Text|id=31|x=570|y=250|outline=2|color=161|size=16|text=冰霜元素>
+<CheckBox|id=32|x=646|y=250|checkboxid=6|nimg=custom/main/fx1.png|pimg=custom/main/fx2.png|default=<$STR(N$勾选_雷电)>|submit=6|delay=0|count=0|link=@勾选强化_雷电>
+<Text|id=33|x=678|y=250|outline=2|color=161|size=16|text=雷电元素>
+
+<CheckBox|id=34|x=430|y=290|checkboxid=7|nimg=custom/main/fx1.png|pimg=custom/main/fx2.png|default=<$STR(N$勾选_神圣)>|submit=7|delay=0|count=0|link=@勾选强化_神圣>
+<Text|id=35|x=462|y=290|outline=2|color=161|size=16|text=神圣元素>
+<CheckBox|id=36|x=538|y=290|checkboxid=8|nimg=custom/main/fx1.png|pimg=custom/main/fx2.png|default=<$STR(N$勾选_暗黑)>|submit=8|delay=0|count=0|link=@勾选强化_暗黑>
+<Text|id=37|x=570|y=290|outline=2|color=161|size=16|text=暗黑元素>
+<CheckBox|id=38|x=646|y=290|checkboxid=9|nimg=custom/main/fx1.png|pimg=custom/main/fx2.png|default=<$STR(N$勾选_幻影)>|submit=9|delay=0|count=0|link=@勾选强化_幻影>
+<Text|id=39|x=678|y=290|outline=2|color=161|size=16|text=幻影元素>
+
+<CheckBox|id=40|x=430|y=330|checkboxid=10|nimg=custom/main/fx1.png|pimg=custom/main/fx2.png|default=<$STR(N$勾选_飓风)>|submit=10|delay=0|count=0|link=@勾选强化_飓风>
+<Text|id=41|x=462|y=330|outline=2|color=161|size=16|text=飓风元素>
+
+<Img|id=42|x=150|y=190|img=custom/main/xjt_3.png>
+<Img|id=43|x=428|y=370|width=320|img=custom/main/hl_bg_01.png>
+
+
+#IF
+#ACT
+PERCENT N$武器经验 <$CURRWEAPONEXP> <$CURRWEAPONMAXEXP>
+#SAY
+<DBItemShow|id=111|x=225|y=165|width=70|height=70|makeindex=<$WEAPONID>|itemcount=0|bgtype=1|showtips=1>
+<Effect|id=112|x=205|y=150|effectid=30019|effecttype=0|dir=0|act=0|speed=1|scale=1>
+
+#IF
+#ACT
+MOV N$首饰成功率 0
+INC N$首饰成功率 <$STR(N$首饰成功率宝石)>
+INC N$首饰成功率 <$STR(N$品质成功率)>
+INC N$首饰成功率 <$STR(N$制炼石几率)>
+#SAY
+<Text|id=45|x=510|y=405|outline=2|color=161|size=16|text=需要金币：500000>
+<Button|id=121|x=550|y=450|size=16|nimg=custom/wuqilz/btn.png|color=255|text=确定炼制|link=@武器炼制开始>
+
+
+[@勾选强化_破坏]
+
+#IF
+EQUAL <$WEAPON>
+#ACT
+sendmsg 9 你身上没有佩戴武器！
+MOV N$勾选_破坏 0
+GOTO @武器提升界面
+Break
+#ELSEACT
+GETITEMADDVALUE 1 <$STR(S$炼制标识)> N$属性数值
+
+#IF
+EQUAL <$STR(S$炼制标识)> 0
+NOT SMALL N$属性数值 10
+#ACT
+sendmsg 9 选择提升的属性最高只能加10点！
+MOV N$勾选_破坏 0
+GOTO @武器提升界面
+Break
+
+#IF
+NOT EQUAL S$炼制标识
+NOT EQUAL S$炼制标识 0
+#ACT
+sendmsg 9 以前的旧元素将被覆盖！
+
+#IF
+EQUAL N$勾选_破坏 1
+#ACT
+MOV N$勾选_破坏 0
+GOTO @武器提升界面
+Break
+#ELSEACT
+MOV S$炼制目标 0
+MOV S$装备标识替换 1
+MOV N$勾选_破坏 1
+MOV N$勾选_自然 0
+MOV N$勾选_灵魂 0
+MOV N$勾选_火焰 0
+MOV N$勾选_冰霜 0
+MOV N$勾选_雷电 0
+MOV N$勾选_神圣 0
+MOV N$勾选_暗黑 0
+MOV N$勾选_幻影 0
+MOV N$勾选_飓风 0
+GOTO @武器提升界面
+Break
+
+
+[@勾选强化_自然]
+#IF
+EQUAL <$WEAPON>
+#ACT
+sendmsg 9 你身上没有佩戴武器！
+MOV N$勾选_自然 0
+GOTO @武器提升界面
+Break
+#ELSEACT
+GETITEMADDVALUE 1 <$STR(S$炼制标识)> N$属性数值
+
+#IF
+EQUAL <$STR(S$炼制标识)> 1
+NOT SMALL N$属性数值 10
+#ACT
+sendmsg 9 选择提升的属性最高只能加10点！
+MOV N$勾选_自然 0
+GOTO @武器提升界面
+Break
+
+#IF
+NOT EQUAL S$炼制标识
+NOT EQUAL S$炼制标识 1
+#ACT
+sendmsg 9 以前的旧元素将被覆盖！
+
+#IF
+EQUAL N$勾选_自然 1
+#ACT
+MOV N$勾选_自然 0
+GOTO @武器提升界面
+Break
+#ELSEACT
+MOV S$炼制目标 1
+MOV S$装备标识替换 2
+MOV N$勾选_破坏 0
+MOV N$勾选_自然 1
+MOV N$勾选_灵魂 0
+MOV N$勾选_火焰 0
+MOV N$勾选_冰霜 0
+MOV N$勾选_雷电 0
+MOV N$勾选_神圣 0
+MOV N$勾选_暗黑 0
+MOV N$勾选_幻影 0
+MOV N$勾选_飓风 0
+GOTO @武器提升界面
+Break
+
+[@勾选强化_灵魂]
+#IF
+EQUAL <$WEAPON>
+#ACT
+sendmsg 9 你身上没有佩戴武器！
+MOV N$勾选_灵魂 0
+GOTO @武器提升界面
+Break
+#ELSEACT
+GETITEMADDVALUE 1 <$STR(S$炼制标识)> N$属性数值
+
+#IF
+EQUAL <$STR(S$炼制标识)> 2
+NOT SMALL N$属性数值 10
+#ACT
+sendmsg 9 选择提升的属性最高只能加10点！
+MOV N$勾选_灵魂 0
+GOTO @武器提升界面
+Break
+
+#IF
+NOT EQUAL S$炼制标识
+NOT EQUAL S$炼制标识 2
+#ACT
+sendmsg 9 以前的旧元素将被覆盖！
+
+#IF
+EQUAL N$勾选_灵魂 1
+#ACT
+MOV N$勾选_灵魂 0
+GOTO @武器提升界面
+Break
+#ELSEACT
+MOV S$炼制目标 2
+MOV S$装备标识替换 3
+MOV N$勾选_破坏 0
+MOV N$勾选_自然 0
+MOV N$勾选_灵魂 1
+MOV N$勾选_火焰 0
+MOV N$勾选_冰霜 0
+MOV N$勾选_雷电 0
+MOV N$勾选_神圣 0
+MOV N$勾选_暗黑 0 
+MOV N$勾选_幻影 0
+MOV N$勾选_飓风 0
+GOTO @武器提升界面
+Break
+
+[@勾选强化_火焰]
+#IF
+EQUAL <$WEAPON>
+#ACT
+sendmsg 9 你身上没有佩戴武器！
+MOV N$勾选_火焰 0
+GOTO @武器提升界面
+Break
+#ELSEACT
+GETITEMADDVALUE 1 <$STR(S$炼制标识)> N$属性数值
+
+#IF
+EQUAL <$STR(S$炼制标识)> 5
+NOT SMALL N$属性数值 10
+#ACT
+sendmsg 9 选择提升的属性最高只能加10点！
+MOV N$勾选_火焰 0
+GOTO @武器提升界面
+Break
+
+#IF
+NOT EQUAL S$炼制标识
+NOT EQUAL S$炼制标识 5
+#ACT
+sendmsg 9 以前的旧元素将被覆盖！
+
+
+#IF
+EQUAL N$勾选_火焰 1
+#ACT
+MOV N$勾选_火焰 0
+GOTO @武器提升界面
+Break
+#ELSEACT
+MOV S$炼制目标 5
+MOV S$装备标识替换 4
+MOV N$勾选_破坏 0
+MOV N$勾选_自然 0
+MOV N$勾选_灵魂 0
+MOV N$勾选_火焰 1
+MOV N$勾选_冰霜 0
+MOV N$勾选_雷电 0
+MOV N$勾选_神圣 0
+MOV N$勾选_暗黑 0
+MOV N$勾选_幻影 0
+MOV N$勾选_飓风 0
+GOTO @武器提升界面
+Break
+
+[@勾选强化_冰霜]
+
+#IF
+EQUAL <$WEAPON>
+#ACT
+sendmsg 9 你身上没有佩戴武器！
+MOV N$勾选_冰霜 0
+GOTO @武器提升界面
+Break
+#ELSEACT
+GETITEMADDVALUE 1 <$STR(S$炼制标识)> N$属性数值
+
+
+#IF
+EQUAL <$STR(S$炼制标识)> 6
+NOT SMALL N$属性数值 10
+#ACT
+sendmsg 9 选择提升的属性最高只能加10点！
+MOV N$勾选_冰霜 0
+GOTO @武器提升界面
+Break
+
+#IF
+NOT EQUAL S$炼制标识
+NOT EQUAL S$炼制标识 6
+#ACT
+sendmsg 9 以前的旧元素将被覆盖！
+
+
+#IF
+EQUAL N$勾选_冰霜 1
+#ACT
+MOV N$勾选_冰霜 0
+GOTO @武器提升界面
+Break
+#ELSEACT
+MOV S$炼制目标 6
+MOV S$装备标识替换 5
+MOV N$勾选_破坏 0
+MOV N$勾选_自然 0
+MOV N$勾选_灵魂 0
+MOV N$勾选_火焰 0
+MOV N$勾选_冰霜 1
+MOV N$勾选_雷电 0
+MOV N$勾选_神圣 0
+MOV N$勾选_暗黑 0
+MOV N$勾选_幻影 0
+MOV N$勾选_飓风 0
+GOTO @武器提升界面
+Break
+
+[@勾选强化_雷电]
+#IF
+EQUAL <$WEAPON>
+#ACT
+sendmsg 9 你身上没有佩戴武器！
+MOV N$勾选_雷电 0
+GOTO @武器提升界面
+Break
+#ELSEACT
+GETITEMADDVALUE 1 <$STR(S$炼制标识)> N$属性数值
+
+#IF
+EQUAL <$STR(S$炼制标识)> 7
+NOT SMALL N$属性数值 10
+#ACT
+sendmsg 9 选择提升的属性最高只能加10点！
+MOV N$勾选_雷电 0
+GOTO @武器提升界面
+Break
+
+#IF
+NOT EQUAL S$炼制标识
+NOT EQUAL S$炼制标识 7
+#ACT
+sendmsg 9 以前的旧元素将被覆盖！
+
+#IF
+EQUAL N$勾选_雷电 1
+#ACT
+MOV N$勾选_雷电 0
+GOTO @武器提升界面
+Break
+#ELSEACT
+MOV S$炼制目标 7
+MOV S$装备标识替换 6
+MOV N$勾选_破坏 0
+MOV N$勾选_自然 0
+MOV N$勾选_灵魂 0
+MOV N$勾选_火焰 0
+MOV N$勾选_冰霜 0
+MOV N$勾选_雷电 1
+MOV N$勾选_神圣 0
+MOV N$勾选_暗黑 0
+MOV N$勾选_幻影 0
+MOV N$勾选_飓风 0
+GOTO @武器提升界面
+Break
+
+[@勾选强化_神圣]
+#IF
+EQUAL <$WEAPON>
+#ACT
+sendmsg 9 你身上没有佩戴武器！
+MOV N$勾选_神圣 0
+GOTO @武器提升界面
+Break
+#ELSEACT
+GETITEMADDVALUE 1 <$STR(S$炼制标识)> N$属性数值
+
+#IF
+EQUAL <$STR(S$炼制标识)> 9
+NOT SMALL N$属性数值 10
+#ACT
+sendmsg 9 选择提升的属性最高只能加10点！
+MOV N$勾选_神圣 0
+GOTO @武器提升界面
+Break
+
+#IF
+NOT EQUAL S$炼制标识
+NOT EQUAL S$炼制标识 9
+#ACT
+sendmsg 9 以前的旧元素将被覆盖！
+
+#IF
+EQUAL N$勾选_神圣 1
+#ACT
+MOV N$勾选_神圣 0
+GOTO @武器提升界面
+Break
+#ELSEACT
+MOV S$炼制目标 9
+MOV S$装备标识替换 7
+MOV N$勾选_破坏 0
+MOV N$勾选_自然 0
+MOV N$勾选_灵魂 0
+MOV N$勾选_火焰 0
+MOV N$勾选_冰霜 0
+MOV N$勾选_雷电 0
+MOV N$勾选_神圣 1
+MOV N$勾选_暗黑 0
+MOV N$勾选_幻影 0
+MOV N$勾选_飓风 0
+GOTO @武器提升界面
+Break
+
+[@勾选强化_暗黑]
+#IF
+EQUAL <$WEAPON>
+#ACT
+sendmsg 9 你身上没有佩戴武器！
+MOV N$勾选_暗黑 0
+GOTO @武器提升界面
+Break
+#ELSEACT
+GETITEMADDVALUE 1 <$STR(S$炼制标识)> N$属性数值
+
+#IF
+EQUAL <$STR(S$炼制标识)> 10
+NOT SMALL N$属性数值 10
+#ACT
+sendmsg 9 选择提升的属性最高只能加10点！
+MOV N$勾选_暗黑 0
+GOTO @武器提升界面
+Break
+
+#IF
+NOT EQUAL S$炼制标识
+NOT EQUAL S$炼制标识 10
+#ACT
+sendmsg 9 以前的旧元素将被覆盖！
+
+#IF
+EQUAL N$勾选_暗黑 1
+#ACT
+MOV N$勾选_暗黑 0
+GOTO @武器提升界面
+Break
+#ELSEACT
+MOV S$炼制目标 10
+MOV S$装备标识替换 8
+MOV N$勾选_破坏 0
+MOV N$勾选_自然 0
+MOV N$勾选_灵魂 0
+MOV N$勾选_火焰 0
+MOV N$勾选_冰霜 0
+MOV N$勾选_雷电 0
+MOV N$勾选_神圣 0
+MOV N$勾选_暗黑 1
+MOV N$勾选_幻影 0
+MOV N$勾选_飓风 0
+GOTO @武器提升界面
+Break
+
+[@勾选强化_幻影]
+#IF
+EQUAL <$WEAPON>
+#ACT
+sendmsg 9 你身上没有佩戴武器！
+MOV N$勾选_幻影 0
+GOTO @武器提升界面
+Break
+#ELSEACT
+GETITEMADDVALUE 1 <$STR(S$炼制标识)> N$属性数值
+
+#IF
+EQUAL <$STR(S$炼制标识)> 11
+NOT SMALL N$属性数值 17
+#ACT
+sendmsg 9 选择提升的属性最高只能加17点！
+MOV N$勾选_幻影 0
+GOTO @武器提升界面
+Break
+
+#IF
+NOT EQUAL S$炼制标识
+NOT EQUAL S$炼制标识 11
+#ACT
+sendmsg 9 以前的旧元素将被覆盖！
+
+#IF
+EQUAL N$勾选_幻影 1
+#ACT
+MOV N$勾选_幻影 0
+GOTO @武器提升界面
+Break
+#ELSEACT
+MOV S$炼制目标 11
+MOV S$装备标识替换 9
+MOV N$勾选_破坏 0
+MOV N$勾选_自然 0
+MOV N$勾选_灵魂 0
+MOV N$勾选_火焰 0
+MOV N$勾选_冰霜 0
+MOV N$勾选_雷电 0
+MOV N$勾选_神圣 0
+MOV N$勾选_暗黑 0
+MOV N$勾选_幻影 1
+MOV N$勾选_飓风 0
+GOTO @武器提升界面
+Break
+
+[@勾选强化_飓风]
+#IF
+EQUAL <$WEAPON>
+#ACT
+sendmsg 9 你身上没有佩戴武器！
+MOV N$勾选_飓风 0
+GOTO @武器提升界面
+Break
+#ELSEACT
+GETITEMADDVALUE 1 <$STR(S$炼制标识)> N$属性数值
+
+#IF
+EQUAL <$STR(S$炼制标识)> 8
+NOT SMALL N$属性数值 10
+#ACT
+sendmsg 9 选择提升的属性最高只能加10点！
+MOV N$勾选_飓风 0
+GOTO @武器提升界面
+Break
+
+#IF
+NOT EQUAL S$炼制标识
+NOT EQUAL S$炼制标识 8
+#ACT
+sendmsg 9 以前的旧元素将被覆盖！
+
+#IF
+EQUAL N$勾选_飓风 1
+#ACT
+MOV N$勾选_飓风 0
+GOTO @武器提升界面
+Break
+#ELSEACT
+MOV S$炼制目标 8
+MOV S$装备标识替换 10
+MOV N$勾选_破坏 0
+MOV N$勾选_自然 0
+MOV N$勾选_灵魂 0
+MOV N$勾选_火焰 0
+MOV N$勾选_冰霜 0
+MOV N$勾选_雷电 0
+MOV N$勾选_神圣 0
+MOV N$勾选_暗黑 0
+MOV N$勾选_幻影 0
+MOV N$勾选_飓风 1
+GOTO @武器提升界面
+Break
+
+
+[@主武器勾选]
+
+#IF
+#ACT
+MOV S$主武器DB <$STR(S0)>
+GetItemNameByMakeIndex <$STR(S$主武器DB)> S$主武器name
+LINKITEMBYMAKEINDEX <$STR(S$主武器DB)>
+MOV N$勾选_破坏 0
+MOV N$勾选_自然 0
+MOV N$勾选_灵魂 0
+MOV N$勾选_火焰 0
+MOV N$勾选_冰霜 0
+MOV N$勾选_雷电 0
+MOV N$勾选_神圣 0
+MOV N$勾选_暗黑 0
+MOV N$勾选_幻影 0
+MOV N$勾选_飓风 0
+
+#IF
+CheckItemFlag -1 1
+#ACT
+MOV S$装备标识 1
+MOV S$炼制标识 2
+MOV N$勾选_破坏 1
+MOV N$勾选_自然 0
+MOV N$勾选_灵魂 0
+MOV N$勾选_火焰 0
+MOV N$勾选_冰霜 0
+MOV N$勾选_雷电 0
+MOV N$勾选_神圣 0
+MOV N$勾选_暗黑 0
+MOV N$勾选_幻影 0
+MOV N$勾选_飓风 0
+#IF
+CheckItemFlag -1 2
+#ACT
+MOV S$装备标识 2
+MOV S$炼制标识 3
+MOV N$勾选_破坏 0
+MOV N$勾选_自然 1
+MOV N$勾选_灵魂 0
+MOV N$勾选_火焰 0
+MOV N$勾选_冰霜 0
+MOV N$勾选_雷电 0
+MOV N$勾选_神圣 0
+MOV N$勾选_暗黑 0
+MOV N$勾选_幻影 0
+MOV N$勾选_飓风 0
+#IF
+CheckItemFlag -1 3
+#ACT
+MOV S$装备标识 3
+MOV S$炼制标识 4
+MOV N$勾选_破坏 0
+MOV N$勾选_自然 0
+MOV N$勾选_灵魂 1
+MOV N$勾选_火焰 0
+MOV N$勾选_冰霜 0
+MOV N$勾选_雷电 0
+MOV N$勾选_神圣 0
+MOV N$勾选_暗黑 0
+MOV N$勾选_幻影 0
+MOV N$勾选_飓风 0
+#IF
+CheckItemFlag -1 4
+#ACT
+MOV S$装备标识 4
+MOV S$炼制标识 14
+MOV N$勾选_破坏 0
+MOV N$勾选_自然 0
+MOV N$勾选_灵魂 0
+MOV N$勾选_火焰 1
+MOV N$勾选_冰霜 0
+MOV N$勾选_雷电 0
+MOV N$勾选_神圣 0
+MOV N$勾选_暗黑 0
+MOV N$勾选_幻影 0
+MOV N$勾选_飓风 0
+#IF
+CheckItemFlag -1 5
+#ACT
+MOV S$装备标识 5
+MOV S$炼制标识 15
+MOV N$勾选_破坏 0
+MOV N$勾选_自然 0
+MOV N$勾选_灵魂 0
+MOV N$勾选_火焰 0
+MOV N$勾选_冰霜 1
+MOV N$勾选_雷电 0
+MOV N$勾选_神圣 0
+MOV N$勾选_暗黑 0
+MOV N$勾选_幻影 0
+MOV N$勾选_飓风 0
+#IF
+CheckItemFlag -1 6
+#ACT
+MOV S$装备标识 6
+MOV S$炼制标识 16
+MOV N$勾选_破坏 0
+MOV N$勾选_自然 0
+MOV N$勾选_灵魂 0
+MOV N$勾选_火焰 0
+MOV N$勾选_冰霜 0
+MOV N$勾选_雷电 1
+MOV N$勾选_神圣 0
+MOV N$勾选_暗黑 0
+MOV N$勾选_幻影 0
+MOV N$勾选_飓风 0
+#IF
+CheckItemFlag -1 7
+#ACT
+MOV S$装备标识 7
+MOV S$炼制标识 18
+MOV N$勾选_破坏 0
+MOV N$勾选_自然 0
+MOV N$勾选_灵魂 0
+MOV N$勾选_火焰 0
+MOV N$勾选_冰霜 0
+MOV N$勾选_雷电 0
+MOV N$勾选_神圣 1
+MOV N$勾选_暗黑 0
+MOV N$勾选_幻影 0
+MOV N$勾选_飓风 0
+#IF
+CheckItemFlag -1 8
+#ACT
+MOV S$装备标识 8
+MOV S$炼制标识 19
+MOV N$勾选_破坏 0
+MOV N$勾选_自然 0
+MOV N$勾选_灵魂 0
+MOV N$勾选_火焰 0
+MOV N$勾选_冰霜 0
+MOV N$勾选_雷电 0
+MOV N$勾选_神圣 0
+MOV N$勾选_暗黑 1
+MOV N$勾选_幻影 0
+MOV N$勾选_飓风 0
+#IF
+CheckItemFlag -1 9
+#ACT
+MOV S$装备标识 9
+MOV S$炼制标识 20
+MOV N$勾选_破坏 0
+MOV N$勾选_自然 0
+MOV N$勾选_灵魂 0
+MOV N$勾选_火焰 0
+MOV N$勾选_冰霜 0
+MOV N$勾选_雷电 0
+MOV N$勾选_神圣 0
+MOV N$勾选_暗黑 0
+MOV N$勾选_幻影 1
+MOV N$勾选_飓风 0
+#IF
+CheckItemFlag -1 10
+#ACT
+MOV S$装备标识 10
+MOV S$炼制标识 17
+MOV N$勾选_破坏 0
+MOV N$勾选_自然 0
+MOV N$勾选_灵魂 0
+MOV N$勾选_火焰 0
+MOV N$勾选_冰霜 0
+MOV N$勾选_雷电 0
+MOV N$勾选_神圣 0
+MOV N$勾选_暗黑 0
+MOV N$勾选_幻影 0
+MOV N$勾选_飓风 1
+
+
+#IF
+#ACT
+GETITEMADDVALUE -1 <$STR(S$炼制标识)> N$属性数值
+
+#IF
+NOT SMALL N$属性数值 17
+#ACT
+sendmsg 9 提升的属性已经达到17点，可选择其他属性进行替换，替换后强化等级归0！
+MOV N$勾选_破坏 0
+MOV N$勾选_自然 0
+MOV N$勾选_灵魂 0
+MOV N$勾选_火焰 0
+MOV N$勾选_冰霜 0
+MOV N$勾选_雷电 0
+MOV N$勾选_神圣 0
+MOV N$勾选_暗黑 0
+MOV N$勾选_幻影 0
+MOV N$勾选_飓风 0
+
+#IF
+#ACT
+GOTO @武器提升界面
+Break
+
+
+[@武器炼制开始]
+
+#IF
+EQUAL <$WEAPON>
+#ACT
+sendmsg 9 你身上没有佩戴武器！
+Break
+
+#IF
+EQUAL S$属性已选
+#ACT
+sendmsg 9 请选取需要提升的属性！
+Break
+
+#IF
+EQUAL S$首饰串
+#ACT
+sendmsg 9 请勾选材料首饰！
+Break
+
+#IF
+NOT checkitem 黑铁矿 3
+#ACT
+sendmsg 9 需要至少3块黑铁矿！
+Break
+
+#IF
+small <$CURRWEAPONEXP> <$CURRWEAPONMAXEXP>
+#ACT
+sendmsg 9 武器经验未满，无法升级！
+close
+break
+
+
+#IF
+NOT CHECKMONEY 金币 ? 500000
+#ACT
+Sendmsg 9 金币不足，无法升级！
+Break
+#ELSEACT
+money 金币 - 500000
+RefineWeapon <$STR(S$炼制目标)> 2 0 5 <$STR(S$首饰串)> 9999
+GETBACKUPGWEAPON 0 0
+;sendmsg 9 升级成功，炼制目标：<$STR(S$炼制目标)>，材料串：<$STR(S$首饰串)>
+close
+Break
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

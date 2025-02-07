@@ -1,0 +1,8 @@
+(@upgradenow @getbackupgnow )
+%100
++5
++6
+[@Main]
+#If
+#Act
+	#Call	[\系统_脚本\积分升刀.txt]	@积分升刀

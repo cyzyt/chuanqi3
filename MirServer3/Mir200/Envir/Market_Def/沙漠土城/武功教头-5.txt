@@ -1,0 +1,108 @@
+;;不要删
+[@Main]
+#If
+CHECKPKPOINTEX >EX > 2
+
+#Say
+跟你这种人我无话可说。\ \
+<结束/@Exit>
+#ELSEACT
+goto @Main_0_0
+
+[@Main_0_0]
+#If
+#Say
+<Img|ay=1|height=250|scale9l=70|bg=1|scale9r=70|scale9t=70|loadDelay=1|scale9b=70|reset=1|Move=0|esc=1|img=public/bg_npc_01.png|show=0>
+<Layout|x=545|y=0|width=80|height=80|link=@Exit>
+<Button|x=546|y=0|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@Exit>
+<Text|x=25|y=20|color=147|size=18|text=我一看就知道你是战士。怎么样，一个人修炼武功有什么困难\
+吗？好不容易弄来的秘籍，却由于无法理解而导致修炼中出现\
+差错，如果那样的话，我可以帮助你。不过，不管怎么说我也\
+是军队里的武功教练，所以你得交点钱我才能指导你。\ >
+<Text|x=25.0|y=140.0|color=251|size=18|text=<查看可解释的武功目录|link=@Main_0_1>
+
+
+[@Main_0_1]
+#If
+#Say
+<Img|ay=1|height=400|scale9l=70|bg=1|scale9r=70|scale9t=70|loadDelay=1|scale9b=70|reset=1|Move=0|esc=1|img=public/bg_npc_01.png|show=0>
+<Layout|x=545|y=0|width=80|height=80|link=@Exit>
+<Button|x=546|y=0|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@Exit>
+<Text|x=25|y=30|color=255|size=18|text=（战士魔法）>
+<Text|x=25|y=60|color=147|size=18|text=（1 - 10 等级 修炼魔法）>
+<Text|x=25|y=120|color=147|size=18|text=（11 - 20 等级 修炼魔法）>
+<Text|x=25|y=180|color=147|size=18|text=（21 - 30 等级 修炼魔法）>
+<Text|x=25|y=240|color=147|size=18|text=（31 - 40 等级 修炼魔法）>
+<Text|x=25|y=300|color=147|size=18|text=（41 - 50 等级 修炼魔法）>
+<Text|x=25.0|y=90.0|color=251|size=18|text=基本剑术|link=@Go_Mu_Warrior_Noatom_wesu>
+
+<Text|x=25.0|y=150.0|color=251|size=18|text=攻杀剑术|link=@Go_Mu_Warrior_Noatom_wedo>
+<Text|x=125.0|y=150.0|color=251|size=18|text=刺杀剑术|link=@Go_Mu_Warrior_Noatom_asword>
+
+<Text|x=25.0|y=210.0|color=251|size=18|text=半月弯刀|link=@Go_Mu_Warrior_Noatom_banwel>
+<Text|x=125.0|y=210.0|color=251|size=18|text=野蛮冲撞|link=@Go_Mu_Warrior_Noatom_mute>
+
+<Text|x=25.0|y=270.0|color=251|size=18|text=烈火剑法|link=@Go_Mu_Warrior_Noatom_fire>
+<Text|x=125.0|y=270.0|color=251|size=18|text=翔空剑法|link=@Go_Mu_Warrior_Noatom_maeng>
+<Text|x=225.0|y=270.0|color=251|size=18|text=莲月剑法|link=@Go_Mu_Warrior_Noatom_double>
+
+<Text|x=25.0|y=330.0|color=251|size=18|text=十方斩|link=@Go_Mu_Warrior_Noatom_shifang>
+<Text|x=125.0|y=330.0|color=251|size=18|text=乾坤大挪移|link=@Go_Mu_Warrior_Noatom_qiankun>
+<Text|x=225.0|y=330.0|color=251|size=18|text=铁布衫|link=@Go_Mu_Warrior_Noatom_tiebu>
+<Text|x=325.0|y=330.0|color=251|size=18|text=斗转星移|link=@Go_Mu_Warrior_Noatom_douzhuan>
+<Text|x=425.0|y=330.0|color=251|size=18|text=破血狂杀|link=@Go_Mu_Warrior_Noatom_poxue>
+
+
+[]
+<基本剑术/@Go_Mu_Warrior_Noatom_wesu>\ \
+（11 - 20 等级 修炼魔法）\
+<攻杀剑术/@Go_Mu_Warrior_Noatom_wedo> , <刺杀剑术/@Go_Mu_Warrior_Noatom_asword>\ \
+（21 - 30 等级 修炼魔法）\
+<半月弯刀/@Go_Mu_Warrior_Noatom_banwel> , <野蛮冲撞/@Go_Mu_Warrior_Noatom_mute>\ \
+（31 - 40 等级 修炼魔法）\
+<烈火剑法/@Go_Mu_Warrior_Noatom_fire> , <翔空剑法/@Go_Mu_Warrior_Noatom_maeng> , <莲月剑法/@Go_Mu_Warrior_Noatom_double>\ \
+（41 - 50 等级 修炼魔法）\
+<十方斩/@Go_Mu_Warrior_Noatom_shifang> , <乾坤大挪移/@Go_Mu_Warrior_Noatom_qiankun> , <铁布衫/@Go_Mu_Warrior_Noatom_tiebu>\
+<斗转星移/@Go_Mu_Warrior_Noatom_douzhuan> , <破血狂杀/@Go_Mu_Warrior_Noatom_poxue>\ \
+ <结束/@Exit>
+
+[@Go_Mu_Warrior_Noatom_wesu]
+	#Call	[\技能_魔法\技能鉴定\战士\基本剑术.txt]	@Mu_Warrior_Noatom_wesu
+
+[@Go_Mu_Warrior_Noatom_wedo]
+	#Call	[\技能_魔法\技能鉴定\战士\攻杀剑术.txt]	@Mu_Warrior_Noatom_wedo
+
+[@Go_Mu_Warrior_Noatom_asword]
+	#Call	[\技能_魔法\技能鉴定\战士\刺杀剑术.txt]	@Mu_Warrior_Noatom_asword
+
+[@Go_Mu_Warrior_Noatom_banwel]
+	#Call	[\技能_魔法\技能鉴定\战士\半月弯刀.txt]	@Mu_Warrior_Noatom_banwel
+
+[@Go_Mu_Warrior_Noatom_mute]
+	#Call	[\技能_魔法\技能鉴定\战士\野蛮冲撞.txt]	@Mu_Warrior_Noatom_mute
+
+[@Go_Mu_Warrior_Noatom_maeng]
+	#Call	[\技能_魔法\技能鉴定\战士\翔空剑法.txt]	@Mu_Warrior_Noatom_maeng
+
+[@Go_Mu_Warrior_Noatom_fire]
+	#Call	[\技能_魔法\技能鉴定\战士\烈火剑法.txt]	@Mu_Warrior_Noatom_fire
+
+[@Go_Mu_Warrior_Noatom_double]
+	#Call	[\技能_魔法\技能鉴定\战士\莲月剑法.txt]	@Mu_Warrior_Noatom_double
+
+[@Go_Mu_Warrior_Noatom_shifang]
+	#Call	[\技能_魔法\技能鉴定\战士\十方斩.txt]	@Mu_Warrior_Noatom_shifang
+
+[@Go_Mu_Warrior_Noatom_poxue]
+	#Call	[\技能_魔法\技能鉴定\战士\破血狂杀.txt]	@Mu_Warrior_Noatom_poxue
+
+[@Go_Mu_Warrior_Noatom_douzhuan]
+	#Call	[\技能_魔法\技能鉴定\战士\斗转星移.txt]	@Mu_Warrior_Noatom_douzhuan
+
+[@Go_Mu_Warrior_Noatom_tiebu]
+	#Call	[\技能_魔法\技能鉴定\战士\铁布衫.txt]	@Mu_Warrior_Noatom_tiebu
+
+[@Go_Mu_Warrior_Noatom_qiankun]
+	#Call	[\技能_魔法\技能鉴定\战士\乾坤大挪移.txt]	@Mu_Warrior_Noatom_qiankun
+
+;;不要删

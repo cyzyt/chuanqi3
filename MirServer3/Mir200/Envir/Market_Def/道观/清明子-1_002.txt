@@ -1,0 +1,246 @@
+;;不要删
+[@Main]
+
+#If
+CHECKPKPOINTEX > 2
+#Say
+跟你这种人我无话可说。\ \
+ <结束/@Exit>
+#ELSEACT
+goto @Main_root_1
+
+[@Main_root_1]
+#If
+checkjob taoist
+#Act
+BreakTimeRecall 
+goto @chung_Main
+#ELSEACT
+BreakTimeRecall 
+goto @chung_other_class
+
+[@chung_other_class]
+#If
+checkjob warrior
+#Say
+贫道就是清明子，专门在这里指导那些想修炼成为道士的人。\
+不过你是战士，你还是去边境城市吧。\ \
+<对今日的任务进行了解/@TQuest>\
+<结束/@Exit>
+#ELSESAY
+贫道就是清明子，专门在这里指导那些想修炼成为道士的人。\
+不过你是魔法师，你还是去银杏山谷吧。\ \
+<对今日的任务进行了解/@TQuest>\
+<结束/@Exit>
+
+;-----------------------------
+
+[@chung_Main]
+#If
+check [020] 1
+#Act
+goto @chung_Main_0_0
+Break
+#If
+check [047] 1
+#Act
+goto @chung_Main_0_2
+Break
+#If
+check [045] 1
+#Act
+goto @chung_Main_0_1
+#ELSEACT
+goto @chung_Main_0_0
+
+
+
+[@chung_Main_0_0]
+#If
+#Say
+贫道就是清明子。\
+那，你来找我有什么事？\
+<寻求武功指导/@chung_mugong_Main>\
+<结束/@Exit>
+
+[@chung_Main_0_1]
+#If
+#Say
+贫道是清明子。\
+你找我有什么事情吗?\ \
+<了解/@masshiding_test_start>{FCOLOR/10}小贩{FCOLOR/12}\
+<寻求武功指导/@chung_mugong_Main>\
+<对今日的任务进行了解/@TQuest>\
+<结束/@Exit>
+
+[@chung_Main_0_2]
+#If
+#Say
+贫道是清明子。\
+你找我有什么事情吗?\ \
+<公开/@masshiding_test_start>{FCOLOR/10}成致日志{FCOLOR/12}\
+<寻求武功指导/@chung_mugong_Main>\
+<对今日的任务进行了解/@TQuest>\
+<结束/@Exit>
+
+;-----------------------------<施毒术/@poison_test_start> 
+
+[@chung_mugong_Main]
+#If
+#Say
+我可以指导你以下的武功。\
+（1 - 10 等级 修炼魔法）\
+<治愈术/@heal_test_start> , <精神力战法/@ilgang_test_start>\
+（11 - 25 等级 修炼魔法）\
+<施毒术/@poison_test_start> , <召唤骷髅/@recallskel_test_start> , <隐身术/@hiding_test_start>\
+<幽灵盾/@hangma_test_start> , <集体隐身术/@masshiding_test_start> , <神圣战甲术/@Upac_test_start>\ \
+<不寻求武功指导/@Exit>
+
+;-----------------------------
+
+[@heal_test_start]
+#If
+#Act
+goto @heal_begin
+[@heal_begin]
+	#Call	[\技能_魔法\技能任务\道士\治愈术.txt]	@mugong_heal
+
+;-----------------------------
+
+[@ilgang_test_start]
+#If
+check [034] 1
+check [015] 0
+#Act
+goto @ilgang_complete
+Break
+#If
+#Act
+goto @ilgang_begin
+
+[@ilgang_begin]
+	#Call	[\技能_魔法\技能任务\道士\精神力战法.txt]	@mugong_ilgang
+
+[@ilgang_complete]
+	#Call	[\技能_魔法\技能任务\道士\精神力战法.txt]	@mugong_ilgang_complete
+
+;-----------------------------
+
+[@poison_test_start]
+#If
+check [036] 1
+check [016] 0
+#Act
+goto @poison_complete
+Break
+#If
+#Act
+goto @poison_begin
+
+[@poison_begin]
+	#Call	[\技能_魔法\技能任务\道士\施毒术.txt]	@mugong_poison
+
+[@poison_complete]
+	#Call	[\技能_魔法\技能任务\道士\施毒术.txt]	@mugong_poison_complete
+
+;-----------------------------
+
+[@recallskel_test_start]
+#If
+check [039] 1
+check [017] 0
+#Act
+goto @recallskel_complete
+Break
+#If
+#Act
+goto @recallskel_begin
+
+[@recallskel_begin]
+	#Call	[\技能_魔法\技能任务\道士\召唤骷髅.txt]	@mugong_recallskel
+
+[@recallskel_complete]
+	#Call	[\技能_魔法\技能任务\道士\召唤骷髅.txt]	@mugong_recallskel_complete
+
+;-----------------------------
+
+[@hiding_test_start]
+#If
+check [041] 1
+check [018] 0
+#Act
+goto @hiding_complete
+Break
+#If
+#Act
+goto @hiding_begin
+[@hiding_begin]
+	#Call	[\技能_魔法\技能任务\道士\隐身术.txt]	@mugong_hiding
+
+[@hiding_complete]
+	#Call	[\技能_魔法\技能任务\道士\隐身术.txt]	@mugong_hiding_complete
+
+;-----------------------------
+
+[@masshiding_test_start]
+#If
+check [047] 1
+check [020] 0
+#Act
+goto @masshiding_complete
+Break
+#If
+#Act
+goto @masshiding_begin
+
+[@masshiding_begin]
+	#Call	[\技能_魔法\技能任务\道士\集体隐身术.txt]	@mugong_masshiding
+
+[@masshiding_complete]
+	#Call	[\技能_魔法\技能任务\道士\集体隐身术.txt]	@mugong_masshiding_complete
+
+;-----------------------------
+
+[@hangma_test_start]
+#If
+check [043] 1
+check [019] 0
+#Act
+goto @hangma_ring
+Break
+#If
+#Act
+goto @hangma_begin
+
+[@hangma_begin]
+	#Call	[\技能_魔法\技能任务\道士\幽灵盾.txt]	@mugong_hangma
+
+[@hangma_ring]
+	#Call	[\技能_魔法\技能任务\道士\幽灵盾.txt]	@mugong_hangma_getring
+
+;-----------------------------
+
+[@Upac_test_start]
+#If
+check [049] 1
+check [021] 0
+#Act
+goto @Upac_test
+Break
+#If
+#Act
+goto @Upac_begin
+
+[@Upac_begin]
+	#Call	[\技能_魔法\技能任务\道士\神圣战甲术.txt]	@mugong_Upac
+
+[@Upac_test]
+	#Call	[\技能_魔法\技能任务\道士\神圣战甲术.txt]	@mugong_Upac_test
+
+
+
+
+[@TQuest]
+#Say
+今天没事情可拜托你了。\ \
+<结束/@Exit>

@@ -1,0 +1,29 @@
+
+[@随身NPC]
+{
+<Img|Move=0|img=public/bg_npc_01.png|loadDelay=1|bg=1|reset=1|show=0>
+<Layout|x=545|y=0|width=80|height=80|link=@Exit>
+<Button|x=546|y=0|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@Exit>
+<Text|ax=0|x=30|y=20.0|size=18|color=255|text=这里是沙巴克城行会的领地。>
+<Text|ax=0|x=30|y=43.0|size=18|color=255|text=我是在这里学习药学的研修生，你需要什么东西？>
+<Text|ax=0|x=30|y=71.0|size=18|color=116|text=购买药品|link=@buy>
+
+
+[@buy]
+请挑选你所需要的药和用量。\ \
+ <返 回/@随身NPC>
+
+
+
+[goods]
+金创药（小）  2000       1
+魔法药（小）  2000       1
+金创药（中）  2000       1
+魔法药（中）  2000       1
+金创药（大）  2000       1
+魔法药（大）  2000       1
+金创药（特）  2000       1
+魔法药（特）  2000       1
+太阳水        2000       1
+万年雪霜      2000       1
+}

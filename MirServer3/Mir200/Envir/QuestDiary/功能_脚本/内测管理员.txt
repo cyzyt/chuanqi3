@@ -1,0 +1,1010 @@
+(@upgradenow @getbackupgnow @repair @s_repair)
+%100
++5
++6
+
+[@内测管理员]
+{
+#If
+#Act
+#Say
+<Img|ay=1|width=600|height=480|show=0|scale9r=70|scale9t=70|bg=1|scale9b=70|Move=0|reset=1|loadDelay=1|img=public/bg_npc_01.png|esc=1|scale9l=70>
+<Layout|x=560|y=10|width=80|height=80|link=@Exit>
+<Button|x=560|y=10|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@Exit>
+<Button|x=135.0|y=23.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn2.png|pimg=public/public_multi_topbtn1.png|size=18|color=253|text=功能服务|link=@内测管理员>
+<RText|x=25|y=20|text=\>
+<Button|x=357.0|y=23.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn2.png|pimg=public/public_multi_topbtn1.png|size=18|color=10|text=传送服务|link=@传送服务>
+<RText|x=25|y=20|text=\>
+<RText|x=25|y=20|text=\>
+<Text|x=21.0|y=121.0|color=152|size=18|<text=-------------------------------------------------------------------------------------------->
+
+
+<Button|x=363.0|y=70.0|pimg=public/public_multi_topbtn1.png|mimg=public/public_multi_topbtn1.png|nimg=public/public_multi_topbtn2.png|color=249|size=18|text=测试功能|link=@测试功能>
+<Button|x=253.0|y=70.0|pimg=public/public_multi_topbtn1.png|mimg=public/public_multi_topbtn1.png|nimg=public/public_multi_topbtn2.png|color=249|size=18|text=发送公告|link=@发送公告>
+<Button|x=143.0|y=70.0|pimg=public/public_multi_topbtn1.png|mimg=public/public_multi_topbtn1.png|nimg=public/public_multi_topbtn2.png|color=249|size=18|text=隐身模式|link=@隐身模式>
+<Button|x=32.0|y=70.0|pimg=public/public_multi_topbtn1.png|mimg=public/public_multi_topbtn1.png|nimg=public/public_multi_topbtn2.png|color=249|size=18|text=无敌模式|link=@无敌模式>
+<Button|x=32.0|y=122.0|pimg=public/public_multi_topbtn1.png|mimg=public/public_multi_topbtn1.png|nimg=public/public_multi_topbtn2.png|color=250|size=18|text=召唤精灵|link=@召唤精灵>
+<Button|x=143.0|y=122.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=提升等级|link=@提升等级>
+<Button|x=253.0|y=122.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=增加金币|link=@增加金币>
+<Button|x=363.0|y=122.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=增加元宝|link=@增加元宝>
+<Button|x=473.0|y=122.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=转换性别|link=@转换性别>
+<Button|x=473.0|y=172.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=转换职业|link=@转换职业>
+<Button|x=33.0|y=172.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=学习技能|link=@学习技能>
+<Button|x=143.0|y=172.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=清除技能|link=@清除技能>
+<Button|x=253.0|y=172.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=改变发型|link=@改变发型>
+<Button|x=363.0|y=172.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=16|color=250|text=拜师收徒|link=@拜师收徒>
+<Button|x=32.0|y=222.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=宝宝租赁|link=@宝宝租赁>
+<Button|x=142.0|y=222.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=称号测试|link=@称号测试>
+<Button|x=252.0|y=222.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=加强元素|link=@加强元素>
+<Button|x=365.0|y=222.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=地图清怪|link=@地图清怪>
+<Button|x=474.0|y=222.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=地图清物|link=@地图清物>
+<Button|x=32.0|y=272.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=装备刻名|link=@装备刻名>
+<Button|x=142.0|y=272.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=转生称号|link=@转生称号>
+<Button|x=252.0|y=272.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=头顶光效|link=@头顶光效>
+<Button|x=365.0|y=272.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=买马功能|link=@买马功能>
+<Button|x=474.0|y=272.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=随身升刀|link=@随身升刀>
+<Button|x=32.0|y=322.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=首饰发光|link=@首饰发光>
+<Button|x=142.0|y=322.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=装备保护|link=@装备保护>
+<Button|x=252.0|y=322.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=装备改造|link=@装备改造>
+<Button|x=365.0|y=322.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=BOSS查询|link=@BOSS查询>
+<Button|x=474.0|y=322.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=装备打孔|link=@装备打孔>
+<Button|x=31.0|y=368.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=装备锻造|link=@装备锻造>
+<Button|x=143.0|y=368.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=镖车活动|link=@镖车活动>
+<Button|x=252.0|y=367.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=跑船活动|link=@跑船活动>
+<Button|x=365.0|y=367.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=洗PK值|link=@洗PK值>
+<Button|x=477.0|y=367.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=加点测试|link=@加点测试>
+<Button|x=31.0|y=418.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=领测试装|link=@领测试装>
+<Button|x=141.0|y=418.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=随身特修|link=@随身特修>
+<Button|x=251.0|y=418.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=持久修改|link=@持久修改>
+<Button|x=361.0|y=418.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=开启拖影|link=@开启拖影>
+<Button|x=477.0|y=418.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=购买双倍|link=@购买双倍>
+[@传送服务]
+#If
+#Say
+<Img|ay=1|width=600|height=480|show=0|loadDelay=1|scale9t=70|scale9r=70|bg=1|Move=1|esc=1|scale9b=70|img=public/bg_npc_01.png|scale9l=70|reset=1>
+<Layout|x=560|y=10|width=80|height=80|link=@Exit>
+<Button|x=560|y=10|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@Exit>
+<Button|x=135.0|y=23.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn2.png|pimg=public/public_multi_topbtn2_1.png|size=18|color=10|text=功能服务|link=@内测管理员>
+<RText|x=25|y=20|text=\>
+<Button|x=300.0|y=23.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn2.png|pimg=public/public_multi_topbtn2_1.png|size=18|color=253|text=传送服务一|link=@传送服务>
+<RText|x=25|y=20|text=\>
+<RText|x=25|y=20|text=\>
+<Button|x=450.0|y=23.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn2.png|pimg=public/public_multi_topbtn2_1.png|size=18|color=10|text=传送服务二|link=@传送服务_2>
+<Img|x=168.0|y=80.0|img=public/icon_tyzys_03.png|esc=0>
+<Img|x=123.0|y=80.0|img=public/icon_tyzys_03.png|esc=0>
+<Img|x=213.0|y=80.0|img=public/icon_tyzys_03.png|esc=0>
+<Img|x=393.0|y=80.0|img=public/icon_tyzys_03.png|esc=0>
+<Img|x=348.0|y=80.0|img=public/icon_tyzys_03.png|esc=0>
+<Img|x=438.0|y=80.0|img=public/icon_tyzys_03.png|esc=0>
+<Text|x=263.0|y=80.0|color=251|size=18|text=145地图>
+
+<Button|x=36.0|y=121.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=比奇县城|link=@比奇大城>
+<Button|x=363.0|y=121.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=银杏山谷|link=@银杏山谷>
+<Button|x=253.0|y=122.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=边境村庄|link=@边境村庄>
+<Button|x=146.0|y=120.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=249|text=道馆村庄|link=@道馆村庄>
+<Button|x=473.0|y=122.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=毒蛇山谷|link=@毒蛇山谷>
+<Button|x=33.0|y=172.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=盟重土城|link=@盟重土城>
+<Button|x=143.0|y=172.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=绿洲村庄|link=@绿洲村庄>
+<Button|x=253.0|y=172.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=沙漠土城|link=@沙漠土城>
+<Button|x=363.0|y=172.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=潘夜海岛|link=@潘夜海岛>
+<Button|x=473.0|y=172.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=沙城区域|link=@沙城区域>
+<Button|x=33.0|y=221.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=失乐园区|link=@失乐园区>
+<Button|x=143.0|y=223.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=诺玛村庄|link=@诺玛村庄>
+;;<Button|x=253.0|y=223.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=新人村庄|link=@新人村庄>
+
+<Button|x=252.0|y=367.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=蜈蚣洞口|link=@蜈蚣洞口>
+<Button|x=367.0|y=370.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=石墓洞口|link=@石墓洞口>
+<Button|x=477.0|y=367.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=祖玛洞口|link=@祖玛洞口>
+<Button|x=30.0|y=272.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=沃玛寺庙|link=@沃玛洞口>
+<Button|x=144.0|y=272.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=比奇矿区|link=@比奇矿区>
+<Button|x=30.0|y=373.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=潘夜神殿|link=@潘夜神殿>
+<Button|x=365.0|y=272.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=赤月洞口|link=@赤月洞口>
+<Button|x=252.0|y=272.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=潘夜石窟|link=@潘夜石窟>
+<Button|x=143.0|y=372.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=跳蚤洞口|link=@跳蚤洞口>
+<Button|x=474.0|y=272.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=蚂蚁洞口|link=@蚂蚁洞口>
+<Button|x=30.0|y=322.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=黑度宫殿|link=@黑度宫殿>
+<Button|x=142.0|y=322.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=比奇洞穴|link=@比奇洞穴>
+<Button|x=252.0|y=322.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=灌木林|link=@灌木林>
+<Button|x=365.0|y=322.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=诺玛遗址|link=@诺玛遗址>
+<Button|x=474.0|y=322.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=幽灵神舰|link=@幽灵神舰>
+<Button|x=30.0|y=423.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=真天入口|link=@真天入口>
+
+
+[@传送服务_2]
+#If
+#Say
+<Img|ay=1|width=600|height=480|show=0|loadDelay=1|scale9t=70|scale9r=70|bg=1|Move=1|esc=1|scale9b=70|img=public/bg_npc_01.png|scale9l=70|reset=1>
+<Layout|x=560|y=10|width=80|height=80|link=@Exit>
+<Button|x=560|y=10|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@Exit>
+<Button|x=135.0|y=23.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn2.png|pimg=public/public_multi_topbtn2_1.png|size=18|color=10|text=功能服务|link=@内测管理员>
+<RText|x=25|y=20|text=\>
+<Button|x=300.0|y=23.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn2.png|pimg=public/public_multi_topbtn2_1.png|size=18|color=10|text=传送服务一|link=@传送服务>
+<RText|x=25|y=20|text=\>
+<RText|x=25|y=20|text=\>
+<Button|x=450.0|y=23.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn2.png|pimg=public/public_multi_topbtn2_1.png|size=18|color=253|text=传送服务二|link=@传送服务_2>
+<Img|x=168.0|y=80.0|img=public/icon_tyzys_03.png|esc=0>
+<Img|x=123.0|y=80.0|img=public/icon_tyzys_03.png|esc=0>
+<Img|x=213.0|y=80.0|img=public/icon_tyzys_03.png|esc=0>
+<Img|x=393.0|y=80.0|img=public/icon_tyzys_03.png|esc=0>
+<Img|x=348.0|y=80.0|img=public/icon_tyzys_03.png|esc=0>
+<Img|x=438.0|y=80.0|img=public/icon_tyzys_03.png|esc=0>
+<Text|x=263.0|y=80.0|color=251|size=18|text=后期地图>
+<Button|x=36.0|y=121.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=大比奇城|link=@大比奇城>
+<Button|x=146.0|y=121.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=本国领地|link=@本国领地>
+<Button|x=252.0|y=121.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=雪原村落|link=@雪原村落>
+<Button|x=365.0|y=122.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=太山大城|link=@太山大城>
+<Button|x=473.0|y=122.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=奔马之岛|link=@神魔之岛>
+
+<Button|x=30.0|y=272.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=西沙入口|link=@西沙入口>
+<Button|x=144.0|y=272.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=火影地牢|link=@火影地牢>
+<Button|x=252.0|y=272.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=雪原神宫|link=@雪原神宫>
+<Button|x=365.0|y=272.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=熔岩地带|link=@熔岩地带>
+<Button|x=474.0|y=272.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=赤龙城口|link=@赤龙城口>
+<Button|x=30.0|y=322.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=龙穴溪谷|link=@龙穴溪谷>
+<Button|x=146.0|y=322.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=卧龙寺庙|link=@卧龙寺庙>
+<Button|x=33.0|y=221.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=不归之谷|link=@不归之谷>
+<Button|x=143.0|y=221.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=海盗岛屿|link=@海盗岛屿>
+<Button|x=252.0|y=222.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=大比骷髅|link=@大比骷髅>
+<Button|x=365.0|y=222.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=玄武神殿|link=@玄武神殿>
+<Button|x=474.0|y=222.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=250|text=虎啸森林|link=@幻象虎滩>
+<Button|x=252.0|y=322.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=鬼域幽林|link=@云梦沼泽>
+<Button|x=365.0|y=322.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=月下村落|link=@月下村落>
+<Button|x=474.0|y=322.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=桃源副本|link=@新桃花源>
+<Button|x=474.0|y=372.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=无尽花园|link=@无尽花园>
+<Button|x=365.0|y=372.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=秦皇陵墓|link=@秦皇陵墓>
+<Button|x=252.0|y=372.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=鬼岭村墓|link=@酆都鬼城>
+<Button|x=143.0|y=372.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=海底世界|link=@海底世界>
+<Button|x=30.0|y=372.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=万里长城|link=@万里长城>
+<Button|x=30.0|y=423.0|nimg=public/public_multi_topbtn2.png|mimg=public/public_multi_topbtn1.png|pimg=public/public_multi_topbtn1.png|size=18|color=252|text=远古晶矿|link=@远古晶矿>
+
+
+[@测试功能]
+#If
+#Act
+	#Call	[功能_脚本\测试脚本.txt]	@测试脚本_1
+
+[@发送公告]
+#If
+#Act
+	#Call	[功能_脚本\发送公告.txt]	@发送公告_1
+
+[@改变发型]
+#If
+#Act
+	#Call	[系统_脚本\美容师.txt]	@发型师
+
+[@购买双倍]
+#If
+#Act
+	#Call	[功能_脚本\多倍经验.txt]	@多倍经验
+[@洗PK值]
+#If
+#Act
+	#Call	[功能_脚本\清洗红名.txt]	@清除红名x
+
+[@跑船活动]
+#If
+#Act
+	#Call	[神舰任务\跑船使者.txt]	@跑船使者
+
+[@加点测试]
+#If
+#Act
+
+	#Call	[功能_脚本\新银杏加点.txt]	@新银杏加点
+
+[@开启拖影]
+#If
+#Act
+	#Call	[功能_脚本\拖影脚印.txt]	@拖影脚印_1
+	
+[@持久修改]
+#If
+#Act
+	#Call	[功能_脚本\修改持久.txt]	@修改持久
+
+[@随身特修]
+#If
+#Act
+	#Call	[系统_脚本\特别修理.txt]	@特别修理
+
+[@隐身模式]
+#If
+#Act
+	#Call	[功能_脚本\隐身模式.txt]	@隐身模式_1
+[@无敌模式]
+#If
+#Act
+GMEXECUTE 无敌
+
+[@镖车活动]
+#If
+#Act
+	#Call	[功能_脚本\开始压镖.txt]	@开始压镖
+
+[@每日副本]
+#If
+#Act
+	#Call	[功能_脚本\每日副本.txt]	@每日副本_1
+
+[@装备锻造]
+#If
+#Act
+	#Call	[功能_脚本\装备锻造.txt]	@装备锻造_1
+
+[@装备打孔]
+#If
+#Act
+	#Call	[功能_脚本\装备打孔.txt]	@装备打孔_1
+
+[@装备改造]
+#If
+#Act
+	#Call	[功能_脚本\装备改造.txt]	@装备改造_1
+
+[@BOSS查询]
+#If
+#Act
+	#Call	[功能_脚本\BOSS查询.txt]	@BOSS查询_1
+
+[@装备保护]
+#If
+#Act
+	#Call	[功能_脚本\装备绑定.txt]	@装备绑定
+
+[@首饰发光]
+#If
+#Act
+	#Call	[功能_脚本\首饰美化.txt]	@首饰美化
+
+[@随身升刀]
+#If
+#Act
+	#Call	[系统_脚本\制炼武器.txt]	@制炼武器
+
+[@买马功能]
+#If
+#Act
+	#Call	[功能_脚本\买马功能.txt]	@horse
+
+[@头顶光效]
+#If
+#Act
+	#Call	[功能_脚本\称号大全.txt]	@称号大全
+
+[@转生称号]
+#If
+#Act
+	#Call	[功能_脚本\转生称号.txt]	@转生称号_1
+
+
+[@暴击几率]
+
+#If
+CHECKNEWITEMVALUE 1 0 < 50 
+#Act
+SetNewItemValue 1 0 + 50
+SendMsg 6 暴击几率增加了50%
+#elseact
+SendMsg 6 暴击几率有50%不能再加
+
+
+[@装备刻名]
+#If
+#Act
+	#Call	[功能_脚本\装备刻名.txt]	@装备刻名_1
+
+[@地图清物]
+#If
+#Act
+CLEARITEMMAP 1 405 112 30
+SendMsg 6 道馆安全区内的所有物品都被清除了。 
+
+[@地图清怪]
+#If
+#Act
+	#Call	[功能_脚本\清除指定地图怪.txt]	@monqingc
+
+[@加强元素]
+#say
+<衣服强元素/@衣服强元素>\
+<手镯强元素/@手镯强元素>\
+
+
+[@衣服强元素]
+#Call	[功能_脚本\加强元素.txt]	@加强元素_1
+[@手镯强元素]
+#Call	[功能_脚本\加强元素手镯.txt]	@加强元素手镯
+
+
+
+[@称号测试]
+#If
+#Act
+#Call	[功能_脚本\称号测试.txt]	@称号测试_1
+
+
+[@宝宝租赁]
+#Act
+	#Call	[功能_脚本\宝宝租赁.txt]	@宝宝租赁_1
+
+[@拜师收徒]
+#If
+#Act
+	#Call	[功能_脚本\师徒管理.txt]	@师徒管理_1
+
+[@领测试装]
+#If
+#Act
+	#Call	[功能_脚本\领测试装.txt]	@领测试装_1
+
+
+[@清除技能]
+#If
+#Act
+CLEARSKILL
+SendMsg 6 你的所有技能已经清除了。
+
+
+[@学习技能]
+#say
+<学老技能/@学老技能>\    
+<学新技能/@学新技能>\
+<加技能点/@加技能点>\
+
+
+[@加技能点]
+#Act
+CHANGETRANPOINT 召唤焰魔 + 100
+SendMsg 6 你的召唤焰魔增加了100技能点。
+
+[@学老技能]
+#If
+#Act
+	#Call	[功能_脚本\学全技能.txt]	@学全技能
+[@学新技能]
+#If
+#Act
+	#Call	[功能_脚本\学新技能.txt]	@学新技能1	
+
+[@转换职业]
+#If
+#Act
+	#Call	[功能_脚本\转换职业.txt]	@转换职业_0_1
+
+
+
+[@转换性别]
+#If
+gender man
+#Act
+CHANGEgender 1
+SendMsg 6  你已经变成一位淑女了，请小退再上。
+#ELSEACT
+CHANGEgender 0
+SendMsg 6  你已经变成一位猛男了，请小退再上。
+
+
+[@增加金币]
+#If
+#Act
+MONEY 金币 + 99999999
+MONEY 绑定金币 + 99999999
+SendMsg 6 你增加了9999999金币。
+
+[@增加元宝]
+#If
+#Act
+GAMEGOLD + 99999
+SendMsg 6 你的元宝增加了99999。
+
+
+[@提升等级]
+#If
+#Act
+
+CHANGELEVEL = 99
+SendMsg 6  你已提升99级了。
+;;----------------------------------------------------------------------------------------------
+[@新人村庄]
+#If
+#Act
+MapMove 535 106 72
+Break
+
+
+[@远古晶矿]
+#If
+#Act
+MapMove 18 278 272
+Break
+
+[@万里长城]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+MapMove id3_011 235 85
+Break
+
+[@秦皇陵墓]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+MapMove 15_002 45 77
+Break
+
+[@酆都鬼城]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+MapMove id9_00 172 187
+Break
+
+[@海底世界]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+MapMove 8 223 299
+Break
+
+[@无尽花园]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+MapMove 8 59 450
+Break
+
+[@新桃花源]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+MapMove d010 48 67
+Break
+
+[@月下村落]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+MapMove 14 139 66
+Break
+
+[@云梦沼泽]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+MapMove d010 79 521
+Break
+
+[@幻象虎滩]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+MapMove d3400 109 361
+Break
+
+[@神魔之岛]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+MapMove 20 155 90
+Break
+
+[@大比骷髅]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+MapMove D2301 19 57
+Break
+
+[@玄武神殿]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+MapMove D2401 159 283
+Break
+
+[@海盗岛屿]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+MapMove 13 171 129
+Break
+
+[@不归之谷]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+MapMove 8 399 227
+Break
+
+[@大比奇城]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+MapMove 10 308 242
+Break
+
+[@太山大城]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+MapMove 15 687 132
+Break
+[@卧龙寺庙]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+MapMove D009  30 184
+Break
+
+[@龙穴溪谷]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+MapMove D008 55 63
+Break
+
+[@赤龙城口]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+MapMove d2900 49 28
+Break
+
+
+[@熔岩地带]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+MapMove D006 23 25
+Break
+
+
+[@本国领地]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+MapMove d005 174 68
+Break
+#ELSEACT
+SendMsg 6  对不起，金币不足1，无法移动！
+
+[@雪原村落]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+MapMove 82 283 163
+Break
+#ELSEACT
+SendMsg 6  对不起，金币不足1，无法移动！
+
+[@雪原神宫]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+MapMove 8_002 80 77
+Break
+#ELSEACT
+SendMsg 6  对不起，金币不足1，无法移动！
+
+[@西沙入口]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+MapMove 45 39 124
+Break
+#ELSEACT
+SendMsg 6  对不起，金币不足1，无法移动！
+
+[@火影地牢]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+MapMove 82 48 326
+Break
+#ELSEACT
+SendMsg 6  对不起，金币不足1，无法移动！
+
+[@真天入口]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+MapMove 9 386 308
+Break
+#ELSEACT
+SendMsg 6  对不起，金币不足1，无法移动！
+
+[@幽灵神舰]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+MapMove d900   43 60
+Break
+#ELSEACT
+SendMsg 6  对不起，金币不足1，无法移动！
+
+[@诺玛遗址]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+MapMove 41      169 56
+Break
+#ELSEACT
+SendMsg 6  对不起，金币不足1，无法移动！
+
+
+
+
+[@诺玛村庄]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+MapMove 41       184    136
+Break
+#ELSEACT
+SendMsg 6  对不起，金币不足1，无法移动！
+
+[@黑度宫殿]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+MapMove 9 208 91
+Break
+#ELSEACT
+SendMsg 6  对不起，金币不足1，无法移动！
+
+[@失乐园区]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+;;Give 回城卷 1
+MapMove 9 195 575
+Break
+#ELSEACT
+SendMsg 6 对不起，金币不足1，无法移动！
+
+
+[@灌木林]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+;;Give 回城卷 1
+MapMove 1 405 31
+Break
+#ELSEACT
+SendMsg 6 对不起，金币不足1，无法移动！
+
+
+[@蚂蚁洞口]
+
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+;;Give 回城卷 1
+MapMove 4 473 158
+Break
+#ELSEACT
+SendMsg 6 对不起，金币不足1，无法移动！
+
+[@比奇矿区]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+;;Give 回城卷 1
+MapMove 0 764 206
+Break
+#ELSEACT
+SendMsg 6 对不起，金币不足1，无法移动！
+
+[@比奇洞穴]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+;;Give 回城卷 1
+MapMove 0     65 174
+Break
+#ELSEACT
+SendMsg 6 对不起，金币不足1，无法移动！
+
+
+
+
+[@跳蚤洞口]
+
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+;;Give 回城卷 1
+MapMove  02    280 77
+Break
+#ELSEACT
+SendMsg 6 对不起，金币不足1，无法移动！
+
+
+[@潘夜石窟]
+
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+;;Give 回城卷 1
+MapMove 8      416 553
+Break
+#ELSEACT
+SendMsg 6 对不起，金币不足1，无法移动！
+
+[@潘夜神殿]
+
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+;;Give 回城卷 1
+MapMove 8      692 358
+
+#ELSEACT
+SendMsg 6 对不起，金币不足1，无法移动！
+
+[@赤月洞口]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+;;Give 回城卷 1
+MapMove 12      110 31
+Break
+#ELSEACT
+SendMsg 6 对不起，金币不足1，无法移动！
+
+
+[@祖玛洞口]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+;;Give 回城卷 1
+MapMove 31	175  128
+
+#ELSEACT
+SendMsg 6 对不起，金币不足1
+
+[@沃玛洞口]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+;;Give 回城卷 1
+MapMove 1 55 370
+#ELSEACT
+SendMsg 6 对不起，金币不足1，无法移动！
+
+[@蜈蚣洞口]
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+;;Give 回城卷 1
+MapMove 74 78 227
+#ELSEACT
+SendMsg 6 对不起，金币不足1！
+
+[@石墓洞口]
+
+#If
+;;checkgold 1
+#Act
+;;take 金币 1
+;;Give 回城卷 1
+MapMove 75 199 64
+Break
+#ELSEACT
+SendMsg 6 对不起，金币不足1！
+
+;-----------------------------------
+
+[@沙城区域]
+#If
+;;checkgold 2000
+#Act
+;;take 金币 2000
+;;Give 回城卷 1
+MapMove 3 218 161
+#elseact
+SendMsg 6 金币不足2000，不能进行传送！
+Break
+
+
+
+
+[@沙漠土城]
+#If
+CHECKLEVELEX < 35
+#Act
+MapMove 5 185 260
+Break
+
+#If
+;;checkgold 2000
+#Act
+;;take 金币 2000
+MapMove 5 185 260
+#elseact
+SendMsg 6 金币不足2000，不能进行传送！
+Break
+
+[@盟重土城]
+#If
+CHECKLEVELEX < 35
+#Act
+MapMove 74 314 286
+Break
+
+#If
+;;checkgold 2000
+#Act
+;;take 金币 2000
+MapMove 74 314 286
+#elseact
+SendMsg 6 金币不足2000，不能进行传送！
+Break
+
+[@绿洲村庄]
+#If
+CHECKLEVELEX < 35
+#Act
+MapMove 4 444 84
+Break
+
+#If
+;;checkgold 2000
+#Act
+;;take 金币 2000
+MapMove 4 444 84
+#elseact
+SendMsg 6 金币不足2000，不能进行传送！
+Break
+
+[@比奇大城]
+#If
+CHECKLEVELEX < 35
+#Act
+MapMove 0 450 390
+Break
+
+#If
+;;checkgold 2000
+#Act
+;;take 金币 2000
+MapMove 0 450 390
+#elseact
+SendMsg 6 金币不足2000，不能进行传送！
+Break
+
+[@银杏山谷]
+#If
+CHECKLEVELEX < 35
+#Act
+MapMove 02 251 198
+Break
+
+#If
+;;checkgold 2000
+#Act
+;;take 金币 2000
+MapMove 02 251 198
+#elseact
+SendMsg 6 金币不足2000，不能进行传送！
+Break
+
+[@边境村庄]
+#If
+CHECKLEVELEX < 35
+#Act
+MapMove 01 459 261
+Break
+
+#If
+;;checkgold 2000
+#Act
+;;take 金币 2000
+MapMove 01 459 261
+#elseact
+SendMsg 6 金币不足2000，不能进行传送！
+Break
+
+[@道馆村庄]
+#If
+CHECKLEVELEX < 35
+#Act
+MapMove 1 405 120
+Break
+
+#If
+;;checkgold 2000
+#Act
+;;take 金币 2000
+MapMove 1 405 120
+#elseact
+SendMsg 6 金币不足2000，不能进行传送！
+Break
+
+
+
+
+[@沙城门口]
+#If
+;;checkgold 2000
+#Act
+;;take 金币 2000
+;;Give 回城卷 1
+MapMove 3 721 402 7
+#elseact
+SendMsg 6 金币不足2000，不能进行传送！
+Break
+
+[@毒蛇山谷]
+#If
+;;checkgold 2000
+#Act
+;;take 金币 2000
+MapMove 2 355 222
+#elseact
+SendMsg 6 金币不足2000，不能进行传送！
+Break
+
+[@潘夜海岛]
+#If
+;;checkgold 2000
+#Act
+;;take 金币 2000
+MapMove 8 253 224
+#elseact
+SendMsg 5 金币不足2000，不能进行传送！
+Break
+
+
+[@召唤精灵]
+#If
+#Act
+	#Call	[功能_脚本\召唤精灵.txt]	@召唤精灵_1
+
+}
+;============================================================================
+;   ······-打造2008年最具人性化服务端 2008.01.01 联系QQ: ······
+;============================================================================

@@ -1,0 +1,123 @@
+[@装备打孔_1]
+{
+#Say
+<打孔装备/@打孔装备>    <检测开孔数量/@检测开孔数量>  <镶嵌宝石数量/@镶嵌宝石数量>\    
+<镶嵌白宝石/@镶嵌白宝石>    <镶嵌红宝石/@镶嵌红宝石>  <镶嵌黄宝石/@镶嵌黄宝石>\  
+<镶嵌蓝宝石/@镶嵌蓝宝石>    <镶嵌绿宝石/@镶嵌绿宝石>  <镶嵌高级原石/@镶嵌高级原石>\  
+
+
+
+
+[@打孔装备]
+#If
+#Act
+DRILLHOLE 1 0 1
+DRILLHOLE 1 1 1
+DRILLHOLE 1 2 1
+DRILLHOLE 1 3 1
+DRILLHOLE 1 4 1
+DRILLHOLE 1 5 1
+DRILLHOLE 1 6 1
+DRILLHOLE 1 7 1
+DRILLHOLE 1 8 1
+DRILLHOLE 1 9 1 
+SendMsg 6 你的武器第十个位置打孔全部成功
+
+
+
+
+
+[@检测开孔数量]
+#If
+CHECKDRILLHOLECOUNT 1 > 1
+#Act
+SendMsg 6 你的武器开孔数量大于1
+#ELSEACT
+SendMsg 6 你的武器开孔数量小于1
+
+
+
+
+
+
+
+[@镶嵌白宝石]
+#If
+CHECKDRILLHOLE 1 0
+#Act
+SOCKETABLEITEM 1 0 1801
+SendMsg 6 你的武器镶嵌了宝石
+#ELSEACT
+SendMsg 6 你的武器没有开孔   
+[@镶嵌红宝石]
+#If
+CHECKDRILLHOLE 1 1
+#Act
+SOCKETABLEITEM 1 1 1802
+SendMsg 6 你的武器镶嵌了宝石
+#ELSEACT
+SendMsg 6 你的武器没有开孔 
+[@镶嵌黄宝石]
+#If
+CHECKDRILLHOLE 1 2
+#Act
+SOCKETABLEITEM 1 2 1803
+SendMsg 6 你的武器镶嵌了宝石
+#ELSEACT
+SendMsg 6 你的武器没有开孔 
+[@镶嵌蓝宝石]
+#If
+CHECKDRILLHOLE 1 3
+#Act
+SOCKETABLEITEM 1 3 1804
+SendMsg 6 你的武器镶嵌了宝石
+#ELSEACT
+SendMsg 6 你的武器没有开孔 
+[@镶嵌绿宝石]
+#If
+CHECKDRILLHOLE 1 4
+#Act
+SOCKETABLEITEM 1 4 1805
+SendMsg 6 你的武器镶嵌了宝石
+#ELSEACT
+SendMsg 6 你的武器没有开孔 
+[@镶嵌高级原石]
+#If
+CHECKDRILLHOLE 1 5
+#Act
+SOCKETABLEITEM 1 5 1822
+SendMsg 6 你的武器镶嵌了宝石
+#ELSEACT
+SendMsg 6 你的武器没有开孔 
+
+
+
+ 
+[@镶嵌宝石数量]
+#If
+CHECKSOCKETABLEITEMCOUNT 1 > 2
+#Act
+SendMsg 6 你的武器镶嵌了2颗宝石以上
+#ELSEACT
+SendMsg 6 你的武器镶嵌宝石小于3个
+
+
+
+
+
+
+
+[@例子]
+#If
+CHECKSOCKETABLEITEM 1 0 N1 S1
+#Act
+SendMsg 6 衣服第一个位置镶嵌了宝石。宝石名称：<$STR(S1)>,宝石IDX字段：<$STR(N1)>
+#elseact
+SendMsg 6 衣服第一个位置没有镶嵌宝石
+
+
+
+}
+
+
+

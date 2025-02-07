@@ -1,0 +1,56 @@
+[@合成影魅_1]
+{
+#SAY
+合成影魅需要<积分5000点/FCOLOR=254>、<寂幻之刃/FCOLOR=254>和<4字项链/FCOLOR=254>各一个、\
+<100个封魔石/FCOLOR=254>和<100瓶祝福油/FCOLOR=254>。\ \
+<进入合成影魅/@进入合成影魅>\ \
+
+<[ 离 开 ]/@EXIT>
+
+
+[@进入合成影魅]
+#IF
+CHECKGAMEGOLD > 5000
+CHECKITEM 寂幻之刃 1
+CHECKITEM 黑天暗云 1
+CHECKITEM 九宫云雾 1
+CHECKITEM 血花落照 1
+CHECKITEM 万里碧海 1
+CHECKITEM 封魔石 100
+CHECKITEM 祝福油 100
+#ACT
+goto @合成功影魅
+#ELSESAY
+对不起,您没有足够的物品用于合成.\\
+合成影魅需要积分5000点、寂幻之刃和4字项链各一个、\
+100个封魔石和100瓶祝福油。\ \
+[@合成功影魅]
+#if
+random 90
+#SAY
+哦，非常抱歉！合成失败了。\
+<结束/@exit>
+#ACT
+take 封魔石 100
+take 祝福油 100
+GAMEGOLD - 5000
+#ELSESAY
+祝贺你，成功了。\
+<结束/@exit>
+#ELSEACT
+GAMEGOLD - 5000
+take 封魔石 100
+take 祝福油 100
+take 寂幻之刃 1
+take 黑天暗云 1
+take 九宫云雾 1
+take 血花落照 1
+take 万里碧海 1
+give 影魅之刃 1
+SENDMOVEMSG 1 253 255 350 1 难以置信，玩家:<$USERNAME>成功锻造了绝世武器影魅之刃！
+break
+
+
+
+
+}

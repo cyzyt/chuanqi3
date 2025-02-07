@@ -1,0 +1,157 @@
+[@召唤精灵_1]
+{
+#If
+CHECKSHOPSTALLSTATUS
+#Say
+正在摆摊中，不能召唤
+#ELSESAY
+<召唤小福猪/@召唤小福猪>  <召唤流氓兔/@召唤流氓兔>  <召唤小恶魔/@召唤小恶魔>  <召唤小银龙/@召唤小银龙>\
+<召唤小金龙/@召唤小金龙>  <召唤小马驹/@召唤小马驹>  <召唤小绵羊/@召唤小绵羊>  <召唤小霸王/@召唤小霸王>\
+<召唤小熊猫/@召唤小熊猫>  <召唤蓝精灵/@召唤蓝精灵> <小哈/@小哈> \
+ <回收小精灵/@回收小精灵>    <批量拾取模式/@批量拾取模式>\
+ <小精灵捡取/@小精灵捡取>    <小精灵不捡/@小精灵模不捡>\
+
+
+
+
+[@小哈]
+#If
+CHECKSPRITELEVEL 
+#Act
+SendMsg 5 你已经有精灵了,不能再召唤。
+Break
+#ELSEACT
+CREATESPRITE 小哈
+PICKUPITEMS 0 6 1013 
+CHANGESLAVENAMECOLOR 小哈 249
+SendMsg 5 你召唤了一个小哈,并开启了自动拾取模式。
+[@召唤小福猪]
+#If
+CHECKSPRITELEVEL 
+#Act
+SendMsg 5 你已经有精灵了,不能再召唤。
+Break
+#ELSEACT
+CREATESPRITE 小福猪
+PICKUPITEMS 0 6 1000 
+CHANGESLAVENAMECOLOR 小福猪 249
+SendMsg 5 你召唤了一个小福猪,并开启了自动拾取模式。
+[@召唤流氓兔]
+#If
+CHECKSPRITELEVEL 
+#Act
+SendMsg 5 你已经有精灵了,不能再召唤。
+Break
+#ELSEACT
+CREATESPRITE 流氓兔
+PICKUPITEMS 0 6 1000 
+SendMsg 5 你召唤了一个流氓兔,并开启了自动拾取模式。
+[@召唤小恶魔]
+#If
+CHECKSPRITELEVEL 
+#Act
+SendMsg 5 你已经有精灵了,不能再召唤。
+Break
+#ELSEACT
+CREATESPRITE 小恶魔
+PICKUPITEMS 1 3 1000 1
+SendMsg 5 你召唤了一个小恶魔,并开启了自动拾取模式。
+[@召唤小银龙]
+#If
+CHECKSPRITELEVEL 
+#Act
+SendMsg 5 你已经有精灵了,不能再召唤。
+Break
+#ELSEACT
+CREATESPRITE 小银龙
+PICKUPITEMS 1 3 1000 1
+SendMsg 5 你召唤了一个小银龙,并开启了自动拾取模式。
+[@召唤小金龙]
+#If
+CHECKSPRITELEVEL 
+#Act
+SendMsg 5 你已经有精灵了,不能再召唤。
+Break
+#ELSEACT
+CREATESPRITE 小金龙
+PICKUPITEMS 1 3 1000 1
+SendMsg 5 你召唤了一个小金龙,并开启了自动拾取模式。
+[@召唤小马驹]
+#If
+CHECKSPRITELEVEL 
+#Act
+SendMsg 5 你已经有精灵了,不能再召唤。
+Break
+#ELSEACT
+CREATESPRITE 小马驹
+PICKUPITEMS 1 3 1000 1
+SendMsg 5 你召唤了一个小马驹,并开启了自动拾取模式。
+[@召唤小绵羊]
+#If
+CHECKSPRITELEVEL 
+#Act
+SendMsg 5 你已经有精灵了,不能再召唤。
+Break
+#ELSEACT
+CREATESPRITE 小绵羊
+PICKUPITEMS 1 3 1000 1
+SendMsg 5 你召唤了一个小绵羊,并开启了自动拾取模式。
+[@召唤小霸王]
+#If
+CHECKSPRITELEVEL 
+#Act
+SendMsg 5 你已经有精灵了,不能再召唤。
+Break
+#ELSEACT
+CREATESPRITE 小霸王
+PICKUPITEMS 1 3 1000 1
+SendMsg 5 你召唤了一个小霸王,并开启了自动拾取模式。
+[@召唤小熊猫]
+#If
+CHECKSPRITELEVEL 
+#Act
+SendMsg 5 你已经有精灵了,不能再召唤。
+Break
+#ELSEACT
+CREATESPRITE 小熊猫
+PICKUPITEMS 1 3 1000 1
+SendMsg 5 你召唤了一个小熊猫,并开启了自动拾取模式。
+[@召唤蓝精灵]
+#If
+CHECKSPRITELEVEL 
+#Act
+SendMsg 5 你已经有精灵了,不能再召唤。
+Break
+#ELSEACT
+CREATESPRITE 蓝精灵
+PICKUPITEMS 1 3 1000 1
+SendMsg 5 你召唤了一个蓝精灵,并开启了自动拾取模式。
+
+;;------------------------------------------------------------
+
+
+[@回收小精灵]
+#If
+#Act
+RELEASESPRITE 
+SendMsg 5 你召回了小精灵
+ 
+
+[@小精灵捡取]
+#If
+#Act
+SETSPRITEMODE 2
+SendMsg 5 你的小精灵捡取人物丢的也拾
+[@小精灵模不捡]
+#If
+#Act
+SETSPRITEMODE 0
+SendMsg 5 你的小精灵不捡 
+
+[@批量拾取模式]
+#If
+#Act
+PICKUPITEMS 1 3 1000 
+SendMsg 5 你的小精灵开启了批量拾取模式
+
+}

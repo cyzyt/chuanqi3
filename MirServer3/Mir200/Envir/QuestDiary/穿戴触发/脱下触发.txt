@@ -1,0 +1,25 @@
+[@脱下触发]
+{
+#If
+equal <$CURRTEMNAME> 20周年称号 
+#Act
+CLEARPLAYEFFECT 5534
+sendmsg 6 脱下20周年称号 
+#If
+equal <$CURRTEMNAME> 21周年称号 
+#Act
+CLEARPLAYEFFECT 5535
+sendmsg 6 脱下21周年称号 
+#If
+equal <$CURRTEMNAME> 黑龙牌
+#Act
+CLEARPLAYEFFECT 5512
+CLEARPLAYEFFECT 5537
+sendmsg 6 脱下黑龙牌
+
+
+#If
+equal <$CURRTEMNAME> 悟空服（男）
+#Act
+SetOffTimer 0
+}

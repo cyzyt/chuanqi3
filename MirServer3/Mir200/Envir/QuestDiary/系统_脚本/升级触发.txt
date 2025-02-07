@@ -1,0 +1,97 @@
+;;常量 <$LEVEL> 
+ 取等级
+[@升级触发]
+{
+#IF
+EQUAL <$LEVEL> 2
+#act
+SENDMSG 5 提示:你升到7级了
+break
+
+#IF
+EQUAL <$LEVEL> 3
+#act
+SENDMSG 5 提示:你升到7级了
+break
+
+#IF
+EQUAL <$LEVEL> 4
+#act
+SENDMSG 5 提示:你升到7级了
+break
+
+#IF
+EQUAL <$LEVEL> 5
+#act
+SENDMSG 5 提示:你升到7级了
+break
+
+#IF
+EQUAL <$LEVEL> 6
+#act
+SENDMSG 5 提示:你升到7级了
+break
+
+#IF
+EQUAL <$LEVEL> 7
+#act
+SENDMSG 5 提示:你升到7级了
+break
+
+#IF
+EQUAL <$LEVEL> 8
+#act
+SENDMSG 5 提示:你升到7级了
+break
+
+#IF
+EQUAL <$LEVEL> 9
+#act
+SENDMSG 5 提示:你升到7级了
+break
+
+#IF
+EQUAL <$LEVEL> 10
+#act
+SENDMSG 5 提示:你升到7级了
+break
+
+#IF
+EQUAL <$LEVEL> 11
+#act
+SENDMSG 5 提示:你升到7级了
+break
+
+#IF
+EQUAL <$LEVEL> 20
+#act
+SENDMSG 5 提示:你升到20级了
+break
+
+#IF
+EQUAL <$LEVEL> 30
+#act
+SENDMSG 5 提示:你升到30级了
+break
+
+#IF
+EQUAL <$LEVEL> 40
+#act
+SENDMSG 5 提示:你升到40级了
+break
+
+#IF
+EQUAL <$LEVEL> 50
+#act
+SENDMSG 5 提示:你升到50级了
+break
+
+#IF
+EQUAL <$LEVEL> 60
+#act
+SENDMSG 5 提示:你升到60级了
+break
+
+
+}
+;;创天网络有限公司原版1.45

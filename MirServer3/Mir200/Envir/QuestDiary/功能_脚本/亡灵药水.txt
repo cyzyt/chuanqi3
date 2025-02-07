@@ -1,0 +1,12 @@
+[@亡灵药水]
+{
+#if
+CHECKCLEANUPGPOINT
+#act
+CHANGEEXP - 1000000
+CLEANUPGPOINT
+SENDMSG 5 喝下了亡灵药水，你的经验：<$EXP>
+#ELSEACT
+stop
+SendMsg 6 你没有可清的点
+}

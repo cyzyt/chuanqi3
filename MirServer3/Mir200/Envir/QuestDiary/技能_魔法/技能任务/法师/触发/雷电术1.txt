@@ -1,0 +1,47 @@
+;;创天网络有限公司原版1.45
+[@MapQuest_lightstick_mon1]
+#If
+checkjob taoist
+#Act
+Break
+;
+#If
+checkjob warrior
+#Act
+Break
+;
+#If
+check [029] 1
+#Act
+Break
+;
+#If
+check [052] 1
+#Act
+Break
+;
+#If
+check [051] 0
+#Act
+Break
+;
+#If
+#Act
+goto @MapQuest_lightstick_mon1_1
+
+[@MapQuest_lightstick_mon1_1]
+#If
+#Act
+Monclear 02_006
+set [052] 1
+goto @MapQuest_lightstick_mon3
+#Say
+(嘿，终于通过了学习雷电术的测试。。。)\
+
+[@MapQuest_lightstick_mon3]
+#If
+#Act
+BreakTimeRecall
+MapMove   02  266  146
+Break
+

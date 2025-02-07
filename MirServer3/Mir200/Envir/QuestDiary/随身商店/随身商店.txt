@@ -1,0 +1,250 @@
+[@游戏随身商店]
+
+{
+
+欢迎. 我可以为你做什么吗?\ \
+
+<购买/@购买随身商店#商铺标识=zhshop> 杂货\
+<购买/@购买随身商店#商铺标识=ydshop> 药水\
+
+
+
+[@购买随身商店]
+#Act
+Mov S$商铺弹出界面
+Mov N$循环 1
+While N$循环 < <$Getcsv(cfg_<$Str(S$商铺标识)>,Row)>
+GetDBItemFieldValue <$cfg_<$Str(S$商铺标识)>(<$Str(N$循环)>_1)> idx N$idx<$Str(N$循环)>
+Inc N$循环 1
+Endwhile
+Goto @远程商店界面
+Break
+
+[@远程商店界面]
+<Img|Move=0|img=public/bg_npc_01.png|loadDelay=0|bg=1|reset=1|show=0>
+<Layout|x=385|y=10|width=80|height=80|link=@Exit>
+<Button|x=385|y=10|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@Exit>
+<Text|x=22.0|y=25.0|color=255|size=18|text=你需要购买什么物品呢?>
+<Text|x=22.0|y=73.0|color=251|size=18|text=返回|link=@游戏随身商店>
+<Img|x=0.0|y=179.0|img=public/bg_01.png|esc=0>
+
+<ListView|children={l1,l2,l3,l4,l5,l6,l7,l8}|x=11.0|y=196.0|width=418|height=389|bounce=0|direction=1|margin=5>
+
+<Layout|id=l1|children={l1-1,l1-2}|x=0.0|y=0.0|width=418|height=75>
+<Img|id=l1-1|children={l1-1-1,l1-1-2,l1-1-3,l1-1-4}|ax=0|x=8.0|y=2.0|width=190|height=75|scale9l=10|scale9t=10|scale9r=10|img=public/1900000651.png|scale9b=10|link=@选择购买商品#购买标识=1>
+<Img|id=l1-1-1|x=11.0|y=7.0|img=public/1900000664.png>
+<Text|id=l1-1-2|x=79.0|y=11.0|color=255|size=16|text=<$cfg_<$Str(S$商铺标识)>(1_1)>>
+<RText|id=l1-1-3|x=79.0|y=37.0|color=255|size=16|text=<$cfg_<$Str(S$商铺标识)>(1_3)>< <$cfg_<$Str(S$商铺标识)>(1_2)>/FCOLOR=255>>
+<ItemShow|id=l1-1-4|x=8.0|y=4.0|width=70|height=70|itemid=<$Str(N$idx1)>|itemcount=1|showtips=1|bgtype=1>
+<Img|id=l1-2|children={l1-2-1,l1-2-2,l1-2-3,l1-2-4}|ax=0|x=220.0|y=2.0|width=190|height=75|scale9l=10|scale9t=10|scale9r=10|esc=0|img=public/1900000651.png|scale9b=10|link=@选择购买商品#购买标识=2>
+<Img|id=l1-2-1|x=11.0|y=7.0|img=public/1900000664.png>
+<Text|id=l1-2-2|x=79.0|y=11.0|color=255|size=16|text=<$cfg_<$Str(S$商铺标识)>(2_1)>>
+<RText|id=l1-2-3|x=79.0|y=37.0|color=255|size=16|text=<$cfg_<$Str(S$商铺标识)>(2_3)>< <$cfg_<$Str(S$商铺标识)>(2_2)>/FCOLOR=255>>
+<ItemShow|id=l1-2-4|x=8.0|y=4.0|width=70|height=70|itemid=<$Str(N$idx2)>|itemcount=1|showtips=1|bgtype=1>
+
+<Layout|id=l2|children={l2-1,l2-2}|x=0.0|y=0.0|width=418|height=75>
+<Img|id=l2-1|children={l2-1-1,l2-1-2,l2-1-3,l2-1-4}|ax=0|x=8.0|y=2.0|width=190|height=75|scale9l=10|scale9t=10|scale9r=10|esc=0|img=public/1900000651.png|scale9b=10|link=@选择购买商品#购买标识=3>
+<Img|id=l2-1-1|x=11.0|y=7.0|img=public/1900000664.png>
+<Text|id=l2-1-2|x=79.0|y=11.0|color=255|size=16|text=<$cfg_<$Str(S$商铺标识)>(3_1)>>
+<RText|id=l2-1-3|x=79.0|y=37.0|color=255|size=16|text=<$cfg_<$Str(S$商铺标识)>(3_3)>< <$cfg_<$Str(S$商铺标识)>(3_2)>/FCOLOR=255>>
+<ItemShow|id=l2-1-4|x=8.0|y=4.0|width=70|height=70|itemid=<$Str(N$idx3)>|itemcount=1|showtips=1|bgtype=1>
+<Img|id=l2-2|children={l2-2-1,l2-2-2,l2-2-3,l2-2-4}|ax=0|x=220.0|y=2.0|width=190|height=75|scale9l=10|scale9t=10|scale9r=10|esc=0|img=public/1900000651.png|scale9b=10|link=@选择购买商品#购买标识=4>
+<Img|id=l2-2-1|x=11.0|y=7.0|img=public/1900000664.png>
+<Text|id=l2-2-2|x=79.0|y=11.0|color=255|size=16|text=<$cfg_<$Str(S$商铺标识)>(4_1)>>
+<RText|id=l2-2-3|x=79.0|y=37.0|color=255|size=16|text=<$cfg_<$Str(S$商铺标识)>(4_3)>< <$cfg_<$Str(S$商铺标识)>(4_2)>/FCOLOR=255>>
+<ItemShow|id=l2-2-4|x=8.0|y=4.0|width=70|height=70|itemid=<$Str(N$idx4)>|itemcount=1|showtips=1|bgtype=1>
+
+<Layout|id=l3|children={l3-1,l3-2}|x=0.0|y=0.0|width=418|height=75>
+<Img|id=l3-1|children={l3-1-1,l3-1-2,l3-1-3,l3-1-4}|ax=0|x=8.0|y=2.0|width=190|height=75|scale9l=10|scale9t=10|scale9r=10|esc=0|img=public/1900000651.png|scale9b=10|link=@选择购买商品#购买标识=5>
+<Img|id=l3-1-1|x=11.0|y=7.0|img=public/1900000664.png>
+<Text|id=l3-1-2|x=79.0|y=11.0|color=255|size=16|text=<$cfg_<$Str(S$商铺标识)>(5_1)>>
+<RText|id=l3-1-3|x=79.0|y=37.0|color=255|size=16|text=<$cfg_<$Str(S$商铺标识)>(5_3)>< <$cfg_<$Str(S$商铺标识)>(5_2)>/FCOLOR=255>>
+<ItemShow|id=l3-1-4|x=8.0|y=4.0|width=70|height=70|itemid=<$Str(N$idx5)>|itemcount=1|showtips=1|bgtype=1>
+<Img|id=l3-2|children={l3-2-1,l3-2-2,l3-2-3,l3-2-4}|ax=0|x=220.0|y=2.0|width=190|height=75|scale9l=10|scale9t=10|scale9r=10|esc=0|img=public/1900000651.png|scale9b=10|link=@选择购买商品#购买标识=6>
+<Img|id=l3-2-1|x=11.0|y=7.0|img=public/1900000664.png>
+<Text|id=l3-2-2|x=79.0|y=11.0|color=255|size=16|text=<$cfg_<$Str(S$商铺标识)>(6_1)>>
+<RText|id=l3-2-3|x=79.0|y=37.0|color=255|size=16|text=<$cfg_<$Str(S$商铺标识)>(6_3)>< <$cfg_<$Str(S$商铺标识)>(6_2)>/FCOLOR=255>>
+<ItemShow|id=l3-2-4|x=8.0|y=4.0|width=70|height=70|itemid=<$Str(N$idx6)>|itemcount=1|showtips=1|bgtype=1>
+#If
+Not Equal <$cfg_<$Str(S$商铺标识)>(7_1)>
+#Say
+<Layout|id=l4|children={l4-1,l4-2}|x=0.0|y=0.0|width=418|height=75>
+<Img|id=l4-1|children={l4-1-1,l4-1-2,l4-1-3,l4-1-4}|ax=0|x=8.0|y=2.0|width=190|height=75|scale9l=10|scale9t=10|scale9r=10|esc=0|img=public/1900000651.png|scale9b=10|link=@选择购买商品#购买标识=7>
+<Img|id=l4-1-1|x=11.0|y=7.0|img=public/1900000664.png>
+<Text|id=l4-1-2|x=79.0|y=11.0|color=255|size=16|text=<$cfg_<$Str(S$商铺标识)>(7_1)>>
+<RText|id=l4-1-3|x=79.0|y=37.0|color=255|size=16|text=<$cfg_<$Str(S$商铺标识)>(7_3)>< <$cfg_<$Str(S$商铺标识)>(7_2)>/FCOLOR=255>>
+<ItemShow|id=l4-1-4|x=8.0|y=4.0|width=70|height=70|itemid=<$Str(N$idx7)>|itemcount=1|showtips=1|bgtype=1>
+#If
+Not Equal <$cfg_<$Str(S$商铺标识)>(8_1)>
+#Say
+<Img|id=l4-2|children={l4-2-1,l4-2-2,l4-2-3,l4-2-4}|ax=0|x=220.0|y=2.0|width=190|height=75|scale9l=10|scale9t=10|scale9r=10|esc=0|img=public/1900000651.png|scale9b=10|link=@选择购买商品#购买标识=8>
+<Img|id=l4-2-1|x=11.0|y=7.0|img=public/1900000664.png>
+<Text|id=l4-2-2|x=79.0|y=11.0|color=255|size=16|text=<$cfg_<$Str(S$商铺标识)>(8_1)>>
+<RText|id=l4-2-3|x=79.0|y=37.0|color=255|size=16|text=<$cfg_<$Str(S$商铺标识)>(8_3)>< <$cfg_<$Str(S$商铺标识)>(8_2)>/FCOLOR=255>>
+<ItemShow|id=l4-2-4|x=8.0|y=4.0|width=70|height=70|itemid=<$Str(N$idx8)>|itemcount=1|showtips=1|bgtype=1>
+#If
+Not Equal <$cfg_<$Str(S$商铺标识)>(9_1)>
+#Say
+<Layout|id=l5|children={l5-1,l5-2}|x=0.0|y=0.0|width=418|height=75>
+<Img|id=l5-1|children={l5-1-1,l5-1-2,l5-1-3,l5-1-4}|ax=0|x=8.0|y=2.0|width=190|height=75|scale9l=10|scale9t=10|scale9r=10|esc=0|img=public/1900000651.png|scale9b=10|link=@选择购买商品#购买标识=9>
+<Img|id=l5-1-1|x=11.0|y=7.0|img=public/1900000664.png>
+<Text|id=l5-1-2|x=79.0|y=11.0|color=255|size=16|text=<$cfg_<$Str(S$商铺标识)>(9_1)>>
+<RText|id=l5-1-3|x=79.0|y=37.0|color=255|size=16|text=<$cfg_<$Str(S$商铺标识)>(9_3)>< <$cfg_<$Str(S$商铺标识)>(9_2)>/FCOLOR=255>>
+<ItemShow|id=l5-1-4|x=8.0|y=4.0|width=70|height=70|itemid=<$Str(N$idx9)>|itemcount=1|showtips=1|bgtype=1>
+#If
+Not Equal <$cfg_<$Str(S$商铺标识)>(10_1)>
+#Say
+<Img|id=l5-2|children={l5-2-1,l5-2-2,l5-2-3,l5-2-4}|ax=0|x=220.0|y=2.0|width=190|height=75|scale9l=10|scale9t=10|scale9r=10|esc=0|img=public/1900000651.png|scale9b=10|link=@选择购买商品#购买标识=10>
+<Img|id=l5-2-1|x=11.0|y=7.0|img=public/1900000664.png>
+<Text|id=l5-2-2|x=79.0|y=11.0|color=255|size=16|text=<$cfg_<$Str(S$商铺标识)>(10_1)>>
+<RText|id=l5-2-3|x=79.0|y=37.0|color=255|size=16|text=<$cfg_<$Str(S$商铺标识)>(10_3)>< <$cfg_<$Str(S$商铺标识)>(10_2)>/FCOLOR=255>>
+<ItemShow|id=l5-2-4|x=8.0|y=4.0|width=70|height=70|itemid=<$Str(N$idx10)>|itemcount=1|showtips=1|bgtype=1>
+#If
+Not Equal <$cfg_<$Str(S$商铺标识)>(11_1)>
+#Say
+<Layout|id=l6|children={l6-1,l6-2}|x=0.0|y=0.0|width=418|height=75>
+<Img|id=l6-1|children={l6-1-1,l6-1-2,l6-1-3,l6-1-4}|ax=0|x=8.0|y=2.0|width=190|height=75|scale9l=10|scale9t=10|scale9r=10|esc=0|img=public/1900000651.png|scale9b=10|link=@选择购买商品#购买标识=11>
+<Img|id=l6-1-1|x=11.0|y=7.0|img=public/1900000664.png>
+<Text|id=l6-1-2|x=79.0|y=11.0|color=255|size=16|text=<$cfg_<$Str(S$商铺标识)>(11_1)>>
+<RText|id=l6-1-3|x=79.0|y=37.0|color=255|size=16|text=<$cfg_<$Str(S$商铺标识)>(11_3)>< <$cfg_<$Str(S$商铺标识)>(11_2)>/FCOLOR=255>>
+<ItemShow|id=l6-1-4|x=8.0|y=4.0|width=70|height=70|itemid=<$Str(N$idx11)>|itemcount=1|showtips=1|bgtype=1>
+#If
+Not Equal <$cfg_<$Str(S$商铺标识)>(12_1)>
+#Say
+<Img|id=l6-2|children={l6-2-1,l6-2-2,l6-2-3,l6-2-4}|ax=0|x=220.0|y=2.0|width=190|height=75|scale9l=10|scale9t=10|scale9r=10|esc=0|img=public/1900000651.png|scale9b=10|link=@选择购买商品#购买标识=12>
+<Img|id=l6-2-1|x=11.0|y=7.0|img=public/1900000664.png>
+<Text|id=l6-2-2|x=79.0|y=11.0|color=255|size=16|text=<$cfg_<$Str(S$商铺标识)>(12_1)>>
+<RText|id=l6-2-3|x=79.0|y=37.0|color=255|size=16|text=<$cfg_<$Str(S$商铺标识)>(12_3)>< <$cfg_<$Str(S$商铺标识)>(12_2)>/FCOLOR=255>>
+<ItemShow|id=l6-2-4|x=8.0|y=4.0|width=70|height=70|itemid=<$Str(N$idx12)>|itemcount=1|showtips=1|bgtype=1>
+#If
+Not Equal <$cfg_<$Str(S$商铺标识)>(13_1)>
+#Say
+<Layout|id=l7|children={l7-1,l7-2}|x=0.0|y=0.0|width=418|height=75>
+<Img|id=l7-1|children={l7-1-1,l7-1-2,l7-1-3,l7-1-4}|ax=0|x=8.0|y=2.0|width=190|height=75|scale9l=10|scale9t=10|scale9r=10|esc=0|img=public/1900000651.png|scale9b=10|link=@选择购买商品#购买标识=13>
+<Img|id=l7-1-1|x=11.0|y=7.0|img=public/1900000664.png>
+<Text|id=l7-1-2|x=79.0|y=11.0|color=255|size=16|text=<$cfg_<$Str(S$商铺标识)>(13_1)>>
+<RText|id=l7-1-3|x=79.0|y=37.0|color=255|size=16|text=<$cfg_<$Str(S$商铺标识)>(13_3)>< <$cfg_<$Str(S$商铺标识)>(13_2)>/FCOLOR=255>>
+<ItemShow|id=l7-1-4|x=8.0|y=4.0|width=70|height=70|itemid=<$Str(N$idx13)>|itemcount=1|showtips=1|bgtype=1>
+#If
+Not Equal <$cfg_<$Str(S$商铺标识)>(14_1)>
+#Say
+<Img|id=l7-2|children={l7-2-1,l7-2-2,l7-2-3,l7-2-4}|ax=0|x=220.0|y=2.0|width=190|height=75|scale9l=10|scale9t=10|scale9r=10|esc=0|img=public/1900000651.png|scale9b=10|link=@选择购买商品#购买标识=14>
+<Img|id=l7-2-1|x=11.0|y=7.0|img=public/1900000664.png>
+<Text|id=l7-2-2|x=79.0|y=11.0|color=255|size=16|text=<$cfg_<$Str(S$商铺标识)>(14_1)>>
+<RText|id=l7-2-3|x=79.0|y=37.0|color=255|size=16|text=<$cfg_<$Str(S$商铺标识)>(14_3)>< <$cfg_<$Str(S$商铺标识)>(14_2)>/FCOLOR=255>>
+<ItemShow|id=l7-2-4|x=8.0|y=4.0|width=70|height=70|itemid=<$Str(N$idx14)>|itemcount=1|showtips=1|bgtype=1>
+
+
+#If
+#Say
+<$Str(S$商铺弹出界面)>
+
+
+[]
+
+<Img|children={t0,t1,t2,t3,t4,t5,t6,t7,t8,t9,t10}|ay=1|x=464.0|y=197.0|height=220|scale9b=30|scale9t=80|scale9r=100|esc=0|img=public/1900000601.png|scale9l=100>
+<Button|id=t0|x=247.0|y=6.0|pimg=public/1900000511.png|nimg=public/1900000510.png|link=@关闭远程购买弹窗>
+<Text|id=t1|x=106.0|y=14.0|color=255|size=18|text=道具购买>
+<Img|id=t2|x=30.0|y=62.0|img=public/1900000664.png>
+<ItemShow|id=t3|x=27.0|y=59.0|width=70|height=70|itemid=1|itemcount=1|showtips=1|bgtype=1>
+<Text|id=t4|x=106.0|y=67.0|color=255|size=16|text=帕瓦罗蒂>
+<RText|id=t5|x=106.0|y=94.0|color=255|size=16|text=持有数量：<5858/FCOLOR=254>>
+<Img|id=t6|ax=0|x=22.0|y=171.0|width=130|esc=0|img=public/1900000668.png>
+<Button|id=t7|x=177.0|y=168.0|nimg=public/1900000660.png|size=18|color=255|text=购买>
+<RText|id=t8|a=4|x=135.0|y=144.0|color=255|size=16|text=购买消费：<5858/FCOLOR=254> 金币>
+<Text|id=t9|x=27.0|y=173.0|color=255|size=16|text=0>
+<Layout|id=t10|ay=1|x=22.0|y=171.0|width=130|height=26>
+
+
+
+[@选择购买商品]
+#If
+Equal <$cfg_<$Str(S$商铺标识)>(<$Str(S$购买标识)>_1)>
+#Act
+Break
+#Elseact
+Mov N$购买数量 0
+Mov N66 0
+Mov N$购买消费 0
+Getbagitemcount <$cfg_<$Str(S$商铺标识)>(<$Str(S$购买标识)>_1)> N$物品背包数量
+Mov S$商铺弹出界面 <Img|children={t0,t1,t2,t3,t4,t5,t6,t7,t8,t9,t10}|ay=1|x=464.0|y=197.0|height=220|scale9b=30|scale9t=80|scale9r=100|esc=0|img=public/1900000601.png|scale9l=100>
+Inc S$商铺弹出界面 <Button|id=t0|x=247.0|y=6.0|pimg=public/1900000511.png|nimg=public/1900000510.png|link=@关闭远程购买弹窗>
+Inc S$商铺弹出界面 <Text|id=t1|x=106.0|y=14.0|color=255|size=18|text=道具购买>
+Inc S$商铺弹出界面 <Img|id=t2|x=30.0|y=62.0|img=public/1900000664.png|esc=0>
+Inc S$商铺弹出界面 <ItemShow|id=t3|x=27.0|y=59.0|width=70|height=70|itemid=<$Str(N$idx<$Str(S$购买标识)>)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$商铺弹出界面 <Text|id=t4|x=106.0|y=67.0|color=255|size=16|text=<$cfg_<$Str(S$商铺标识)>(<$Str(S$购买标识)>_1)>>
+Inc S$商铺弹出界面 <RText|id=t5|x=106.0|y=94.0|color=255|size=16|text=持有数量：<<$Str(N$物品背包数量)>/FCOLOR=254>>
+Inc S$商铺弹出界面 <Img|id=t6|ax=0|x=22.0|y=171.0|width=130|esc=0|img=public/1900000668.png>
+Inc S$商铺弹出界面 <Button|id=t7|x=177.0|y=168.0|nimg=public/1900000660.png|size=18|color=255|text=购买|link=@开始购买商店物品>
+Inc S$商铺弹出界面 <RText|id=t8|a=4|x=135.0|y=144.0|color=255|size=16|text=购买消费：<<$Str(N$购买消费)>/FCOLOR=254>金币>
+Inc S$商铺弹出界面 <Text|id=t9|x=27.0|y=173.0|color=255|size=16|text=<$Str(N$购买数量)>>
+Inc S$商铺弹出界面 <Layout|id=t10|ay=1|x=22.0|y=171.0|width=130|height=26|link=@@InPutInteger66(请输入购买数量)>
+Goto @远程商店界面
+Break
+
+
+[@InPutInteger66]
+#IF
+#ACT
+mov  N66 <$NPCPARAMS(1,N66)>
+
+
+#If
+Not Large N66 0
+#Act
+MessageBox 请输入正确的数字...
+Break
+#Elseact
+Mov N$购买数量 <$Str(N66)>
+Mul N$购买消费 <$Str(N$购买数量)> <$cfg_<$Str(S$商铺标识)>(<$Str(S$购买标识)>_3)>
+Getbagitemcount <$cfg_<$Str(S$商铺标识)>(<$Str(S$购买标识)>_1)> N$物品背包数量
+Mov S$商铺弹出界面 <Img|children={t0,t1,t2,t3,t4,t5,t6,t7,t8,t9,t10}|ay=1|x=464.0|y=197.0|height=220|scale9b=30|scale9t=80|scale9r=100|esc=0|img=public/1900000601.png|scale9l=100>
+Inc S$商铺弹出界面 <Button|id=t0|x=247.0|y=6.0|pimg=public/1900000511.png|nimg=public/1900000510.png|link=@关闭远程购买弹窗>
+Inc S$商铺弹出界面 <Text|id=t1|x=106.0|y=14.0|color=255|size=18|text=道具购买>
+Inc S$商铺弹出界面 <Img|id=t2|x=30.0|y=62.0|img=public/1900000664.png|esc=0>
+Inc S$商铺弹出界面 <ItemShow|id=t3|x=27.0|y=59.0|width=70|height=70|itemid=<$Str(N$idx<$Str(S$购买标识)>)>|itemcount=1|showtips=1|bgtype=1>
+Inc S$商铺弹出界面 <Text|id=t4|x=106.0|y=67.0|color=255|size=16|text=<$cfg_<$Str(S$商铺标识)>(<$Str(S$购买标识)>_1)>>
+Inc S$商铺弹出界面 <RText|id=t5|x=106.0|y=94.0|color=255|size=16|text=持有数量：<<$Str(N$物品背包数量)>/FCOLOR=254>>
+Inc S$商铺弹出界面 <Img|id=t6|ax=0|x=22.0|y=171.0|width=130|esc=0|img=public/1900000668.png>
+Inc S$商铺弹出界面 <Button|id=t7|x=177.0|y=168.0|nimg=public/1900000660.png|size=18|color=255|text=购买|link=@开始购买商店物品>
+Inc S$商铺弹出界面 <RText|id=t8|a=4|x=135.0|y=144.0|color=255|size=16|text=购买消费：<<$Str(N$购买消费)>/FCOLOR=254>金币>
+Inc S$商铺弹出界面 <Text|id=t9|x=27.0|y=173.0|color=255|size=16|text=<$Str(N$购买数量)>>
+Inc S$商铺弹出界面 <Layout|id=t10|ay=1|x=22.0|y=171.0|width=130|height=26|link=@@InPutInteger66(请输入购买数量)>
+Goto @远程商店界面
+Break
+
+[@开始购买商店物品]
+#OR
+Equal N$购买数量 0
+Equal N66 0
+Equal N$购买消费 0
+#Act
+Break
+
+#If
+CheckMoney <$cfg_<$Str(S$商铺标识)>(<$Str(S$购买标识)>_2)> ? <$Str(N$购买消费)>
+#Act
+Money <$cfg_<$Str(S$商铺标识)>(<$Str(S$购买标识)>_2)> - <$Str(N$购买消费)>
+Give <$cfg_<$Str(S$商铺标识)>(<$Str(S$购买标识)>_1)> <$Str(N$购买数量)>
+Mov S$商铺弹出界面
+Mov N$购买数量 0
+Mov N66 0
+Mov N$购买消费 0
+Goto @远程商店界面
+Break
+#Elseact
+Mov S$商铺弹出界面
+Mov N$购买数量 0
+Mov N66 0
+Mov N$购买消费 0
+SendMsg 5 你没有足够的货币来支付...
+Goto @远程商店界面
+Break
+
+[@关闭远程购买弹窗]
+#Act
+Mov S$商铺弹出界面
+Goto @远程商店界面
+Break
+}
+

@@ -1,0 +1,133 @@
+;;不要删
+[@Castle_Manager]
+{
+
+#If
+Checkunderwar 沙巴克
+#Say
+<Img|Move=0|img=public/bg_npc_01.png|loadDelay=1|bg=1|reset=1|show=0>
+<Layout|x=390|y=10|width=80|height=80|link=@Exit>
+<Button|x=390|y=10|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@Exit>
+<Text|a=0|x=16.0|y=30.0|tipsx=10|tipsy=80|color=255|size=18|text='<$OWNERGUILD>'行会是沙巴克城的主人。>
+<Text|a=0|x=16.0|y=83.0|tipsx=10|tipsy=80|color=253|size=18|text=（攻城中）...>
+#Act
+Break
+
+#If
+Iscastleguild
+Not Iscastlemaster
+#Say
+<Img|Move=0|img=public/bg_npc_01.png|loadDelay=1|bg=1|reset=1|show=0>
+<Layout|x=390|y=10|width=80|height=80|link=@Exit>
+<Button|x=390|y=10|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@Exit>
+<RText|x=25|y=20|color=255|size=18|text=沙巴克攻击行会：<昔日同盟/FCOLOR=254>>
+<RText|x=25.0|y=55.0|color=255|size=18|text=沙巴克城门的状态：>
+<RText|x=25.0|y=83.0|color=255|size=18|text=城左们：<开启/FCOLOR=70>>
+<RText|x=25.0|y=108.0|color=255|size=18|text=城右门：<开启/FCOLOR=70>>
+<RText|x=25.0|y=133.0|color=255|size=18|text=城大门：<开启/FCOLOR=70>>
+<Text|x=150.0|y=83.0|size=18|color=255|text=改变状态|link=@改变沙城门状态1>
+<Text|x=150.0|y=108.0|size=18|color=255|text=改变状态|link=@改变沙城门状态2>
+<Text|x=150.0|y=133.0|size=18|color=255|text=改变状态|link=@改变沙城门状态3>
+
+
+#If
+Not CheckInWarArea
+Not Iscastleguild
+IsGuildMaster
+#Say
+<Img|Move=0|img=public/bg_npc_01.png|loadDelay=1|bg=1|reset=1|show=0>
+<Layout|x=390|y=10|width=80|height=80|link=@Exit>
+<Button|x=390|y=10|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@Exit>
+<Text|a=0|x=15.0|y=33.0|tipsx=10|tipsy=80|color=251|size=18|text=查看功城战的日程。|link=@view_warschedule>
+<Text|a=0|x=15.0|y=73.0|tipsx=10|tipsy=80|color=251|size=18|text=申请攻城战。|link=@requestcastlewar>
+#ELSESAY
+<Img|Move=0|img=public/bg_npc_01.png|loadDelay=1|bg=1|reset=1|show=0>
+<Layout|x=390|y=10|width=80|height=80|link=@Exit>
+<Button|x=390|y=10|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@Exit>
+<Text|a=0|x=32.0|y=12.0|tipsx=10|tipsy=80|color=255|size=18|text=你是沙巴克城主人行会的城主啊。。>
+<Text|a=0|x=32.0|y=46.0|tipsx=10|tipsy=80|color=251|size=18|text=看攻城战的日程。|link=@view_warschedule>
+<Text|a=0|x=32.0|y=86.0|tipsx=10|tipsy=80|color=251|size=18|text=申请攻城战。|link=@requestcastlewar>
+<Text|a=0|x=32.0|y=129.0|tipsx=10|tipsy=80|color=251|size=18|text=了解有关于攻城战的事。|link=@requestcastlewar>
+
+
+[@requestcastlewar]
+<Img|Move=0|img=public/bg_npc_01.png|loadDelay=1|bg=1|reset=1|show=0>
+<Layout|x=390|y=10|width=80|height=80|link=@Exit>
+<Button|x=390|y=10|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@Exit>
+<Text|a=0|x=32.0|y=24.0|tipsx=10|tipsy=80|color=255|size=18|text=为了申请攻城战需要祖玛头像。>
+<Text|a=0|x=32.0|y=44.0|tipsx=10|tipsy=80|color=255|size=18|text=你有那个东西吗？>
+<Text|a=0|x=32.0|y=64.0|tipsx=10|tipsy=80|color=255|size=18|text=现在申请的话>
+<Text|a=0|x=141.0|y=64.0|tipsx=10|tipsy=80|color=251|size=18|text=<$applyforwar>天后<$warbeginhour>点>
+<Text|a=0|x=231.0|y=64.0|tipsx=10|tipsy=80|color=255|size=18|text=开始战争>
+<Text|a=0|x=304.0|y=64.0|tipsx=10|tipsy=80|color=159|size=18|text=(包含今天)>
+<Text|a=0|x=32.0|y=104.0|tipsx=10|tipsy=80|color=251|size=18|text=不申请了|link=@Main>
+<Text|a=0|x=120.0|y=104.0|tipsx=10|tipsy=80|color=251|size=18|text=我要申请|link=@Propse_CastleWar>
+
+
+
+[@Propse_CastleWar]
+#If
+Checkunderwar 沙巴克
+#Act
+MessageBox 在攻城中是不能申请攻城战的...
+Break
+
+#If
+Not Isguildmaster
+#Act
+MessageBox 你不是行会老大不能申请攻城战役...
+Break
+
+#If
+EQUAL <$GUILDNAME> <$CASTLEGUILDNAME>
+#Act
+MessageBox 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　你已经申请过了..
+Break
+
+#If
+CheckContainsText <$LISTOFWAR> <$GUILDNAME>
+#Act
+MessageBox 你的行会在申请列表中..
+Break
+
+#If
+Not Checkitem 祖玛头像 1
+#Act
+MessageBox 因为没有祖玛头像所以不能申请攻城战...
+Break
+
+#If
+Iscastlemaster
+#Act
+MessageBox 你是想自己攻打自己吗...
+Break
+
+#Elseact
+Take 祖玛头像 1
+Addtocastlewarlist 沙巴克 <$Guildname>
+goto @申请成功
+
+[@申请成功]
+#say
+申请了攻城战,攻城日程是:\
+<$applyforwar>天后<$warbeginhour>点开始战争(包含今天)。\　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+
+
+[@view_warschedule]
+沙巴克城攻城战的日程是这样的。\ \
+<$LISTOFWAR> \ \
+
+<返回/@Main>
+
+
+[@改变沙城门状态1]
+#Act
+
+[@改变沙城门状态2]
+#Act
+
+[@改变沙城门状态3]
+#Act
+
+
+}

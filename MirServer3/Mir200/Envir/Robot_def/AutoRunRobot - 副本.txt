@@ -1,0 +1,54 @@
+;Sec：按秒运行
+;Min：按分运行
+;Hour：按小时运行
+;Day：按天运行
+;RunOnDay：按每天什么时候运行
+;RunOnWeek：按星期几及时间运行
+#AutoRun NPC RunOnDay 09:30 @开赤龙石门
+#AutoRun NPC RunOnDay 09:45 @关赤龙石门
+#AutoRun NPC RunOnDay 14:30 @开赤龙石门
+#AutoRun NPC RunOnDay 14:45 @关赤龙石门
+#AutoRun NPC RunOnDay 20:30 @开赤龙石门
+#AutoRun NPC RunOnDay 20:45 @关赤龙石门
+#AutoRun NPC RunOnDay 08:00 @AddMapGate
+#AutoRun NPC RunOnDay 08:15 @DelMapGate
+#AutoRun NPC RunOnDay 11:00 @AddMapGate
+#AutoRun NPC RunOnDay 11:15 @DelMapGate
+#AutoRun NPC RunOnDay 14:00 @AddMapGate
+#AutoRun NPC RunOnDay 14:15 @DelMapGate
+#AutoRun NPC RunOnDay 17:00 @AddMapGate
+#AutoRun NPC RunOnDay 17:15 @DelMapGate
+#AutoRun NPC RunOnDay 20:00 @AddMapGate
+#AutoRun NPC RunOnDay 20:15 @DelMapGate
+#AutoRun NPC RunOnDay 23:00 @AddMapGate
+#AutoRun NPC RunOnDay 23:15 @DelMapGate
+#AutoRun NPC RunOnDay 02:00 @AddMapGate
+#AutoRun NPC RunOnDay 02:15 @DelMapGate
+#AutoRun NPC RunOnDay 05:00 @AddMapGate
+#AutoRun NPC RunOnDay 05:15 @DelMapGate
+#AutoRun NPC RunOnDay 10:00 @神宫通知
+#AutoRun NPC RunOnDay 10:10 @神宫开门
+#AutoRun NPC RunOnDay 10:40 @神宫关门
+#AutoRun NPC RunOnDay 13:00 @神宫通知
+#AutoRun NPC RunOnDay 13:10 @神宫开门
+#AutoRun NPC RunOnDay 13:40 @神宫关门
+#AutoRun NPC RunOnDay 16:00 @神宫通知
+#AutoRun NPC RunOnDay 16:10 @神宫开门
+#AutoRun NPC RunOnDay 16:40 @神宫关门
+#AutoRun NPC RunOnDay 19:00 @神宫通知
+#AutoRun NPC RunOnDay 19:10 @神宫开门
+#AutoRun NPC RunOnDay 19:40 @神宫关门
+#AutoRun NPC RunOnDay 22:00 @神宫通知
+#AutoRun NPC RunOnDay 22:10 @神宫开门
+#AutoRun NPC RunOnDay 22:40 @神宫关门
+#AutoRun NPC RunOnDay 01:00 @神宫通知
+#AutoRun NPC RunOnDay 01:10 @神宫开门
+#AutoRun NPC RunOnDay 01:40 @神宫关门
+#AutoRun NPC RunOnDay 04:00 @神宫通知
+#AutoRun NPC RunOnDay 04:10 @神宫开门
+#AutoRun NPC RunOnDay 04:40 @神宫关门
+#AutoRun NPC RunOnDay 07:00 @神宫通知
+#AutoRun NPC RunOnDay 07:10 @神宫开门
+#AutoRun NPC RunOnDay 07:40 @神宫关门
+#AutoRun NPC RunOnDay 09:00 @副本每日清理
+#AutoRun NPC RunOnDay 00:00 @每日清理_变量

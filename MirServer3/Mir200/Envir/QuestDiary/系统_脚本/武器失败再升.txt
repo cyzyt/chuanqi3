@@ -1,0 +1,144 @@
+(@upgradenow @getbackupgnow )
+%100
++5
++6
+[@武器失败再升_1]
+{
+#IF
+Equal <$Weapon>
+#say
+你手上没武器？
+#Elseact
+goto @开始升
+
+[@开始升]
+#Act
+#SAY
+您好！欢迎使用随身功能，您还有：<$GAMEGOLD>点积分\                       
+我的技术有使武器起死回生之功效,收费当然贵喽\　\
+
+<[ 我要用积分炼制武器 ]/@StartPromoteWeapon>   
+
+
+
+[@StartPromoteWeapon]
+#If
+NEWCHECKITEMADDVALUE 1 15 = 1
+#say
+请选择你要升级的类型.\　\
+<武器2次冶炼(破坏)/@Refine_DC>         <武器2次冶炼(全系)/@Refine_ALL1>\\
+<武器2次冶炼(火)/@Refine_Fire>             <武器2次冶炼(冰)/@Refine_Ice>\
+<武器2次冶炼(雷)/@Refine_Light>             <武器2次冶炼(风)/@Refine_Wind>\
+<武器2次冶炼(神圣)/@Refine_Holy>         <武器2次冶炼(暗黑)/@Refine_Dark>\
+<武器2次冶炼(幻影)/@Refine_Pantom> 
+#Elsesay
+你的武器没有失败不需要补救。
+
+
+
+
+[@Refine_ALL1]
+#If
+#Act
+RefineWeapon 3 1
+GetBackupgWeapon 0 1 1 1
+SendMsg 5 你的武器<$WEAPON>补救了一次全系，请试刀
+Break
+
+
+
+[@Refine_DC]
+#If
+#Act
+RefineWeapon 0 1
+GetBackupgWeapon 0 1
+SendMsg 5 你的武器<$WEAPON>补救了一次破坏，请试刀
+Break
+
+
+[@Refine_MC]
+#If
+#Act
+RefineWeapon 1 1
+GetBackupgWeapon 0 1
+SendMsg 5 你的武器<$WEAPON>补救了一次自然，请试刀
+Break
+
+
+
+
+[@Refine_SC]
+#If
+#Act
+RefineWeapon 2 1
+GetBackupgWeapon 0 1
+SendMsg 5 你的武器<$WEAPON>补救了一次灵魂，请试刀
+Break
+
+
+[@Refine_Fire]
+#If
+#Act
+RefineWeapon 5 1
+GetBackupgWeapon 0 1
+SendMsg 5 你的武器(<$WEAPON>)补救了一次元素火，请试刀
+Break
+
+[@Refine_Ice]
+#If
+#Act
+RefineWeapon 6 1
+GetBackupgWeapon 0 1
+SendMsg 5 你的武器(<$WEAPON>)补救了一次元素冰，请试刀
+Break
+
+[@Refine_Light]
+#If
+#Act
+RefineWeapon 7 1
+GetBackupgWeapon 0 1
+SendMsg 5 你的武器(<$WEAPON>)补救了一次元素雷，请试刀
+Break
+
+[@Refine_Wind]
+#If
+#Act
+RefineWeapon 8 1
+GetBackupgWeapon 0 1
+SendMsg 5 你的武器(<$WEAPON>)补救了一次元素风，请试刀
+Break
+
+[@Refine_Holy]
+#If
+#Act
+RefineWeapon 9 1
+GetBackupgWeapon 0 1
+SendMsg 5 你的武器(<$WEAPON>)补救了一次元素神圣，请试刀
+Break
+
+[@Refine_Dark]
+#If
+#Act
+RefineWeapon 10 1
+GetBackupgWeapon 0 1
+SendMsg 5 你的武器(<$WEAPON>)补救了一次元素暗黑，请试刀
+Break
+
+[@Refine_Pantom]
+#If
+#Act
+RefineWeapon 11 1
+GetBackupgWeapon 0 1
+SendMsg 5 你的武器(<$WEAPON>)补救了一次元素幻影，请试刀
+Break
+
+[@Refine_Dura]
+#If
+#Act
+RefineWeapon 4 1
+GetBackupgWeapon 0 1
+SendMsg 5 你的武器<$WEAPON>补救了一次持久，请试刀
+Break 
+ 
+
+}

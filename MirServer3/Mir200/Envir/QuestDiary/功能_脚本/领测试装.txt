@@ -1,0 +1,28 @@
+[@领测试装_1]
+{
+#If
+#Act
+give 影魅之刃
+give 圣山项链
+give 全能戒指 2
+give 心念手镯 2
+give 圣诞靴子
+give 腰带
+give 铁马铠
+give 北斗泰山
+give 盾牌
+give 玫瑰
+give 斗笠
+give 军鼓
+give 玉佩
+give 护身符（大）
+GOTO @男女衣判断
+SendMsg 5 你已经领取所有测试装备。
+[@男女衣判断]
+#If
+gender man
+#Act
+give 天赐战甲（男）
+#ELSEACT
+give 天赐战甲（女）
+}

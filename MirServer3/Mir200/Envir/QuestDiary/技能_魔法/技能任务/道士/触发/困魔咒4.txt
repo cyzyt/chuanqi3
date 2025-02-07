@@ -1,0 +1,60 @@
+;;创天网络有限公司原版1.45
+[@MapQuest_holycircle_MoveTo2]
+#If
+check [051] 1
+#Act
+set [051] 0
+enter_fail
+Break
+;
+#If
+check [022] 1
+#Say
+(现在也没有进去的必要了...)
+#Act
+enter_fail
+Break
+;
+#If
+CheckMagicName 困魔咒
+#Say
+(现在也没有进去的必要了...)
+#Act
+enter_fail
+Break
+;
+#If
+check [055] 1
+check [022] 0
+#Act
+goto @MapQuest_holycircle_MoveTo2_0
+#ELSESAY
+(我怎么会在这里呢? 难道我的魂被什么勾住了? )\
+#ELSEACT
+enter_fail
+Break
+
+[@MapQuest_holycircle_MoveTo2_0]
+#If
+checkmonmap 1_015  1
+#Say
+(这里还没有彻底净化...)
+#Act
+enter_fail
+#ELSEACT
+goto @MapQuest_holycircle_MoveTo2_1
+
+[@MapQuest_holycircle_MoveTo2_1]
+#If
+checkitem 第二困魔石   1
+;#Say
+;(现在是进入第二困魔咒空间吗...)
+#Act
+take 第二困魔石   1
+set [051] 1
+enter_ok
+#ELSESAY
+(需要第二困魔石...)
+#ELSEACT
+enter_fail
+

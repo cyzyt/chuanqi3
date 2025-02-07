@@ -1,0 +1,34 @@
+[@穿上触发]
+{
+#If
+equal <$CURRTEMNAME> 20周年称号 
+#Act
+PLAYEFFECT 5534
+sendmsg 6 穿上：<$CURRTEMNAME>
+#If
+equal <$CURRTEMNAME> 21周年称号 
+#Act
+PLAYEFFECT 5535
+sendmsg 6 穿上：<$CURRTEMNAME>
+#If
+equal <$CURRTEMNAME> 黑龙牌
+#Act
+PLAYEFFECT 5537
+PLAYEFFECT 5512
+sendmsg 6 穿上：<$CURRTEMNAME>
+
+#If
+equal <$CURRTEMNAME> 悟空服（男）
+#Act
+SetOnTimer 0 5
+
+
+
+
+
+
+
+
+
+
+}

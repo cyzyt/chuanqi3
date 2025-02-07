@@ -1,0 +1,136 @@
+[@队伍召集令]
+{
+
+#If
+NOT Equal <$TEAM0> <$USERNAME>
+#Act
+GIVE 队伍召集令 1
+MessageBox 您不是队长无法使用此物品
+Break
+
+#OR
+ISONMAP 0150
+ISONMAP 0151
+;禁止使用的地图
+#Act
+GIVE 队伍召集令 1
+MessageBox 该地图禁止使用队伍召集令
+Break
+#ELSEACT
+Mov N$发起召集 0
+
+#If
+CHECKITEM 队伍召集令 1
+Equal <$TEAM0> <$USERNAME>
+#Act
+Mov S$召集地图 <$MAP>
+Mov S$召集X <$X>
+Mov S$召集Y <$Y>
+Mov N$发起召集 1
+#ELSEACT
+MessageBox 缺少队伍召集令或者你不是队长
+Break
+
+#If
+NOT Equal <$TEAM1>
+#Act
+Mov S1 <$TEAM1>
+S1.MovEX S70 <$STR(S$召集地图)>
+S1.MovEX S71 <$STR(S$召集X)>
+S1.MovEX S72 <$STR(S$召集Y)>
+
+#If
+NOT Equal <$TEAM2>
+#Act
+Mov S1 <$TEAM2>
+S1.MovEX S70 <$STR(S$召集地图)>
+S1.MovEX S71 <$STR(S$召集X)>
+S1.MovEX S72 <$STR(S$召集Y)>
+
+#If
+NOT Equal <$TEAM3>
+#Act
+Mov S1 <$TEAM3>
+S1.MovEX S70 <$STR(S$召集地图)>
+S1.MovEX S71 <$STR(S$召集X)>
+S1.MovEX S72 <$STR(S$召集Y)>
+
+#If
+NOT Equal <$TEAM4>
+#Act
+Mov S1 <$TEAM4>
+S1.MovEX S70 <$STR(S$召集地图)>
+S1.MovEX S71 <$STR(S$召集X)>
+S1.MovEX S72 <$STR(S$召集Y)>
+
+#If
+NOT Equal <$TEAM5>
+#Act
+Mov S1 <$TEAM5>
+S1.MovEX S70 <$STR(S$召集地图)>
+S1.MovEX S71 <$STR(S$召集X)>
+S1.MovEX S72 <$STR(S$召集Y)>
+
+#If
+NOT Equal <$TEAM6>
+#Act
+Mov S1 <$TEAM6>
+S1.MovEX S70 <$STR(S$召集地图)>
+S1.MovEX S71 <$STR(S$召集X)>
+S1.MovEX S72 <$STR(S$召集Y)>
+
+#If
+NOT Equal <$TEAM7>
+#Act
+Mov S1 <$TEAM7>
+S1.MovEX S70 <$STR(S$召集地图)>
+S1.MovEX S71 <$STR(S$召集X)>
+S1.MovEX S72 <$STR(S$召集Y)>
+
+
+#If
+NOT Equal <$TEAM8>
+#Act
+Mov S1 <$TEAM8>
+S1.MovEX S70 <$STR(S$召集地图)>
+S1.MovEX S71 <$STR(S$召集X)>
+S1.MovEX S72 <$STR(S$召集Y)>
+
+#If
+NOT Equal <$TEAM9>
+#Act
+Mov S1 <$TEAM9>
+S1.MovEX S70 <$STR(S$召集地图)>
+S1.MovEX S71 <$STR(S$召集X)>
+S1.MovEX S72 <$STR(S$召集Y)>
+
+#If
+#Act
+Mov N$队伍集合 1
+GOTOLABEL 0 @队伍召集
+
+
+[@队伍召集]
+#If
+NOT Equal S70
+NOT Equal <$TEAM0> <$USERNAME>
+#Act
+AddbutShow 50 协助队长 @协助队长
+AddbutShow 51 放弃队长 @放弃队长
+
+[@协助队长]
+#If
+NOT Equal S70
+#Act
+MapMove <$STR(S70)> <$STR(S71)> <$STR(S72)>
+Mov S70
+Mov S71
+Mov S72
+DelbutShow 50
+DelbutShow 51
+
+[@放弃队长]
+#Act
+DelbutShow 50
+DelbutShow 51
+}

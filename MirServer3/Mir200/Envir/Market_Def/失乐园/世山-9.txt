@@ -1,0 +1,4 @@
+[@Main]
+#If
+#Act
+	#Call	[功能_脚本\买马功能.txt]	@horse

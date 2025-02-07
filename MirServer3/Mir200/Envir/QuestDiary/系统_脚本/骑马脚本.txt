@@ -1,0 +1,38 @@
+[@骑马脚本]
+{
+#if
+EQUAL <$CANSETHORSE> 1
+#act
+goto @检测骑马图
+;;Sendmsg 5 该地图可以骑马。
+#elseact
+CLEARPLAYEFFECT 5526
+;;Sendmsg 5 该地图不能骑马。
+
+
+
+
+
+
+[@检测骑马图]
+#if
+EQUAL <$HORSEAPPR> 0
+#act
+;;Sendmsg 5 你还没有马，请去比奇的马商义贤选购马匹。
+#elseact
+goto @检测上下马
+
+
+[@检测上下马]
+#if
+EQUAL <$CURRIDEHORSE> 1207
+#act
+PLAYEFFECT 5526
+SetOnTimer 0 2
+;;Sendmsg 5 你已经下马。
+#elseact
+CLEARPLAYEFFECT 5526
+;;Sendmsg 5 你已经上马。
+
+
+}

@@ -1,0 +1,34 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@Main]
+#If
+#Say
+┏━━━━━━━━━━━━━━━━━━━━━━━┓\
+┃您好,我是专业的{FCOLOR/10}寄售商人{FCOLOR/12},欢迎您前来查看寄售信息┃\
+┃如果您想寄售物品,我可以帮忙.您需要进行寄售登记┃\
+┃手续费{FCOLOR/10}5万{FCOLOR/12}金币.物品卖出后,另加收您{FCOLOR/10}2%{FCOLOR/12}的手续费...┃\
+┃这不是蛮划算吗?试试看.每人最多可以寄售{FCOLOR/10}20{FCOLOR/12}件物品┃\
+┣━━━━━━━━━━━━━━━━━━━━━━━┫\
+┃{FCOLOR/1}綜合查看{FCOLOR/12}  {FCOLOR/10}→{FCOLOR/12} <[ 查 看 所 有 寄 售 物 品]/@buyfromusermarket(0)>  {FCOLOR/10}←{FCOLOR/12}   ┃\
+┣━━━━━━━┳━━━━━━━┳━━━━━━━┫\
+┃      {FCOLOR/13}囍{FCOLOR/12}      ┃<[ 查看武器类 ]/@buyfromusermarket(2)>┃      {FCOLOR/13}囍{FCOLOR/12}      ┃\
+┣━━━━━━━╋━━━━━━━╋━━━━━━━┫\
+┃<[ 查看衣服类 ]/@buyfromusermarket(1)>┃<[ 查看头盔类 ]/@buyfromusermarket(5)>┃<[ 查看鞋类类 ]/@buyfromusermarket(11)>┃\
+┣━━━━━━━╋━━━━━━━╋━━━━━━━┫\
+┃<[ 查看项链类 ]/@buyfromusermarket(4)>┃<[ 查看手镯类 ]/@buyfromusermarket(6)>┃<[ 查看戒指类 ]/@buyfromusermarket(8)>┃\
+┣━━━━━━━╋━━━━━━━╋━━━━━━━┫\
+┃<[ 查看药品类 ]/@buyfromusermarket(21)>┃<[ 查看书籍类 ]/@buyfromusermarket(22)>┃<[ 查看其他类 ]/@buyfromusermarket(23)>┃\
+┣━━━━━━━━━━━━━━━━━━━━━━━┫\
+┃                                              ┃\
+┃結帳查看<[ 查看自己寄售物品是否已經賣出(结帐) ]/@checksold>┃\
+┃                                              ┃\
+┗━━━━━━━━━━━━━━━━━━━━━━━┛\
+
+[@buyfromusermarket()]
+#Act
+;;SetTypeUserMarket %ARG(1)
+OpenUserMarket
+
+[@checksold]
+#Act
+CheckSoldItemsUserMarket
+;;CNSOFTS-火鸟网络先锋2011商业服务端

@@ -1,0 +1,7 @@
+(@storage @getback )
+%100
+[@Main]
+#If
+#Act
+
+	#Call	[公共_商人\仓库.txt]	@仓库

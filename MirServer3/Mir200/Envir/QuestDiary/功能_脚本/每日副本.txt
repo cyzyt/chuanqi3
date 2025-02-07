@@ -1,0 +1,31 @@
+[@每日副本_1]
+{
+
+
+<检查GM/@检查GM>\
+<删除特效/@删除特效>\
+
+
+
+
+[@检查GM]
+#If
+#Act
+HUMANHP = 100
+HUMANMP = 100
+sendmsg 7 HUMANHP = 100
+
+;搭配分割有神奇的功效
+MOV N11 1
+GETVALIDSTRSUPER <$str(S1)> , S$获取主键值 N$总主键数量
+while N11 < <$str(N$总主键数量)>
+sendmsg 7 <$str(S$获取主键值<$str(N11)>)>
+
+
+[@删除特效]
+#ACT
+Delbuff 10000
+SENDMSG 6 删除特效成功 
+
+
+}

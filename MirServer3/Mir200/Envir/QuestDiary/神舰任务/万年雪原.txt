@@ -1,0 +1,15 @@
+[@万年雪原]
+{
+#IF
+CHECKLEVELEX > 90
+#ACT
+enter_ok
+sendmsg 5 你有90级，可以进入。
+#ELSEACT
+enter_fail
+#ELSESAY
+你不能进到这里去。要进这儿的话需要{90级/FCOLOR=250}。\
+升到{90级/FCOLOR=250}。 后再来吧。\ 
+
+
+}

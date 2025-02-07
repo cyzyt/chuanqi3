@@ -1,0 +1,31 @@
+(@upgradenow @getbackupgnow @repair @s_repair)
+%100
++5
++6
+
+[@清理背包]
+{
+#If
+;;large <$BW> 0
+large <$BAGUSERCOUNT> 0
+#Act
+#Say
+<Img|scale9r=70|scale9t=70|bg=1|show=4|scale9b=70|Move=1|reset=1|loadDelay=1|img=public/1900000600.png|esc=1|scale9l=70>
+<Layout|x=390|y=10|width=80|height=80|link=@Exit>
+<Button|x=290|y=240|nimg=public/btn_10.png|pimg=public/btn_11.png|link=@Exit>
+<Button|x=120|y=240|nimg=public/btn_8.png|pimg=public/btn_9.png|link=@清除背包>
+
+<Text|x=130.0|y=160.0|color=255|size=18|text=确实要清除背包所有物品吗！>
+#elseact 
+SendMsg 9 你的背包为空无须清理！
+
+
+
+
+[@清除背包]
+#act
+GMEXECUTE ClearBag
+SendMsg 9 你清除了包裹所有物品
+close
+}
+

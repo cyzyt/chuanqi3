@@ -1,0 +1,35 @@
+;;不要删
+[@Main]
+#If
+check [265] 1
+#Act
+goto @Main_0_0
+Break
+
+#If
+check [259] 1
+#Act
+goto @NQuest_1_1
+Break
+#ELSEACT
+goto @NQuest_1
+
+[@Main_0_0]
+#Say
+（这到底是怎么回事？那就是说女人回来了？）\ \
+ <结束/@Exit>
+
+[@NQuest_1]
+#If
+checklevel 7
+#Act
+goto @NQuest_1_1
+#ELSESAY
+（这石头的样子真奇怪）\ \
+ <结束/@Exit>
+
+
+[@NQuest_1_1]
+#If
+#Act
+MapMove 0_003 26 36

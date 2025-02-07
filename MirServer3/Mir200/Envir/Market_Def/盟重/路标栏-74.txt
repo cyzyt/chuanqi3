@@ -1,0 +1,17 @@
+;;不要删
+[@Main]
+#Say
+<Img|ay=1|height=320|scale9l=70|bg=1|scale9r=70|scale9t=70|loadDelay=1|scale9b=70|reset=1|Move=0|esc=1|img=public/bg_npc_01.png|show=0>
+<Layout|x=385|y=10|width=80|height=80|link=@Exit>
+<Button|x=386|y=10|nimg=public/1900000510.png|pimg=public/1900000511.png|link=@Exit>
+{往其他村庄移动的路/FCOLOR=250}\
+沙漠    - [580,295] \
+石阁庙  - [22,310] \ 
+沙漠    - [85,405] \ 
+{商人位置/FCOLOR=250}\
+铁匠铺  - [354,297]\
+药房    - [289,289]\
+布店    - [324,277]\
+仓库    - [323,310]\
+小商贩  - [293,278]\
+装饰品店- [311,273]\

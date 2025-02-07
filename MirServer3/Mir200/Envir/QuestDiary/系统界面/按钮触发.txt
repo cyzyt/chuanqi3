@@ -1,0 +1,57 @@
+
+[@游戏界面按钮触发]
+{
+
+[@系统背包]
+#Act
+Openhyperlink 7
+
+[@系统角色]
+#Act
+Openhyperlink 1
+
+[@系统技能]
+#Act
+Openhyperlink 4
+
+[@系统行会]
+#Act
+Openhyperlink 31
+
+[@系统组队]
+#Act
+Openhyperlink 17
+
+[@系统邮件]
+#Act
+Openhyperlink 16
+
+[@系统商城]
+#Act
+Openhyperlink 9
+
+[@系统摆摊]
+#Act
+Openhyperlink 8
+
+[@系统拍卖行]
+#Act
+Openhyperlink 27
+
+[@系统排行]
+#Act
+Openhyperlink 32
+
+[@系统设置]
+#Act
+Openhyperlink 23
+
+[@系统退出]
+#Act
+Openhyperlink 29
+
+
+
+
+
+}
