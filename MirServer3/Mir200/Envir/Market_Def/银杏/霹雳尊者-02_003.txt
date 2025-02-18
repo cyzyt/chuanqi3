@@ -1,3 +1,0 @@
-;;不要删
-[@Main]
-	#Call	[\技能_魔法\技能任务\法师\抗拒火环.txt]	@mugong_firewind_test

@@ -1,4 +1,0 @@
-;;不要删
-[@Main]
-
-	#Call	[\城堡_行会\沙城管理.txt]	@Castle_Manager

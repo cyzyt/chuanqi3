@@ -1,3 +1,0 @@
-;;不要删
-[@Main]
-	#Call	[\技能_魔法\技能任务\道士\施毒术.txt]	@mugong_poison_test

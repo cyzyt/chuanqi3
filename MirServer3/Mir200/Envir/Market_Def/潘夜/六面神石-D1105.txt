@@ -1,5 +1,0 @@
-;;²»ÒªÉ¾
-[@Main]
-#If
-#Act
-MapMove D1110 30 33

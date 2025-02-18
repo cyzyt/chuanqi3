@@ -1,3 +1,0 @@
-;;不要删
-[@Main]
-	#Call	[系统_脚本\说书人.txt]	@NPC_Main

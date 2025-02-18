@@ -1,8 +1,0 @@
-(@buy @sell @repair @s_repair )
-%100
-+1
-+40
-[@Main]
-#If
-#Act
-	#Call	[公共_商人\肉店.txt]	@肉店

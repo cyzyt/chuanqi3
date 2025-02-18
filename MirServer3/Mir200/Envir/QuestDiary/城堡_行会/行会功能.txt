@@ -1,7 +1,0 @@
-;;创天网络有限公司原版1.45
-[@Castle_Execution]
-{
-#Act
-Openhyperlink 31
-
-}
