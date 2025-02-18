@@ -134986,5 +134986,17 @@ local config = {
 		effOpacity=1,
 		idle_interval="0.1",
 	},
+	[5470] = { 
+		index=5470,
+		id=20051,
+		type=4,
+		sex=0,
+		dir=1,
+		blendmode=0,
+		stand_pos_x=0,
+		stand_pos_y=1,
+		effOpacity=1,
+		idle_interval=0.065,
+	},
 }
 return config
