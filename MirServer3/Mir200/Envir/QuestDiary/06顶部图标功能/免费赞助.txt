@@ -1,0 +1,177 @@
+[@免费赞助功能]
+{
+#IF 
+CHECK [001] 0
+#ACT 
+MOV S$主界面按钮1 <Button|x=118.0|y=491.0|size=18|nimg=cc/zzlb/an_jh.png|color=255|link=@激活赞助1>
+#ELSEACT 
+MOV S$主界面按钮1 <Img|x=103.0|y=475.0|img=cc/public/3_2.png|esc=0>
+
+#IF 
+CHECK [002] 0
+#ACT 
+MOV S$主界面按钮2 <Button|x=294.0|y=491.0|size=18|nimg=cc/zzlb/an_jh.png|color=255|link=@激活赞助2>
+#ELSEACT 
+MOV S$主界面按钮2 <Img|x=278.0|y=474.0|img=cc/public/3_2.png|esc=0>
+
+#IF 
+CHECK [003] 0
+#ACT 
+MOV S$主界面按钮3 <Button|x=470.0|y=491.0|size=18|nimg=cc/zzlb/an_jh.png|color=255|link=@激活赞助3>
+#ELSEACT 
+MOV S$主界面按钮3 <Img|x=459.0|y=470.0|img=cc/public/3_2.png|esc=0>
+
+#IF 
+CHECK [004] 0
+#ACT 
+MOV S$主界面按钮4 <Button|x=647.0|y=491.0|size=18|nimg=cc/zzlb/an_jh.png|color=255|link=@激活赞助4>
+#ELSEACT 
+MOV S$主界面按钮4 <Img|x=640.0|y=469.0|img=cc/public/3_2.png|esc=0>
+
+#IF 
+#ACT 
+GOTO @免费赞助主界面
+
+
+[@免费赞助主界面]
+#SAY 
+<Img|x=26.0|y=-33.0|move=0|loadDelay=1|show=4|esc=1|reset=1|img=cc/zzlb/bg.png|bg=1>
+<Layout|x=384|y=10|width=80|height=80|link=@exit>
+<Button|x=829.0|y=54.0|nimg=cc/public/btn_close_2_2.png|size=18|color=255|link=@exit>
+<Frames|x=102.0|y=-117.0|speed=10|count=15|suffix=.png|loop=-1|prefix=cc/zzlb/00/1_>
+<Frames|x=620.0|y=-52.0|speed=10|count=90|suffix=.png|loop=-1|prefix=cc/zzlb/01/1_>
+<Frames|x=355.0|y=48.0|speed=10|loop=-1|count=15|prefix=cc/zzlb/02/1_|suffix=.png>
+<Frames|x=538.0|y=47.0|speed=10|loop=-1|count=15|prefix=cc/zzlb/03/1_|suffix=.png>
+<Frames|x=176.0|y=46.0|speed=10|loop=-1|count=15|prefix=cc/zzlb/04/1_|suffix=.png>
+<Frames|x=1.0|y=46.0|speed=10|loop=-1|count=15|prefix=cc/zzlb/05/1_|suffix=.png>
+<Img|x=120.0|y=191.0|esc=0|img=cc/public/lv.png>
+<Img|x=120.0|y=226.0|esc=0|img=cc/public/lv.png>
+<Img|x=120.0|y=263.0|esc=0|img=cc/public/lv.png>
+<Img|x=120.0|y=300.0|esc=0|img=cc/public/lv.png>
+<Img|x=292.0|y=191.0|esc=0|img=cc/public/lv.png>
+<Img|x=292.0|y=226.0|esc=0|img=cc/public/lv.png>
+<Img|x=292.0|y=263.0|esc=0|img=cc/public/lv.png>
+<Img|x=292.0|y=300.0|esc=0|img=cc/public/lv.png>
+<Img|x=468.0|y=191.0|esc=0|img=cc/public/lv.png>
+<Img|x=468.0|y=226.0|esc=0|img=cc/public/lv.png>
+<Img|x=468.0|y=263.0|esc=0|img=cc/public/lv.png>
+<Img|x=468.0|y=297.0|esc=0|img=cc/public/lv.png>
+<Img|x=643.0|y=191.0|esc=0|img=cc/public/lv.png>
+<Img|x=643.0|y=226.0|esc=0|img=cc/public/lv.png>
+<Img|x=643.0|y=263.0|esc=0|img=cc/public/lv.png>
+<Img|x=643.0|y=297.0|esc=0|img=cc/public/lv.png>
+<Text|x=157.0|y=394.0|size=18|color=250|outline=1|outlinecolor=0|text=免费>
+<Text|x=320.0|y=395.0|size=16|color=249|outline=1|outlinecolor=0|text=50万元宝>
+<Text|x=491.0|y=395.0|size=16|color=249|outline=1|outlinecolor=0|text=100万元宝>
+<Text|x=668.0|y=395.0|size=16|color=249|outline=1|outlinecolor=0|text=200万元宝>
+<Text|x=142.0|y=193.0|size=15|color=255|outline=1|outlinecolor=0|text=杀怪爆率 + 1%>
+<Text|x=142.0|y=227.0|size=15|color=255|outline=1|outlinecolor=0|text=受怪减伤 + 1%>
+<Text|x=142.0|y=264.0|size=15|color=255|outline=1|outlinecolor=0|text=杀怪经验 + 5%>
+<Text|x=141.0|y=301.0|size=15|color=255|outline=1|outlinecolor=0|text=打怪切割 + 100>
+<Text|x=317.0|y=192.0|size=15|color=255|outline=1|outlinecolor=0|text=杀怪爆率 + 5%>
+<Text|x=316.0|y=226.0|size=15|color=255|outline=1|outlinecolor=0|text=受怪减伤 + 5%>
+<Text|x=316.0|y=264.0|size=15|color=255|outline=1|outlinecolor=0|text=杀怪经验 + 10%>
+<Text|x=316.0|y=301.0|size=15|color=255|outline=1|outlinecolor=0|text=打怪切割 + 200>
+<Text|x=491.0|y=192.0|size=15|color=255|outline=1|outlinecolor=0|text=杀怪爆率 + 10%>
+<Text|x=491.0|y=227.0|size=15|color=255|outline=1|outlinecolor=0|text=受怪减伤 + 10%>
+<Text|x=492.0|y=264.0|size=15|color=255|outline=1|outlinecolor=0|text=杀怪经验 + 15%>
+<Text|x=492.0|y=298.0|size=15|color=255|outline=1|outlinecolor=0|text=打怪切割 + 300>
+<Text|x=667.0|y=192.0|size=15|color=255|outline=1|outlinecolor=0|text=杀怪爆率 + 15%>
+<Text|x=667.0|y=227.0|size=15|color=255|outline=1|outlinecolor=0|text=受怪减伤 + 15%>
+<Text|x=667.0|y=264.0|size=15|color=255|outline=1|outlinecolor=0|text=杀怪经验 + 20%>
+<Text|x=668.0|y=298.0|size=15|color=255|outline=1|outlinecolor=0|text=打怪切割 + 500>
+<$STR(S$主界面按钮1)>
+<$STR(S$主界面按钮2)>
+<$STR(S$主界面按钮3)>
+<$STR(S$主界面按钮4)>
+
+[@激活赞助1]
+#IF 
+#ACT 
+set [001] 1
+CONFERTITLE 白银赞助
+sendmsg 9 <font color='#00EE00'>白银赞助领取成功</font>
+goto @免费赞助功能
+
+
+[@激活赞助2]
+#IF 
+NOT CHECKTITLE 白银赞助
+#act 
+sendmsg 9 <font color='#FF0000'>请先领取上一档位赞助</font>
+break
+
+#IF 
+CheckBindMoney 元宝 < 500000
+#act 
+sendmsg 9 <font color='#FF0000'>当前元宝不足，无法领取赞助</font>
+break
+
+#IF 
+#ACT 
+set [002] 1
+ChangeBindMoney 元宝 500000
+DEPRIVETITLE 白银赞助
+CONFERTITLE 黄金赞助
+sendmsg 9 <font color='#00EE00'>黄金赞助领取成功</font>
+goto @免费赞助功能
+
+[@激活赞助3]
+#IF 
+NOT CHECKTITLE 黄金赞助
+#act 
+sendmsg 9 <font color='#FF0000'>请先领取上一档位赞助</font>
+break
+
+#IF 
+CheckBindMoney 元宝 < 1000000
+#act 
+sendmsg 9 <font color='#FF0000'>当前元宝不足，无法领取赞助</font>
+break
+
+#IF 
+#ACT 
+set [003] 1
+ChangeBindMoney 元宝 1000000
+DEPRIVETITLE 黄金赞助
+CONFERTITLE 钻石赞助
+sendmsg 9 <font color='#00EE00'>钻石赞助领取成功</font>
+goto @免费赞助功能
+
+[@激活赞助4]
+#IF 
+NOT CHECKTITLE 钻石赞助
+#act 
+sendmsg 9 <font color='#FF0000'>请先领取上一档位赞助</font>
+break
+
+#IF 
+CheckBindMoney 元宝 < 2000000
+#act 
+sendmsg 9 <font color='#FF0000'>当前元宝不足，无法领取赞助</font>
+break
+
+#IF 
+#ACT 
+set [004] 1
+ChangeBindMoney 元宝 2000000
+DEPRIVETITLE 钻石赞助
+CONFERTITLE 荣耀赞助
+sendmsg 9 <font color='#00EE00'>荣耀赞助领取成功</font>
+goto @免费赞助功能
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

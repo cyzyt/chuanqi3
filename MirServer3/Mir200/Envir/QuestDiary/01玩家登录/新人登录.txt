@@ -1,0 +1,44 @@
+[@新人登录]
+{
+;玩家第一次登录
+#IF 
+isnewhuman 
+#ACT 
+MAPMOVE newxtc 119 105 3
+ADDSKILL 基本剑术 3
+ADDSKILL 攻杀剑术 3
+ADDSKILL 刺杀剑术 3
+ADDSKILL 野蛮冲撞 3
+ADDSKILL 烈火剑法 3
+SetSndaItemBox 1
+GIVE 新手·木剑 1
+GIVE 新手·布衣 1
+TakeOnItem 新手·木剑 1
+TakeOnItem 新手·布衣 0
+GIVE 盟重回城石 1
+GIVE 随机传送石 1 
+ADDVARCACHE T1 新人赠送切割 100
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

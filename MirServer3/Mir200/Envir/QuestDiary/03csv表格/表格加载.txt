@@ -1,0 +1,31 @@
+[@表格加载]
+{
+#IF 
+#ACT 
+NEWREADCSV  ..\QuestDiary\03csv表格\永恒玫瑰\cfg_yhmg.csv 
+NEWREADCSV  ..\QuestDiary\03csv表格\勋章锻造\cfg_xzdz.csv 
+NEWREADCSV  ..\QuestDiary\03csv表格\转生使者\cfg_zhuansheng.csv 
+NEWREADCSV  ..\QuestDiary\03csv表格\盾牌锻造\cfg_dpdz.csv 
+NEWREADCSV  ..\QuestDiary\03csv表格\称号晋升\cfg_chjs.csv 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

@@ -1,0 +1,97 @@
+[@属性管理]
+{
+#IF 
+#ACT 
+;--1号属性 生命值 数值
+MOV N$生命值 0
+INC N$生命值 <$HUMAN(潜力生命属性)>
+ChangeHumNewValue 1 <$STR(N$生命值)> 65535
+
+;--3号属性 破坏下限 数值
+MOV N$破坏下限 0
+INC N$破坏下限 <$HUMAN(潜力攻击属性)>
+ChangeHumNewValue 3 <$STR(N$破坏下限)> 65535
+
+;--4号属性 破坏下上限 数值
+MOV N$破坏上限 0
+INC N$破坏上限 <$HUMAN(潜力攻击属性)>
+ChangeHumNewValue 4 <$STR(N$破坏上限)> 65535
+
+;--9号属性 防御下限 数值
+MOV N$防御下限 0
+INC N$防御下限 <$HUMAN(潜力防御属性)>
+ChangeHumNewValue 9 <$STR(N$防御下限)> 65535
+
+;--10号属性 防御上限 数值
+MOV N$防御上限 0
+INC N$防御上限 <$HUMAN(潜力防御属性)>
+ChangeHumNewValue 10 <$STR(N$防御上限)> 65535
+
+;--20号属性 攻击速度 数值
+MOV N$攻击速度 0
+INC N$攻击速度 <$HUMAN(潜力攻速属性)>
+ChangeHumNewValue 20 <$STR(N$攻击速度)> 65535
+
+;--21号属性 暴击几率 万分比
+MOV N$暴击几率 0
+INC N$暴击几率 <$HUMAN(潜力暴击属性)>
+ChangeHumNewValue 21 <$STR(N$暴击几率)> 65535
+
+;--22号属性 暴击伤害 万分比
+MOV N$暴击伤害 0
+INC N$暴击伤害 <$HUMAN(潜力暴伤属性)>
+ChangeHumNewValue 22 <$STR(N$暴击伤害)> 65535
+
+;--23号属性 韧性 万分比
+MOV N$韧性 0
+INC N$韧性 <$HUMAN(潜力抵抗属性)>
+ChangeHumNewValue 23 <$STR(N$韧性)> 65535
+
+;--28号属性 忽视防御 万分比
+MOV N$忽视防御 0
+INC N$忽视防御 <$HUMAN(潜力穿甲属性)>
+ChangeHumNewValue 28 <$STR(N$忽视防御)> 65535
+
+;--200号属性 切割 数值
+MOV N$对怪切割 0
+INC N$对怪切割 <$GETSTRVALUE(T1,新人赠送切割)>
+ChangeHumNewValue 200 <$STR(N$对怪切割)> 65535
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

@@ -1,0 +1,177 @@
+[@货币兑换功能]
+{
+#IF 
+#ACT 
+GOTO @货币兑换主界面
+
+[@货币兑换主界面]
+#SAY 
+<Img|x=1.0|y=0.0|width=500|height=300|bg=1|loadDelay=1|reset=1|img=public/public_bg_general.png|show=4|move=0|esc=1>
+<Button|x=475.0|y=-3.0|pimg=public/1900000514.png|nimg=public/1900000514.png|link=@exit>
+<Text|x=214.0|y=8.0|size=18|color=251|text=货币兑换>
+<Text|x=42.0|y=50.0|size=18|color=251|text=500万元宝>
+<Text|x=152.0|y=51.0|size=18|color=7|text=兑换>
+<Text|x=223.0|y=51.0|size=18|color=250|text=1000灵符>
+<Text|x=33.0|y=91.0|size=18|color=251|text=5000万元宝>
+<Text|x=153.0|y=91.0|size=18|color=7|text=兑换>
+<Text|x=235.0|y=90.0|size=18|color=250|text=1万灵符>
+<Text|x=44.0|y=134.0|size=18|color=251|text=200万元宝>
+<Text|x=154.0|y=134.0|size=18|color=7|text=兑换>
+<Text|x=243.0|y=132.0|size=18|color=250|text=10晶石>
+<Text|x=35.0|y=174.0|size=18|color=251|text=2000万元宝>
+<Text|x=155.0|y=174.0|size=18|color=7|text=兑换>
+<Text|x=234.0|y=173.0|size=18|color=250|text=100晶石>
+
+<Text|x=17.0|y=212.0|size=16|color=254|text=优先使用绑定元宝兑换，不足兑换非绑元宝>
+<Img|x=19.0|y=233.0|width=150|esc=0|img=public/1900000668.png>
+<Img|x=19.0|y=263.0|width=150|img=public/1900000668.png|esc=0>
+<Img|x=176.0|y=233.0|width=150|img=public/1900000668.png|esc=0>
+<Img|x=176.0|y=263.0|width=150|img=public/1900000668.png|esc=0>
+<Img|x=332.0|y=232.0|width=150|img=public/1900000668.png|esc=0>
+<Text|x=23.0|y=238.0|size=15|color=251|text=绑元:>
+<Text|x=59.0|y=238.0|size=15|color=255|text=$STM(ITEMCOUNT_绑定元宝)>
+<Text|x=23.0|y=267.0|size=15|color=251|text=元宝:>
+<Text|x=59.0|y=268.0|size=15|color=255|text=$STM(ITEMCOUNT_元宝)>
+<Text|x=180.0|y=238.0|size=15|color=70|text=绑定灵符:>
+<Text|x=247.0|y=238.0|size=15|color=255|text=$STM(ITEMCOUNT_绑定灵符)>
+<Text|x=181.0|y=268.0|size=15|color=70|text=灵符:>
+<Text|x=217.0|y=268.0|size=15|color=255|text=$STM(ITEMCOUNT_灵符)>
+<Text|x=338.0|y=237.0|size=15|color=254|text=晶石:>
+<Text|x=377.0|y=237.0|size=15|color=255|text=$STM(ITEMCOUNT_晶石)>
+
+<Button|x=339.0|y=42.0|nimg=public/1900000662.png|size=18|color=255|text=点击兑换|link=@点击兑换1>
+<Button|x=338.0|y=84.0|nimg=public/1900000662.png|size=18|color=255|text=点击兑换|link=@点击兑换1>
+<Button|x=338.0|y=127.0|nimg=public/1900000662.png|size=18|color=255|text=点击兑换|link=@点击兑换3>
+<Button|x=338.0|y=167.0|nimg=public/1900000662.png|size=18|color=255|text=点击兑换|link=@点击兑换4>
+
+
+[@点击兑换1]
+#if
+CHECKMONEY 绑定元宝 < 5000000
+CHECKMONEY 元宝 < 5000000
+#act 
+sendmsg 9 <font color='#FF0000'>当前元宝不足，无法兑换灵符</font>
+break
+
+#if 
+checkmoney 绑定元宝 ? 5000000
+#act 
+money 绑定元宝 - 5000000
+money 绑定灵符 + 1000
+sendmsg 9 <font color='#00EE00'>兑换成功</font>
+goto @货币兑换功能
+break
+
+#if 
+checkmoney 元宝 ? 5000000
+#act 
+money 元宝 - 5000000
+money 灵符 + 1000
+sendmsg 9 <font color='#00EE00'>兑换成功</font>
+goto @货币兑换功能
+break
+
+[@点击兑换2]
+#if
+CHECKMONEY 绑定元宝 < 50000000
+CHECKMONEY 元宝 < 50000000
+#act 
+sendmsg 9 <font color='#FF0000'>当前元宝不足，无法兑换灵符</font>
+break
+
+#if 
+checkmoney 绑定元宝 ? 50000000
+#act 
+money 绑定元宝 - 50000000
+money 绑定灵符 + 10000
+sendmsg 9 <font color='#00EE00'>兑换成功</font>
+goto @货币兑换功能
+break
+
+#if 
+checkmoney 元宝 ? 50000000
+#act 
+money 元宝 - 50000000
+money 灵符 + 10000
+sendmsg 9 <font color='#00EE00'>兑换成功</font>
+goto @货币兑换功能
+break
+
+[@点击兑换3]
+#if
+CHECKMONEY 绑定元宝 < 2000000
+CHECKMONEY 元宝 < 2000000
+#act 
+sendmsg 9 <font color='#FF0000'>当前元宝不足，无法兑换晶石</font>
+break
+
+#if 
+checkmoney 绑定元宝 ? 2000000
+#act 
+money 绑定元宝 - 2000000
+money 晶石 + 10
+sendmsg 9 <font color='#00EE00'>兑换成功</font>
+goto @货币兑换功能
+break
+
+#if 
+checkmoney 元宝 ? 2000000
+#act 
+money 元宝 - 2000000
+money 晶石 + 10
+sendmsg 9 <font color='#00EE00'>兑换成功</font>
+goto @货币兑换功能
+break
+
+[@点击兑换4]
+#if
+CHECKMONEY 绑定元宝 < 20000000
+CHECKMONEY 元宝 < 20000000
+#act 
+sendmsg 9 <font color='#FF0000'>当前元宝不足，无法兑换晶石</font>
+break
+
+#if 
+checkmoney 绑定元宝 ? 20000000
+#act 
+money 绑定元宝 - 20000000
+money 晶石 + 100
+sendmsg 9 <font color='#00EE00'>兑换成功</font>
+goto @货币兑换功能
+break
+
+#if 
+checkmoney 元宝 ? 20000000
+#act 
+money 元宝 - 20000000
+money 晶石 + 100
+sendmsg 9 <font color='#00EE00'>兑换成功</font>
+goto @货币兑换功能
+break
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

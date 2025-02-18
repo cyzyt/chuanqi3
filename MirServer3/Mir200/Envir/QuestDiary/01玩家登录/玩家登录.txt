@@ -1,0 +1,49 @@
+[@玩家登录]
+{
+;没满60开启泡点
+#IF 
+CHECKLEVELEX < 60
+#ACT 
+setautogetexp 1 100000 0 * 0 65535 60
+
+;狂暴之力判断
+#IF 
+CHECKTITLE 狂暴之力
+#ACT 
+SetIcon 0 1 20001 0 0 0 0 0
+
+;打开自动拾取
+#IF 
+#ACT 
+PICKUPITEMS 0 6 500
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

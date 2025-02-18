@@ -1,775 +1,87 @@
-(@@InPutInteger @@InPutString @upgradenow @getbackupgnow @repair @s_repair)
-+10
-+11
-+15
-+27
-+28
-+5
-+6
-+22
-+24
-+26
-
-[@AutoFightStatus]
-
-[@GroupKillMon]
-#IF
-CheckKillMonName 鸡
-#act
-SENDMSG 5 你杀死了怪物名称<$KILLMONNAME> 
-
-[@StartAutoPlayGame]
-#if
-#ACT
-;;SENDMSG 7 开始挂机触发
-
-[@AutoReclaim] 
-#IF 
-SMALL <$level> 100 
-#ACT 
-SendMsg 9 等级不足100！ 
-stop 
-
-
-
-[@petupitem]
-#if
-#act
-SENDMSG 5 小精灵拾取了战利品。
-[@GroupItemOn1]
-#IF
-#act
-SENDMSG 5 套装激活触发
-
-[@MakeWeaponUnLuck]
-#IF
-#act
-
-
-[@PickUpDropItemEX]
-#IF
-#act
-;;SENDMSG 5 你的<$param1>爆出了
-
-[@dropitemfrontex]
-#IF
-#act
-;;SENDMSG 6 你扔出了<$param1>
-
-
-;;[@AttackMode]
-#IF
-#act
-SENDMSG 5 切换攻击模式触发
-;;[@AttackDamage]
-#IF
-CHECKCURRTARGETRACE = 0
-#act
-;;ChangeDamageValue 0 = 10
-SENDMSG 6 你攻击了人物【<$CURRRTARGETNAME>】。使用魔法ID=<$CURRRUSEMAGICID>--攻击力：<$DAMAGEVALUE>
-BREAK
-
-
-#IF
-#act
-;;ChangeDamageValue 0 = 10
-SENDMSG 6 你攻击了怪物【<$CURRRTARGETNAME>】。使用魔法ID=<$CURRRUSEMAGICID>--攻击力：<$DAMAGEVALUE>
-
-
-[@_Diary1]
-#ACT
-SENDMSG 6 AFT+F触发
-
-[@_Diary]
-#ACT
-#Call	[\随身商店\D键功能.txt]	@D键功能
-
-;怪物自定义技能触发---------------------------------------------------------------------------
-[@MonEffect251]
-#IF
-#ACT
-ADDBUFF 1620 2
-SCENEVIBRATION 2 3 1
-SENDMSG 6 受到弥兽王的攻击！
-[@MonEffect246]
-#IF
-#ACT
-SCENEVIBRATION 2 3 1
-SENDMSG 6 受到角牛兽攻击！
-[@MonEffect239]
-#IF
-#ACT
-SCENEVIBRATION 2 3 1
-SENDMSG 9 一只巨大的触手突然向你袭来！！
-[@MonEffect234]
-#IF
-random 3
-#ACT
-SCENEVIBRATION 2 3 1
-ADDBUFF 1620 3
-SENDMSG 6 受到八腕魔王攻击，屏幕范围内所有人的屏幕开始震动
-[@MonEffect237]
-#IF
-random 10
-#ACT
-SCENEVIBRATION 2 3 1
-
-SENDMSG 6 受到八腕魔王攻击，屏幕范围内所有人的屏幕开始震动
-[@MonEffect179]
-#IF
-random 10
-#ACT
-SCENEVIBRATION 2 3 1
-ADDBUFF 1620 3
-SENDMSG 6 受到雪巨人攻击，屏幕范围内所有人的屏幕开始震动
-[@MonEffect196]
-#IF
-random 10
-#ACT
-SCENEVIBRATION 2 3 1
-ADDBUFF 1620 3
-;;SENDMSG 6 受到晶魔像攻击，屏幕范围内所有人的屏幕开始震动
-;刷怪触发---------------------------------------------------------------------------
-[@异界触发]
-#IF
-#ACT
-sendmsg 6 在沙漠出现了<$MONGENNAME>
-SENDMOVEMSG 0 253 255 150 1 在沙漠出现了<$MONGENNAME>
-[@赤龙触发]
-#IF
-#ACT
-sendmsg 6 在本国领地出现了<$MONGENNAME>
-SENDMOVEMSG 0 253 255 150 1 在本国领地出现了<$MONGENNAME>
-
-[@半兽触发]
-#IF
-#ACT
-sendmsg 0 半兽人刷出来了
-
-[@水晶木触发]
-#IF
-#ACT
-MAPEFFECT 3 Id7_003 114 109 10191 0 0
-sendmsg 5 水晶木触发了10191
-[@金龟触发]
-#ACT
-sendmsg 0 金龟触发
-
-
-;地图连接点触发---------------------------------------------------------------------------
-[@mapconnect101]
-#ACT
-#Call	[\神舰任务\船任务一.txt]	@船任务一
-
-[@mapconnect102]
-#ACT
-#Call	[\神舰任务\检测明珠.txt]	@检测明珠
-
-[@mapconnect103]
-#If
-#Act
-	 #Call	[\神舰任务\地洞之眼.txt]	@地洞之眼
-	 
-[@mapconnect104]
-#If
-#Act
-	 #Call	[\神舰任务\雪原魔石.txt]	@雪原魔石
-	 
-[@mapconnect105]
-#If
-#Act
-	 #Call	[\神舰任务\万年雪原.txt]	@万年雪原	 
-
-
-;限时物品到期触发---------------------------------------------------------------------------
-[@ItemExpired]
-#IF
-#ACT
-sendmsg 5 你的装备<$ExpiredItemName>已到期消失了
-SENDMOVEMSG 1 253 255 350 1 你的装备<$ExpiredItemName>已到期消失了
-;---------------------------------------------------------------------------
-[@ClickSkillID]
-#IF
-#ACT
-; #Call [\技能_魔法\点技能触发.txt] @点技能触发_1
-; SendMsg 6 <$CURRCLICKSKILLID>：点击技能ID
-; SendMsg 6 <$CURRCLICKSKILLNAME>：点击技能名称
-
-[@magicopen]
-#IF
-#ACT
-; #Call [\技能_魔法\技能红点.txt] @技能红点_1
-;---------------------------------------------------------------------------
-[@MobTreachery]
-#IF
-#ACT
-GetSlaveInfo 1 S$宝宝名字1 N$宝宝等级1
-SENDMSG 5 你的宝宝《<$MOBTREACHERYNAME>》叛变了
-
-[@Slaveupgrade]
-#IF
-#ACT
-GetSlaveInfo 1 S$宝宝名字1 N$宝宝等级1 
-SENDMSG 5 你的宝宝《<$str(S$宝宝名字1)>》升级了， 现在是《<$str(N$宝宝等级1)>级》
-
-[@Slavebb]
-;;#IF
-;;#ACT
-;;GetSlaveInfo 1 S$宝宝名字1 N$宝宝等级1
-;;SENDMSG 5 你获得宝宝《<$str(S$宝宝名字1)>》
-
-[@SelfKillSlave]
-#IF
-#ACT
-
-[@KillSlave]
-	
-;;触发----------------------------------------------------------------------------------------------
-[@makemine3]
-; #ACT
-; Give 回城卷 1
-; SendMsg 5 你挖到了一个回城卷
-
-[@刷怪触发]
-#ACT
-SendMsg 5 刷怪触发
-SendCustomMsg 1 刷怪触发 253 255 600 433
-Break
-;;采集触发----------------------------------------------------------------------------------------------
-[@采集完成]
-; #ACT
-; Give 回城卷 1
-; SendMsg 5 你采集一个回城卷
-; SendCustomMsg 1 采集成功 253 255 600 433
-; Break
-
-[@采集中断]
-#ACT
-SendMsg 5 采集被中断
-SendCustomMsg 1 采集中断 253 255 600 433
-Break
-
-;;购买前触发----------------------------------------------------------------------------------------------
-[@CanBuyShopItem100]
-#IF
-CHECKLEVELEX > 50
-#ACT
-NotAllowBuy 1
-MESSAGEBOX 大于50级不允许购买此物品[<$STR(S0)>]
-;;购买后触发
-[@BuyShopItem]
-#IF
-#ACT
-SendMsg 7 测试购买 货品<$ShopItemName> 数量<$ShopItemCount> 单价：<$ShopItemPrice> 金额<$ShopItemAmount> 币种<$ShopItemCurrency>
-
-
-[@TryDeal]
-#if
-NOT CHECKBAGSIZE 4
-#ACT
-SENDMSG 6 你背包不足4格无法交易
-stop
-#ELSEACT
-SENDMSG 6 你背包格子充足
-
-[@BuffChange]
-#IF
-EQUAL <$param1> 1600
-#act
-SENDMSG 5 你的双倍经验消失了
-break
-#IF
-EQUAL <$param1> 1601
-#act
-SENDMSG 5 你的三倍经验消失了
-break
-#IF
-EQUAL <$param1> 1610
-#act
-SENDMSG 5 你的双倍爆率消失了
-break
-
-[@chghpmp]
-#IF
-EQUAL <$HUMHPMP> 1
-#act
-SENDMSG 5 提示:你血量少于200
-break
-
-#IF
-EQUAL <$HUMHPMP> 2
-#act
-SENDMSG 5 提示:你蓝量少于200
-break
-
-;;复活戒指触发---------------------------------------------------------------------------
-[@SpRingRelive]
-#IF
-#ACT
-SENDMSG 5 利用戒指的力量起死回生，下次复活还剩<$RELIVERING_CD>秒
-;;包里红蓝药少于5个触发---------------------------------------------------------------------------
-[@UsedUpMed]
-#IF
-#ACT
-#Call	[\系统_脚本\少药触发.txt]	@少药触发
-;;升级触发---------------------------------------------------------------------------
-[@PlayLevelUp]
-#IF
-#ACT
-#Call	[\系统_脚本\升级触发.txt]	@升级触发
-;;回生术触发---------------------------------------------------------------------------
-[@PlayMagReLive]
-#IF
-#ACT
-DELBUTTON 103 1
-SENDMSG 1 提示:玩家【<$CURRRTARGETNAME>】在:%m(%x:%y) 回生了【<$USERNAME>】！
-
-;自动寻路飞---------------------------------------------------------------------------
-[@FindPathBegin]
-#IF
-ISADMIN
-#say
-你要飞过去吗？？\
-<我要飞过去/@我要飞过去>\
-<我不去了/@exit>\
-[@我要飞过去]
-#ACT
-Mapmove <$Map> <$ToPointX> <$ToPointY>
-sendmsg 7 移动到寻路坐标
-
-;寻路中断
-[@FindPathStop]
-
-;寻路结束
-[@FindPathEnd]
-
-
-
-;;---------------------------------------------------------------------------
-[@CHUFA]
-#IF
-	CheckLevelEx	>	39
-#ACT
-	ALLOWDROP 0
-	SENDMSG 7 不掉东西
-#ELSEACT
-	ALLOWDROP 1
-	SENDMSG 7 掉东西
-;;镖车----------------------------------------------------------------------------
-[@CarPathEnd]
-#IF
-CHECKMAPNAME 1
-#ACT
-;;MAPMOVE 0 211 54 0
-SENDMSG 7 你的镖车马上到比奇了
-#IF
-CHECKMAPNAME 0
-#ACT
-SENDMSG 7 你的镖车终于送到了
-[@LeaveDart]
-#IF
-CHECKMAPNAME 0
-#ACT
-Dartmap 454 393 0
-SENDMSG 7 终于来到了比奇地界，还有半天路程就到了
-[@CarFindMaster]
-#IF
-#ACT
-SENDMSG 7 你的进入了镖车自动寻路范围
-[@SlaveDamage]
-#OR
-CHECKSLAVENAME 普通镖车
-CHECKSLAVENAME 高级镖车
-CHECKSLAVENAME 超级镖车
-#ACT
-SENDMSG 7 你的镖车被攻击了
-
-[@HitSlave]
-#OR
-CHECKSLAVENAME 普通镖车
-CHECKSLAVENAME 高级镖车
-CHECKSLAVENAME 超级镖车
-#act
-SENDMSG 7 攻击了别人的镖车
-
-
-;;异界传送触发---------------------------------------------------------------------------
-;;1.cfg_mongen加入异界之门,并且传送门配置正确
-;;2.QF加入以下触发
-[@GateMonMove799]
-#IF
-#ACT
-#say
-你要传送到神舰吗？\
-<我要传送/@我要飞神舰>\
-<我不去了/@exit>\
-
-[@我要飞神舰]
-#IF
-#ACT
-Mapmove <$GATEMOVE_MAP> <$GATEMOVE_X> <$GATEMOVE_Y>
-SENDMSG 5 你已传送到<$GATEMOVE_MAP> <$GATEMOVE_X> <$GATEMOVE_Y>
-
-[@GateMonMove800]
-#IF
-#ACT
-#say
-你要传送到熔岩地带吗？\
-<我要传送/@我要飞熔岩>\
-<我不去了/@exit>\
-
-[@我要飞熔岩]
-#IF
-#ACT
-Mapmove <$GATEMOVE_MAP> <$GATEMOVE_X> <$GATEMOVE_Y>
-SENDMSG 5 你已传送到<$GATEMOVE_MAP> <$GATEMOVE_X> <$GATEMOVE_Y>
-;;神舰----------------------------------------------------------------------------------------
-
-
-
-
-
-[@火影地牢_传3]
-#If
-#Act
-	 #Call	[\神舰任务\检测明珠.txt]	@检测明珠
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;界面按钮;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [@系统界面加载]
-	#Call	[\系统界面\按钮触发.txt]	@游戏界面按钮触发
+#Call [\系统界面\按钮触发.txt] @游戏界面按钮触发
 
-[@SetHorseState]
-#Act
-#Call	[系统_脚本\骑马脚本.txt]	@骑马脚本
+[@加点]
+#CALL [\06顶部图标功能\潜力点.txt] @潜力点功能
 
-[@婚戒]
-	#Call	[系统_脚本\婚戒脚本.txt]	@婚戒脚本
-
-[@PlayDie]
-#IF
-EQUAL <$MAP> juma_s02
-#ACT
-#Call	[\地图触发\被触手杀.txt]	@被触手杀
-#ELSEACT
-#Call	[\系统_脚本\死亡触发.txt]	@死亡触发
-
-[@Revival]
-#IF
-#ACT
-
-[@系统打宝]
-#IF
-#ACT
-OPENHYPERLINK 61 1
-goto @停止挂机
-
-[@天天省钱]
-#IF
-#ACT
-OPENHYPERLINK 111 1
-
-[@回收]
-	#Call	[系统_脚本\装备回收新.txt]	@装备回收x1
-
-[@随身商店]
-	#Call	[随身商店\随身商店.txt]	@游戏随身商店
-
-[@随身测试]
-	#Call	[功能_脚本\内测管理员.txt]	@内测管理员
-
-[@StartMyShop]
-	#Call	[系统_脚本\摆摊功能.txt]	@摆摊功能
-
-[@GetMailItem] 
-; #If
-; CHECKBAGSIZE 1
-; #Act
-; SendMsg 5 你的背包空格不够，无法提取邮件
-; Addbutton 14 1001 <Effect|effectid=4912|effecttype=0|scale=0.8|x=215|y=-143>
-
-
-;;杀死怪物或人物，爆物品触发
-[@ScatterBagItems]
-#IF
-#ACT
-Break
-
-[@OnKillMob]
-#Act
-    #Call	[任务系统\指定图杀怪触发.txt]	@指定图杀怪触发
-
-[@PlayLevelUp]
-;人物升级触发
-
-
-[@AddBag]
-
-
-[@TakeOnEx]
-	#Call	[穿戴触发\穿上触发.txt]	@穿上触发
-[@TakeOffEx]
-	#Call	[穿戴触发\脱下触发.txt]	@脱下触发
-[@TakeOn1]
-	#Call	[穿戴触发\武器穿上触发.txt]	@武器穿上触发
-[@TakeOff1]
-	#Call	[穿戴触发\武器脱下触发.txt]	@武器脱下触发
-
-[@EnterMap]
-#If
-#Act
-    #Call	[地图触发\地图触发.txt]	@地图触发
-Break
-[@LeaveMap]
-#If
-#Act
-    #Call	[地图触发\离开地图触发.txt]	@离开地图触发
-Break
-
-[@随身仓库]
-#If
-#Act
-OPENSTORAGE
-
-[@刷新]
-#If
-#Act
-REFRESHBAG
-
-[@清包]
-#If
-#Act
-    #Call	[随身商店\清理背包.txt]	@清理背包
-
-
-[@OpenSndaItemBox]
-#Act
-SetSndaItemBox 1
-; SendMsg 6 人物首饰盒开启成功.
-
-
-;=============================================触发
-[@KillMon]
-#IF
-#Act
-	#Call	[\杀怪触发\杀怪触发.txt]	@杀怪触发
-
-#IF	
-#Act
-	#Call	[\杀怪触发\杀BOSS给声望.txt]	@杀BOSS给声望
-[@Struck]
-#IF	
-#Act
-;;	#Call	[\杀怪触发\被物攻触发.txt]	@被物攻触发
-
-[@MagicStruck]
-#IF	
-#Act
-;;	#Call	[\杀怪触发\被魔攻触发.txt]	@被魔攻触发
-
-[@PickTask]
-#Act
-    #Call	[任务系统\接取任务触发.txt]	@接取任务触发
-[@ChangeTask]
-#Act
-    #Call	[任务系统\刷新任务触发.txt]	@刷新任务触发
-[@CompleteTask]
-#Act
-    #Call	[任务系统\完成任务触发.txt]	@完成任务触发
-
-[@DeleteTask]
-#Act
-    #Call	[任务系统\删除任务触发.txt]	@删除任务触发
-[@ClickNewTask]
-#Act
-    #Call	[任务系统\任务点击触发.txt]	@任务点击触发
-
-
-;=============================================沙巴克触发
-[@CastleWarStart]
-#Act
-#Call	[\攻城触发\攻城准备.txt]	@攻城准备
-#Act	
-#Call	[\城堡_行会\提示准备攻城.txt]	@提示准备攻城
-
-	
-[@CastleDisbleWarEnd]
-#Act
-	#Call	[\攻城触发\攻城开始.txt]	@攻城开始
-#Act	
-	#Call	[\城堡_行会\提示开始攻城.txt]	@提示开始攻城
-
-[@CastleWarEnd]
-#Act
-	#Call	[\攻城触发\攻城结束.txt]	@攻城结束
-#Act	
-	#Call	[\城堡_行会\提示结束攻城.txt]	@提示结束攻城
-
-
-[@伸缩]
-#IF
-Equal <$CLIENTFLAG> 2
-#ACT
-delbutton 102 2
-MOV S$图标2 <Button|soundid=105|x=-210|y=12|nimg=official/top/1900012532.png|link=@展开>
-addbutton 102 2 <$STR(S$图标2)>
+[@收缩]
+#IF 
+#ACT 
+DELBUTTON 102 1002
+addbutton 102 1002 <Button|x=-220|y=0.0|color=254|nimg=cc/top/arr1.png|link=@展开>
 
 [@展开]
-#IF
-Equal <$CLIENTFLAG> 2
-#ACT
-delbutton 102 2
-MOV S$图标2 <Button|soundid=103|x=-210|y=12|nimg=official/top/1900012531.png|link=@伸缩>
-INC S$图标2 <Button|x=-300|y=10|nimg=private/main/bottom/1900013022.png|link=@系统宠物>
-INC S$图标2 <Button|x=-380|y=10|nimg=private/main/bottom/1900012595.png|link=@系统商城>
-;;INC S$图标2 <Button|x=-386|y=60|nimg=custom/tubiao/30.png|link=@拉起充值>
-;;INC S$图标2 <Button|x=-450|y=60|nimg=custom/tubiao/18.png|link=@活动>
-;;INC S$图标2 <Button|x=-506|y=62|nimg=custom/tubiao/24.png|link=@赞助>
-;;INC S$图标2 <Button|x=-580|y=60|nimg=custom/tubiao/16.png|link=@公众号>
-;;INC S$图标2 <Button|x=-645|y=60|nimg=custom/tubiao/27.png|link=@游戏攻略>
-;;INC S$图标2 <Button|x=-710|y=60|nimg=custom/tubiao/33.png|link=@开启盒子>
-addbutton 102 2 <$STR(S$图标2)>
-break
+#IF 
+#ACT 
+DELBUTTON 102 1002
+#Call [\系统界面\顶部图标.txt] @顶部图标
 
-[@StdModeFunc1]
-#If
-#Act
-Close
-MapMove 0 451 392
+[@赞助礼包]
+#call [\06顶部图标功能\免费赞助.txt] @免费赞助功能
 
-[@StdModeFunc2]
-#If
-#Act
-Close
-MapMove 1 404 124
+[@在线充值]
+#CALL [\06顶部图标功能\在线充值.txt] @在线充值功能
 
-[@StdModeFunc203]
-	#Call	[功能_脚本\队伍召集令.txt]	@队伍召集令
-[@StdModeFunc204]
-#ACT
-#Call	[功能_脚本\诅咒药水.txt]	@诅咒药水
+[@首充豪礼]
+#CALL [\06顶部图标功能\首充豪礼.txt] @首充豪礼功能
 
-[@StdModeFunc205]
-#if
-CHECKEXP > 1000000
-#act
-#Call	[功能_脚本\亡灵药水.txt]	@亡灵药水
-#ELSEACT
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;各类触发;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;---攻击触发
+[@Attack]
+;攻击怪物触发
+#IF 
+CHECKCURRTARGETRACE = 1
+#ACT  
+#CALL [\02触发脚本\攻击怪物触发.txt] @攻击怪物触发
+
+;---切换地图触发
+[@EnterMap]
+
+;---死亡触发
+[@PlayDie]
+#CALL [\02触发脚本\死亡触发.txt] @死亡触发
+
+;---复活戒指触发
+[@SpRingRelive] 
+#IF 
+#ACT 
+SENDMSG 5 利用戒指的力量起死回生，下次复活还剩<$RELIVERING_CD>秒 
+
+;---杀怪触发
+[@KillMon]
+#CALL [\02触发脚本\杀怪触发.txt] @杀怪触发
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;称号触发;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@TitleChanged_100]
+#IF 
+#ACT 
+SetIcon 1 1 20050 0 0 0 0 
+
+[@Untitled_100]
+#IF 
+#ACT 
+SetIcon 1 -1
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;道具使用触发;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@STDMODEFUNC1000]
+#IF 
+#ACT 
+MAPMOVE newxtc 119 104 2
 stop
-SENDMSG 5 你的经验小于100W，不能使用
 
-[@StdModeFunc206]
-#if
-checkitem 宝箱钥匙 1
-#act
-MONEY 绑定元宝 + 10000
-MONEY 元宝 + 20000
-SENDMSG 5 你打开了宝箱获得了宝物。
-#ELSEACT
+[@STDMODEFUNC1001]
+#IF 
+#ACT 
 stop
-SENDMSG 9 你没有宝箱钥匙，我无法为你打开.
 
+[@STDMODEFUNC1002]
+#IF 
+#ACT 
+stop
 
-
-[@有经验检测]
-
-[@StdModeFunc4700]
-#IF
-#ACT
-Gmexecute showeffect 4700
-SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯、大家快去欣赏哦。
-
-[@StdModeFunc4701]
-#IF
-#ACT
-Gmexecute showeffect 4701
-SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯、大家快去欣赏哦。
-
-[@StdModeFunc4702]
-#IF
-#ACT
-Gmexecute showeffect 4702
-SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯、大家快去欣赏哦。
-
-[@StdModeFunc4703]
-#IF
-#ACT
-Gmexecute showeffect 4703
-SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯、大家快去欣赏哦。
-
-[@StdModeFunc4704]
-#IF
-#ACT
-Gmexecute showeffect 4704
-SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯、大家快去欣赏哦。
-
-[@StdModeFunc4705]
-#IF
-#ACT
-Gmexecute showeffect 4705
-SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯、大家快去欣赏哦。
-
-[@StdModeFunc4706]
-#IF
-#ACT
-Gmexecute showeffect 4706
-SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯、大家快去欣赏哦。
-
-[@StdModeFunc4707]
-#IF
-#ACT
-Gmexecute showeffect 4707
-SENDMSG 0 <$USERNAME>在:%m%x:%y处放烟花咯、大家快去欣赏哦。
-
-
-[@StdModeFunc4708]
-#IF
-#ACT
-Gmexecute showeffect 4708
-SENDMSG 0 <$USERNAME>在:%m%x:%y处放庆典蛋糕了!大家快去看拉
-
-[@Message_1100]
-#IF
-#ACT
-mapmove <$CUSTMSGPARAM> <$PARAM2> <$PARAM3>
-SendMsg 5 你已到达目的地：<$CUSTMSGPARAM> <$PARAM2> <$PARAM3>
-
-[@MARRAYMSG1]
-#ACT
-#Call	[\系统_脚本\婚姻功能.txt]	@MARRAYMSG_1
-
-[@DIVORCEMSG1]
-#ACT
-#Call	[\系统_脚本\婚姻功能.txt]	@DIVORCEMSG_1
-
-[@DIVORCEMSG2]
-#ACT
-#Call	[\系统_脚本\婚姻功能.txt]	@DIVORCEMSG_2
-
-[@DIVORCEMSG3]
-#ACT
-#Call	[\系统_脚本\婚姻功能.txt]	@DIVORCEMSG_3
-
-[@DIVORCEMSG4]
-#ACT
-#Call	[\系统_脚本\婚姻功能.txt]	@DIVORCEMSG_4
-
-
-[@停止挂机111]
-#if
-#act
-sendmsg 6 ++++++
-
-#IF
-EQUAL N$挂机状态 1
-#ACT
-MOV N$挂机状态 0
-#ELSEACT
-MOV N$挂机状态 1
-
-#IF
-Equal <$CLIENTFLAG> 1
-#act
-StopAutoPlayGame
-MOV S$挂机 <Button|x=-60|y=-200|color=251|mimg=private\main\Skill\1900012708.png|size=16|nimg=private\main\Skill\1900012708.png|pimg=private\main\Skill\1900012708.png|link=@开始挂机>
-DELBUTTON 104 1
-ADDBUTTON 104 1 <$STR(S$挂机)>
-SENDMSG 7 关闭挂机
+#IF 
+CHECKITEM 10元宝 1 
+#act 
+take 10元宝 1
+money 绑定元宝 + 10

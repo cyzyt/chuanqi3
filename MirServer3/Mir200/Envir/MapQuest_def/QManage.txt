@@ -1,74 +1,19 @@
-[@OnTimer1]
-#if
-#act
-sendmsg 5 定时器1已开启，每20秒执行一次
-
-[@OnTimer2]
-#if
-#act
-sendmsg 5 定时器2已开启，每50秒执行一次
-
-
-[@OnTimer0]
-#if
-EQUAL <$CURRIDEHORSE> 1207
-#act
-RangeHarm <$X> <$Y> 3 9 9 30 0 0 4605
-
-
-[@全服触发]
-#say
-你要传送到神舰吗？\
-点击传送\
-
 [@Startup]
-#If
-#Act
-Mov	A499
-Mov	G499	0
-
-#If
-#Act
-#Call	[\01读取_表格\全局读取表格.txt]	@全局读取表格Ex_Ly
-#Call	[\02申明_变量\全局变量申明.txt]	@全局变量申明Ex_Ly
+#IF 
+#ACT 
+#CALL [\03csv表格\表格加载.txt] @表格加载
 
 [@LoadGuild]
 
 [@Login]
 #If
-CHECKLEVELEX > 0
 #Act
-VAR string HUMAN 押镖次数
-
-#If
-#Act
-#Call	[\02申明_变量\个人变量申明.txt]	@个人变量申明Ex_Ly
-#Call	[\08登陆_系统\新人首次上线.txt]	@新人登陆触发Ex_Ly
-#Call	[\08登陆_系统\平时登陆脚本.txt]	@平时登陆触发Ex_Ly
-#Call	[\系统界面\系统界面.txt]	@游戏界面加载
-#Call	[\系统界面\功能图标.txt]	@功能图标
-
-
-
-
-
-#If
-IsNewHuman
-#act
-Break
-#elseact
-
-#IF
-LARGE <$human(已解锁声望等级)> 0
-#ACT
-goto @人物上线声望处理
-
-#IF
-LARGE <$RELEVEL> 0
-#ACT
-goto @人物上线转生处理
-
-[@OnTimerEx0]
-#Act
-#Call	[\城堡_行会\夺旗准备中.txt]	@夺旗准备中
+#Call [\系统界面\系统界面.txt] @游戏界面加载
+#Call [\系统界面\顶部图标.txt] @顶部图标
+#Call [\系统界面\背包界面.txt] @背包界面加载
+#CALL [\01玩家登录\申明变量.txt] @申明变量
+#CALL [\01玩家登录\申明键值对.txt] @申明键值对
+#CALL [\01玩家登录\新人登录.txt] @新人登录
+#CALL [\01玩家登录\玩家登录.txt] @玩家登录
+#CALL [\01玩家登录\属性管理.txt] @属性管理
 

@@ -1,0 +1,11 @@
+[@main]
+#IF 
+CHECKHPPER = 100
+#act 
+sendmsg 9 <font color='#FF0000'>当前血量已满，无需加血</font>
+break
+
+
+#IF 
+#ACT 
+AddhpPer = 100

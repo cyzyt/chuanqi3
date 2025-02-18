@@ -1,0 +1,86 @@
+[@转生使者功能]
+{
+#IF 
+#ACT
+FORMULATION <$HUMAN(转生等级)>+1 N$下阶转生等级
+
+#IF 
+CHECKVAR HUMAN 转生等级 < <$STR(N$当前大陆最高转生)>
+#ACT 
+MOV S$主界面内容 <Button|x=608.0|y=474.0|color=255|size=18|nimg=cc/zhuansheng/a.png|pimg=cc/zhuansheng/b.png|link=@开启转生>
+INC S$主界面内容 <ItemShow|x=596.0|y=396.0|width=70|height=70|itemid=<$cfg_zhuansheng(<$GetTypeBRow(cfg_zhuansheng,0,<$STR(N$下阶转生等级)>)>_2)>|itemcount=<$cfg_zhuansheng(<$GetTypeBRow(cfg_zhuansheng,0,<$STR(N$下阶转生等级)>)>_3)>|bgtype=1|showtips=1>
+INC S$主界面内容 <ItemShow|x=674.0|y=396.0|width=70|height=70|itemid=<$cfg_zhuansheng(<$GetTypeBRow(cfg_zhuansheng,0,<$STR(N$下阶转生等级)>)>_5)>|itemcount=<$cfg_zhuansheng(<$GetTypeBRow(cfg_zhuansheng,0,<$STR(N$下阶转生等级)>)>_4)>|bgtype=1|showtips=1>
+#ELSEACT 
+MOV S$主界面内容 <Text|x=467.0|y=458.0|size=16|color=249|text=当前大陆转生已达满级，请前往下个大陆继续升级>
+
+#IF 
+#ACT 
+GOTO @转生主界面
+
+[@转生主界面]
+#SAY 
+<Img|reset=1|move=0|loadDelay=1|show=4|esc=1|img=cc/zhuansheng/bg.png|bg=1>
+<Layout|x=384|y=10|width=80|height=80|link=@exit>
+<Button|x=805.0|y=125.0|color=255|size=18|nimg=cc/public/btn_close_2_2.png|link=@exit>
+<Text|x=601.0|y=295.0|color=254|size=14|text=<$HUMAN(转生等级)>%>
+<Text|x=646.0|y=360.0|color=250|size=16|text=<$HUMAN(转生等级)>转>
+<$str(s$主界面内容)>
+<Frames|x=112.0|y=28.0|speed=20|count=10|suffix=.png|prefix=cc/zhuansheng/01/1_|loop=-1>
+<Img|x=639.0|y=298.0|esc=0|img=cc/zhuansheng/btn_szjm_01_5.png>
+<Text|x=670.0|y=295.0|color=253|size=14|text=<$STR(N$下阶转生等级)>%>
+<Img|x=703.0|y=291.0|img=cc/zhuansheng/btn_szjm_01_3.png|esc=0>
+
+[@开启转生]
+#IF 
+CHECKVAR HUMAN 转生等级 ? <$STR(N$当前大陆最高转生)>
+#ACT 
+messagebox 当前大陆转生已达上限，请前往下个大陆继续升级
+break
+
+#IF 
+#ACT 
+GetDBIdxItemFieldValue <$cfg_zhuansheng(<$GetTypeBRow(cfg_zhuansheng,0,<$STR(N$下阶转生等级)>)>_2)> Name S$消耗货币名称
+GetDBIdxItemFieldValue <$cfg_zhuansheng(<$GetTypeBRow(cfg_zhuansheng,0,<$STR(N$下阶转生等级)>)>_5)> Name S$消耗道具名称
+
+#IF 
+CheckBindMoney <$STR(S$消耗货币名称)> < <$cfg_zhuansheng(<$GetTypeBRow(cfg_zhuansheng,0,<$STR(N$下阶转生等级)>)>_3)>
+#act 
+sendmsg 9 <font color='#FF0000'>当前<$STR(S$消耗货币名称)>不足，无法转生</font>
+break
+
+#IF 
+NOT CHECKITEM <$STR(S$消耗道具名称)> <$cfg_zhuansheng(<$GetTypeBRow(cfg_zhuansheng,0,<$STR(N$下阶转生等级)>)>_4)>
+#ACT 
+sendmsg 9 <font color='#FF0000'>当前<$STR(S$消耗道具名称)>不足，无法转生</font>
+break
+
+#IF 
+#ACT 
+ChangeBindMoney <$STR(S$消耗货币名称)> <$cfg_zhuansheng(<$GetTypeBRow(cfg_zhuansheng,0,<$STR(N$下阶转生等级)>)>_3)>
+TAKE <$STR(S$消耗道具名称)> <$cfg_zhuansheng(<$GetTypeBRow(cfg_zhuansheng,0,<$STR(N$下阶转生等级)>)>_4)>
+DEPRIVETITLE <$HUMAN(转生等级)>转
+CONFERTITLE <$STR(N$下阶转生等级)>转
+CALCVAR HUMAN 转生等级 + 1
+SAVEVAR HUMAN 转生等级
+sendmsg 9 <font color='#00EE00'>恭喜，转生成功</font>
+goto @转生使者功能
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

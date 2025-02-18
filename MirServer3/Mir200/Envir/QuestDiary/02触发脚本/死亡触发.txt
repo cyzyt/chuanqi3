@@ -1,0 +1,51 @@
+[@死亡触发]
+{
+;---人物死亡邮件
+#IF 
+#ACT 
+SendMail 2 死亡邮件 你被【<$CURRRTARGETNAME>】杀死
+
+
+;---狂暴之力判断
+#IF 
+CHECKTITLE 狂暴之力
+CHECKCURRTARGETRACE = 0
+#ACT 
+SetIcon 0 -1
+DEPRIVETITLE 狂暴之力
+MailGIVE 灵符 500
+<$CURRRTARGETNAME>.SendMail 1 击杀狂暴玩家 你击杀了狂暴玩家，这是您的灵符奖励
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

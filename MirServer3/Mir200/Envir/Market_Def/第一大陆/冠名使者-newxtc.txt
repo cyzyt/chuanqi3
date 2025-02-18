@@ -1,0 +1,38 @@
+[@main]
+#IF 
+CHECKTITLE 冠名大哥
+#ACT 
+MOV S$界面内容 <Img|x=498.0|y=459.0|esc=0|img=cc/public/3_1.png>
+#elseact 
+MOV S$界面内容 <Button|id=4a|x=426.0|y=459.0|color=255|nimg=cc/guanming/btn.png|size=18|link=@领取冠名>
+
+#if
+#act 
+goto @冠名主界面
+
+[@冠名主界面]
+#say 
+<Img|children={1a,2a,3a,4a,5a}|width=799|height=600|loadDelay=0|show=4|reset=1|bg=1|img=public/0.png|move=0|esc=1>
+<Frames|id=1a|ax=0|ay=1|x=-172.0|y=0.0|speed=10|suffix=.png|prefix=cc/guanming/00/1_|loop=-1|count=20>
+<Img|id=2a|x=-151.0|y=-1.0|img=cc/guanming/text.png|esc=0>
+<RText|id=3a|x=452.0|y=425.0|color=255|size=16|text=<当前累充:/FCOLOR=251><<$STR(U1)>/FCOLOR=250><元/FCOLOR=251>>
+<Layout|x=384|y=10|width=80|height=80|link=@exit>
+<Button|x=782.0|y=118.0|nimg=cc/public/btn_close_2_2.png|size=18|color=255|link=@exit>
+<Effect|id=5a|x=724.0|y=407.0|scale=0.8|speed=1|dir=5|act=0|effectid=20050|effecttype=0>
+<$STR(S$界面内容)>
+
+
+[@领取冠名]
+#IF 
+SMALL U1 999
+#ACT 
+sendmsg 9 <font color='#FF0000'>当前累计充值未达到999元，无法领取冠名</font>
+break
+
+#IF
+#ACT 
+CONFERTITLE 冠名大哥 1
+sendmsg 9 <font color='#00EE00'>冠名称号领取成功</font>
+SENDMOVEMSG 0 255 0 100 1 <恭喜玩家/FCOLOR=255>{【<$username>】/FCOLOR=249}<成功领取/FCOLOR=255><【冠名称号】/FCOLOR=250><从此区服内横着走/FCOLOR=255>
+; SENDMSGNEW 255 0 <恭喜玩家/FCOLOR=255>{【<$username>】/FCOLOR=249}<成功领取/FCOLOR=255><【冠名称号】/FCOLOR=250><从此区服内横着走/FCOLOR=255> 1 1
+goto @main

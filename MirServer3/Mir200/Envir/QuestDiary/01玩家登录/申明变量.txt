@@ -1,0 +1,30 @@
+[@申明变量]
+{
+#IF 
+#ACT 
+VAR integer HUMAN 永恒玫瑰等级
+VAR integer HUMAN 勋章锻造等级
+VAR integer HUMAN 转生等级
+VAR integer HUMAN 盾牌锻造等级
+VAR integer HUMAN 称号晋升等级
+
+;---潜力点变量
+VAR integer HUMAN 潜力攻击
+VAR integer HUMAN 潜力攻击属性
+VAR integer HUMAN 潜力防御
+VAR integer HUMAN 潜力防御属性
+VAR integer HUMAN 潜力生命
+VAR integer HUMAN 潜力生命属性
+VAR integer HUMAN 潜力攻速
+VAR integer HUMAN 潜力攻速属性
+VAR integer HUMAN 潜力暴击
+VAR integer HUMAN 潜力暴击属性
+VAR integer HUMAN 潜力暴伤
+VAR integer HUMAN 潜力暴伤属性
+VAR integer HUMAN 潜力抵抗
+VAR integer HUMAN 潜力抵抗属性
+VAR integer HUMAN 潜力穿甲
+VAR integer HUMAN 潜力穿甲属性
+
+
+}

@@ -1,0 +1,104 @@
+[@称号晋升功能]
+{
+#IF 
+#ACT
+FORMULATION <$HUMAN(称号晋升等级)>+1 N$下阶称号等级
+
+#IF 
+#ACT 
+GOTO @称号晋升主界面
+
+
+[@称号晋升主界面]
+#SAY 
+<Img|move=0|esc=1|loadDelay=1|reset=1|img=cc/chjs/bg.png|show=4|bg=1>
+<Layout|x=384|y=10|width=80|height=80|link=@exit>
+<Button|x=877.0|y=57.0|color=255|nimg=cc/public/btn_close_2_2.png|size=18|link=@exit>
+<Img|x=483.0|y=356.0|img=public/word_sxbt_05.png|esc=0>
+<Img|x=571.0|y=344.0|img=cc/chjs/04.png|esc=0>
+<Img|x=565.0|y=384.0|width=50|height=50|img=cc/public/1900015031.png|esc=0>
+<Img|x=644.0|y=384.0|width=50|height=50|img=cc/public/1900015031.png|esc=0>
+<ItemShow|x=557.0|y=377.0|width=70|height=70|itemid=<$cfg_chjs(<$GetTypeBRow(cfg_chjs,0,<$STR(N$下阶称号等级)>)>_5)>|itemcount=<$cfg_chjs(<$GetTypeBRow(cfg_chjs,0,<$STR(N$下阶称号等级)>)>_6)>|showtips=1|bgtype=0>
+<ItemShow|x=637.0|y=377.0|width=70|height=70|itemid=<$cfg_chjs(<$GetTypeBRow(cfg_chjs,0,<$STR(N$下阶称号等级)>)>_7)>|itemcount=<$cfg_chjs(<$GetTypeBRow(cfg_chjs,0,<$STR(N$下阶称号等级)>)>_8)>|showtips=1|bgtype=0>
+<Button|x=553.0|y=439.0|color=255|nimg=cc/chjs/02.png|pimg=cc/chjs/03.png|size=18|link=@升级称号>
+<Text|x=577.0|y=212.0|size=18|color=250|text=<$cfg_chjs(<$GetTypeBRow(cfg_chjs,0,<$HUMAN(称号晋升等级)>)>_1)>>
+<Text|x=809.0|y=214.0|size=18|color=250|text=<$cfg_chjs(<$GetTypeBRow(cfg_chjs,0,<$STR(N$下阶称号等级)>)>_1)>>
+<Text|x=577.0|y=247.0|size=18|color=250|text=<$cfg_chjs(<$GetTypeBRow(cfg_chjs,0,<$HUMAN(称号晋升等级)>)>_2)>>
+<Text|x=810.0|y=251.0|size=18|color=250|text=<$cfg_chjs(<$GetTypeBRow(cfg_chjs,0,<$STR(N$下阶称号等级)>)>_2)>>
+<Text|x=577.0|y=283.0|size=18|color=250|text=<$cfg_chjs(<$GetTypeBRow(cfg_chjs,0,<$HUMAN(称号晋升等级)>)>_3)>%>
+<Text|x=811.0|y=287.0|size=18|color=250|text=<$cfg_chjs(<$GetTypeBRow(cfg_chjs,0,<$STR(N$下阶称号等级)>)>_3)>%>
+<Text|x=577.0|y=321.0|size=18|color=250|text=<$cfg_chjs(<$GetTypeBRow(cfg_chjs,0,<$HUMAN(称号晋升等级)>)>_4)>%>
+<Text|x=811.0|y=325.0|size=18|color=250|text=<$cfg_chjs(<$GetTypeBRow(cfg_chjs,0,<$STR(N$下阶称号等级)>)>_4)>%>
+<Img|x=871.0|y=210.0|img=cc/public/btn_szjm_01_3.png|esc=0>
+<Img|x=871.0|y=248.0|img=cc/public/btn_szjm_01_3.png|esc=0>
+<Img|x=871.0|y=284.0|img=cc/public/btn_szjm_01_3.png|esc=0>
+<Img|x=871.0|y=322.0|img=cc/public/btn_szjm_01_3.png|esc=0>
+<Frames|x=73.0|y=-148.0|speed=15|count=15|prefix=cc/chjs/00/1_|suffix=.png|loop=-1>
+<Frames|x=52.0|y=-5.0|speed=15|count=16|loop=-1|suffix=.png|prefix=cc/chjs/04/1_>
+<Effect|x=499.0|y=177.0|scale=1|speed=1|effectid=<$cfg_chjs(<$GetTypeBRow(cfg_chjs,0,<$HUMAN(称号晋升等级)>)>_9)>|dir=5|act=0|effecttype=0>
+<Effect|x=734.0|y=179.0|scale=1|speed=1|effectid=<$cfg_chjs(<$GetTypeBRow(cfg_chjs,0,<$STR(N$下阶称号等级)>)>_9)>|dir=5|act=0|effecttype=0>
+
+
+[@升级称号]
+#IF 
+#ACT 
+GetDBIdxItemFieldValue <$cfg_chjs(<$GetTypeBRow(cfg_chjs,0,<$STR(N$下阶称号等级)>)>_5)> Name S$消耗货币名称
+GetDBIdxItemFieldValue <$cfg_chjs(<$GetTypeBRow(cfg_chjs,0,<$STR(N$下阶称号等级)>)>_7)> Name S$消耗材料名称
+
+#IF 
+CheckBindMoney <$STR(S$消耗货币名称)> < <$cfg_chjs(<$GetTypeBRow(cfg_chjs,0,<$STR(N$下阶称号等级)>)>_6)>
+#ACT 
+sendmsg 9 <font color='#FF0000'>当前<$STR(S$消耗货币名称)>不足，无法升级称号</font>
+break
+
+#IF 
+NOT CHECKITEM <$str(S$消耗材料名称)> <$cfg_chjs(<$GetTypeBRow(cfg_chjs,0,<$STR(N$下阶称号等级)>)>_8)>
+#act 
+sendmsg 9 <font color='#FF0000'>当前<$STR(S$消耗材料名称)>不足，无法升级称号</font>
+break
+
+#IF 
+#ACT 
+ChangeBindMoney <$STR(S$消耗货币名称)> <$cfg_chjs(<$GetTypeBRow(cfg_chjs,0,<$STR(N$下阶称号等级)>)>_6)>
+TAKE <$str(S$消耗材料名称)> <$cfg_chjs(<$GetTypeBRow(cfg_chjs,0,<$STR(N$下阶称号等级)>)>_8)>
+DEPRIVETITLE <$cfg_chjs(<$GetTypeBRow(cfg_chjs,0,<$HUMAN(称号晋升等级)>)>_10)>
+CONFERTITLE <$cfg_chjs(<$GetTypeBRow(cfg_chjs,0,<$STR(N$下阶称号等级)>)>_10)>
+CALCVAR HUMAN 称号晋升等级 + 1
+SAVEVAR HUMAN 称号晋升等级
+sendmsg 9 <font color='#00EE00'>称号升级成功</font>
+goto @称号晋升功能
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

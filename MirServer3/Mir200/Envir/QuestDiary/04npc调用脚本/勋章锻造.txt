@@ -1,0 +1,144 @@
+[@勋章锻造功能]
+{
+#IF 
+#ACT
+FORMULATION <$HUMAN(勋章锻造等级)>+1 N$下阶勋章等级
+
+#IF 
+CHECKVAR HUMAN 勋章锻造等级 > 0
+#act 
+MOV N$是否展示tips 1
+#ELSEACT 
+MOV N$是否展示tips 0
+
+#IF 
+equal <$cfg_xzdz(<$GetTypeBRow(cfg_xzdz,0,<$STR(N$下阶勋章等级)>)>_8)> 0
+#act 
+MOV S$消耗材料 <Img|x=592.0|y=369.0|width=50|height=50|img=cc/public/1900015031.png|esc=0>
+INC S$消耗材料 <ItemShow|x=583.0|y=361.0|width=70|height=70|itemid=<$cfg_xzdz(<$GetTypeBRow(cfg_xzdz,0,<$STR(N$下阶勋章等级)>)>_7)>|itemcount=<$cfg_xzdz(<$GetTypeBRow(cfg_xzdz,0,<$STR(N$下阶勋章等级)>)>_4)>|bgtype=0|showtips=1>
+#elseact 
+MOV S$消耗材料 <Img|x=559.0|y=369.0|width=50|height=50|esc=0|img=cc/public/1900015031.png>
+INC S$消耗材料 <ItemShow|x=551.0|y=361.0|width=70|height=70|itemid=<$cfg_xzdz(<$GetTypeBRow(cfg_xzdz,0,<$STR(N$下阶勋章等级)>)>_7)>|itemcount=<$cfg_xzdz(<$GetTypeBRow(cfg_xzdz,0,<$STR(N$下阶勋章等级)>)>_4)>|bgtype=0|showtips=1>
+INC S$消耗材料 <Img|x=619.0|y=369.0|width=50|height=50|img=cc/public/1900015031.png|esc=0>
+INC S$消耗材料 <ItemShow|x=611.0|y=361.0|width=70|height=70|itemid=<$cfg_xzdz(<$GetTypeBRow(cfg_xzdz,0,<$STR(N$下阶勋章等级)>)>_8)>|itemcount=<$cfg_xzdz(<$GetTypeBRow(cfg_xzdz,0,<$STR(N$下阶勋章等级)>)>_9)>|bgtype=0|showtips=1>
+
+
+
+#IF 
+#ACT 
+GOTO @勋章锻造主界面 
+
+
+[@勋章锻造主界面]
+#SAY 
+<Img|x=0.0|y=-26.0|bg=1|move=0|reset=1|loadDelay=1|img=cc/xzdz/bg.png|show=4|esc=1>
+<Layout|x=384.0|y=-16.0|width=80|height=80|link=@exit>
+<Button|x=852.0|y=96.0|color=255|size=18|nimg=cc/public/btn_close_2_2.png|link=@exit>
+<Img|x=604.0|y=217.0|esc=0|img=cc/xzdz/an_you.png>
+<Img|x=475.0|y=195.0|width=90|height=90|esc=0|img=cc/yhmg/kuang_1.png>
+<Img|x=679.0|y=196.0|width=90|height=90|esc=0|img=cc/yhmg/kuang_1.png>
+<Img|x=468.0|y=375.0|esc=0|img=public/word_sxbt_05.png>
+<ItemShow|x=486.0|y=211.0|width=70|height=70|itemid=<$cfg_xzdz(<$GetTypeBRow(cfg_xzdz,0,<$HUMAN(勋章锻造等级)>)>_5)>|itemcount=0|bgtype=0|showtips=<$str(N$是否展示tips)>>
+<ItemShow|x=690.0|y=211.0|width=70|height=70|itemid=<$cfg_xzdz(<$GetTypeBRow(cfg_xzdz,0,<$STR(N$下阶勋章等级)>)>_5)>|itemcount=0|bgtype=0|showtips=1>
+<$STR(S$消耗材料)>
+<Button|x=568.0|y=433.0|pimg=cc/xzdz/2.png|size=18|color=255|nimg=cc/xzdz/1.png|link=@升级勋章>
+<Frames|x=85.0|y=41.0|speed=20|count=12|prefix=cc/xzdz/02/1_|loop=-1|suffix=.png>
+<Img|x=690.0|y=212.0|esc=0|img=cc/xzdz/06_2.png>
+<Text|x=588.0|y=287.0|size=16|color=253|text=<$cfg_xzdz(<$GetTypeBRow(cfg_xzdz,0,<$HUMAN(勋章锻造等级)>)>_1)>>
+<Text|x=788.0|y=287.0|size=16|color=253|text=<$cfg_xzdz(<$GetTypeBRow(cfg_xzdz,0,<$STR(N$下阶勋章等级)>)>_1)>>
+<Text|x=588.0|y=317.0|size=16|color=250|text=<$cfg_xzdz(<$GetTypeBRow(cfg_xzdz,0,<$HUMAN(勋章锻造等级)>)>_2)>%>
+<Text|x=788.0|y=316.0|size=16|color=250|text=<$cfg_xzdz(<$GetTypeBRow(cfg_xzdz,0,<$STR(N$下阶勋章等级)>)>_2)>%>
+<Text|x=588.0|y=345.0|size=16|color=251|text=<$cfg_xzdz(<$GetTypeBRow(cfg_xzdz,0,<$HUMAN(勋章锻造等级)>)>_3)>%>
+<Text|x=789.0|y=345.0|size=16|color=251|text=<$cfg_xzdz(<$GetTypeBRow(cfg_xzdz,0,<$STR(N$下阶勋章等级)>)>_3)>%>
+<Img|x=827.0|y=283.0|img=cc/public/btn_szjm_01_3.png|esc=0>
+<Img|x=827.0|y=312.0|img=cc/public/btn_szjm_01_3.png|esc=0>
+<Img|x=828.0|y=343.0|img=cc/public/btn_szjm_01_3.png|esc=0>
+
+
+[@升级勋章]
+#IF 
+#ACT 
+GetDBIdxItemFieldValue <$cfg_xzdz(<$GetTypeBRow(cfg_xzdz,0,<$STR(N$下阶勋章等级)>)>_7)> Name S$消耗货币名称
+
+#IF 
+NOT CHECKBAGSIZE 2
+#ACT 
+messagebox 当前背包剩余格数不足2格，请先清理背包
+break
+
+
+#IF 
+CheckBindMoney <$STR(S$消耗货币名称)> < <$cfg_xzdz(<$GetTypeBRow(cfg_xzdz,0,<$STR(N$下阶勋章等级)>)>_4)>
+#act 
+sendmsg 9 <font color='#FF0000'>当前<$STR(S$消耗货币名称)>不足，无法升级勋章</font>
+break
+
+
+;----有材料扣除材料
+#IF 
+LARGE <$cfg_xzdz(<$GetTypeBRow(cfg_xzdz,0,<$STR(N$下阶勋章等级)>)>_8)> 0
+#act 
+GetDBIdxItemFieldValue <$cfg_xzdz(<$GetTypeBRow(cfg_xzdz,0,<$STR(N$下阶勋章等级)>)>_8)> Name S$消耗道具名称
+
+#IF 
+LARGE <$cfg_xzdz(<$GetTypeBRow(cfg_xzdz,0,<$STR(N$下阶勋章等级)>)>_8)> 0
+NOT CHECKITEM <$STR(S$消耗道具名称)> <$cfg_xzdz(<$GetTypeBRow(cfg_xzdz,0,<$STR(N$下阶勋章等级)>)>_9)>
+#ACT 
+sendmsg 9 <font color='#FF0000'>当前<$STR(S$消耗道具名称)>不足，无法升级勋章</font>
+break
+
+
+#IF 
+LARGE <$cfg_xzdz(<$GetTypeBRow(cfg_xzdz,0,<$STR(N$下阶勋章等级)>)>_8)> 0
+#ACT 
+TAKE <$STR(S$消耗道具名称)> <$cfg_xzdz(<$GetTypeBRow(cfg_xzdz,0,<$STR(N$下阶勋章等级)>)>_9)>
+
+;----升级逻辑
+#IF 
+#ACT 
+ChangeBindMoney <$STR(S$消耗货币名称)> <$cfg_xzdz(<$GetTypeBRow(cfg_xzdz,0,<$STR(N$下阶勋章等级)>)>_4)>
+TAKEW <$cfg_xzdz(<$GetTypeBRow(cfg_xzdz,0,<$HUMAN(勋章锻造等级)>)>_6)>
+GIVE <$cfg_xzdz(<$GetTypeBRow(cfg_xzdz,0,<$STR(N$下阶勋章等级)>)>_6)> 1
+TakeOnItem <$cfg_xzdz(<$GetTypeBRow(cfg_xzdz,0,<$STR(N$下阶勋章等级)>)>_6)> 2
+CALCVAR HUMAN 勋章锻造等级 + 1
+SAVEVAR HUMAN 勋章锻造等级
+sendmsg 9 <font color='#00EE00'>勋章升级成功</font>
+goto @勋章锻造功能
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

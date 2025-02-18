@@ -1,0 +1,46 @@
+[@main]
+#IF 
+CHECKTITLE 狂暴之力
+#ACT 
+MOV S$确认按钮 <Img|x=637.0|y=544.0|esc=0|img=cc/public/3_1.png>
+#ELSEACT 
+MOV S$确认按钮 <Button|x=656.0|y=549.0|nimg=cc/kbzl/kb_an.png|size=18|color=255|link=@开通狂暴之力>
+
+#IF 
+#ACT    
+GOTO @狂暴之力主界面
+
+
+
+[@狂暴之力主界面]
+#SAY 
+<Img|bg=1|loadDelay=1|img=cc/kbzl/kb_bj.png|reset=1|esc=1|show=4|move=0>
+<Layout|x=384|y=10|width=80|height=80|link=@exit>
+<Button|x=946.0|y=157.0|size=18|color=255|nimg=cc/public/btn_close_2_2.png|link=@exit>
+<Frames|speed=15|suffix=.png|count=15|loop=-1|prefix=cc/kbzl/eff/kbzl_>
+<$str(S$确认按钮)>
+<Text|x=660.0|y=492.0|size=16|color=250|text=1000灵符>
+<Text|x=695.0|y=520.0|size=16|color=251|text=500灵符>
+
+
+[@开通狂暴之力]
+#if 
+checkmoney 灵符 < 1000
+#ACT 
+sendmsg 9 <font color='#FF0000'>当前灵符不足，无法开通狂暴</font>
+break 
+
+#IF 
+CHECKTITLE 狂暴之力
+#ACT 
+sendmsg 9 <font color='#FF0000'>当前已开通狂暴，无法重复开通</font>
+break 
+
+#IF 
+#ACT 
+money 灵符 - 1000
+CONFERTITLE 狂暴之力
+addskill 十步一杀 3
+SetIcon 0 1 20001 0 0 0 0 0
+sendmsg 9 <font color='#00EE00'>狂暴之力开通成功</font>
+goto @main

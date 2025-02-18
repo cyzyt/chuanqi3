@@ -1,0 +1,54 @@
+[@顶部图标]
+{
+#IF 
+#ACT 
+MOV S$顶部图标 <Button|x=-220|y=0.0|color=254|nimg=cc/top/arr2.png|link=@收缩>
+INC S$顶部图标 <Button|x=-310|y=0.0|color=254|nimg=cc/top/2.png|link=@天天省钱>
+INC S$顶部图标 <Button|x=-390|y=0.0|color=254|nimg=cc/top/3.png|link=@交易行>
+INC S$顶部图标 <Button|x=-470|y=0.0|color=254|nimg=cc/top/4.png|link=@福利大厅>
+INC S$顶部图标 <Button|x=-550|y=0.0|color=254|nimg=cc/top/9.png|link=@首充豪礼>
+INC S$顶部图标 <Button|x=-630|y=0.0|color=254|nimg=cc/top/8.png|link=@天选之人>
+INC S$顶部图标 <Button|x=-710|y=0.0|color=254|nimg=cc/top/11.png|link=@扭一扭>
+
+INC S$顶部图标 <Button|x=-310|y=80.0|color=254|nimg=cc/top/1.png|link=@在线充值>
+INC S$顶部图标 <Button|x=-390|y=80.0|color=254|nimg=cc/top/6.png|link=@游戏攻略>
+INC S$顶部图标 <Button|x=-470|y=80.0|color=254|nimg=cc/top/5.png|link=@游戏活动>
+INC S$顶部图标 <Button|x=-550|y=80.0|color=254|nimg=cc/top/7.png|link=@赞助礼包>
+INC S$顶部图标 <Button|x=-630|y=80.0|color=254|nimg=cc/top/10.png|link=@特权福利>
+addbutton 102 1002 <$STR(S$顶部图标)>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

@@ -1,0 +1,112 @@
+[@永恒玫瑰功能]
+{
+#IF 
+#ACT
+FORMULATION <$HUMAN(永恒玫瑰等级)>+1 N$下阶玫瑰等级
+
+#IF 
+CHECKVAR HUMAN 永恒玫瑰等级 > 0
+#act 
+MOV N$是否展示tips 1
+#ELSEACT 
+MOV N$是否展示tips 0
+
+#IF 
+CHECKVAR HUMAN 转生等级 < <$STR(N$当前大陆最高玫瑰)>
+#ACT 
+MOV S$主界面内容 <Img|x=608.0|y=380.0|width=50|height=50|img=cc/public/1900015031.png|esc=0>
+inc S$主界面内容 <ItemShow|x=600.0|y=370.0|itemid=<$cfg_yhmg(<$GetTypeBRow(cfg_yhmg,0,<$STR(N$下阶玫瑰等级)>)>_7)>|itemcount=<$cfg_yhmg(<$GetTypeBRow(cfg_yhmg,0,<$STR(N$下阶玫瑰等级)>)>_4)>|iheight=50|bgtype=0|iwidth=50|showtips=1>
+INC S$主界面内容 <Img|x=482.0|y=382.0|img=public/word_sxbt_05.png|esc=0>
+INC S$主界面内容 <Button|x=581.0|y=435.0|pimg=cc/yhmg/2.png|color=255|nimg=cc/yhmg/1.png|size=18|link=@升级玫瑰>
+#ELSEACT 
+MOV S$主界面内容 <Text|x=455.0|y=400.0|size=18|color=249|text=当前大陆玫瑰已满级，请前往下个大陆升级>
+
+
+
+#IF 
+#ACT 
+goto @永恒玫瑰主界面
+
+
+[@永恒玫瑰主界面]
+#SAY 
+<Img|x=0.0|y=-28.0|move=0|reset=1|bg=1|show=4|loadDelay=1|img=cc/yhmg/bg.png|esc=1>
+<Layout|x=384|y=10|width=80|height=80|link=@exit>
+<Button|x=844.0|y=86.0|size=18|color=255|nimg=cc/public/btn_close_2_2.png|link=@exit>
+<Img|x=475.0|y=196.0|width=90|height=90|esc=0|img=cc/yhmg/kuang_1.png>
+<Img|x=678.0|y=196.0|width=90|height=90|esc=0|img=cc/yhmg/kuang_1.png>
+<Img|x=605.0|y=217.0|img=cc/yhmg/an_you.png|esc=0>
+<ItemShow|x=487.0|y=210.0|width=70|height=70|itemid=<$cfg_yhmg(<$GetTypeBRow(cfg_yhmg,0,<$HUMAN(永恒玫瑰等级)>)>_5)>|itemcount=0|bgtype=0|showtips=<$STR(N$是否展示tips)>>
+<ItemShow|x=690.0|y=212.0|width=70|height=70|itemid=<$cfg_yhmg(<$GetTypeBRow(cfg_yhmg,0,<$STR(N$下阶玫瑰等级)>)>_5)>|itemcount=0|bgtype=0|showtips=1>
+<$STR(S$主界面内容)>
+<Frames|x=110.0|y=21.0|speed=20|loop=-1|count=12|suffix=.png|prefix=cc/yhmg/01/1_>
+<Text|x=587.0|y=285.0|size=16|color=250|text=<$cfg_yhmg(<$GetTypeBRow(cfg_yhmg,0,<$HUMAN(永恒玫瑰等级)>)>_1)>%>
+<Text|x=787.0|y=285.0|size=16|color=250|text=<$cfg_yhmg(<$GetTypeBRow(cfg_yhmg,0,<$STR(N$下阶玫瑰等级)>)>_1)>%>
+<Text|x=587.0|y=315.0|size=16|color=253|text=<$cfg_yhmg(<$GetTypeBRow(cfg_yhmg,0,<$HUMAN(永恒玫瑰等级)>)>_2)>%>
+<Text|x=787.0|y=315.0|size=16|color=253|text=<$cfg_yhmg(<$GetTypeBRow(cfg_yhmg,0,<$STR(N$下阶玫瑰等级)>)>_2)>%>
+<Text|x=587.0|y=344.0|size=16|color=249|text=<$cfg_yhmg(<$GetTypeBRow(cfg_yhmg,0,<$HUMAN(永恒玫瑰等级)>)>_3)>>
+<Text|x=787.0|y=344.0|size=16|color=249|text=<$cfg_yhmg(<$GetTypeBRow(cfg_yhmg,0,<$STR(N$下阶玫瑰等级)>)>_3)>>
+
+<Img|x=828.0|y=280.0|img=cc/public/btn_szjm_01_3.png|esc=0>
+<Img|x=828.0|y=312.0|img=cc/public/btn_szjm_01_3.png|esc=0>
+<Img|x=829.0|y=343.0|img=cc/public/btn_szjm_01_3.png|esc=0>
+<Img|x=689.0|y=215.0|esc=0|img=cc/yhmg/06_2.png>
+
+
+
+
+
+[@升级玫瑰]
+#IF 
+CHECKVAR HUMAN 转生等级 ? <$STR(N$当前大陆最高玫瑰)>
+#act 
+sendmsg 9 <font color='#FF0000'>当前大陆玫瑰已满级，请前往下个大陆升级</font>
+break
+
+#IF 
+#ACT 
+GetDBIdxItemFieldValue <$cfg_yhmg(<$GetTypeBRow(cfg_yhmg,0,<$STR(N$下阶玫瑰等级)>)>_7)> Name S$消耗货币名称
+
+#IF 
+CheckBindMoney <$STR(S$消耗货币名称)> < <$cfg_yhmg(<$GetTypeBRow(cfg_yhmg,0,<$STR(N$下阶玫瑰等级)>)>_4)>
+#act 
+sendmsg 9 <font color='#FF0000'>当前<$STR(S$消耗货币名称)>不足，无法升级玫瑰</font>
+break
+
+#IF 
+NOT CHECKBAGSIZE 2
+#ACT 
+messagebox 当前背包剩余格数不足2格，请先清理背包
+break
+
+#IF 
+#ACT 
+ChangeBindMoney <$STR(S$消耗货币名称)> <$cfg_yhmg(<$GetTypeBRow(cfg_yhmg,0,<$STR(N$下阶玫瑰等级)>)>_4)>
+TAKEW <$cfg_yhmg(<$GetTypeBRow(cfg_yhmg,0,<$HUMAN(永恒玫瑰等级)>)>_6)>
+GIVE <$cfg_yhmg(<$GetTypeBRow(cfg_yhmg,0,<$STR(N$下阶玫瑰等级)>)>_6)> 1
+TakeOnItem <$cfg_yhmg(<$GetTypeBRow(cfg_yhmg,0,<$STR(N$下阶玫瑰等级)>)>_6)> 60
+CALCVAR HUMAN 永恒玫瑰等级 + 1
+SAVEVAR HUMAN 永恒玫瑰等级
+sendmsg 9 <font color='#00EE00'>永恒玫瑰升级成功</font>
+goto @永恒玫瑰功能
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

@@ -4696,3 +4696,13 @@ d3400_1 397 417 -> d3400 396 420
 [id7_003 远古晶矿三层 0] DAY HORSE ONKILLMON
 [id7_004 远古晶矿四层 0] DAY HORSE ONKILLMON
 [sljd8 神龙禁地 0]
+;---------------------------------------------------------------------------
+[newxtc 盟重省] DAY
+;一大陆野外
+[1dl101|e001 天然洞穴 0] ONKILLMON  RUNMON(1) NORECONNECT(newxtc:119:106)
+[1dl201|e002 半兽洞穴 0] ONKILLMON   RUNMON(1) NORECONNECT(newxtc:119:106)
+[1dl301|d8001 蚂蚁洞穴 0] ONKILLMON   RUNMON(1) NORECONNECT(newxtc:119:106)
+[1dl401|d5074 祖玛神殿 0] ONKILLMON RUNMON(1) NORECONNECT(newxtc:119:106)
+[1dl501|d024 沃玛神殿 0] ONKILLMON RUNMON(1) NORECONNECT(newxtc:119:106)
+;二大陆主城
+[2dl 第二大陆] DAY SAFE

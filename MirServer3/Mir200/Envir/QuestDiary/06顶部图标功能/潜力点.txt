@@ -1,0 +1,292 @@
+[@潜力点功能]
+{
+#IF 
+#ACT 
+MOV N$潜力说明打开 0
+MOV S$潜力点说明
+formulation 1000-<$STR(U4)> N$需要击杀数量
+GOTO @潜力点主界面
+
+[@潜力点主界面]
+#SAY 
+<Img|x=478.0|y=173.0|esc=1|bg=1|loadDelay=1|reset=1|show=0|img=public/bg_01.png|move=0>
+<Layout|x=384|y=10|width=80|height=80|link=@exit>
+<Button|x=891.0|y=170.0|size=18|nimg=public/1900000514.png|color=255|link=@exit>
+<Img|x=556.0|y=226.0|esc=0|img=public/1900000667_1.png>
+<Button|x=507.0|y=197.0|width=30|height=30|nimg=public/1900001024.png|size=18|color=255|link=@查看潜力点说明>
+<Text|x=545.0|y=203.0|size=16|color=251|text=潜力点：>
+<Text|x=607.0|y=202.0|size=18|color=250|text=$STM(ITEMCOUNT_潜力点)>
+
+<Img|x=496.0|y=234.0|height=30|esc=0|img=public/bg_npcsm_01.png>
+<Img|x=496.0|y=268.0|height=30|img=public/bg_npcsm_01.png|esc=0>
+<Img|x=496.0|y=301.0|height=30|esc=0|img=public/bg_npcsm_01.png>
+<Img|x=496.0|y=334.0|height=30|esc=0|img=public/bg_npcsm_01.png>
+<Img|x=496.0|y=368.0|height=30|esc=0|img=public/bg_npcsm_01.png>
+<Img|x=496.0|y=402.0|height=30|esc=0|img=public/bg_npcsm_01.png>
+<Img|x=496.0|y=436.0|height=30|esc=0|img=public/bg_npcsm_01.png>
+<Img|x=496.0|y=471.0|height=30|img=public/bg_npcsm_01.png|esc=0>
+
+<Text|x=507.0|y=240.0|color=249|size=18|text=攻 击>
+<Text|x=564.0|y=241.0|color=7|size=15|text=每点攻击可增加1点破坏属性>
+<Text|x=813.0|y=201.0|size=16|color=251|text=已分配>
+<Text|x=831.0|y=241.0|color=255|size=16|text=<$HUMAN(潜力攻击)>>
+<Button|x=870.0|y=238.0|color=255|nimg=public/1900000621.png|size=18|link=@增加攻击潜力>
+
+<Text|x=506.0|y=274.0|color=254|size=18|text=防 御>
+<Text|x=564.0|y=275.0|color=7|size=15|text=每点防御可增加1点防御属性>
+<Text|x=831.0|y=274.0|color=255|size=16|text=<$HUMAN(潜力防御)>>
+<Button|x=870.0|y=272.0|color=255|nimg=public/1900000621.png|size=18|link=@增加防御潜力>
+
+<Text|x=507.0|y=307.0|color=250|size=18|text=生 命>
+<Text|x=564.0|y=308.0|color=7|size=15|text=每点生命可增加10点生命值>
+<Text|x=831.0|y=307.0|color=255|size=16|text=<$HUMAN(潜力生命)>>
+<Button|x=870.0|y=304.0|color=255|nimg=public/1900000621.png|size=18|link=@增加生命潜力>
+
+<Text|x=507.0|y=339.0|color=253|size=18|text=攻 速>
+<Text|x=564.0|y=341.0|color=7|size=15|text=每2点攻速可增加1点攻速属性>
+<Text|x=831.0|y=339.0|color=255|size=16|text=<$HUMAN(潜力攻速)>>
+<Button|x=870.0|y=337.0|color=255|size=18|nimg=public/1900000621.png|link=@增加攻速潜力>
+
+<Text|x=507.0|y=373.0|color=252|size=18|text=暴 击>
+<Text|x=564.0|y=375.0|color=7|size=15|text=每点暴击可增加0.2%暴击几率>
+<Text|x=831.0|y=373.0|color=255|size=16|text=<$HUMAN(潜力暴击)>>
+<Button|x=870.0|y=371.0|color=255|nimg=public/1900000621.png|size=18|link=@增加暴击潜力>
+
+<Text|x=507.0|y=407.0|color=251|size=18|text=暴 伤>
+<Text|x=564.0|y=408.0|color=7|size=15|text=每点暴伤可增加0.2%暴击伤害>
+<Text|x=831.0|y=407.0|color=255|size=16|text=<$HUMAN(潜力暴伤)>>
+<Button|x=870.0|y=405.0|color=255|nimg=public/1900000621.png|size=18|link=@增加暴伤潜力>
+
+<Text|x=507.0|y=442.0|color=214|size=18|text=抵 抗>
+<Text|x=564.0|y=443.0|color=7|size=15|text=每点抵抗可增加0.2%被暴击概率>
+<Text|x=831.0|y=442.0|color=255|size=16|text=<$HUMAN(潜力抵抗)>>
+<Button|x=870.0|y=440.0|color=255|nimg=public/1900000621.png|size=18|link=@增加抵抗潜力>
+
+<Text|x=507.0|y=476.0|color=185|size=18|text=穿 甲>
+<Text|x=564.0|y=478.0|color=7|size=15|text=每点穿甲可增加0.2%忽视防御属性>
+<Text|x=831.0|y=477.0|color=255|size=16|text=<$HUMAN(潜力穿甲)>>
+<Button|x=870.0|y=476.0|color=255|nimg=public/1900000621.png|size=18|link=@增加穿甲潜力>
+
+<Button|x=820.0|y=537.0|size=18|nimg=public/00000361.png|color=70|text=重置>
+<RText|x=497.0|y=549.0|color=255|size=15|text=<再击杀：/FCOLOR=251><<$str(N$需要击杀数量)>/FCOLOR=250><只怪，可获得1点潜力点/FCOLOR=251>>
+
+<$str(S$潜力点说明)>
+
+[@查看潜力点说明]
+#IF 
+equal N$潜力说明打开 0
+#ACT 
+MOV N$潜力说明打开 1
+MOV S$潜力点说明 <Img|x=514.0|y=111.0|width=280|height=80|scale9r=10|img=public/bg_bubble_1.png|scale9l=10|scale9t=10|scale9b=10|esc=0>
+INC S$潜力点说明 <Text|x=522.0|y=117.0|color=255|size=15|text=1.每击杀1000只怪物，可获得1点潜力点>
+INC S$潜力点说明 <Text|x=522.0|y=137.0|color=255|size=15|text=2.每个属性最高分配200点>
+goto @潜力点主界面
+#ELSEACT 
+MOV N$潜力说明打开 0
+MOV S$潜力点说明
+goto @潜力点主界面
+
+[@增加攻击潜力]
+#IF 
+CHECKMONEY 潜力点 = 0
+#act 
+sendmsg 9 <font color='#FF0000'>当前潜力点不足，无法加点</font>
+break
+
+#IF 
+CHECKVAR HUMAN 潜力攻击 = 200
+#act 
+sendmsg 9 <font color='#FF0000'>当前属性点已达最高，无法加点</font>
+break
+
+#IF 
+#ACT 
+MONEY 潜力点 - 1
+CALCVAR HUMAN 潜力攻击 + 1
+SAVEVAR HUMAN 潜力攻击
+sendmsg 9 <font color='#00EE00'>加点成功</font>
+goto @潜力属性计算
+
+[@增加防御潜力]
+#IF 
+CHECKMONEY 潜力点 = 0
+#act 
+sendmsg 9 <font color='#FF0000'>当前潜力点不足，无法加点</font>
+break
+
+#IF 
+CHECKVAR HUMAN 潜力防御 = 200
+#act 
+sendmsg 9 <font color='#FF0000'>当前属性点已达最高，无法加点</font>
+break
+
+#IF 
+#ACT 
+MONEY 潜力点 - 1
+CALCVAR HUMAN 潜力防御 + 1
+SAVEVAR HUMAN 潜力防御
+sendmsg 9 <font color='#00EE00'>加点成功</font>
+goto @潜力属性计算
+
+[@增加生命潜力]
+#IF 
+CHECKMONEY 潜力点 = 0
+#act 
+sendmsg 9 <font color='#FF0000'>当前潜力点不足，无法加点</font>
+break
+
+#IF 
+CHECKVAR HUMAN 潜力生命 = 200
+#act 
+sendmsg 9 <font color='#FF0000'>当前属性点已达最高，无法加点</font>
+break
+
+#IF 
+#ACT 
+MONEY 潜力点 - 1
+CALCVAR HUMAN 潜力生命 + 1
+SAVEVAR HUMAN 潜力生命
+sendmsg 9 <font color='#00EE00'>加点成功</font>
+goto @潜力属性计算
+
+[@增加攻速潜力]
+#IF 
+CHECKMONEY 潜力点 = 0
+#act 
+sendmsg 9 <font color='#FF0000'>当前潜力点不足，无法加点</font>
+break
+
+#IF 
+CHECKVAR HUMAN 潜力攻速 = 200
+#act 
+sendmsg 9 <font color='#FF0000'>当前属性点已达最高，无法加点</font>
+break
+
+#IF 
+#ACT 
+MONEY 潜力点 - 1
+CALCVAR HUMAN 潜力攻速 + 1
+SAVEVAR HUMAN 潜力攻速
+sendmsg 9 <font color='#00EE00'>加点成功</font>
+goto @潜力属性计算
+
+[@增加暴击潜力]
+#IF 
+CHECKMONEY 潜力点 = 0
+#act 
+sendmsg 9 <font color='#FF0000'>当前潜力点不足，无法加点</font>
+break
+
+#IF 
+CHECKVAR HUMAN 潜力暴击 = 200
+#act 
+sendmsg 9 <font color='#FF0000'>当前属性点已达最高，无法加点</font>
+break
+
+#IF 
+#ACT 
+MONEY 潜力点 - 1
+CALCVAR HUMAN 潜力暴击 + 1
+SAVEVAR HUMAN 潜力暴击
+sendmsg 9 <font color='#00EE00'>加点成功</font>
+goto @潜力属性计算
+
+[@增加暴伤潜力]
+#IF 
+CHECKMONEY 潜力点 = 0
+#act 
+sendmsg 9 <font color='#FF0000'>当前潜力点不足，无法加点</font>
+break
+
+#IF 
+CHECKVAR HUMAN 潜力暴伤 = 200
+#act 
+sendmsg 9 <font color='#FF0000'>当前属性点已达最高，无法加点</font>
+break
+
+#IF 
+#ACT 
+MONEY 潜力点 - 1
+CALCVAR HUMAN 潜力暴伤 + 1
+SAVEVAR HUMAN 潜力暴伤
+sendmsg 9 <font color='#00EE00'>加点成功</font>
+goto @潜力属性计算
+
+[@增加抵抗潜力]
+#IF 
+CHECKMONEY 潜力点 = 0
+#act 
+sendmsg 9 <font color='#FF0000'>当前潜力点不足，无法加点</font>
+break
+
+#IF 
+CHECKVAR HUMAN 潜力抵抗 = 200
+#act 
+sendmsg 9 <font color='#FF0000'>当前属性点已达最高，无法加点</font>
+break
+
+#IF 
+#ACT 
+MONEY 潜力点 - 1
+CALCVAR HUMAN 潜力抵抗 + 1
+SAVEVAR HUMAN 潜力抵抗
+sendmsg 9 <font color='#00EE00'>加点成功</font>
+goto @潜力属性计算
+
+[@增加穿甲潜力]
+#IF 
+CHECKMONEY 潜力点 = 0
+#act 
+sendmsg 9 <font color='#FF0000'>当前潜力点不足，无法加点</font>
+break
+
+#IF 
+CHECKVAR HUMAN 潜力穿甲 = 200
+#act 
+sendmsg 9 <font color='#FF0000'>当前属性点已达最高，无法加点</font>
+break
+
+#IF 
+#ACT 
+MONEY 潜力点 - 1
+CALCVAR HUMAN 潜力穿甲 + 1
+SAVEVAR HUMAN 潜力穿甲
+sendmsg 9 <font color='#00EE00'>加点成功</font>
+goto @潜力属性计算
+
+[@潜力属性计算]
+#IF 
+#ACT 
+CALCVAR HUMAN 潜力攻击属性 = <$HUMAN(潜力攻击)>
+SAVEVAR HUMAN 潜力攻击属性
+
+CALCVAR HUMAN 潜力防御属性 = <$HUMAN(潜力防御)>
+SAVEVAR HUMAN 潜力防御属性
+
+formulation <$HUMAN(潜力生命)>*10 N$潜力生命
+CALCVAR HUMAN 潜力生命属性 = <$STR(N$潜力生命)>
+SAVEVAR HUMAN 潜力生命属性
+
+formulation <$HUMAN(潜力攻速)>*1/2 N$潜力攻速 1
+CALCVAR HUMAN 潜力攻速属性 = <$STR(N$潜力攻速)>
+SAVEVAR HUMAN 潜力攻速属性
+
+formulation <$HUMAN(潜力暴击)>*20 N$潜力暴击
+CALCVAR HUMAN 潜力暴击属性 = <$STR(N$潜力暴击)>
+SAVEVAR HUMAN 潜力暴击属性
+
+formulation <$HUMAN(潜力暴伤)>*20 N$潜力暴伤
+CALCVAR HUMAN 潜力暴伤属性 = <$STR(N$潜力暴伤)>
+SAVEVAR HUMAN 潜力暴伤属性
+
+formulation <$HUMAN(潜力抵抗)>*20 N$潜力抵抗
+CALCVAR HUMAN 潜力抵抗属性 = <$STR(N$潜力抵抗)>
+SAVEVAR HUMAN 潜力抵抗属性
+
+formulation <$HUMAN(潜力穿甲)>*20 N$潜力穿甲
+CALCVAR HUMAN 潜力穿甲属性 = <$STR(N$潜力穿甲)>
+SAVEVAR HUMAN 潜力穿甲属性
+#CALL [\01玩家登录\属性管理.txt] @属性管理
+goto @潜力点功能
+
+}

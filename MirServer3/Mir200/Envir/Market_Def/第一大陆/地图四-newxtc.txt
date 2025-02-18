@@ -1,0 +1,19 @@
+[@main]
+#SAY 
+<Img|children={1a,2a}|ax=0|ay=1|x=0|y=70|width=600|height=600|show=4|img=public/0.png|move=0|loadDelay=0|bg=1|reset=1|esc=1>
+<Frames|id=1a|x=0|y=0|width=600|height=400|speed=10|count=40|prefix=cc/ditucs/frame/a_|loop=-1|suffix=.png>
+<Button|id=2a|x=563.0|y=28.0|width=60|height=51|color=255|size=18|nimg=cc/public/btn_close_2_2.png|link=@exit>
+<Img|x=338.0|y=133.0|width=225|height=170|esc=0|img=cc/ditucs/1dl401.png>
+<ItemShow|x=138.0|y=380.0|width=70|height=70|itemid=30008|itemcount=1|bgtype=0|showtips=1>
+<ItemShow|x=232.0|y=381.0|width=70|height=70|itemid=30014|itemcount=1|bgtype=0|showtips=1>
+<ItemShow|x=325.0|y=381.0|width=70|height=70|itemid=30020|itemcount=1|bgtype=0|showtips=1>
+<ItemShow|x=418.0|y=381.0|width=70|height=70|itemid=30026|itemcount=1|bgtype=0|showtips=1>
+<Text|x=515.0|y=333.0|color=250|size=16|text=免费进入>
+<Button|x=478.0|y=356.0|width=100|height=100|color=251|size=16|nimg=cc/ditucs/jr.png|link=@进入地图>
+
+
+
+[@进入地图]
+#IF 
+#ACT 
+MAP 1dl401

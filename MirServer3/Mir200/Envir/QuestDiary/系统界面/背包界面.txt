@@ -1,0 +1,50 @@
+[@背包界面加载]
+{
+#IF 
+#ACT 
+MOV S$背包界面 <Img|x=20.0|y=515.0|width=150|img=public/1900000668.png|esc=0>
+INC S$背包界面 <Img|x=180.0|y=515.0|width=150|img=public/1900000668.png|esc=0>
+INC S$背包界面 <Img|x=20.0|y=550.0|width=150|img=public/1900000668.png|esc=0>
+INC S$背包界面 <Img|x=180.0|y=550.0|width=150|img=public/1900000668.png|esc=0>
+INC S$背包界面 <Text|x=22|y=519|color=7|size=14|outline=1|outlinecolor=0|text=绑定元宝：>
+INC S$背包界面 <Text|x=182|y=519|color=7|size=14|outline=1|outlinecolor=0|text=元宝：>
+INC S$背包界面 <Text|x=22|y=554|color=7|size=14|outline=1|outlinecolor=0|text=绑定灵符：>
+INC S$背包界面 <Text|x=182|y=554|color=7|size=14|outline=1|outlinecolor=0|text=灵符：>
+INC S$背包界面 <Text|x=85|y=519|color=251|size=14|outline=1|outlinecolor=0|text=$STM(ITEMCOUNT_绑定元宝)>
+INC S$背包界面 <Text|x=220|y=519|color=251|size=14|outline=1|outlinecolor=0|text=$STM(ITEMCOUNT_元宝)>
+INC S$背包界面 <Text|x=85|y=554|color=70|size=14|outline=1|outlinecolor=0|text=$STM(ITEMCOUNT_绑定灵符)>
+INC S$背包界面 <Text|x=220|y=554|color=70|size=14|outline=1|outlinecolor=0|text=$STM(ITEMCOUNT_灵符)>
+ADDBUTTON 7 1000 <$STR(S$背包界面)>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

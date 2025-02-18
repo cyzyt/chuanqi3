@@ -19,4 +19,12 @@ Addbutton 109 60000 <$Str(S$主隐藏界面)>
 
 Addbutton 107 60002 <Button|id=110|x=-134.0|y=-120.0|nimg=private/main/bottom/1900013011.png|link=@系统背包><Button|x=-62.0|y=-120.0|nimg=private/main/bottom/1900013010.png|link=@系统角色>
 SETPICKITEMTOBAG 107 110
+
+;------角色界面 
+#IF 
+#ACT 
+MOV S$角色界面按钮 <Button|x=250.0|y=50.0|text=加点|color=254|nimg=public/1900000652.png|link=@加点>
+ADDBUTTON 3 1001 <$STR(S$角色界面按钮)>
+
+
 }
