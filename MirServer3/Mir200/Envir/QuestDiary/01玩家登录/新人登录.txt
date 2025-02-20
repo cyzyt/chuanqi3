@@ -4,7 +4,7 @@
 #IF 
 isnewhuman 
 #ACT 
-MAPMOVE newxtc 119 105 3
+MAPMOVE 1 403 123 2
 ADDSKILL 基本剑术 3
 ADDSKILL 攻杀剑术 3
 ADDSKILL 刺杀剑术 3

@@ -14141,7 +14141,7 @@ local config = {
 	},
 	[2607] = { 
 		Idx=2607,
-		Name="盟重回城石",
+		Name="道馆回城石",
 		Stdmode=2,
 		Shape=1,
 		Weight=0,
