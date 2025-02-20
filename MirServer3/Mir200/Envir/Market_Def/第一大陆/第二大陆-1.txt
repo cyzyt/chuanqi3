@@ -20,4 +20,4 @@ break
 
 #IF 
 #ACT 
-MAPMOVE 2dl 97 61 2
+MAPMOVE 2dl 140 28 2
