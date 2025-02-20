@@ -15,7 +15,7 @@ GIVE 新手·木剑 1
 GIVE 新手·布衣 1
 TakeOnItem 新手·木剑 1
 TakeOnItem 新手·布衣 0
-GIVE 盟重回城石 1
+GIVE 道馆回城石 1
 GIVE 随机传送石 1 
 ADDVARCACHE T1 新人赠送切割 100
 
