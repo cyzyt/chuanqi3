@@ -7,6 +7,7 @@ VAR integer HUMAN 勋章锻造等级
 VAR integer HUMAN 转生等级
 VAR integer HUMAN 盾牌锻造等级
 VAR integer HUMAN 称号晋升等级
+VAR integer HUMAN 特权是否开通
 
 ;---潜力点变量
 VAR integer HUMAN 潜力攻击

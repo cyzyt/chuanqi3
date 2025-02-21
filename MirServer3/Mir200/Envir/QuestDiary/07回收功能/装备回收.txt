@@ -1,0 +1,542 @@
+[@装备回收功能]
+{
+#IF 
+CHECK [005] 0
+#ACT 
+MOV S$勾选框1 <Button|x=29.0|y=79.0|color=255|size=18|nimg=cc/public/001.png|link=@勾选1>
+#ELSEACT 
+MOV S$勾选框1 <Button|x=29.0|y=79.0|color=255|size=18|nimg=cc/public/002.png|link=@勾选1>
+
+#IF 
+CHECK [006] 0
+#ACT 
+MOV S$勾选框2 <Button|x=190.0|y=79.0|color=255|size=18|nimg=cc/public/001.png|link=@勾选2>
+#ELSEACT 
+MOV S$勾选框2 <Button|x=190.0|y=79.0|color=255|size=18|nimg=cc/public/002.png|link=@勾选2>
+
+#IF 
+CHECK [007] 0
+#ACT 
+MOV S$勾选框3 <Button|x=351.0|y=79.0|color=255|size=18|nimg=cc/public/001.png|link=@勾选3>
+#ELSEACT 
+MOV S$勾选框3 <Button|x=351.0|y=79.0|color=255|size=18|nimg=cc/public/002.png|link=@勾选3>
+
+#IF 
+CHECK [008] 0
+#ACT 
+MOV S$勾选框4 <Button|x=28.0|y=122.0|nimg=cc/public/001.png|size=18|color=255|link=@勾选4>
+#ELSEACT 
+MOV S$勾选框4 <Button|x=28.0|y=122.0|nimg=cc/public/002.png|size=18|color=255|link=@勾选4>
+
+#IF 
+CHECK [009] 0
+#ACT 
+MOV S$勾选框5 <Button|x=191.0|y=123.0|nimg=cc/public/001.png|size=18|color=255|link=@勾选5>
+#ELSEACT 
+MOV S$勾选框5 <Button|x=191.0|y=123.0|nimg=cc/public/002.png|size=18|color=255|link=@勾选5>
+
+#IF 
+CHECK [010] 0
+#ACT 
+MOV S$勾选框6 <Button|x=351.0|y=122.0|nimg=cc/public/001.png|size=18|color=255|link=@勾选6>
+#ELSEACT 
+MOV S$勾选框6 <Button|x=351.0|y=122.0|nimg=cc/public/002.png|size=18|color=255|link=@勾选6>
+
+#IF 
+CHECK [011] 0
+#ACT 
+MOV S$勾选框7 <Button|x=28.0|y=163.0|nimg=cc/public/001.png|size=18|color=255|link=@勾选7>
+#ELSEACT 
+MOV S$勾选框7 <Button|x=28.0|y=163.0|nimg=cc/public/002.png|size=18|color=255|link=@勾选7>
+
+#IF 
+CHECK [012] 0
+#ACT 
+MOV S$勾选框8 <Button|x=190.0|y=163.0|color=255|size=18|nimg=cc/public/001.png|link=@勾选8>
+#ELSEACT 
+MOV S$勾选框8 <Button|x=190.0|y=163.0|color=255|size=18|nimg=cc/public/002.png|link=@勾选8>
+
+#IF 
+CHECK [013] 0
+#ACT 
+MOV S$勾选框9 <Button|x=351.0|y=163.0|color=255|size=18|nimg=cc/public/001.png|link=@勾选9>
+#ELSEACT 
+MOV S$勾选框9 <Button|x=351.0|y=163.0|color=255|size=18|nimg=cc/public/002.png|link=@勾选9>
+
+#IF 
+CHECK [014] 0
+#ACT 
+MOV S$勾选框10 <Button|x=28.0|y=201.0|nimg=cc/public/001.png|size=18|color=255|link=@勾选10>
+#ELSEACT 
+MOV S$勾选框10 <Button|x=28.0|y=201.0|nimg=cc/public/002.png|size=18|color=255|link=@勾选10>
+
+#IF 
+CHECK [015] 0
+#ACT 
+MOV S$勾选框11 <Button|x=190.0|y=201.0|color=255|size=18|nimg=cc/public/001.png|link=@勾选11>
+#ELSEACT 
+MOV S$勾选框11 <Button|x=190.0|y=201.0|color=255|size=18|nimg=cc/public/002.png|link=@勾选11>
+
+#IF 
+CHECK [016] 0
+#ACT 
+MOV S$勾选框12 <Button|x=28.0|y=239.0|nimg=cc/public/001.png|size=18|color=255|link=@勾选12>
+#ELSEACT 
+MOV S$勾选框12 <Button|x=28.0|y=239.0|nimg=cc/public/002.png|size=18|color=255|link=@勾选12>
+
+#IF 
+CHECK [017] 0
+#ACT 
+MOV S$勾选框13 <Button|x=190.0|y=238.0|color=255|size=18|nimg=cc/public/001.png|link=@勾选13>
+#ELSEACT 
+MOV S$勾选框13 <Button|x=190.0|y=238.0|color=255|size=18|nimg=cc/public/002.png|link=@勾选13>
+
+#IF 
+CHECK [018] 0
+#ACT 
+MOV S$勾选框14 <Button|x=351.0|y=239.0|color=255|size=18|nimg=cc/public/001.png|link=@勾选14>
+#ELSEACT 
+MOV S$勾选框14 <Button|x=351.0|y=239.0|color=255|size=18|nimg=cc/public/002.png|link=@勾选14>
+
+#IF 
+CHECK [019] 0
+#ACT 
+MOV S$勾选框15 <Button|x=28.0|y=276.0|color=255|size=18|nimg=cc/public/001.png|link=@勾选15>
+#ELSEACT 
+MOV S$勾选框15 <Button|x=28.0|y=276.0|color=255|size=18|nimg=cc/public/002.png|link=@勾选15>
+
+#IF 
+CHECK [020] 0
+#ACT 
+MOV S$勾选框16 <Button|x=189.0|y=277.0|color=255|size=18|nimg=cc/public/001.png|link=@勾选16>
+#ELSEACT 
+MOV S$勾选框16 <Button|x=189.0|y=277.0|color=255|size=18|nimg=cc/public/002.png|link=@勾选16>
+
+#IF 
+CHECK [021] 0
+#ACT 
+MOV S$勾选框17 <Button|x=351.0|y=277.0|color=255|size=18|nimg=cc/public/001.png|link=@勾选17>
+#ELSEACT 
+MOV S$勾选框17 <Button|x=351.0|y=277.0|color=255|size=18|nimg=cc/public/002.png|link=@勾选17>
+
+#IF 
+CHECK [022] 0
+#ACT 
+MOV S$勾选框18 <Button|x=29.0|y=313.0|color=255|size=18|nimg=cc/public/001.png|link=@勾选18>
+#ELSEACT 
+MOV S$勾选框18 <Button|x=29.0|y=313.0|color=255|size=18|nimg=cc/public/002.png|link=@勾选18>
+
+#IF 
+CHECK [023] 0
+#ACT 
+MOV S$勾选框19 <Button|x=190.0|y=314.0|color=255|size=18|nimg=cc/public/001.png|link=@勾选19>
+#ELSEACT 
+MOV S$勾选框19 <Button|x=190.0|y=314.0|color=255|size=18|nimg=cc/public/002.png|link=@勾选19>
+
+#IF 
+CHECK [024] 0
+#ACT 
+MOV S$勾选框20 <Button|x=352.0|y=314.0|color=255|size=18|nimg=cc/public/001.png|link=@勾选20>
+#ELSEACT 
+MOV S$勾选框20 <Button|x=352.0|y=314.0|color=255|size=18|nimg=cc/public/002.png|link=@勾选20>
+
+#IF 
+CHECK [025] 0
+#ACT 
+MOV S$勾选框21 <Button|x=29.0|y=349.0|color=255|size=18|nimg=cc/public/001.png|link=@勾选21>
+#ELSEACT 
+MOV S$勾选框21 <Button|x=29.0|y=349.0|color=255|size=18|nimg=cc/public/002.png|link=@勾选21>
+
+#IF 
+CHECK [026] 0
+#ACT 
+MOV S$勾选框22 <Button|x=190.0|y=349.0|color=255|size=18|nimg=cc/public/001.png|link=@勾选22>
+#ELSEACT 
+MOV S$勾选框22 <Button|x=190.0|y=349.0|color=255|size=18|nimg=cc/public/002.png|link=@勾选22>
+
+;---------自动回收勾选
+#IF 
+CHECK [027] 0
+#ACT 
+MOV S$勾选框23 <Button|x=29.0|y=402.0|color=255|size=18|nimg=cc/public/001.png|link=@勾选23>
+#ELSEACT 
+MOV S$勾选框23 <Button|x=29.0|y=402.0|color=255|size=18|nimg=cc/public/002.png|link=@勾选23>
+
+#IF 
+#ACT 
+GOTO @装备回收主界面
+
+[@装备回收主界面]
+#SAY 
+<Img|x=0.0|y=0.0|show=4|reset=1|img=cc/huishou/zbhs_bj.png|loadDelay=1|bg=1|move=1|esc=1>
+<Button|x=649.0|y=-8.0|nimg=cc/public/btn_close_2_2.png|color=255|size=18|link=@exit>
+<RText|x=518.0|y=49.0|size=16|color=250|text=<当前回收加成：/FCOLOR=255><0%/FCOLOR=250>>
+<Button|x=513.0|y=87.0|height=45|nimg=cc/public/1900000663_2.png|size=18|color=70|text=装 备 回 收>
+<Img|x=29.0|y=80.0|width=150|esc=0|img=public/bg_bti_07.png>
+<$STR(S$勾选框1)>
+<Text|x=60.0|y=85.0|size=16|color=250|outline=1|outlinecolor=0|text=一大陆绿装首饰>
+<Img|x=191.0|y=80.0|width=150|esc=0|img=public/bg_bti_07.png>
+<$STR(S$勾选框2)>
+<Text|x=223.0|y=85.0|size=16|color=250|outline=1|outlinecolor=0|text=一大陆绿装剑甲>
+<Img|x=351.0|y=80.0|width=150|esc=0|img=public/bg_bti_07.png>
+<$STR(S$勾选框3)>
+<Text|x=383.0|y=85.0|size=16|color=250|outline=1|outlinecolor=0|text=二大陆绿装首饰>
+<Img|x=29.0|y=123.0|width=150|esc=0|img=public/bg_bti_07.png>
+<$STR(S$勾选框4)>
+<Text|x=60.0|y=128.0|size=16|color=250|outline=1|outlinecolor=0|text=二大陆绿装剑甲>
+<Img|x=191.0|y=123.0|width=150|esc=0|img=public/bg_bti_07.png>
+<$STR(S$勾选框5)>
+<Text|x=223.0|y=128.0|size=16|color=250|outline=1|outlinecolor=0|text=三大陆绿装首饰>
+<Img|x=351.0|y=123.0|width=150|esc=0|img=public/bg_bti_07.png>
+<$STR(S$勾选框6)>
+<Text|x=383.0|y=128.0|size=16|color=250|outline=1|outlinecolor=0|text=四大陆绿装首饰>
+<Img|x=29.0|y=164.0|width=150|esc=0|img=public/bg_bti_07.png>
+<$STR(S$勾选框7)>
+<Text|x=60.0|y=169.0|size=16|color=250|outline=1|outlinecolor=0|text=四大陆绿装剑甲>
+<Img|x=191.0|y=164.0|width=150|esc=0|img=public/bg_bti_07.png>
+<$STR(S$勾选框8)>
+<Text|x=223.0|y=169.0|size=16|color=250|outline=1|outlinecolor=0|text=五大陆绿装首饰>
+<Img|x=351.0|y=164.0|width=150|esc=0|img=public/bg_bti_07.png>
+<$STR(S$勾选框9)>
+<Text|x=383.0|y=169.0|size=16|color=250|outline=1|outlinecolor=0|text=五大陆绿装剑甲>
+<Img|x=29.0|y=202.0|width=150|esc=0|img=public/bg_bti_07.png>
+<$STR(S$勾选框10)>
+<Text|x=59.0|y=207.0|size=16|color=250|outline=1|outlinecolor=0|text=六大陆绿装首饰>
+<Img|x=190.0|y=202.0|width=150|esc=0|img=public/bg_bti_07.png>
+<$STR(S$勾选框11)>
+<Text|x=222.0|y=207.0|size=16|color=250|outline=1|outlinecolor=0|text=六大陆绿装剑甲>
+<Img|x=29.0|y=239.0|width=150|esc=0|img=public/bg_bti_07.png>
+<$STR(S$勾选框12)>
+<Text|x=59.0|y=244.0|size=16|color=252|outline=1|outlinecolor=0|text=一大陆蓝装武器>
+<Img|x=190.0|y=239.0|width=150|esc=0|img=public/bg_bti_07.png>
+<$STR(S$勾选框13)>
+<Text|x=221.0|y=244.0|size=16|color=252|outline=1|outlinecolor=0|text=二大陆蓝装首饰>
+<Img|x=352.0|y=239.0|width=150|esc=0|img=public/bg_bti_07.png>
+<$STR(S$勾选框14)>
+<Text|x=383.0|y=245.0|size=16|color=252|outline=1|outlinecolor=0|text=二大陆蓝装剑甲>
+<Img|x=29.0|y=277.0|width=150|esc=0|img=public/bg_bti_07.png>
+<$STR(S$勾选框15)>
+<Text|x=61.0|y=282.0|size=16|color=252|outline=1|outlinecolor=0|text=三大陆蓝装首饰>
+<Img|x=190.0|y=277.0|width=150|esc=0|img=public/bg_bti_07.png>
+<$STR(S$勾选框16)>
+<Text|x=220.0|y=282.0|size=16|color=252|outline=1|outlinecolor=0|text=三大陆蓝装剑甲>
+<Img|x=352.0|y=277.0|width=150|esc=0|img=public/bg_bti_07.png>
+<$STR(S$勾选框17)>
+<Text|x=383.0|y=282.0|size=16|color=252|outline=1|outlinecolor=0|text=四大陆蓝装首饰>
+<Img|x=29.0|y=314.0|width=150|esc=0|img=public/bg_bti_07.png>
+<$STR(S$勾选框18)>
+<Text|x=61.0|y=319.0|size=16|color=252|outline=1|outlinecolor=0|text=四大陆蓝装剑甲>
+<Img|x=190.0|y=315.0|width=150|esc=0|img=public/bg_bti_07.png>
+<$STR(S$勾选框19)>
+<Text|x=221.0|y=320.0|size=16|color=252|outline=1|outlinecolor=0|text=五大陆蓝装首饰>
+<Img|x=353.0|y=315.0|width=150|esc=0|img=public/bg_bti_07.png>
+<$STR(S$勾选框20)>
+<Text|x=384.0|y=320.0|size=16|color=252|outline=1|outlinecolor=0|text=五大陆蓝装剑甲>
+<Img|x=29.0|y=349.0|width=150|esc=0|img=public/bg_bti_07.png>
+<$STR(S$勾选框21)>
+<Text|x=62.0|y=354.0|size=16|color=252|outline=1|outlinecolor=0|text=六大陆蓝装首饰>
+<Img|x=190.0|y=350.0|width=150|esc=0|img=public/bg_bti_07.png>
+<$STR(S$勾选框22)>
+<Text|x=222.0|y=355.0|size=16|color=252|outline=1|outlinecolor=0|text=六大陆蓝装剑甲>
+<Img|x=47.0|y=387.0|height=5|esc=0|img=public/bg_szjm_02.png>
+<Button|x=24.0|y=445.0|width=150|nimg=cc/public/1900000663_2.png|size=18|color=255|text=一键全选|link=@一键全选>
+<Button|x=186.0|y=446.0|width=150|nimg=cc/public/1900000663_2.png|size=18|color=255|text=一键反选|link=@一键反选>
+<Button|x=345.0|y=446.0|width=150|nimg=cc/public/1900000663_2.png|size=18|color=255|text=回收勾选|link=@勾选回收>
+<Img|x=29.0|y=402.0|width=150|esc=0|img=public/bg_bti_07.png>
+<$STR(S$勾选框23)>
+<Text|x=64.0|y=407.0|size=16|color=254|outline=1|outlinecolor=0|text=自动回收>
+
+;-----界面1勾选框状态
+[@勾选1]
+#IF 
+CHECK [005] 0
+#ACT 
+SET [005] 1
+goto @装备回收功能
+#ELSEACT 
+SET [005] 0
+goto @装备回收功能
+
+[@勾选2]
+#IF 
+CHECK [006] 0
+#ACT 
+SET [006] 1
+goto @装备回收功能
+#ELSEACT 
+SET [006] 0
+goto @装备回收功能
+
+[@勾选3]
+#IF 
+CHECK [007] 0
+#ACT 
+SET [007] 1
+goto @装备回收功能
+#ELSEACT 
+SET [007] 0
+goto @装备回收功能
+
+[@勾选4]
+#IF 
+CHECK [008] 0
+#ACT 
+SET [008] 1
+goto @装备回收功能
+#ELSEACT 
+SET [008] 0
+goto @装备回收功能
+
+[@勾选5]
+#IF 
+CHECK [009] 0
+#ACT 
+SET [009] 1
+goto @装备回收功能
+#ELSEACT 
+SET [009] 0
+goto @装备回收功能
+
+[@勾选6]
+#IF 
+CHECK [010] 0
+#ACT 
+SET [010] 1
+goto @装备回收功能
+#ELSEACT 
+SET [010] 0
+goto @装备回收功能
+
+[@勾选7]
+#IF 
+CHECK [011] 0
+#ACT 
+SET [011] 1
+goto @装备回收功能
+#ELSEACT 
+SET [011] 0
+goto @装备回收功能
+
+[@勾选8]
+#IF 
+CHECK [012] 0
+#ACT 
+SET [012] 1
+goto @装备回收功能
+#ELSEACT 
+SET [012] 0
+goto @装备回收功能
+
+[@勾选9]
+#IF 
+CHECK [013] 0
+#ACT 
+SET [013] 1
+goto @装备回收功能
+#ELSEACT 
+SET [013] 0
+goto @装备回收功能
+
+[@勾选10]
+#IF 
+CHECK [014] 0
+#ACT 
+SET [014] 1
+goto @装备回收功能
+#ELSEACT 
+SET [014] 0
+goto @装备回收功能
+
+[@勾选11]
+#IF 
+CHECK [015] 0
+#ACT 
+SET [015] 1
+goto @装备回收功能
+#ELSEACT 
+SET [015] 0
+goto @装备回收功能
+
+[@勾选12]
+#IF 
+CHECK [016] 0
+#ACT 
+SET [016] 1
+goto @装备回收功能
+#ELSEACT 
+SET [016] 0
+goto @装备回收功能
+
+[@勾选13]
+#IF 
+CHECK [017] 0
+#ACT 
+SET [017] 1
+goto @装备回收功能
+#ELSEACT 
+SET [017] 0
+goto @装备回收功能
+
+[@勾选14]
+#IF 
+CHECK [018] 0
+#ACT 
+SET [018] 1
+goto @装备回收功能
+#ELSEACT 
+SET [018] 0
+goto @装备回收功能
+
+[@勾选15]
+#IF 
+CHECK [019] 0
+#ACT 
+SET [019] 1
+goto @装备回收功能
+#ELSEACT 
+SET [019] 0
+goto @装备回收功能
+
+[@勾选16]
+#IF 
+CHECK [020] 0
+#ACT 
+SET [020] 1
+goto @装备回收功能
+#ELSEACT 
+SET [020] 0
+goto @装备回收功能
+
+[@勾选17]
+#IF 
+CHECK [021] 0
+#ACT 
+SET [021] 1
+goto @装备回收功能
+#ELSEACT 
+SET [021] 0
+goto @装备回收功能
+
+[@勾选18]
+#IF 
+CHECK [022] 0
+#ACT 
+SET [022] 1
+goto @装备回收功能
+#ELSEACT 
+SET [022] 0
+goto @装备回收功能
+
+[@勾选19]
+#IF 
+CHECK [023] 0
+#ACT 
+SET [023] 1
+goto @装备回收功能
+#ELSEACT 
+SET [023] 0
+goto @装备回收功能
+
+[@勾选20]
+#IF 
+CHECK [024] 0
+#ACT 
+SET [024] 1
+goto @装备回收功能
+#ELSEACT 
+SET [024] 0
+goto @装备回收功能
+
+[@勾选21]
+#IF 
+CHECK [025] 0
+#ACT 
+SET [025] 1
+goto @装备回收功能
+#ELSEACT 
+SET [025] 0
+goto @装备回收功能
+
+[@勾选22]
+#IF 
+CHECK [026] 0
+#ACT 
+SET [026] 1
+goto @装备回收功能
+#ELSEACT 
+SET [026] 0
+goto @装备回收功能
+
+[@勾选23]
+#IF 
+CHECK [027] 0
+#ACT 
+SET [027] 1
+goto @装备回收功能
+#ELSEACT 
+SET [027] 0
+goto @装备回收功能
+
+;------------------------------一键全选
+[@一键全选]
+#IF 
+#ACT 
+SET [005] 1 
+SET [006] 1 
+SET [007] 1 
+SET [008] 1 
+SET [009] 1 
+SET [010] 1 
+SET [011] 1 
+SET [012] 1 
+SET [013] 1 
+SET [014] 1 
+SET [015] 1 
+SET [016] 1
+SET [017] 1
+SET [018] 1
+SET [019] 1 
+SET [020] 1
+SET [021] 1
+SET [022] 1
+SET [023] 1
+SET [024] 1
+SET [025] 1      
+SET [026] 1 
+goto @装备回收功能
+
+;------------------------------一键反选
+[@一键反选]
+#IF 
+#ACT 
+SET [005] 0
+SET [006] 0
+SET [007] 0
+SET [008] 0
+SET [009] 0
+SET [010] 0
+SET [011] 0
+SET [012] 0
+SET [013] 0
+SET [014] 0
+SET [015] 0
+SET [016] 0
+SET [017] 0
+SET [018] 0
+SET [019] 0
+SET [020] 0
+SET [021] 0
+SET [022] 0
+SET [023] 0
+SET [024] 0
+SET [025] 0 
+SET [026] 0
+goto @装备回收功能
+
+;-------
+[@勾选回收]
+#IF 
+#ACT
+#CALL [/07回收功能/回收执行.txt] @回收执行
+
+}
