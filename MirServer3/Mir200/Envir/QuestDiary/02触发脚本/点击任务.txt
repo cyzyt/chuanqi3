@@ -1,0 +1,110 @@
+[@点击任务触发]
+{
+; T2控制任务完成情况。为空为为接取状态，0为接取状态，1为完成状态，2为已领取状态
+#IF
+EQUAL <$GETSTRVALUE(T2,<$STR(U6)>)>
+#ACT
+break
+
+#IF
+EQUAL <$GETSTRVALUE(T2,<$STR(U6)>)> 0
+#ACT
+goto @任务点击前往
+
+#IF
+EQUAL <$GETSTRVALUE(T2,<$STR(U6)>)> 1
+#ACT
+goto @任务完成
+
+[@任务点击前往]
+; 确保任务为接取状态
+#IF
+NOT EQUAL <$GETSTRVALUE(T2,<$STR(U6)>)> 0
+#ACT
+break
+
+; 杀怪任务
+#OR
+EQUAL <$cfg_task(U6_1)> 1
+EQUAL <$cfg_task(U6_1)> 2
+#ACT
+GETVALIDSTRSUPER <$cfg_task(U6_5)> # S$任务目的地坐标 N$任务目的地坐标分割数
+MAPMOVE <$cfg_task(U6_4)> <$STR(S$任务目的地坐标1)> <$STR(S$任务目的地坐标2)> 5 0
+break
+
+; npc类型任务
+#IF
+EQUAL <$cfg_task(U6_1)> 0
+#ACT
+OPENNPCSHOWEX <$cfg_task(U6_4)> 1
+break
+
+; 引导原生界面任务
+; 引导5 打开背包
+#IF
+#ACT
+NavigationEx main/main_root yd5 打开背包 0 1 0 0 0
+
+[@任务完成]
+; 确保任务为完成状态
+#IF
+NOT EQUAL <$GETSTRVALUE(T2,<$STR(U6)>)> 1
+#ACT
+break
+
+; 领取奖励
+#IF
+#ACT
+GETVALIDSTRSUPER <$cfg_task(U6_7)> # S$任务奖励ID N$任务奖励ID分割数
+GETVALIDSTRSUPER <$cfg_task(U6_8)> # S$任务奖励数量 N$任务奖励数量分割数
+GETVALIDSTRSUPER <$cfg_task(U6_9)> # S$任务奖励类型 N$任务奖励类型分割数
+MOV N8 1
+While N8 < <$STR(N$任务奖励ID分割数)>
+goto @任务循环领取奖励
+EndWhile
+
+; 删除任务，让任务状态为已领取状态
+NEWDELETETASK <$STR(U6)>
+ADDVARCACHE T2 <$STR(U6)> 2
+; 任务索引＋1 计数重置 接取任务
+INC U6 1
+MOV U7 0
+NEWPICKTASK <$STR(U6)>
+ADDVARCACHE T2 <$STR(U6)> 0
+
+; 判断下个任务是否可以提前完成
+#IF
+EQUAL <$cfg_task(U6_7)> 1
+EQUAL <$GETSTRVALUE(T2,<$STR(U6)>)> 1
+#ACT
+NEWCOMPLETETASK <$STR(U6)>
+#ELSEACT
+NEWCHANGETASK <$STR(U6)> <$STR(U7)>
+
+[@任务循环领取奖励]
+#IF
+NOT SMALL N8 <$STR(N$任务奖励ID分割数)>
+#ACT
+break
+
+#IF
+#ACT
+GetDBIdxItemFieldValue <$STR(S$任务奖励ID<$STR(N8)>)> name S$任务奖励名称<$STR(N8)>
+
+; 道具类型
+#IF
+EQUAL <$STR(S$任务奖励类型<$STR(N8)>)> 0
+#ACT
+GiveStateItem <$STR(S$任务奖励名称<$STR(N8)>)> <$STR(S$任务奖励数量<$STR(N8)>)> 0 1 0 0 1 1 1 1
+
+; 货币类型
+#IF
+EQUAL <$STR(S$任务奖励类型<$STR(N8)>)> 1
+#ACT
+MONEY <$STR(S$任务奖励名称<$STR(N8)>)> + <$STR(S$任务奖励数量<$STR(N8)>)>
+
+#IF
+#ACT
+INC N8 1
+
+}

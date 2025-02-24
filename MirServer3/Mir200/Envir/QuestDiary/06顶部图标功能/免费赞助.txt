@@ -3,7 +3,9 @@
 #IF 
 CHECK [001] 0
 #ACT 
-MOV S$主界面按钮1 <Button|x=118.0|y=491.0|size=18|nimg=cc/zzlb/an_jh.png|color=255|link=@激活赞助1>
+MOV S$主界面按钮1 <Button|id=yd3|x=118.0|y=491.0|size=18|nimg=cc/zzlb/an_jh.png|color=255|link=@激活赞助1>
+; 引导3 领取赞助
+NavigationEx npc/npc_talk_layer yd3 点击领取 0 1 0 0 0
 #ELSEACT 
 MOV S$主界面按钮1 <Img|x=103.0|y=475.0|img=cc/public/3_2.png|esc=0>
 
@@ -36,8 +38,8 @@ GOTO @免费赞助主界面
 [@免费赞助主界面]
 #SAY 
 <Img|x=26.0|y=-33.0|move=0|loadDelay=1|show=4|esc=1|reset=1|img=cc/zzlb/bg.png|bg=1>
-<Layout|x=384|y=10|width=80|height=80|link=@exit>
-<Button|x=829.0|y=54.0|nimg=cc/public/btn_close_2_2.png|size=18|color=255|link=@exit>
+<Layout|x=384|y=10|width=80|height=80|link=@关闭界面>
+<Button|x=829.0|y=54.0|nimg=cc/public/btn_close_2_2.png|size=18|color=255|link=@关闭界面>
 <Frames|x=102.0|y=-117.0|speed=10|count=15|suffix=.png|loop=-1|prefix=cc/zzlb/00/1_>
 <Frames|x=620.0|y=-52.0|speed=10|count=90|suffix=.png|loop=-1|prefix=cc/zzlb/01/1_>
 <Frames|x=355.0|y=48.0|speed=10|loop=-1|count=15|prefix=cc/zzlb/02/1_|suffix=.png>
@@ -161,8 +163,16 @@ sendmsg 9 <font color='#00EE00'>荣耀赞助领取成功</font>
 goto @免费赞助功能
 
 
+[@关闭界面]
+#IF
+#ACT
+close
 
-
+#IF
+equal U6 1
+#ACT
+; 引导4 开始任务
+NavigationEx main_ui/assist/assist 1 开始任务 0 1 0 0 0
 
 
 

@@ -15,9 +15,22 @@ MONEY 潜力点 + 1
 INC U5 1
 sendmsg 9 <font color='#00EE00'>击杀1000只怪物，获得潜力点+1</font>
 
+; 主线任务杀怪
+#IF
+isonmap <$cfg_task(U6_4)>
+EQUAL <$cfg_task(U6_1)> 1
+SMALL U7 <$cfg_task(U6_3)>
+#ACT
+INC U7 1
+NEWCHANGETASK <$STR(U6)> <$STR(U7)>
 
-
-
+#IF
+isonmap <$cfg_task(U6_4)>
+EQUAL <$cfg_task(U6_1)> 1
+Equal U7 <$cfg_task(U6_3)>
+#ACT
+ADDVARCACHE T2 <$STR(U6)> 1
+NEWCOMPLETETASK <$STR(U6)>
 
 
 

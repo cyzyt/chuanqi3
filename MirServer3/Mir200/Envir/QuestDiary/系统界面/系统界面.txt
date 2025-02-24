@@ -17,8 +17,8 @@ Inc S$主隐藏界面 <Button|x=92.0|y=159.0|nimg=private/main/bottom/1900013017.png|
 Inc S$主隐藏界面 <Button|x=164.0|y=159.0|nimg=private/main/bottom/1900013018.png|link=@系统退出>
 Addbutton 109 60000 <$Str(S$主隐藏界面)>
 
-Addbutton 107 60002 <Button|id=110|x=-134.0|y=-120.0|nimg=private/main/bottom/1900013011.png|link=@系统背包><Button|x=-62.0|y=-120.0|nimg=private/main/bottom/1900013010.png|link=@系统角色>
-SETPICKITEMTOBAG 107 110
+Addbutton 107 60002 <Button|id=yd5|x=-134.0|y=-120.0|nimg=private/main/bottom/1900013011.png|link=@系统背包><Button|x=-62.0|y=-120.0|nimg=private/main/bottom/1900013010.png|link=@系统角色>
+SETPICKITEMTOBAG 107 yd5
 
 ;------角色界面 
 #IF 

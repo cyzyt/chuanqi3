@@ -9,6 +9,7 @@ NEWREADCSV  ..\QuestDiary\03csv表格\盾牌锻造\cfg_dpdz.csv
 NEWREADCSV  ..\QuestDiary\03csv表格\称号晋升\cfg_chjs.csv 
 NEWREADCSV  ..\QuestDiary\03csv表格\技能修炼\技能强化\cfg_skill_up.csv 
 NEWREADCSV  ..\QuestDiary\03csv表格\技能修炼\技能学习\cfg_skill_add.csv 
+NEWREADCSV  ..\QuestDiary\03csv表格\任务系统\cfg_task.csv
 
 
 

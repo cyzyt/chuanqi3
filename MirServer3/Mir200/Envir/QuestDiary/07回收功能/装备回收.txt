@@ -166,6 +166,13 @@ MOV S$勾选框23 <Button|x=29.0|y=402.0|color=255|size=18|nimg=cc/public/002.png|l
 #ACT 
 GOTO @装备回收主界面
 
+#IF
+EQUAL U6 2
+NOT EQUAL <$GETSTRVALUE(T2,<$STR(U6)>)> 2
+#ACT
+; 引导7 一键全选
+NavigationEx npc/npc_talk_layer yd7 一键全选 0 1 0 0 0
+
 [@装备回收主界面]
 #SAY 
 <Img|x=0.0|y=0.0|show=4|reset=1|img=cc/huishou/zbhs_bj.png|loadDelay=1|bg=1|move=1|esc=1>
@@ -239,9 +246,9 @@ GOTO @装备回收主界面
 <$STR(S$勾选框22)>
 <Text|x=222.0|y=355.0|size=16|color=252|outline=1|outlinecolor=0|text=六大陆蓝装剑甲>
 <Img|x=47.0|y=387.0|height=5|esc=0|img=public/bg_szjm_02.png>
-<Button|x=24.0|y=445.0|width=150|nimg=cc/public/1900000663_2.png|size=18|color=255|text=一键全选|link=@一键全选>
+<Button|id=yd7|x=24.0|y=445.0|width=150|nimg=cc/public/1900000663_2.png|size=18|color=255|text=一键全选|link=@一键全选>
 <Button|x=186.0|y=446.0|width=150|nimg=cc/public/1900000663_2.png|size=18|color=255|text=一键反选|link=@一键反选>
-<Button|x=345.0|y=446.0|width=150|nimg=cc/public/1900000663_2.png|size=18|color=255|text=回收勾选|link=@勾选回收>
+<Button|id=yd8|x=345.0|y=446.0|width=150|nimg=cc/public/1900000663_2.png|size=18|color=255|text=回收勾选|link=@勾选回收>
 <Img|x=29.0|y=402.0|width=150|esc=0|img=public/bg_bti_07.png>
 <$STR(S$勾选框23)>
 <Text|x=64.0|y=407.0|size=16|color=254|outline=1|outlinecolor=0|text=自动回收>
@@ -505,6 +512,13 @@ SET [025] 1
 SET [026] 1 
 goto @装备回收功能
 
+#IF
+EQUAL U6 2
+NOT EQUAL <$GETSTRVALUE(T2,<$STR(U6)>)> 2
+#ACT
+; 引导8 一键回收
+NavigationEx npc/npc_talk_layer yd8 一键回收 0 1 0 0 0
+
 ;------------------------------一键反选
 [@一键反选]
 #IF 
@@ -538,5 +552,13 @@ goto @装备回收功能
 #IF 
 #ACT
 #CALL [/07回收功能/回收执行.txt] @回收执行
+
+; 任务2完成
+#IF
+EQUAL U6 2
+NOT EQUAL <$GETSTRVALUE(T2,<$STR(U6)>)> 2
+#ACT
+ADDVARCACHE T2 <$STR(U6)> 1
+NEWCOMPLETETASK <$STR(U6)>
 
 }

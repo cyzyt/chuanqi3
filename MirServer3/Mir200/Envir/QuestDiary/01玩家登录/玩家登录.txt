@@ -17,14 +17,18 @@ SetIcon 0 1 20001 0 0 0 0 0
 #ACT 
 PICKUPITEMS 0 6 500
 
+; 上线接取任务
+#IF
+#ACT
+NEWPICKTASK <$STR(U6)>
 
-
-
-
-
-
-
-
+; 如果任务是完成状态,则直接完成 否则刷新进度
+#IF
+EQUAL <$cfg_task(U6_2)> <$cfg_task(U6_3)>
+#ACT
+NEWCOMPLETETASK <$STR(U6)>
+#ELSEACT
+NEWCHANGETASK <$STR(U6)> <$STR(U7)>
 
 
 

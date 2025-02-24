@@ -15,7 +15,7 @@ INC S$背包界面 <Text|x=220|y=519|color=251|size=14|outline=1|outlinecolor=0|text
 INC S$背包界面 <Text|x=85|y=554|color=70|size=14|outline=1|outlinecolor=0|text=$STM(ITEMCOUNT_绑定灵符)>
 INC S$背包界面 <Text|x=220|y=554|color=70|size=14|outline=1|outlinecolor=0|text=$STM(ITEMCOUNT_灵符)>
 INC S$背包界面 <Button|x=388|y=380|color=7|text=整理||outline=1|outlinecolor=0|size=16|nimg=public/1900000660.png|link=@整理>
-INC S$背包界面 <Button|x=388|y=420|color=7|text=回收||outline=1|outlinecolor=0|size=16|nimg=public/1900000660.png|link=@回收>
+INC S$背包界面 <Button|id=yd6|x=388|y=420|color=7|text=回收||outline=1|outlinecolor=0|size=16|nimg=public/1900000660.png|link=@回收>
 ADDBUTTON 7 1000 <$STR(S$背包界面)>
 
 

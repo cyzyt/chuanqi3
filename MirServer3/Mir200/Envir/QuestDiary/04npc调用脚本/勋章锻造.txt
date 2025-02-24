@@ -105,9 +105,23 @@ SAVEVAR HUMAN 勋章锻造等级
 sendmsg 9 <font color='#00EE00'>勋章升级成功</font>
 goto @勋章锻造功能
 
+; 任务3
+#IF
+EQUAL U6 3
+#ACT
+MOV U7 <$HUMAN(勋章锻造等级)>
 
+#IF
+EQUAL <$HUMAN(勋章锻造等级)> 5
+#ACT
+ADDVARCACHE T2 3 1
 
-
+#IF
+NOT EQUAL U7 5
+#ACT
+NEWCHANGETASK 3 <$STR(U7)>
+#ELSEACT
+NEWCOMPLETETASK 3
 
 
 

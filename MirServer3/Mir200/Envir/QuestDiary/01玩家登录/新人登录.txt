@@ -19,6 +19,13 @@ GIVE 道馆回城石 1
 GIVE 随机传送石 1 
 ADDVARCACHE T1 新人赠送切割 100
 DELAYGOTO 50 @新人登录界面 
+; 引导1 开始游戏
+NavigationEx npc/npc_talk_layer yd1 点击领取 0 1 0 0 0
+; 接取任务
+MOV U6 1
+NEWPICKTASK 1
+NEWCHANGETASK 1 <$STR(U7)>
+ADDVARCACHE T2 <$STR(U6)> 0
 
 [@新人登录界面]
 #IF 
@@ -33,13 +40,15 @@ DELAYGOTO 50 @新人登录界面
 <Img|id=a4|x=545.0|y=430.0|esc=0|img=cc/xrdl/2.png>
 <Img|id=a5|x=645.0|y=431.0|esc=0|img=cc/xrdl/3.png>
 <Img|id=a6|x=746.0|y=431.0|esc=0|img=cc/xrdl/4.png>
-<Button|id=a7|x=516.0|y=576.0|nimg=cc/xrdl/btn1.png|color=255|pimg=cc/xrdl/btn2.png|size=18|link=@开始游戏>
-
+<Button|id=yd1|x=516.0|y=576.0|nimg=cc/xrdl/btn1.png|color=255|pimg=cc/xrdl/btn2.png|size=18|link=@开始游戏>
 
 [@开始游戏]
-#if 
-#act
+#IF
+#ACT
 close
+; 引导2 打开赞助
+NavigationEx main/main_root yd2 点击打开 0 1 0 0 0
+
 
 
 
