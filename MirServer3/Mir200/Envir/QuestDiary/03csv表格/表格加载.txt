@@ -7,8 +7,8 @@ NEWREADCSV  ..\QuestDiary\03csv表格\勋章锻造\cfg_xzdz.csv
 NEWREADCSV  ..\QuestDiary\03csv表格\转生使者\cfg_zhuansheng.csv 
 NEWREADCSV  ..\QuestDiary\03csv表格\盾牌锻造\cfg_dpdz.csv 
 NEWREADCSV  ..\QuestDiary\03csv表格\称号晋升\cfg_chjs.csv 
-
-
+NEWREADCSV  ..\QuestDiary\03csv表格\技能修炼\技能强化\cfg_skill_up.csv 
+NEWREADCSV  ..\QuestDiary\03csv表格\技能修炼\技能学习\cfg_skill_add.csv 
 
 
 

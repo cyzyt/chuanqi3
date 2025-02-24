@@ -16131,5 +16131,23 @@ local config = {
 		bEffect="4895#1",
 		equipstep=1,
 	},
+	[2698] = { 
+		Idx=2698,
+		Name="书页",
+		Stdmode=44,
+		Shape=0,
+		Weight=1,
+		Anicount=0,
+		Source=0,
+		Reserved=0,
+		Looks=7503,
+		DuraMax=1,
+		Need=0,
+		NeedLevel=0,
+		Price=1000,
+		Color=253,
+		OverLap=9999,
+		equipstep=1,
+	},
 }
 return config
