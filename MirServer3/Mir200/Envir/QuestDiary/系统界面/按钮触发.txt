@@ -7,8 +7,7 @@
 Openhyperlink 7
 
 #IF
-EQUAL U6 2
-NOT EQUAL <$GETSTRVALUE(T2,<$STR(U6)>)> 2
+NOT LARGE <$GETSTRVALUE(T2,2)> 0
 #ACT
 ; 引导6 打开回收
 NavigationEx bag_panel/bag_sort_panel yd6 打开回收 0 1 0 0 0

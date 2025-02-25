@@ -1,0 +1,15 @@
+[@切换地图触发]
+{
+#IF
+; NOT IsOnMap 1
+; NOT CHECKMAPNAME 2dl
+; NOT CHECKMAPNAME 3dl
+; NOT CHECKMAPNAME 4dl
+; NOT CHECKMAPNAME 5dl
+; NOT CHECKMAPNAME 6dl
+#ACT
+; #CALL [\自动挂机\自动挂机QF.txt] @开始挂机
+StartAutoPlayGame
+
+
+}

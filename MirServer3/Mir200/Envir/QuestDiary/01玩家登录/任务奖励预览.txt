@@ -1,0 +1,43 @@
+[@任务奖励预览]
+{
+#IF
+NOT EQUAL <$cfg_task(U6_7)> 0
+#ACT
+GETVALIDSTRSUPER <$cfg_task(U6_7)> # S$任务奖励ID N$任务奖励ID分割数
+GETVALIDSTRSUPER <$cfg_task(U6_8)> # S$任务奖励数量 N$任务奖励数量分割数
+FORMULATION <$SCREENHEIGHT>/2-80 N$奖励预览Y坐标
+
+#IF
+EQUAL N$任务奖励ID分割数 2
+#ACT
+DELBUTTON 101 1
+MOV S$任务奖励预览1 <ItemShow|x=105.00|y=<$STR(N$奖励预览Y坐标)>|width=70|height=70|itemid=<$STR(S$任务奖励ID1)>|itemcount=<$STR(S$任务奖励数量1)>|showtips=1|bgtype=1>
+ADDBUTTON 101 1 <$STR(S$任务奖励预览1)>
+break
+
+#IF
+EQUAL N$任务奖励ID分割数 3
+#ACT
+DELBUTTON 101 1
+MOV S$任务奖励预览1 <ItemShow|x=75.00|y=<$STR(N$奖励预览Y坐标)>|width=70|height=70|itemid=<$STR(S$任务奖励ID1)>|itemcount=<$STR(S$任务奖励数量1)>|showtips=1|bgtype=1>
+ADDBUTTON 101 1 <$STR(S$任务奖励预览1)>
+DELBUTTON 101 2
+MOV S$任务奖励预览2 <ItemShow|x=135.00|y=<$STR(N$奖励预览Y坐标)>|width=70|height=70|itemid=<$STR(S$任务奖励ID2)>|itemcount=<$STR(S$任务奖励数量2)>|showtips=1|bgtype=1>
+ADDBUTTON 101 2 <$STR(S$任务奖励预览2)>
+break
+
+#IF
+EQUAL N$任务奖励ID分割数 4
+#ACT
+DELBUTTON 101 1
+MOV S$任务奖励预览1 <ItemShow|x=35.00|y=<$STR(N$奖励预览Y坐标)>|width=70|height=70|itemid=<$STR(S$任务奖励ID1)>|itemcount=<$STR(S$任务奖励数量1)>|showtips=1|bgtype=1>
+ADDBUTTON 101 1 <$STR(S$任务奖励预览1)>
+DELBUTTON 101 2
+MOV S$任务奖励预览2 <ItemShow|x=105.00|y=<$STR(N$奖励预览Y坐标)>|width=70|height=70|itemid=<$STR(S$任务奖励ID2)>|itemcount=<$STR(S$任务奖励数量2)>|showtips=1|bgtype=1>
+ADDBUTTON 101 2 <$STR(S$任务奖励预览2)>
+DELBUTTON 101 3
+MOV S$任务奖励预览3 <ItemShow|x=175.00|y=<$STR(N$奖励预览Y坐标)>|width=70|height=70|itemid=<$STR(S$任务奖励ID3)>|itemcount=<$STR(S$任务奖励数量3)>|showtips=1|bgtype=1>
+ADDBUTTON 101 3 <$STR(S$任务奖励预览3)>
+break
+
+}

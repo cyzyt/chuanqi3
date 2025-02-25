@@ -90,7 +90,24 @@ SAVEVAR HUMAN 永恒玫瑰等级
 sendmsg 9 <font color='#00EE00'>永恒玫瑰升级成功</font>
 goto @永恒玫瑰功能
 
+; 任务7
+#IF
+LARGE U6 7
+#ACT
+BREAK
+; 如果当前任务匹配，则完成任务
+#IF
+EQUAL U6 7
+#ACT
+MOV U7 <$HUMAN(永恒玫瑰等级)>
+ADDVARCACHE T2 7 1
+NEWCOMPLETETASK 7
+break
 
+#IF
+SMALL U6 7
+#ACT
+ADDVARCACHE T2 7 1
 
 
 

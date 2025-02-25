@@ -23,27 +23,18 @@ NOT EQUAL <$GETSTRVALUE(T2,<$STR(U6)>)> 0
 #ACT
 break
 
-; 杀怪任务
-#OR
-EQUAL <$cfg_task(U6_1)> 1
-EQUAL <$cfg_task(U6_1)> 2
-#ACT
-GETVALIDSTRSUPER <$cfg_task(U6_5)> # S$任务目的地坐标 N$任务目的地坐标分割数
-MAPMOVE <$cfg_task(U6_4)> <$STR(S$任务目的地坐标1)> <$STR(S$任务目的地坐标2)> 5 0
-break
-
-; npc类型任务
-#IF
-EQUAL <$cfg_task(U6_1)> 0
-#ACT
-OPENNPCSHOWEX <$cfg_task(U6_4)> 1
-break
-
 ; 引导原生界面任务
 ; 引导5 打开背包
 #IF
+EQUAL <$cfg_task(U6_1)> 3
 #ACT
 NavigationEx main/main_root yd5 打开背包 0 1 0 0 0
+break
+
+; 杀怪任务、npc类型任务
+#IF
+#ACT
+OPENNPCSHOWEX <$cfg_task(U6_5)> 1
 
 [@任务完成]
 ; 确保任务为完成状态
@@ -70,7 +61,6 @@ ADDVARCACHE T2 <$STR(U6)> 2
 INC U6 1
 MOV U7 0
 NEWPICKTASK <$STR(U6)>
-ADDVARCACHE T2 <$STR(U6)> 0
 
 ; 判断下个任务是否可以提前完成
 #IF
@@ -79,7 +69,18 @@ EQUAL <$GETSTRVALUE(T2,<$STR(U6)>)> 1
 #ACT
 NEWCOMPLETETASK <$STR(U6)>
 #ELSEACT
+ADDVARCACHE T2 <$STR(U6)> 0
 NEWCHANGETASK <$STR(U6)> <$STR(U7)>
+
+; 判断下个任务是否有奖励预览
+#IF
+NOT EQUAL <$cfg_task(U6_7)> 0
+#ACT
+#CALL [\01玩家登录\任务奖励预览.txt] @任务奖励预览
+#ELSEACT
+DELBUTTON 101 1
+DELBUTTON 101 2
+DELBUTTON 101 3
 
 [@任务循环领取奖励]
 #IF
@@ -106,5 +107,8 @@ MONEY <$STR(S$任务奖励名称<$STR(N8)>)> + <$STR(S$任务奖励数量<$STR(N8)>)>
 #IF
 #ACT
 INC N8 1
+
+
+
 
 }

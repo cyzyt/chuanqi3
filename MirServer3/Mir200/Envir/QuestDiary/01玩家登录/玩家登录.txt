@@ -30,6 +30,11 @@ NEWCOMPLETETASK <$STR(U6)>
 #ELSEACT
 NEWCHANGETASK <$STR(U6)> <$STR(U7)>
 
+; 判断当前任务是否有奖励预览
+#IF
+NOT EQUAL <$cfg_task(U6_7)> 0
+#ACT
+#CALL [\01玩家登录\任务奖励预览.txt] @任务奖励预览
 
 
 

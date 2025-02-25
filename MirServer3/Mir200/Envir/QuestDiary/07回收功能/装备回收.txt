@@ -158,7 +158,7 @@ MOV S$勾选框22 <Button|x=190.0|y=349.0|color=255|size=18|nimg=cc/public/002.png|
 #IF 
 CHECK [027] 0
 #ACT 
-MOV S$勾选框23 <Button|x=29.0|y=402.0|color=255|size=18|nimg=cc/public/001.png|link=@勾选23>
+MOV S$勾选框23 <Button|id=yd9|x=29.0|y=402.0|color=255|size=18|nimg=cc/public/001.png|link=@勾选23>
 #ELSEACT 
 MOV S$勾选框23 <Button|x=29.0|y=402.0|color=255|size=18|nimg=cc/public/002.png|link=@勾选23>
 
@@ -167,8 +167,7 @@ MOV S$勾选框23 <Button|x=29.0|y=402.0|color=255|size=18|nimg=cc/public/002.png|l
 GOTO @装备回收主界面
 
 #IF
-EQUAL U6 2
-NOT EQUAL <$GETSTRVALUE(T2,<$STR(U6)>)> 2
+NOT LARGE <$GETSTRVALUE(T2,2)> 0
 #ACT
 ; 引导7 一键全选
 NavigationEx npc/npc_talk_layer yd7 一键全选 0 1 0 0 0
@@ -513,11 +512,10 @@ SET [026] 1
 goto @装备回收功能
 
 #IF
-EQUAL U6 2
-NOT EQUAL <$GETSTRVALUE(T2,<$STR(U6)>)> 2
+NOT LARGE <$GETSTRVALUE(T2,2)> 0
 #ACT
 ; 引导8 一键回收
-NavigationEx npc/npc_talk_layer yd8 一键回收 0 1 0 0 0
+NavigationEx npc/npc_talk_layer yd8 点击回收 0 1 0 0 0
 
 ;------------------------------一键反选
 [@一键反选]
@@ -555,10 +553,15 @@ goto @装备回收功能
 
 ; 任务2完成
 #IF
-EQUAL U6 2
-NOT EQUAL <$GETSTRVALUE(T2,<$STR(U6)>)> 2
+NOT LARGE <$GETSTRVALUE(T2,2)> 0
 #ACT
-ADDVARCACHE T2 <$STR(U6)> 1
+ADDVARCACHE T2 2 1
+; 引导9 自动回收
+NavigationEx npc/npc_talk_layer yd9 点击勾选 0 1 0 0 0
+
+#IF
+EQUAL U6 2
+#ACT
 NEWCOMPLETETASK <$STR(U6)>
 
 }

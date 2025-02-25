@@ -100,6 +100,24 @@ SAVEVAR HUMAN 盾牌锻造等级
 sendmsg 9 <font color='#00EE00'>盾牌升级成功</font>
 goto @盾牌锻造功能
 
+; 任务5
+#IF
+LARGE U6 5
+#ACT
+BREAK
+; 如果当前任务匹配，则完成任务
+#IF
+EQUAL U6 5
+#ACT
+MOV U7 <$HUMAN(盾牌锻造等级)>
+ADDVARCACHE T2 5 1
+NEWCOMPLETETASK 5
+break
+
+#IF
+SMALL U6 5
+#ACT
+ADDVARCACHE T2 5 1
 
 
 

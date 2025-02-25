@@ -68,7 +68,24 @@ SAVEVAR HUMAN 称号晋升等级
 sendmsg 9 <font color='#00EE00'>称号升级成功</font>
 goto @称号晋升功能
 
+; 任务9
+#IF
+LARGE U6 9
+#ACT
+BREAK
+; 如果当前任务匹配，则完成任务
+#IF
+EQUAL U6 9
+#ACT
+MOV U7 <$HUMAN(称号晋升等级)>
+ADDVARCACHE T2 9 1
+NEWCOMPLETETASK 9
+break
 
+#IF
+SMALL U6 9
+#ACT
+ADDVARCACHE T2 9 1
 
 
 

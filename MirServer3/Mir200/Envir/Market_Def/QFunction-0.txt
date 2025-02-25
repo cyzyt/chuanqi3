@@ -29,6 +29,7 @@ DELBUTTON 102 1002
 [@回收]
 #CALL [\07回收功能\装备回收.txt] @装备回收功能
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;各类触发;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;---攻击触发
 [@Attack]
@@ -40,6 +41,7 @@ CHECKCURRTARGETRACE = 1
 
 ;---切换地图触发
 [@EnterMap]
+#CALL [\02触发脚本\切换地图触发.txt] @切换地图触发
 
 ;---死亡触发
 [@PlayDie]
@@ -64,7 +66,7 @@ SENDMSG 5 利用戒指的力量起死回生，下次复活还剩<$RELIVERING_CD>秒
 [@CompleteTask]
 #IF
 #ACT
-Screffects 100 4541 600 250 1 0 0
+Screffects 100 4541 600 250 1 1 0
 
 ; ---点击任务触发
 [@ClickNewTask]

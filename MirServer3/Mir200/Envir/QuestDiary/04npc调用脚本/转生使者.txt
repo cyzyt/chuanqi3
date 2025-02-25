@@ -65,7 +65,32 @@ SAVEVAR HUMAN 转生等级
 sendmsg 9 <font color='#00EE00'>恭喜，转生成功</font>
 goto @转生使者功能
 
+; 任务11
+#IF
+LARGE U6 11
+#ACT
+BREAK
+; 如果当前任务匹配，并且达到转生5则完成任务
+#IF
+EQUAL U6 11
+SMALL <$HUMAN(转生等级)> 5
+#ACT
+MOV U7 <$HUMAN(转生等级)>
+NEWCHANGETASK 11 <$STR(U7)>
 
+#IF
+EQUAL U6 11
+EQUAL <$HUMAN(转生等级)> 5
+#ACT
+ADDVARCACHE T2 11 1
+NEWCOMPLETETASK 11
+break
+
+#IF
+SMALL U6 11
+EQUAL <$HUMAN(转生等级)> 5
+#ACT
+ADDVARCACHE T2 11 1
 
 
 
