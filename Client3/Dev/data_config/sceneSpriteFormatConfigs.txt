@@ -2,6 +2,8 @@
   "1235": "Other_obj1235_%06d.png",
   "3235": "Other_smtiles3235_%06d.png",
   "1100": "Other_obj1100_%06d.png",
-  "2100": "Other_tiles2100_%06d.png"
+  "2100": "Other_tiles2100_%06d.png",
+  "1101": "Other_obj1101_%06d.png",
+  "2101": "Other_tiles2101_%06d.png"
 }
 

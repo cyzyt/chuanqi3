@@ -2,5 +2,7 @@
   "1235": "scene/Other/obj1235/%d",
   "3235": "scene/Other/smtiles3235/%d",
   "1100": "scene/Other/obj1100/%d",
-  "2100": "scene/Other/tiles2100/%d"
+  "2100": "scene/Other/tiles2100/%d",
+  "1101": "scene/Other/obj1101/%d",
+  "2101": "scene/Other/tiles2101/%d"
 }
