@@ -4,5 +4,8 @@
   "1100": "scene/Other/obj1100/%d",
   "2100": "scene/Other/tiles2100/%d",
   "1101": "scene/Other/obj1101/%d",
-  "2101": "scene/Other/tiles2101/%d"
+  "2101": "scene/Other/tiles2101/%d",
+  "1102": "scene/Other/obj1102/%d",
+  "2102": "scene/Other/tiles2102/%d",
+  "3102": "scene/Other/smtiles3102/%d"
 }

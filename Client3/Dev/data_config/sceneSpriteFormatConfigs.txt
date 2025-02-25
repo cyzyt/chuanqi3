@@ -4,6 +4,9 @@
   "1100": "Other_obj1100_%06d.png",
   "2100": "Other_tiles2100_%06d.png",
   "1101": "Other_obj1101_%06d.png",
-  "2101": "Other_tiles2101_%06d.png"
+  "2101": "Other_tiles2101_%06d.png",
+  "1102": "Other_obj1102_%06d.png",
+  "2102": "Other_tiles2102_%06d.png",
+  "3102": "Other_smtiles3102_%06d.png"
 }
 
