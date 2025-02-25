@@ -7,14 +7,14 @@ GETVALIDSTRSUPER <$cfg_task(U6_7)> # S$任务奖励ID N$任务奖励ID分割数
 GETVALIDSTRSUPER <$cfg_task(U6_8)> # S$任务奖励数量 N$任务奖励数量分割数
 FORMULATION <$SCREENHEIGHT>/2-65 N$奖励预览Y坐标
 FORMULATION <$SCREENHEIGHT>/2-100 N$奖励预览标题Y坐标
+DELBUTTON 101 4
 
 #IF
-NOT SMALL N$任务奖励ID分割数 2
+NOT EQUAL <$cfg_task(U6_7)>
 #ACT
-DELBUTTON 101 4
 MOV S$任务奖励预览4 <Img|x=95.0|y=<$STR(N$奖励预览标题Y坐标)>|esc=0|img=public/word_jyxszy_02.png>
 ADDBUTTON 101 4 <$STR(S$任务奖励预览4)>
-SENDMSG 6 111
+
 #IF
 EQUAL N$任务奖励ID分割数 2
 #ACT
