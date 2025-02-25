@@ -45,6 +45,7 @@ break
 
 ; 领取奖励
 #IF
+NOT EQUAL <$cfg_task(U6_7)>
 #ACT
 GETVALIDSTRSUPER <$cfg_task(U6_7)> # S$任务奖励ID N$任务奖励ID分割数
 GETVALIDSTRSUPER <$cfg_task(U6_8)> # S$任务奖励数量 N$任务奖励数量分割数
@@ -55,11 +56,21 @@ goto @任务循环领取奖励
 EndWhile
 
 ; 删除任务，让任务状态为已领取状态
+#IF
+#ACT
 NEWDELETETASK <$STR(U6)>
 ADDVARCACHE T2 <$STR(U6)> 2
-; 任务索引＋1 计数重置 接取任务
+; 任务索引＋1 计数重置
 INC U6 1
 MOV U7 0
+
+; 如果下个任务不存在了 则直接终止,否则接取任务
+#IF
+NOT SMALL U6 <$Getcsv(cfg_task,Row)>
+#ACT
+sendmsg 9 恭喜您已完成全部主线任务！
+break
+#ELSEACT
 NEWPICKTASK <$STR(U6)>
 
 ; 判断下个任务是否可以提前完成
@@ -74,7 +85,7 @@ NEWCHANGETASK <$STR(U6)> <$STR(U7)>
 
 ; 判断下个任务是否有奖励预览
 #IF
-NOT EQUAL <$cfg_task(U6_7)> 0
+NOT EQUAL <$cfg_task(U6_7)>
 #ACT
 #CALL [\01玩家登录\任务奖励预览.txt] @任务奖励预览
 #ELSEACT
@@ -96,6 +107,7 @@ GetDBIdxItemFieldValue <$STR(S$任务奖励ID<$STR(N8)>)> name S$任务奖励名称<$STR(N
 #IF
 EQUAL <$STR(S$任务奖励类型<$STR(N8)>)> 0
 #ACT
+sendmsg 9 恭喜获得<$STR(S$任务奖励名称<$STR(N8)>)>*<$STR(S$任务奖励数量<$STR(N8)>)>
 GiveStateItem <$STR(S$任务奖励名称<$STR(N8)>)> <$STR(S$任务奖励数量<$STR(N8)>)> 0 1 0 0 1 1 1 1
 
 ; 货币类型
@@ -103,6 +115,7 @@ GiveStateItem <$STR(S$任务奖励名称<$STR(N8)>)> <$STR(S$任务奖励数量<$STR(N8)>)> 
 EQUAL <$STR(S$任务奖励类型<$STR(N8)>)> 1
 #ACT
 MONEY <$STR(S$任务奖励名称<$STR(N8)>)> + <$STR(S$任务奖励数量<$STR(N8)>)>
+sendmsg 9 恭喜获得<$STR(S$任务奖励名称<$STR(N8)>)>*<$STR(S$任务奖励数量<$STR(N8)>)>
 
 #IF
 #ACT

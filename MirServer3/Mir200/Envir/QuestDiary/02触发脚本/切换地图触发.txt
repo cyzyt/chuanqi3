@@ -2,14 +2,49 @@
 {
 #IF
 ; NOT IsOnMap 1
-; NOT CHECKMAPNAME 2dl
-; NOT CHECKMAPNAME 3dl
-; NOT CHECKMAPNAME 4dl
-; NOT CHECKMAPNAME 5dl
-; NOT CHECKMAPNAME 6dl
+; NOT IsOnMap 2dl
+; NOT IsOnMap 3dl
+; NOT IsOnMap 4dl
+; NOT IsOnMap 5dl
+; NOT IsOnMap 6dl
 #ACT
 ; #CALL [\自动挂机\自动挂机QF.txt] @开始挂机
 StartAutoPlayGame
 
+
+#IF
+IsOnMap 2dl
+SMALL <$HUMAN(大陆等级)> 2
+#ACT
+CALCVAR HUMAN 大陆等级 = 2
+SAVEVAR HUMAN 大陆等级
+
+#IF
+IsOnMap 3dl
+SMALL <$HUMAN(大陆等级)> 3
+#ACT
+CALCVAR HUMAN 大陆等级 = 3
+SAVEVAR HUMAN 大陆等级
+
+#IF
+IsOnMap 4dl
+SMALL <$HUMAN(大陆等级)> 4
+#ACT
+CALCVAR HUMAN 大陆等级 = 4
+SAVEVAR HUMAN 大陆等级
+
+#IF
+IsOnMap 5dl
+SMALL <$HUMAN(大陆等级)> 5
+#ACT
+CALCVAR HUMAN 大陆等级 = 5
+SAVEVAR HUMAN 大陆等级
+
+#IF
+IsOnMap 6dl
+SMALL <$HUMAN(大陆等级)> 6
+#ACT
+CALCVAR HUMAN 大陆等级 = 6
+SAVEVAR HUMAN 大陆等级
 
 }

@@ -27,5 +27,6 @@ VAR integer HUMAN 潜力抵抗属性
 VAR integer HUMAN 潜力穿甲
 VAR integer HUMAN 潜力穿甲属性
 
-
+; ---大陆等级
+VAR integer HUMAN 大陆等级
 }
