@@ -7,5 +7,8 @@
   "2101": "scene/Other/tiles2101/%d",
   "1102": "scene/Other/obj1102/%d",
   "2102": "scene/Other/tiles2102/%d",
-  "3102": "scene/Other/smtiles3102/%d"
+  "3102": "scene/Other/smtiles3102/%d",
+  "1103": "scene/Other/obj1103/%d",
+  "1104": "scene/Other/obj1104/%d",
+  "2104": "scene/Other/tiles2104/%d"
 }

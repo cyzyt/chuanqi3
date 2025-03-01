@@ -12,7 +12,7 @@ MOV N$是否展示tips 1
 MOV N$是否展示tips 0
 
 #IF 
-CHECKVAR HUMAN 转生等级 < <$STR(N$当前大陆最高玫瑰)>
+CHECKVAR HUMAN 永恒玫瑰等级 < <$STR(N$当前大陆最高玫瑰)>
 #ACT 
 MOV S$主界面内容 <Img|x=608.0|y=380.0|width=50|height=50|img=cc/public/1900015031.png|esc=0>
 inc S$主界面内容 <ItemShow|x=600.0|y=370.0|itemid=<$cfg_yhmg(<$GetTypeBRow(cfg_yhmg,0,<$STR(N$下阶玫瑰等级)>)>_7)>|itemcount=<$cfg_yhmg(<$GetTypeBRow(cfg_yhmg,0,<$STR(N$下阶玫瑰等级)>)>_4)>|iheight=50|bgtype=0|iwidth=50|showtips=1>
@@ -20,7 +20,7 @@ INC S$主界面内容 <Img|x=482.0|y=382.0|img=public/word_sxbt_05.png|esc=0>
 INC S$主界面内容 <Button|x=581.0|y=435.0|pimg=cc/yhmg/2.png|color=255|nimg=cc/yhmg/1.png|size=18|link=@升级玫瑰>
 #ELSEACT 
 MOV S$主界面内容 <Text|x=455.0|y=400.0|size=18|color=249|text=当前大陆玫瑰已满级，请前往下个大陆升级>
-
+sendmsg 6 <$STR(N$当前大陆最高玫瑰)>
 
 
 #IF 
@@ -58,7 +58,7 @@ goto @永恒玫瑰主界面
 
 [@升级玫瑰]
 #IF 
-CHECKVAR HUMAN 转生等级 ? <$STR(N$当前大陆最高玫瑰)>
+CHECKVAR HUMAN 永恒玫瑰等级 ? <$STR(N$当前大陆最高玫瑰)>
 #act 
 sendmsg 9 <font color='#FF0000'>当前大陆玫瑰已满级，请前往下个大陆升级</font>
 break

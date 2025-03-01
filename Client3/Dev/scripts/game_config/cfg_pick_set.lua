@@ -47,5 +47,9 @@ local config = {
 		group=12,
 		name="其它类",
 	},
+	[13] = { 
+		group=13,
+		name="腰带类",
+	},
 }
 return config

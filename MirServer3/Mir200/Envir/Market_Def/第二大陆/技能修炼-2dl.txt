@@ -371,8 +371,6 @@ goto @选择技能
 #IF 
 #ACT 
 MOV S$选择的技能 <$STR(S$名称)>
-sendmsg 6 >
-
 
 #IF 
 CHECKSKILL <$STR(S$选择的技能)> > 0
