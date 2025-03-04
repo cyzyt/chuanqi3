@@ -466,7 +466,7 @@ local config = {
 	},
 	["missionControl"] = { 
 		k="missionControl",
-		value=1,
+		value=0,
 	},
 	["value_model"] = { 
 		k="value_model",

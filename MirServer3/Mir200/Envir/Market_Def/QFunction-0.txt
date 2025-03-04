@@ -64,9 +64,19 @@ SENDMSG 5 利用戒指的力量起死回生，下次复活还剩<$RELIVERING_CD>秒
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;任务类触发;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; ---完成任务触发
 [@CompleteTask]
+; 完成特效 屏幕中间
 #IF
 #ACT
-Screffects 100 4541 600 250 1 1 0
+FORMULATION <$SCREENWIDTH>/2 N$任务完成特效X坐标
+Screffects 100 4541 <$STR(N$任务完成特效X坐标)> 250 1 1 0
+; 完成特效 任务栏
+#IF
+EQUAL <$CLIENTFLAG> 2
+#ACT
+Reddot 110 <$STR(U6)> 126 54 1 4301
+#ELSEACT
+Reddot 110 <$STR(U6)> 97 50 1 4301
+
 
 ; ---点击任务触发
 [@ClickNewTask]

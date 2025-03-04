@@ -112,6 +112,7 @@ EQUAL U6 5
 MOV U7 <$HUMAN(¶ÜÅÆ¶ÍÔìµÈ¼¶)>
 ADDVARCACHE T2 5 1
 NEWCOMPLETETASK 5
+close
 break
 
 #IF
