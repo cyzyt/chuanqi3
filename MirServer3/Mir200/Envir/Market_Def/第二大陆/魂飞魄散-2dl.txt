@@ -11,7 +11,7 @@ CHECKTITLE 魂飞魄散
 #act 
 MOV S$主界面按钮 <Img|x=571.0|y=465.0|img=cc/public/3_1.png|esc=0>
 #ELSEACT 
-MOV S$主界面按钮 <Button|x=522.0|y=486.0|color=255|size=18|nimg=cc/hfps/btn1.png>
+MOV S$主界面按钮 <Button|x=522.0|y=486.0|color=255|size=18|nimg=cc/hfps/btn1.png|link=@魂飞魄散领取奖励>
 
 #IF 
 #act
@@ -33,3 +33,21 @@ goto @魂飞魄散主界面
 <$STR(S$主界面按钮)>
 
 
+[@魂飞魄散领取奖励]
+#IF
+SMALL U8 2000 
+#ACT 
+sendmsg 9 <font color='#FF0000'>当前杀怪数量不足，无法领取奖励</font>
+break 
+
+#IF 
+CHECKTITLE 魂飞魄散
+#ACT 
+sendmsg 9 <font color='#FF0000'>你已经领取过奖励了,无法重复领取</font>
+break
+
+#IF 
+#ACT 
+CONFERTITLE 魂飞魄散
+sendmsg 9 <font color='#FF0000'>恭喜你，获得了魂飞魄散称号</font>
+goto @main 
