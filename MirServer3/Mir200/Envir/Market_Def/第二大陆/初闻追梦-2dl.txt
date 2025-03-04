@@ -1,7 +1,64 @@
 [@main]
 #if 
 #act 
+GETBAGITEMCOUNT 剑刃核心 N$剑刃核心数量
+GETBAGITEMCOUNT 剑柄本源 N$剑柄本源数量
+GETBAGITEMCOUNT 护手魂晶 N$护手魂晶数量
+GETBAGITEMCOUNT 剑鞘碎片 N$剑鞘碎片数量
+GETBAGITEMCOUNT 剑魂共鸣 N$剑魂共鸣数量
+GETBAGITEMCOUNT 追梦锻造锤 N$追梦锻造锤数量
 
+#IF 
+large N$剑刃核心数量 0
+#ACT 
+MOV N$颜色编号1 250
+#ELSEACT 
+MOV N$颜色编号1 249
+
+#IF 
+large N$剑柄本源数量 0
+#ACT 
+MOV N$颜色编号2 250
+#ELSEACT 
+MOV N$颜色编号2 249
+
+#IF 
+large N$护手魂晶数量 0
+#ACT 
+MOV N$颜色编号3 250
+#ELSEACT 
+MOV N$颜色编号3 249
+
+#IF 
+large N$剑鞘碎片数量 0
+#ACT 
+MOV N$颜色编号4 250
+#ELSEACT 
+MOV N$颜色编号4 249
+
+#IF 
+large N$剑魂共鸣数量 0
+#ACT 
+MOV N$颜色编号5 250
+#ELSEACT 
+MOV N$颜色编号5 249
+
+#IF 
+large N$追梦锻造锤数量 0
+#ACT 
+MOV N$颜色编号6 250
+#ELSEACT 
+MOV N$颜色编号6 249
+
+#IF 
+CHECK [028] 0 
+#act 
+MOV S$主界面按钮 <Button|x=457.0|y=492.0|pimg=cc/cwzm/btn2.png|color=255|size=18|nimg=cc/cwzm/btn1.png|link=@领取追梦剧情>
+#ELSEACT 
+MOV S$主界面按钮 <Img|x=463.0|y=481.0|img=cc/public/3_2.png|esc=0>
+
+#IF 
+#ACT 
 goto @初闻追梦主界面
 
 [@初闻追梦主界面]
@@ -27,19 +84,53 @@ goto @初闻追梦主界面
 <Img|x=409.0|y=401.0|img=cc/public/1900015031.png|esc=0>
 <Img|x=506.0|y=401.0|img=cc/public/1900015031.png|esc=0>
 <Img|x=600.0|y=401.0|img=cc/public/1900015031.png|esc=0>
-<Button|x=457.0|y=492.0|pimg=cc/cwzm/btn2.png|color=255|size=18|nimg=cc/cwzm/btn1.png>
+<$STR(S$主界面按钮)>
 <ItemShow|x=284.0|y=258.0|width=70|height=70|itemid=2704|itemcount=0|bgtype=0|showtips=1>
 <ItemShow|x=375.0|y=257.0|width=70|height=70|itemid=2705|itemcount=0|bgtype=0|showtips=1>
 <ItemShow|x=468.0|y=258.0|width=70|height=70|itemid=2706|itemcount=0|bgtype=0|showtips=1>
 <ItemShow|x=560.0|y=258.0|width=70|height=70|itemid=2707|itemcount=0|bgtype=0|showtips=1>
 <ItemShow|x=654.0|y=258.0|width=70|height=70|itemid=2708|itemcount=0|bgtype=0|showtips=1>
 <ItemShow|x=745.0|y=258.0|width=70|height=70|itemid=2709|itemcount=0|bgtype=0|showtips=1>
-<RText|x=322.0|y=297.0|color=255|size=16|text=<0/FCOLOR=249></1/FCOLOR=255>>
-<RText|x=411.0|y=297.0|color=255|size=16|text=<0/FCOLOR=249></1/FCOLOR=255>>
-<RText|x=504.0|y=297.0|color=255|size=16|text=<0/FCOLOR=249></1/FCOLOR=255>>
-<RText|x=595.0|y=297.0|color=255|size=16|text=<0/FCOLOR=249></1/FCOLOR=255>>
-<RText|x=688.0|y=297.0|color=255|size=16|text=<0/FCOLOR=249></1/FCOLOR=255>>
-<RText|x=781.0|y=297.0|color=255|size=16|text=<0/FCOLOR=249></1/FCOLOR=255>>
+<RText|x=322.0|y=297.0|color=255|size=16|text=<<$STR(N$剑刃核心数量)>/FCOLOR=<$STR(N$颜色编号1)>></1/FCOLOR=255>>
+<RText|x=411.0|y=297.0|color=255|size=16|text=<<$STR(N$剑柄本源数量)>/FCOLOR=<$STR(N$颜色编号2)>></1/FCOLOR=255>>
+<RText|x=504.0|y=297.0|color=255|size=16|text=<<$STR(N$护手魂晶数量)>/FCOLOR=<$STR(N$颜色编号3)>></1/FCOLOR=255>>
+<RText|x=595.0|y=297.0|color=255|size=16|text=<<$STR(N$剑鞘碎片数量)>/FCOLOR=<$STR(N$颜色编号4)>></1/FCOLOR=255>>
+<RText|x=688.0|y=297.0|color=255|size=16|text=<<$STR(N$剑魂共鸣数量)>/FCOLOR=<$STR(N$颜色编号5)>></1/FCOLOR=255>>
+<RText|x=781.0|y=297.0|color=255|size=16|text=<<$STR(N$追梦锻造锤数量)>/FCOLOR=<$STR(N$颜色编号6)>></1/FCOLOR=255>>
 <ItemShow|x=405.0|y=399.0|width=70|height=70|itemid=30238|itemcount=1|bgtype=0|showtips=1>
-<ItemShow|x=503.0|y=398.0|width=70|height=70|itemid=1|itemcount=1|bgtype=0|showtips=1>
-<ItemShow|x=597.0|y=398.0|width=70|height=70|itemid=1|itemcount=1|bgtype=0|showtips=1>
+<ItemShow|x=503.0|y=398.0|width=70|height=70|itemid=2711|itemcount=1|bgtype=0|showtips=1>
+<ItemShow|x=597.0|y=398.0|width=70|height=70|itemid=4|itemcount=1000000|bgtype=0|showtips=1>
+
+[@领取追梦剧情]
+#OR 
+NOT CHECKItem 剑刃核心 1
+NOT CHECKItem 剑柄本源 1
+NOT CHECKItem 护手魂晶 1
+NOT CHECKItem 剑鞘碎片 1
+NOT CHECKItem 剑魂共鸣 1
+NOT CHECKItem 追梦锻造锤 1
+#ACT 
+sendmsg 9 <font color='#FF0000'>当前材料不足，无法完成任务</font>
+break
+
+#IF 
+CHECK [028] 1
+#ACT 
+sendmsg 9 <font color='#FF0000'>已经完成此任务请勿重复提交</font>
+break
+
+
+#IF 
+#ACT 
+TAKE 剑刃核心 1
+TAKE 剑柄本源 1
+TAKE 护手魂晶 1
+TAKE 剑鞘碎片 1
+TAKE 剑魂共鸣 1
+TAKE 追梦锻造锤 1
+GiveStateItem 追梦?破晓裁决 1 1 1 0 0 1 1 1 1
+GiveStateItem 88元充值券 1 1 1 0 0 1 1 1 1
+MONEY 绑定元宝 + 1000000
+sendmsg 9 <font color='#00EE00'>剧情任务完成</font>
+SENDMSGNEW 255 0 <恭喜玩家/FCOLOR=255>{【<$username>】/FCOLOR=249}<完成/FCOLOR=255><【初闻追梦】/FCOLOR=250><剧情任务，获得追梦神装/FCOLOR=255> 1 1
+goto @main

@@ -106,3 +106,29 @@ CHECKITEM 10元宝 1
 #act 
 take 10元宝 1
 money 绑定元宝 + 10
+
+[@STDMODEFUNC1003]
+#IF 
+#ACT 
+stop
+
+#IF 
+CHECKITEM 1元充值券 1 
+#act 
+take 1元充值券 1
+money 绑定灵符 + 100
+INC U1 1
+SENDMSGNEW 255 0 <恭喜玩家/FCOLOR=255>{【<$username>】/FCOLOR=249}<使用/FCOLOR=255><【1元充值券】/FCOLOR=250><获得1元真实充值/FCOLOR=255> 1 1
+
+[@STDMODEFUNC1004]
+#IF 
+#ACT 
+stop
+
+#IF 
+CHECKITEM 88元充值券 1 
+#act 
+take 88元充值券 1
+money 绑定灵符 + 8800
+INC U1 1
+SENDMSGNEW 255 0 <恭喜玩家/FCOLOR=255>{【<$username>】/FCOLOR=249}<使用/FCOLOR=255><【88元充值券】/FCOLOR=250><获得88元真实充值/FCOLOR=255> 1 1

@@ -32,8 +32,14 @@ Equal U7 <$cfg_task(U6_3)>
 ADDVARCACHE T2 <$STR(U6)> 1
 NEWCOMPLETETASK <$STR(U6)>
 
-
-
-
+;------¶þ´óÂ½»ê·ÉÆÇÉ¢¾çÇé
+#OR
+ISONMAP 2dl101 
+ISONMAP 2dl201 
+ISONMAP 2dl301
+ISONMAP 2dl401
+ISONMAP 2dl501
+#ACT    
+INC U8 1
 
 }
