@@ -128,7 +128,7 @@ TAKE 护手魂晶 1
 TAKE 剑鞘碎片 1
 TAKE 剑魂共鸣 1
 TAKE 追梦锻造锤 1
-GiveStateItem 追梦?破晓裁决 1 1 1 0 0 1 1 1 1
+GiveStateItem 追梦·破晓裁决 1 1 1 0 0 1 1 1 1
 GiveStateItem 88元充值券 1 1 1 0 0 1 1 1 1
 MONEY 绑定元宝 + 1000000
 sendmsg 9 <font color='#00EE00'>剧情任务完成</font>

@@ -2356,5 +2356,20 @@ local config = {
 		upNotShow=0,
 		tipsNotShow=0,
 	},
+	[202] = { 
+		Idx=202,
+		name="鞭尸概率",
+		nbvalue="100#100#100",
+		type=2,
+		desc="鞭尸概率",
+		isshow=2,
+		szshow=2,
+		scolor=253,
+		sort=137,
+		ys="回收增加",
+		zl=10,
+		upNotShow=0,
+		tipsNotShow=0,
+	},
 }
 return config
