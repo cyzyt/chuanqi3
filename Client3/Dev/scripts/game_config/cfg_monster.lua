@@ -27992,7 +27992,7 @@ local config = {
 	},
 	[734] = { 
 		IDX=734,
-		Name="灵翼龙",
+		Name="灵翼龙1",
 		Race=999,
 		RaceImg=19,
 		Appr=500,
@@ -28029,7 +28029,7 @@ local config = {
 	},
 	[735] = { 
 		IDX=735,
-		Name="蝎尾狮",
+		Name="蝎尾狮1",
 		Race=999,
 		RaceImg=19,
 		Appr=501,
@@ -28065,7 +28065,7 @@ local config = {
 	},
 	[736] = { 
 		IDX=736,
-		Name="角牛兽",
+		Name="角牛兽1",
 		Race=999,
 		RaceImg=19,
 		Appr=502,
@@ -28101,7 +28101,7 @@ local config = {
 	},
 	[737] = { 
 		IDX=737,
-		Name="弥兽拳皇",
+		Name="弥兽拳皇1",
 		Race=999,
 		RaceImg=19,
 		Appr=503,
@@ -28137,7 +28137,7 @@ local config = {
 	},
 	[738] = { 
 		IDX=738,
-		Name="神魔战士",
+		Name="神魔战士1",
 		Race=999,
 		RaceImg=19,
 		Appr=504,
@@ -28173,7 +28173,7 @@ local config = {
 	},
 	[739] = { 
 		IDX=739,
-		Name="神魔法师",
+		Name="神魔法师1",
 		Race=999,
 		RaceImg=19,
 		Appr=505,
@@ -28209,7 +28209,7 @@ local config = {
 	},
 	[740] = { 
 		IDX=740,
-		Name="神魔祭师",
+		Name="神魔祭师1",
 		Race=999,
 		RaceImg=19,
 		Appr=506,
@@ -28245,7 +28245,7 @@ local config = {
 	},
 	[741] = { 
 		IDX=741,
-		Name="神魔影卫",
+		Name="神魔影卫1",
 		Race=999,
 		RaceImg=19,
 		Appr=507,
@@ -28281,7 +28281,7 @@ local config = {
 	},
 	[742] = { 
 		IDX=742,
-		Name="神魔岛主",
+		Name="神魔岛主1",
 		Race=999,
 		RaceImg=19,
 		Appr=508,

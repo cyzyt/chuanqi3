@@ -17,15 +17,9 @@ MOV S$主界面按钮 <Img|x=520.0|y=495.0|img=cc/public/3_1.png|esc=0>
 #ELSEACT 
 MOV S$主界面按钮 <Button|x=481.0|y=489.0|size=18|color=255|nimg=cc/jq2dl101/btn1.png|link=@提交任务>
 
-
 #IF 
 #ACT 
 goto @剧情主界面 
-
-
-
-
-
 
 [@剧情主界面]
 #say 
@@ -58,7 +52,7 @@ break
 
 #IF 
 #ACT  
-TAKE 炽焰龙鳞 1
+TAKE 炽焰龙鳞 10
 GiveStateItem 剑刃核心 1 1 1 0 0 1 1 1 1
 GiveStateItem 称号:熔岩之心 1 1 1 0 0 1 1 1 1
 money 绑定元宝 + 300000

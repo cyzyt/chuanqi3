@@ -11,15 +11,11 @@ CHECKTITLE 魂飞魄散
 #act 
 MOV S$主界面按钮 <Img|x=571.0|y=465.0|img=cc/public/3_1.png|esc=0>
 #ELSEACT 
-MOV S$主界面按钮 <Button|x=522.0|y=486.0|color=255|size=18|nimg=cc/hfps/btn1.png|link=@魂飞魄散领取奖励>
+MOV S$主界面按钮 <Button|x=530.0|y=486.0|color=255|size=18|nimg=cc/hfps/btn1.png|link=@魂飞魄散领取奖励>
 
 #IF 
 #act
 goto @魂飞魄散主界面 
-
-
-
-
 
 
 [@魂飞魄散主界面]
@@ -30,6 +26,10 @@ goto @魂飞魄散主界面
 <Button|x=854.0|y=140.0|size=18|color=255|nimg=cc/public/btn_close_2_2.png|link=@exit>
 <Img|x=88.0|y=91.0|esc=0|img=cc/hfps/text.png>
 <Text|x=639.0|y=305.0|size=20|color=250|text=<$STR(n$杀敌数显示)>>
+<Img|x=546.0|y=382.0|esc=0|img=cc/public/1900015031.png>
+<ItemShow|x=543.0|y=379.0|width=70|height=70|itemid=2712|itemcount=1|bgtype=1|showtips=1>
+<Img|x=651.0|y=384.0|img=cc/public/1900015031.png|esc=0>
+<ItemShow|x=648.0|y=381.0|width=70|height=70|itemid=2698|itemcount=30|bgtype=1|showtips=1>
 <$STR(S$主界面按钮)>
 
 
@@ -49,5 +49,6 @@ break
 #IF 
 #ACT 
 CONFERTITLE 魂飞魄散
+GiveStateItem 书页 30 1 1 0 0 1 1 1 1
 sendmsg 9 <font color='#FF0000'>恭喜你，获得了魂飞魄散称号</font>
 goto @main 

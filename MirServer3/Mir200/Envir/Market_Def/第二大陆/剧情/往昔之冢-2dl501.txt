@@ -1,0 +1,60 @@
+[@main]
+#if 
+#act 
+GETBAGITEMCOUNT 古墨灵液 N0
+
+#IF 
+LARGE N0 0
+#act 
+MOV N$颜色编号 250 
+#elseact
+MOV N$颜色编号 249 
+
+#IF 
+CHECKTITLE 往昔之冢
+#ACT 
+MOV S$主界面按钮 <Img|x=520.0|y=495.0|img=cc/public/3_1.png|esc=0>
+#ELSEACT 
+MOV S$主界面按钮 <Button|x=481.0|y=489.0|size=18|color=255|nimg=cc/jq2dl501/btn1.png|link=@提交任务>
+
+#IF 
+#ACT 
+goto @剧情主界面 
+
+[@剧情主界面]
+#say 
+<Img|x=0.0|y=0.0|width=1024|height=768|bg=1|show=0|move=0|esc=1|img=public/0.png|loadDelay=1|reset=0>
+<Layout|x=384|y=10|width=80|height=80|link=@exit>
+<Frames|x=63.0|y=100.0|speed=10|prefix=cc/jq2dl501/00/1_|suffix=.png|loop=-1|count=20>
+<Frames|x=572.0|y=43.0|speed=10|prefix=cc/jq2dl501/01/1_|suffix=.png|loop=-1|count=10>
+<Button|x=867.0|y=125.0|size=18|color=255|nimg=cc/public/btn_close_2_2.png|link=@exit>
+<Img|x=41.0|y=87.0|img=cc/jq2dl501/text.png|esc=0>
+<Img|x=551.0|y=325.0|img=cc/public/1900015031.png|esc=0>
+<ItemShow|x=549.0|y=324.0|width=70|height=70|itemid=2703|itemcount=0|bgtype=0|showtips=1>
+<Img|x=436.0|y=403.0|img=public/word_sxbt_05.png|esc=0>
+<Img|x=540.0|y=396.0|img=public/word_jyxszy_02.png|esc=0>
+<Img|x=441.0|y=426.0|img=cc/public/1900015031.png|esc=0>
+<Img|x=552.0|y=426.0|img=cc/public/1900015031.png|esc=0>
+<Img|x=653.0|y=426.0|img=cc/public/1900015031.png|esc=0>
+<ItemShow|x=438.0|y=423.0|width=70|height=70|itemid=2708|itemcount=1|bgtype=1|showtips=1>
+<ItemShow|x=550.0|y=423.0|width=70|height=70|itemid=2722|itemcount=1|bgtype=1|showtips=1>
+<ItemShow|x=650.0|y=423.0|width=70|height=70|itemid=4|itemcount=1100000|bgtype=1|showtips=1>
+<RText|x=586.0|y=363.0|size=16|color=255|text=<<$STR(N0)>/FCOLOR=<$STR(N$颜色编号)>></10/FCOLOR=255>>
+<$STR(S$主界面按钮)>
+
+
+[@提交任务]
+#IF 
+NOT CHECKITEM 古墨灵液 10
+#act 
+sendmsg 9 <font color='#FF0000'>当前古墨灵液数量不足，无法兑换奖励</font>
+break 
+
+#IF 
+#ACT  
+TAKE 古墨灵液 10
+GiveStateItem 剑魂共鸣 1 1 1 0 0 1 1 1 1
+GiveStateItem 称号:往昔之冢 1 1 1 0 0 1 1 1 1
+money 绑定元宝 + 1100000
+sendmsg 9 <font color='#FF0000'>恭喜你，完成往昔之冢任务</font>
+goto @main 

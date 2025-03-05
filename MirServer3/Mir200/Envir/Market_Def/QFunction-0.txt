@@ -142,3 +142,39 @@ take 88元充值券 1
 money 绑定灵符 + 8800
 INC U1 1
 SENDMSGNEW 255 0 <恭喜玩家/FCOLOR=255>{【<$username>】/FCOLOR=249}<使用/FCOLOR=255><【88元充值券】/FCOLOR=250><获得88元真实充值/FCOLOR=255> 1 1
+
+[@STDMODEFUNC1005]
+#IF 
+#ACT 
+STOP 
+
+#IF 
+CHECKITEM 称号:魂飞魄散
+#ACT 
+TAKE 称号:魂飞魄散 1
+CONFERTITLE 魂飞魄散
+SENDMSGNEW 255 0 <恭喜玩家/FCOLOR=255>{【<$username>】/FCOLOR=249}<使用/FCOLOR=255><【称号:魂飞魄散】/FCOLOR=250><获得魂飞魄散称号/FCOLOR=255> 1 1
+
+[@STDMODEFUNC1006]
+#IF 
+#ACT 
+STOP 
+
+#IF 
+CHECKITEM 称号:熔岩之心
+#ACT 
+TAKE 称号:熔岩之心 1
+CONFERTITLE 熔岩之心
+SENDMSGNEW 255 0 <恭喜玩家/FCOLOR=255>{【<$username>】/FCOLOR=249}<使用/FCOLOR=255><【称号:熔岩之心/FCOLOR=250><获得熔岩之心散称号/FCOLOR=255> 1 1
+
+[@STDMODEFUNC1007]
+#IF 
+#ACT 
+STOP 
+
+#IF 
+CHECKITEM 称号:森语挽歌
+#ACT 
+TAKE 称号:森语挽歌 1
+CONFERTITLE 森语挽歌
+SENDMSGNEW 255 0 <恭喜玩家/FCOLOR=255>{【<$username>】/FCOLOR=249}<使用/FCOLOR=255><【称号:森语挽歌/FCOLOR=250><获得森语挽歌散称号/FCOLOR=255> 1 1

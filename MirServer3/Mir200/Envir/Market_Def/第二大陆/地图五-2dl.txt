@@ -16,4 +16,4 @@
 [@ฝ๘ศ๋ตุอผ]
 #IF 
 #ACT 
-MAPMOVE 2dl401 62 47 2
+MAPMOVE 2dl501 115 123 2

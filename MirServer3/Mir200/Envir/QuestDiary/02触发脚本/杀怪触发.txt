@@ -15,6 +15,13 @@ MONEY 潜力点 + 1
 INC U5 1
 sendmsg 9 <font color='#00EE00'>击杀1000只怪物，获得潜力点+1</font>
 
+;---鞭尸
+#IF 
+RANDOMEX <$CUSTABIL[202]> 100
+#ACT 
+MonItems 1
+SendCenterMsg 7 0 【鞭尸】让怪物再爆一次 0 0.1
+
 ; 主线任务杀怪
 #IF
 isonmap <$cfg_task(U6_4)>
