@@ -4,11 +4,11 @@
 GETBAGITEMCOUNT 古墨灵液 N0
 
 #IF 
-LARGE N0 0
+small N0 10
 #act 
-MOV N$颜色编号 250 
-#elseact
 MOV N$颜色编号 249 
+#elseact
+MOV N$颜色编号 250 
 
 #IF 
 CHECKTITLE 往昔之冢

@@ -4,11 +4,11 @@
 GETBAGITEMCOUNT ÐÇÔÉ¶Ï¸Ö N0
 
 #IF 
-LARGE N0 0
+small N0 10
 #act 
-MOV N$ÑÕÉ«±àºÅ 250 
-#elseact
 MOV N$ÑÕÉ«±àºÅ 249 
+#elseact
+MOV N$ÑÕÉ«±àºÅ 250 
 
 #IF 
 CHECKTITLE Ììñ·ÁÑºÛ
