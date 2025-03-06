@@ -54,7 +54,8 @@ break
 #ACT  
 TAKE 古墨灵液 10
 GiveStateItem 剑魂共鸣 1 1 1 0 0 1 1 1 1
-GiveStateItem 称号:往昔之冢 1 1 1 0 0 1 1 1 1
+CONFERTITLE 往昔之冢
 money 绑定元宝 + 1100000
 sendmsg 9 <font color='#FF0000'>恭喜你，完成往昔之冢任务</font>
+SENDMSGNEW 255 0 <恭喜玩家/FCOLOR=255>{【<$username>】/FCOLOR=249}<完成/FCOLOR=255><【往昔之冢】/FCOLOR=250><任务，获得往昔之冢称号/FCOLOR=255> 1 1
 goto @main 

@@ -51,4 +51,5 @@ break
 CONFERTITLE ªÍ∑…∆«…¢
 GiveStateItem  È“≥ 30 1 1 0 0 1 1 1 1
 sendmsg 9 <font color='#FF0000'>πßœ≤ƒ„£¨ªÒµ√¡ÀªÍ∑…∆«…¢≥∆∫≈</font>
+SENDMSGNEW 255 0 <πßœ≤ÕÊº“/FCOLOR=255>{°æ<$username>°ø/FCOLOR=249}<ÕÍ≥…/FCOLOR=255><°æªÍ∑…∆«…¢°ø/FCOLOR=250><»ŒŒÒ£¨ªÒµ√ªÍ∑…∆«…¢≥∆∫≈/FCOLOR=255> 1 1
 goto @main 

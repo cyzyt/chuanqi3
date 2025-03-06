@@ -54,7 +54,8 @@ break
 #ACT  
 TAKE 炽焰龙鳞 10
 GiveStateItem 剑刃核心 1 1 1 0 0 1 1 1 1
-GiveStateItem 称号:熔岩之心 1 1 1 0 0 1 1 1 1
+CONFERTITLE 熔岩之心
 money 绑定元宝 + 300000
 sendmsg 9 <font color='#FF0000'>恭喜你，完成熔岩之心任务</font>
+SENDMSGNEW 255 0 <恭喜玩家/FCOLOR=255>{【<$username>】/FCOLOR=249}<完成/FCOLOR=255><【熔岩之心】/FCOLOR=250><任务，获得熔岩之心称号/FCOLOR=255> 1 1
 goto @main 

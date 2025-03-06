@@ -54,7 +54,8 @@ break
 #ACT  
 TAKE 苍翠灵根 10
 GiveStateItem 剑柄本源 1 1 1 0 0 1 1 1 1
-GiveStateItem 称号:森语挽歌 1 1 1 0 0 1 1 1 1
+CONFERTITLE 森语挽歌
 money 绑定元宝 + 500000
 sendmsg 9 <font color='#FF0000'>恭喜你，完成森语挽歌任务</font>
+SENDMSGNEW 255 0 <恭喜玩家/FCOLOR=255>{【<$username>】/FCOLOR=249}<完成/FCOLOR=255><【森语挽歌】/FCOLOR=250><任务，获得森语挽歌称号/FCOLOR=255> 1 1
 goto @main 

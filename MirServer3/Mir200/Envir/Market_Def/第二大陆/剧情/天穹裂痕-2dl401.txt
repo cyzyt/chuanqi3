@@ -54,7 +54,8 @@ break
 #ACT  
 TAKE 星陨断钢 10
 GiveStateItem 剑鞘碎片 1 1 1 0 0 1 1 1 1
-GiveStateItem 称号:天穹裂痕 1 1 1 0 0 1 1 1 1
+CONFERTITLE 天穹裂痕
 money 绑定元宝 + 900000
 sendmsg 9 <font color='#FF0000'>恭喜你，完成天穹裂痕任务</font>
+SENDMSGNEW 255 0 <恭喜玩家/FCOLOR=255>{【<$username>】/FCOLOR=249}<完成/FCOLOR=255><【天穹裂痕】/FCOLOR=250><任务，获得天穹裂痕称号/FCOLOR=255> 1 1
 goto @main 
