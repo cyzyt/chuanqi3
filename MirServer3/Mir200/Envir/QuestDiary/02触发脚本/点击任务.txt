@@ -110,7 +110,7 @@ GetDBIdxItemFieldValue <$STR(S$任务奖励ID<$STR(N8)>)> name S$任务奖励名称<$STR(N
 EQUAL <$STR(S$任务奖励类型<$STR(N8)>)> 0
 #ACT
 sendmsg 9 恭喜获得<$STR(S$任务奖励名称<$STR(N8)>)>*<$STR(S$任务奖励数量<$STR(N8)>)>
-GiveStateItem <$STR(S$任务奖励名称<$STR(N8)>)> <$STR(S$任务奖励数量<$STR(N8)>)> 0 1 0 0 1 1 1 1
+GiveStateItem <$STR(S$任务奖励名称<$STR(N8)>)> <$STR(S$任务奖励数量<$STR(N8)>)> 1 1 0 0 1 1 1 1
 
 ; 货币类型
 #IF

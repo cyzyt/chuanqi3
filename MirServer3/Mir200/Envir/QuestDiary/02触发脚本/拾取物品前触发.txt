@@ -1,0 +1,39 @@
+[@拾取物品前触发]
+{
+#IF 
+NOT CHECKTITLE 特权玩家
+#ACT 
+LINKPICKUPITEM
+SetItemState -1 0 1
+SetItemState -1 1 1
+SetItemState -1 4 1
+SetItemState -1 5 1
+SetItemState -1 6 1
+SetItemState -1 8 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
