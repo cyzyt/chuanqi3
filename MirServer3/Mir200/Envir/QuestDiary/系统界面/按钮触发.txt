@@ -5,6 +5,7 @@
 [@ÏµÍ³±³°ü]
 #Act
 Openhyperlink 7
+REFRESHBAG
 
 #IF
 NOT LARGE <$GETSTRVALUE(T2,2)> 0
