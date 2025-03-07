@@ -18,9 +18,17 @@ ISONMAP 2dl301
 #act 
 INC N12 1
 
+;------2dl401剧情材料保底    
+#IF 
+ISONMAP 2dl401 
+#act 
+INC N13 1
 
-
-
+;------2dl501剧情材料保底    
+#IF 
+ISONMAP 2dl501 
+#act 
+INC N14 1
 
 
 
