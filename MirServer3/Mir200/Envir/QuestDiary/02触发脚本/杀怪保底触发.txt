@@ -12,7 +12,11 @@ ISONMAP 2dl201
 #act 
 INC N11 1
 
-
+;------2dl301¾çÇé²ÄÁÏ±£µ×    
+#IF 
+ISONMAP 2dl301 
+#act 
+INC N12 1
 
 
 
