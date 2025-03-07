@@ -1377,6 +1377,8 @@ UnderFightTime=3
 AntiRobotTimeOut=300
 DisableMotaeboSameZs=0
 DisableMotaeboSameZsEX=0
+SPEffectBoundID=107
+SPBtnID=110
 [MacConfig]
 NoMacAndAc=0
 MacLv-7=0
