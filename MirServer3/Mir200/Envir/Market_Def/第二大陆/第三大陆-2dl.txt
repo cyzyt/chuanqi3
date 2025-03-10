@@ -4,34 +4,18 @@
 <Img|x=153.0|y=252.0|width=500|height=300|esc=0|img=cc/dlcs/2dl.png>
 <Frames|x=-66.0|y=40.0|speed=10|suffix=.png|loop=-1|count=12|prefix=cc/dlcs/00/1_>
 <Button|x=857.0|y=148.0|nimg=cc/public/btn_close_2_2.png|size=18|color=255|link=@exit>
-<Text|x=653.0|y=269.0|outlinecolor=0|outline=1|size=16|color=249|text=转生等级达到5转>
-<Button|x=466.0|y=514.0|nimg=cc/dlcs/an_cs.png|size=18|color=255|link=@前往二大陆>
+<Text|x=653.0|y=269.0|outlinecolor=0|outline=1|size=16|color=249|text=转生等级达到10转>
+<Button|x=466.0|y=514.0|nimg=cc/dlcs/an_cs.png|size=18|color=255|link=@前往三大陆>
 <ItemShow|x=644.0|y=377.0|width=70|height=70|itemid=30140|itemcount=1|showtips=1|bgtype=0>
 <ItemShow|x=707.0|y=376.0|width=70|height=70|itemid=30150|itemcount=1|showtips=1|bgtype=0>
 <ItemShow|x=770.0|y=376.0|width=70|height=70|itemid=30160|itemcount=1|showtips=1|bgtype=0>
 <ItemShow|x=833.0|y=377.0|width=70|height=70|itemid=30170|itemcount=1|showtips=1|bgtype=0>
 
-[@前往二大陆]
+[@前往三大陆]
 #IF 
-CHECKVAR HUMAN 转生等级 < 5 
+CHECKVAR HUMAN 转生等级 < 10
 #act 
 sendmsg 9 <font color='#FF0000'>当前转生等级不足，无法前往下个大陆</font>
 break
 
-#IF 
-SMALL U6 12
-#act 
-sendmsg 9 <font color='#FF0000'>当前主线任务未完成，无法前往下个大陆</font>
-break
 
-#IF 
-#ACT 
-MAPMOVE 2dl 140 28 2
-
-; 任务12 完成
-#IF
-EQUAL U6 12
-SMALL <$GETSTRVALUE(T2,12)> 1
-#ACT
-ADDVARCACHE T2 12 1
-NEWCOMPLETETASK 12

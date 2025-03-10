@@ -570,7 +570,6 @@ local config = {
 	},
 	["bindTypeStr"] = { 
 		k="bindTypeStr",
-		value="0#禁止丢弃|1#禁止交易|2#禁止存仓|3#禁止修理|4#禁止出售|5#禁止爆出|6#丢弃消失|7#死亡必爆|8#禁止摆摊与拍卖",
 	},
 	["ItemLock"] = { 
 		k="ItemLock",
@@ -634,7 +633,7 @@ local config = {
 	},
 	["AutoFightViewRange"] = { 
 		k="AutoFightViewRange",
-		value="5#6#6",
+		value="10#6#6",
 	},
 	["skillAutoAddNum"] = { 
 		k="skillAutoAddNum",

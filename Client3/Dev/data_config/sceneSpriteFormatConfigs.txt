@@ -10,6 +10,8 @@
   "3102": "Other_smtiles3102_%06d.png",
   "1103": "Other_obj1103_%06d.png",
   "1104": "Other_obj1104_%06d.png",
-  "2104": "Other_tiles2104_%06d.png"
+  "2104": "Other_tiles2104_%06d.png",
+  "1105": "Other_obj1105_%06d.png",
+  "3105": "Other_smtiles3105_%06d.png"
 }
 
