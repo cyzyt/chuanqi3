@@ -1,7 +1,7 @@
 [@main]
 #say 
 <Img|width=1024|height=768|reset=1|move=0|img=public/0.png|bg=1|esc=1|show=4|loadDelay=1>
-<Img|x=153.0|y=252.0|width=500|height=300|esc=0|img=cc/dlcs/2dl.png>
+<Img|x=153.0|y=252.0|width=500|height=300|esc=0|img=cc/dlcs/3dl.png>
 <Frames|x=-66.0|y=40.0|speed=10|suffix=.png|loop=-1|count=12|prefix=cc/dlcs/00/1_>
 <Button|x=857.0|y=148.0|nimg=cc/public/btn_close_2_2.png|size=18|color=255|link=@exit>
 <Text|x=653.0|y=269.0|outlinecolor=0|outline=1|size=16|color=249|text=转生等级达到10转>
@@ -18,4 +18,6 @@ CHECKVAR HUMAN 转生等级 < 10
 sendmsg 9 <font color='#FF0000'>当前转生等级不足，无法前往下个大陆</font>
 break
 
-
+#IF 
+#ACT 
+MAPMOVE 3dl 96 72 2

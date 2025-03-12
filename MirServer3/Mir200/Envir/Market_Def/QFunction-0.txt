@@ -112,6 +112,7 @@ stop
 [@STDMODEFUNC1001]
 #IF 
 #ACT 
+map <$MAP>
 stop
 
 [@STDMODEFUNC1002]

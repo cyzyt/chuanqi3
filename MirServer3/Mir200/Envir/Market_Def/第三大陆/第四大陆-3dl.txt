@@ -1,0 +1,15 @@
+[@main]
+#say 
+<Img|width=1024|height=768|show=4|loadDelay=1|reset=1|move=0|bg=1|esc=1|img=public/0.png>
+<Img|x=153.0|y=252.0|width=500|height=300|img=cc/dlcs/2dl.png|esc=0>
+<Frames|x=-66.0|y=40.0|speed=10|loop=-1|count=12|prefix=cc/dlcs/00/1_|suffix=.png>
+<Button|x=857.0|y=148.0|size=18|color=255|nimg=cc/public/btn_close_2_2.png|link=@exit>
+<Text|x=653.0|y=269.0|size=16|outline=1|outlinecolor=0|color=255|text=完成深渊秘境挑战>
+<Button|x=466.0|y=514.0|size=18|color=255|nimg=cc/dlcs/an_cs.png|link=@前往四大陆>
+<ItemShow|x=644.0|y=377.0|width=70|height=70|itemid=30140|itemcount=1|showtips=1|bgtype=0>
+<ItemShow|x=707.0|y=376.0|width=70|height=70|itemid=30150|itemcount=1|showtips=1|bgtype=0>
+<ItemShow|x=770.0|y=376.0|width=70|height=70|itemid=30160|itemcount=1|showtips=1|bgtype=0>
+<ItemShow|x=833.0|y=377.0|width=70|height=70|itemid=30170|itemcount=1|showtips=1|bgtype=0>
+<Text|x=826.0|y=270.0|size=16|color=249|outline=1|outlinecolor=0|text=未完成>
+
+

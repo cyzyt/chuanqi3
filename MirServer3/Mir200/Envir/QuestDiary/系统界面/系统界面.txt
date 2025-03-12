@@ -26,5 +26,14 @@ SETPICKITEMTOBAG 107 yd5
 MOV S$角色界面按钮 <Button|x=250.0|y=50.0|text=加点|color=254|nimg=public/1900000652.png|link=@加点>
 ADDBUTTON 3 1001 <$STR(S$角色界面按钮)>
 
+;------小地图按钮
+#IF 
+#ACT 
+MOV S$小地图按钮 <Img|x=620.0|y=5.0|width=120|height=425|img=public/public_multi_leftbtnBG.png|esc=0>
+INC S$小地图按钮 <Button|x=620.0|y=5.0|color=255|size=18|nimg=cc/public/3.png|link=@小地图回城>
+inc S$小地图按钮 <Button|x=620.0|y=50.0|color=255|size=18|nimg=cc/public/2.png|link=@小地图随机>
+inc S$小地图按钮 <Button|x=620.0|y=95.0|color=255|size=18|nimg=cc/public/1.png|link=@小地图定点>
+addbutton 8 1005 <$STR(S$小地图按钮)>
+
 
 }

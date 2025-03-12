@@ -1,0 +1,55 @@
+[@main]
+#if 
+large U9 2000
+#ACT 
+mov n$杀敌数显示 2000
+#ELSEACT 
+mov n$杀敌数显示 <$STR(U9)>
+
+#IF 
+CHECKTITLE 魂飞魄散
+#act 
+MOV S$主界面按钮 <Img|x=571.0|y=465.0|img=cc/public/3_1.png|esc=0>
+#ELSEACT 
+MOV S$主界面按钮 <Button|x=530.0|y=486.0|color=255|size=18|nimg=cc/hfps/btn1.png|link=@魂飞魄散领取奖励>
+
+#IF 
+#act
+goto @魂飞魄散主界面 
+
+
+[@魂飞魄散主界面]
+#say 
+<Img|width=1024|height=768|bg=1|reset=1|img=public/0.png|loadDelay=1|esc=1|show=0|move=0>
+<Layout|x=384|y=10|width=80|height=80|link=@exit>
+<Frames|speed=10|loop=-1|count=20|prefix=cc/hfps/00/1_|suffix=.png>
+<Button|x=854.0|y=140.0|size=18|color=255|nimg=cc/public/btn_close_2_2.png|link=@exit>
+<Img|x=88.0|y=91.0|esc=0|img=cc/hfps/3text.png>
+<Text|x=639.0|y=305.0|size=20|color=250|text=<$STR(n$杀敌数显示)>>
+<Img|x=546.0|y=382.0|esc=0|img=cc/public/1900015031.png>
+<ItemShow|x=543.0|y=379.0|width=70|height=70|itemid=2712|itemcount=1|bgtype=1|showtips=1>
+<Img|x=651.0|y=384.0|img=cc/public/1900015031.png|esc=0>
+<ItemShow|x=648.0|y=381.0|width=70|height=70|itemid=2698|itemcount=30|bgtype=1|showtips=1>
+<$STR(S$主界面按钮)>
+
+
+[@魂飞魄散领取奖励]
+#IF
+SMALL U9 2000 
+#ACT 
+sendmsg 9 <font color='#FF0000'>当前杀怪数量不足，无法领取奖励</font>
+break 
+
+#IF 
+CHECKTITLE 魂飞魄散二阶
+#ACT 
+sendmsg 9 <font color='#FF0000'>你已经领取过奖励了,无法重复领取</font>
+break
+
+#IF 
+#ACT 
+CONFERTITLE 魂飞魄散二阶
+GiveStateItem 书页 30 1 1 0 0 1 1 1 1
+sendmsg 9 <font color='#FF0000'>恭喜你，获得了魂飞魄二阶散称号</font>
+SENDMSGNEW 255 0 <恭喜玩家/FCOLOR=255>{【<$username>】/FCOLOR=249}<完成/FCOLOR=255><【魂飞魄散】/FCOLOR=250><任务，获得魂飞魄散二阶称号/FCOLOR=255> 1 1
+goto @main 

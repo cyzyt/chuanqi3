@@ -70,4 +70,19 @@ Openhyperlink 35
 #ACT 
 REFRESHBAG
 
+[@小地图回城]
+#IF 
+#ACT 
+goto @STDMODEFUNC1000
+
+[@小地图随机]
+#IF 
+#ACT 
+goto @STDMODEFUNC1001
+
+[@小地图定点]
+#IF 
+#ACT 
+Mapmove <$Map> <$ToPointX> <$ToPointY>
+
 }
