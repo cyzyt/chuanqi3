@@ -14,5 +14,7 @@
   "1105": "scene/Other/obj1105/%d",
   "3105": "scene/Other/smtiles3105/%d",
   "1106": "scene/Other/obj1106/%d",
-  "2106": "scene/Other/tiles2106/%d"
+  "2106": "scene/Other/tiles2106/%d",
+  "1107": "scene/Other/obj1107/%d",
+  "2107": "scene/Other/tiles2107/%d"
 }
