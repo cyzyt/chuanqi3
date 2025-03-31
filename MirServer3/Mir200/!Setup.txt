@@ -1395,6 +1395,8 @@ ExitDelay=0
 QuitDelay=0
 ExitStop=0
 QuitStop=0
+SpiritKillByMonDropNum=0
+SpiritKillByHumDropNum=0
 [MacConfig]
 NoMacAndAc=0
 MacLv-7=0
