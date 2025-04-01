@@ -26,6 +26,8 @@
   "1111": "Other_obj1111_%06d.png",
   "2111": "Other_tiles2111_%06d.png",
   "1112": "Other_obj1112_%06d.png",
-  "2112": "Other_tiles2112_%06d.png"
+  "2112": "Other_tiles2112_%06d.png",
+  "1113": "Other_obj1113_%06d.png",
+  "2113": "Other_tiles2113_%06d.png"
 }
 

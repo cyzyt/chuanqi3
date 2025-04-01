@@ -26,5 +26,7 @@
   "1111": "scene/Other/obj1111/%d",
   "2111": "scene/Other/tiles2111/%d",
   "1112": "scene/Other/obj1112/%d",
-  "2112": "scene/Other/tiles2112/%d"
+  "2112": "scene/Other/tiles2112/%d",
+  "1113": "scene/Other/obj1113/%d",
+  "2113": "scene/Other/tiles2113/%d"
 }

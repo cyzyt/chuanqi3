@@ -1,0 +1,3 @@
+[@main]
+#act 
+mapmove 3dl201 84 89 2
