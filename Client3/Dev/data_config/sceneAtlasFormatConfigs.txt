@@ -28,5 +28,12 @@
   "1112": "scene/Other/obj1112/%d",
   "2112": "scene/Other/tiles2112/%d",
   "1113": "scene/Other/obj1113/%d",
-  "2113": "scene/Other/tiles2113/%d"
+  "2113": "scene/Other/tiles2113/%d",
+  "1114": "scene/Other/obj1114/%d",
+  "2114": "scene/Other/tiles2114/%d",
+  "1115": "scene/Other/obj1115/%d",
+  "3115": "scene/Other/smtiles3115/%d",
+  "3116": "scene/Other/smtiles3116/%d",
+  "1117": "scene/Other/obj1117/%d",
+  "2117": "scene/Other/tiles2117/%d"
 }

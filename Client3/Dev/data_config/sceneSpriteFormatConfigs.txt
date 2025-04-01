@@ -28,6 +28,13 @@
   "1112": "Other_obj1112_%06d.png",
   "2112": "Other_tiles2112_%06d.png",
   "1113": "Other_obj1113_%06d.png",
-  "2113": "Other_tiles2113_%06d.png"
+  "2113": "Other_tiles2113_%06d.png",
+  "1114": "Other_obj1114_%06d.png",
+  "2114": "Other_tiles2114_%06d.png",
+  "1115": "Other_obj1115_%06d.png",
+  "3115": "Other_smtiles3115_%06d.png",
+  "3116": "Other_smtiles3116_%06d.png",
+  "1117": "Other_obj1117_%06d.png",
+  "2117": "Other_tiles2117_%06d.png"
 }
 
