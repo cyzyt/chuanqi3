@@ -35,6 +35,18 @@
   "3115": "Other_smtiles3115_%06d.png",
   "3116": "Other_smtiles3116_%06d.png",
   "1117": "Other_obj1117_%06d.png",
-  "2117": "Other_tiles2117_%06d.png"
+  "2117": "Other_tiles2117_%06d.png",
+  "1118": "Other_obj1118_%06d.png",
+  "2118": "Other_tiles2118_%06d.png",
+  "1119": "Other_obj1119_%06d.png",
+  "2119": "Other_tiles2119_%06d.png",
+  "3119": "Other_smtiles3119_%06d.png",
+  "1120": "Other_obj1120_%06d.png",
+  "2120": "Other_tiles2120_%06d.png",
+  "3120": "Other_smtiles3120_%06d.png",
+  "1121": "Other_obj1121_%06d.png",
+  "2121": "Other_tiles2121_%06d.png",
+  "1122": "Other_obj1122_%06d.png",
+  "2122": "Other_tiles2122_%06d.png"
 }
 

@@ -35,5 +35,17 @@
   "3115": "scene/Other/smtiles3115/%d",
   "3116": "scene/Other/smtiles3116/%d",
   "1117": "scene/Other/obj1117/%d",
-  "2117": "scene/Other/tiles2117/%d"
+  "2117": "scene/Other/tiles2117/%d",
+  "1118": "scene/Other/obj1118/%d",
+  "2118": "scene/Other/tiles2118/%d",
+  "1119": "scene/Other/obj1119/%d",
+  "2119": "scene/Other/tiles2119/%d",
+  "3119": "scene/Other/smtiles3119/%d",
+  "1120": "scene/Other/obj1120/%d",
+  "2120": "scene/Other/tiles2120/%d",
+  "3120": "scene/Other/smtiles3120/%d",
+  "1121": "scene/Other/obj1121/%d",
+  "2121": "scene/Other/tiles2121/%d",
+  "1122": "scene/Other/obj1122/%d",
+  "2122": "scene/Other/tiles2122/%d"
 }
